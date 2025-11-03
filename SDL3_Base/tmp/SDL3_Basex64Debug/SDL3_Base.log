@@ -1,33 +1,19 @@
 ﻿  Game.cpp
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\Object.h(31,12): error C2660: 'Renderer::Update': la función no acepta 1 argumentos
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\Renderer.h(18,16): message : vea la declaración de 'Renderer::Update'
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\Object.h(31,12): message : al hacer coincidir la lista de argumentos '(float)'
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\Object.h(36,12): error C2660: 'Renderer::Render': la función no acepta 0 argumentos
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\Renderer.h(19,16): message : vea la declaración de 'Renderer::Render'
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\Object.h(36,12): message : al hacer coincidir la lista de argumentos '()'
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.h(10,15): error C3668: 'ImageRenderer::Render': el método con el especificador de invalidación 'override' no invalidó ningún método de clase base
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\ImageObject.h(10,1): error C2259: "ImageRenderer": no se puede crear una instancia de una clase abstract
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.h(5,7): message : vea la declaración de 'ImageRenderer'
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\ImageObject.h(10,1): message : debido a los siguientes miembros:
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\ImageObject.h(10,1): message : 'void Renderer::Render(SDL_Renderer *)': es abstracto
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\Renderer.h(19,16): message : vea la declaración de 'Renderer::Render'
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\ImageObject.h(10,32): error C2259: "ImageRenderer": no se puede crear una instancia de una clase abstract
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.h(5,7): message : vea la declaración de 'ImageRenderer'
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\ImageObject.h(10,32): message : debido a los siguientes miembros:
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\ImageObject.h(10,32): message : 'void Renderer::Render(SDL_Renderer *)': es abstracto
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\Renderer.h(19,16): message : vea la declaración de 'Renderer::Render'
   ImageRenderer.cpp
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.h(10,15): error C3668: 'ImageRenderer::Render': el método con el especificador de invalidación 'override' no invalidó ningún método de clase base
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.cpp(5,130): error C2661: 'Renderer::Renderer': ninguna función sobrecargada acepta 2 argumentos
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.cpp(5,130): message : al hacer coincidir la lista de argumentos '(Transform *, std::string)'
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.cpp(47,2): error C2660: 'SDL_RenderTexture': la función no acepta 7 argumentos
-D:\GitHub\SDL_Tutorial\SDL3_Base\dependencies\SDL_3.2.22\include\SDL3\SDL_render.h(2113,34): message : vea la declaración de 'SDL_RenderTexture'
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.cpp(47,2): message : al hacer coincidir la lista de argumentos '(SDL_Renderer *, SDL_Texture *, SDL_FRect *, SDL_FRect *, float, int, SDL_FlipMode)'
   Main.cpp
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\Object.h(31,12): error C2660: 'Renderer::Update': la función no acepta 1 argumentos
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\Renderer.h(18,16): message : vea la declaración de 'Renderer::Update'
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\Object.h(31,12): message : al hacer coincidir la lista de argumentos '(float)'
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\Object.h(36,12): error C2660: 'Renderer::Render': la función no acepta 0 argumentos
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\Renderer.h(19,16): message : vea la declaración de 'Renderer::Render'
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\Object.h(36,12): message : al hacer coincidir la lista de argumentos '()'
-  Generando código...
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.cpp(5,130): error C2661: 'Renderer::Renderer': no overloaded function takes 2 arguments
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.cpp(5,130):
+      while trying to match the argument list '(Transform *, std::string)'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.cpp(34,22): error C2084: function 'void ImageRenderer::Update(float)' already has a body
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.h(9,15):
+      see previous definition of 'ImageRenderer::Update'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.cpp(47,2): error C2660: 'SDL_RenderTexture': function does not take 7 arguments
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\dependencies\SDL_3.2.22\include\SDL3\SDL_render.h(2113,34):
+      see declaration of 'SDL_RenderTexture'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.cpp(47,2):
+      while trying to match the argument list '(SDL_Renderer *, SDL_Texture *, SDL_FRect *, SDL_FRect *, float, int, SDL_FlipMode)'
+  
+  RenderManager.cpp
+  Generating Code...

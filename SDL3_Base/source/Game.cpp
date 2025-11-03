@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "ImageObject.h"
 #include "RenderManager.h"
+#include "InputManager.h"
 
 void Game::Init()
 {
@@ -38,6 +39,10 @@ void Game::HandleEvents()
 			_isRunning = false;
 }
 
+void Game::HandleEvents()
+{
+	_isRunning = !IM->Listen();
+}
 
 void Game::Update()
 {

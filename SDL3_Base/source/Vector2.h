@@ -16,6 +16,10 @@ public:
 		y /= length;
 	}
 
+	void operator!()
+	{
+		Normalize();
+	}
 	Vector2 const operator+(const Vector2& other) const
 	{
 		return Vector2(x + other.x, y + other.y);
@@ -35,9 +39,5 @@ public:
 	Vector2 const operator/(const float& other) const
 	{
 		return Vector2(x / other, y / other);
-	}
-	Vector2 const operator/(const Vector2& other) const
-	{
-		return Vector2(x / other.x, y / other.y);
 	}
 };

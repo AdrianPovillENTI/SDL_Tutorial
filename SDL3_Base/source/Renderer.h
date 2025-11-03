@@ -15,8 +15,8 @@ class Renderer {
 
 	public:
 		virtual void LoadTexture(std::string texturePath, SDL_Renderer* renderer) = 0;
-		virtual void Update() = 0;
-		virtual void Render(SDL_Renderer* renderer) = 0;
+		virtual void Update(float dt) = 0;
+		virtual void Render() = 0;
 		virtual void SetDestinationRect(SDL_FRect rect) {
 			_destinationRect = rect;
 		}

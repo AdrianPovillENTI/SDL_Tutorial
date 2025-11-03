@@ -31,7 +31,7 @@ void ImageRenderer::LoadTexture(std::string texturePath, SDL_Renderer* renderer)
 	_sourceRect = { 0.0f, 0.0f, (float)_texture->w, (float)_texture->h };
 }
 
- void ImageRenderer::Update() 
+ void ImageRenderer::Update(float dt) 
 {
 	Vector2 offset = (Vector2(-_transform->size.x, -_transform->size.y) / 2.0f) * _transform->scale;
 
