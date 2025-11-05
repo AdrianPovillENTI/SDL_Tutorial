@@ -6,6 +6,6 @@ class ImageRenderer : public Renderer {
 public:
 	ImageRenderer(Transform* transform, std::string resourcePath, Vector2 sourceOffset, Vector2 sourceSize);
 	void LoadTexture(std::string texturePath, SDL_Renderer* renderer) override;
-	virtual void Update(float dt) override {};
+	virtual void Update(float dt) override;
 	virtual void Render() override;
 };

@@ -14,6 +14,8 @@ class Renderer {
 		std::string _resourcePath;
 
 	public:
+		Renderer(Transform* transform, std::string resourcePath)
+			: _transform(transform), _resourcePath(resourcePath) { }
 		virtual void LoadTexture(std::string texturePath, SDL_Renderer* renderer) = 0;
 		virtual void Update(float dt) = 0;
 		virtual void Render() = 0;

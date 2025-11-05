@@ -44,7 +44,7 @@ void ImageRenderer::LoadTexture(std::string texturePath, SDL_Renderer* renderer)
 
 void ImageRenderer::Render()
 {
-	SDL_RenderTexture(
+	SDL_RenderTextureRotated(
 		RM->GetRenderer(),
 		RM->GetTexture(_resourcePath),
 		&_sourceRect,

@@ -2,13 +2,13 @@
 
 bool InputManager::Listen()
 {
-    if (std::unordered_map<Sint32, KeyState>::iterator it = _keyReference.begin();
+    for (std::unordered_map<Sint32, KeyState>::iterator it = _keyReference.begin();
         it != _keyReference.end();
         it++)
     {
         if (it->second == DOWN)
         {
-            it->second == HOLD;
+            it->second = HOLD;
         }
         else if (it->second == UP)
         {
