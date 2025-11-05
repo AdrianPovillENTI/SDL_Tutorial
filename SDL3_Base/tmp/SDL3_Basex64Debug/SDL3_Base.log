@@ -1,0 +1,19 @@
+﻿  Game.cpp
+  ImageRenderer.cpp
+  Main.cpp
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.cpp(5,130): error C2661: 'Renderer::Renderer': no overloaded function takes 2 arguments
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.cpp(5,130):
+      while trying to match the argument list '(Transform *, std::string)'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.cpp(34,22): error C2084: function 'void ImageRenderer::Update(float)' already has a body
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.h(9,15):
+      see previous definition of 'ImageRenderer::Update'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.cpp(47,2): error C2660: 'SDL_RenderTexture': function does not take 7 arguments
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\dependencies\SDL_3.2.22\include\SDL3\SDL_render.h(2113,34):
+      see declaration of 'SDL_RenderTexture'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\ImageRenderer.cpp(47,2):
+      while trying to match the argument list '(SDL_Renderer *, SDL_Texture *, SDL_FRect *, SDL_FRect *, float, int, SDL_FlipMode)'
+  
+  RenderManager.cpp
+  Generating Code...
