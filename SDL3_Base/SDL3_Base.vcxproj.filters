@@ -24,6 +24,12 @@
     <ClCompile Include="source\ImageRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
+=======
+    <ClCompile Include="source\RenderManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+>>>>>>> parent of 14887ae (Input Manager)
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Game.h">
@@ -44,7 +50,14 @@
     <ClInclude Include="source\Vector2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="RenderManager.h">
+=======
+    <ClInclude Include="source\RenderManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Transform.h">
+>>>>>>> parent of 14887ae (Input Manager)
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

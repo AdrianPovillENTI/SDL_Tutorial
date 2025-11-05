@@ -10,7 +10,11 @@ void ImageRenderer::LoadTexture(std::string texturePath, SDL_Renderer* renderer)
 	_sourceRect = { 0.0f, 0.0f, (float)_texture->w, (float)_texture->h };
 }
 
+<<<<<<< HEAD
 void ImageRenderer::Update()
+=======
+ void ImageRenderer::Update() 
+>>>>>>> parent of 14887ae (Input Manager)
 {
 	//does nothing
 	//Could update shaders

@@ -1,5 +1,9 @@
 #include "Game.h"
 #include "ImageObject.h"
+<<<<<<< HEAD
+=======
+#include "RenderManager.h"
+>>>>>>> parent of 14887ae (Input Manager)
 
 void Game::Init()
 {
