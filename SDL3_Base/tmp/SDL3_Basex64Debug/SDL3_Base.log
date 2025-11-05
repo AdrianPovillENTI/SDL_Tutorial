@@ -1,15 +1,108 @@
-﻿  Game.cpp
+﻿  AABB.cpp
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7): error C2011: 'AABB': 'class' type redefinition
+  (compiling source file 'source/AABB.cpp')
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\Rigidbody.h(30,4): warning C4150: deletion of pointer to incomplete type 'AABB'; no destructor called
+  (compiling source file 'source/AABB.cpp')
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(4,12): error C2027: use of undefined type 'AABB'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(6,31): error C2065: '_topLeft': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(6,56): error C2065: '_topLeft': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(6,69): error C2065: '_size': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(7,31): error C2065: '_topLeft': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(7,56): error C2065: '_topLeft': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(7,69): error C2065: '_size': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(12,12): error C2027: use of undefined type 'AABB'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(15,22): error C2065: '_topLeft': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(15,36): error C2027: use of undefined type 'AABB'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(15,59): error C2065: '_topLeft': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(15,73): error C2065: '_topLeft': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(15,87): error C2027: use of undefined type 'AABB'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(16,9): error C2027: use of undefined type 'AABB'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(17,22): error C2027: use of undefined type 'AABB'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(17,45): error C2065: '_topLeft': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(17,59): error C2027: use of undefined type 'AABB'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(17,81): error C2065: '_topLeft': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(18,9): error C2065: '_size': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(20,22): error C2065: '_topLeft': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(20,36): error C2027: use of undefined type 'AABB'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(20,59): error C2065: '_topLeft': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(20,73): error C2065: '_topLeft': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(20,87): error C2027: use of undefined type 'AABB'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(21,9): error C2027: use of undefined type 'AABB'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(22,22): error C2027: use of undefined type 'AABB'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(22,45): error C2065: '_topLeft': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(22,59): error C2027: use of undefined type 'AABB'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(22,81): error C2065: '_topLeft': undeclared identifier
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.cpp(23,9): error C2065: '_size': undeclared identifier
+  Game.cpp
   ImageRenderer.cpp
-  RenderManager.cpp
+  Main.cpp
+  Rigidbody.cpp
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7): error C2011: 'AABB': 'class' type redefinition
+  (compiling source file 'source/Rigidbody.cpp')
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\Rigidbody.h(30,4): warning C4150: deletion of pointer to incomplete type 'AABB'; no destructor called
+  (compiling source file 'source/Rigidbody.cpp')
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\Rigidbody.cpp(10,8): error C2027: use of undefined type 'AABB'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\Rigidbody.cpp(21,7): error C2027: use of undefined type 'AABB'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\Rigidbody.cpp(46,3): error C2027: use of undefined type 'AABB'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
+C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\Rigidbody.cpp(47,3): error C2027: use of undefined type 'AABB'
+      C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\source\AABB.h(3,7):
+      see declaration of 'AABB'
+  
   Generating Code...
-  SDL3_Base.vcxproj -> C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\binaries\x64Debug\SDL3_Base.exe
-  C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\\dependencies\SDL_3.2.22\lib\x64\SDL3.dll
-  1 File(s) copied
-  C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\\dependencies\SDL_image_3.2.4\lib\x64\SDL3_image.dll
-  1 File(s) copied
-  C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\\dependencies\SDL_mixer_2.8.1_compatible\lib\x64\SDL2_mixer.dll
-  1 File(s) copied
-  C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\\dependencies\SDL_ttf-3.2.2\lib\x64\SDL3_ttf.dll
-  1 File(s) copied
-  C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\\resources\xd.png
-  1 File(s) copied

@@ -20,5 +20,28 @@ private:
 
 public:
 	Rigidbody(Transform* transform) 
-		: _transform(transform), _velocity
+		: _transform(transform), _velocity(Vector2()), _angularVelocity(0.0f),
+		_acceleration(Vector2()), _angularAcceleration(0.0f),
+		_linearDrag(0.0f), _angularDrag(0.0f) { }
+
+	~Rigidbody()
+	{
+		for (AABB* collider : _colliders)
+			delete collider;
+	}
+
+	void AddCollider(AABB* collider) { _colliders.push_back(collider); }
+	
+	void AddForce(Vector2 force) { _acceleration = _acceleration + force; }
+	void AddTorque(float amount) { _angularAcceleration += amount; }
+	Vector2 const GetVelocity() { return _velocity; }
+	void SetVelocity(Vector2 velocity) { _velocity = velocity; }
+	void SetLinearDrag(float linearDrag) { _linearDrag = linearDrag; }
+	void SetAngularDrag(float angularDrag) { _angularDrag = angularDrag; }
+
+	bool CheckCollision(const Rigidbody* other);
+
+	bool CheckOverlappingPoint(Vector2 point);
+
+	void Update(float dt);
 };
