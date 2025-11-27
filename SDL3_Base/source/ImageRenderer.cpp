@@ -2,35 +2,6 @@
 #include <cassert>
 #include <SDL3_image/SDL_image.h>
 
-ImageRenderer::ImageRenderer(Transform* transform, std::string resourcePath, Vector2 sourceOffset, Vector2 sourceSize) : Renderer(transform, resourcePath)
-{
-	RM->GetTexture(resourcePath);
-
-	_sourceRect = SDL_FRect
-	{
-		sourceOffset.x,
-		sourceOffset.y,
-		sourceSize.x,
-		sourceSize.y
-	};
-
-	_destinationRect = SDL_FRect
-	{
-		transform->position.x,
-		transform->position.y,
-		transform->scale.x,
-		transform->scale.y
-	};
-}
-
-void ImageRenderer::LoadTexture(std::string texturePath, SDL_Renderer* renderer)
-{
-	_texture = IMG_LoadTexture(renderer, texturePath.c_str());
-	assert(_texture);
-
-	_sourceRect = { 0.0f, 0.0f, (float)_texture->w, (float)_texture->h };
-}
-
  void ImageRenderer::Update(float dt) 
 {
 	Vector2 offset = (Vector2(-_transform->size.x, -_transform->size.y) / 2.0f) * _transform->scale;

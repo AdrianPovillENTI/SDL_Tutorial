@@ -16,10 +16,12 @@ bool AABB::CheckOverlappingAABB(const AABB* other)
         other -> _size.x;
     intersectionX |= other -> _topLeft.x >= _topLeft.x && other-> _topLeft.x <= _topLeft.x +
         _size.x;
+
     bool intersectionY = false;
     intersectionY |= _topLeft.y >= other -> _topLeft.y && _topLeft.y && _topLeft.y <= other -> _topLeft.y +
         other -> _size.y;
     intersectionY |= other -> _topLeft.y >= _topLeft.y && other-> _topLeft.y <= _topLeft.y +
         _size.y;
+
     return intersectionX && intersectionY;
 }

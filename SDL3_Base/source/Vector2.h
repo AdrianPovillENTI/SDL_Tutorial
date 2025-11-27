@@ -54,10 +54,12 @@ public:
 	{
 		return x * other.x + y * other.x;
 	}
+
 	float Cross ( const Vector2 & other ) const
 	{
-		return x * y - y * x
+		return x * y - y * x;
 	}
+
 	float GetAngleBetween( Vector2 from , Vector2 to )
 	{
 		float dot = to.x * from.x + to.y * from.y;
