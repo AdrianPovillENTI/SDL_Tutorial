@@ -2,12 +2,18 @@
 #include "ImageObject.h"
 #include "RenderManager.h"
 #include "InputManager.h"
+#include "..\SceneManager.h"
+#include <cassert>
 
 void Game::Init()
 {
 	RM->Init();
 
 	RM->LoadTexture("recources/xd.png");
+
+	assert(SM.AddScene("Gameplay", new Gameplay()));
+
+	assert(SM.InitFirstScene("Gameplay"));
 
 	_isRunning = true;
 }
@@ -46,16 +52,14 @@ void Game::HandleEvents()
 
 void Game::Update()
 {
-	for (Object* go : _gameObjects)
-		go->Update();
+	SM.UpdateCurrentScene();
 }
 
 void Game::Render()
 {
 	RM->ClearScreen();
 	
-	for (Object* go : _gameObjects)
-		go->Render();
+	SM.GetCurrentScene()->Render();
 
 	RM->RenderScreen();
 }
