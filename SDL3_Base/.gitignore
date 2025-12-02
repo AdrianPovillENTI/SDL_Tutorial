@@ -9,6 +9,10 @@
 *.opendb
 *.VC.opendb
 *.VC.db
+.vs/**/FileContentIndex/*
+.vs/**/*.db
+.vs/**/*.opendb
+.vs/**/*.VC.db
 
 # Archivos de configuración y temporales
 *.log

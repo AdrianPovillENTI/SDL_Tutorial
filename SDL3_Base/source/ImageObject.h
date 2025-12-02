@@ -9,7 +9,7 @@ public:
 	{
 		_renderer = new ImageRenderer(_transform, texturePath, sourceOffset, sourceSize);
 	}
-	~ImageObject() {
+	~ImageObject() noexcept {
 		delete _renderer;
 	}
 };

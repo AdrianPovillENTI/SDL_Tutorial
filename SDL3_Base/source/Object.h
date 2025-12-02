@@ -1,10 +1,10 @@
 #pragma once
 #include "Vector2.h"
 #include "Renderer.h"
+#include "ImageRenderer.h"
 #include "Rigidbody.h"
 #include <SDL3/SDL.h>
 #include <string>
-
 class Object
 {
 private: 
@@ -15,7 +15,8 @@ protected:
 	Renderer* _renderer = nullptr;
 
 public:
-	Object() { 
+	Object() 
+	{ 
 		_transform = new Transform();
 		_physics = new Rigidbody(_transform);
 	}
@@ -36,12 +37,13 @@ public:
 	{ 	
 		if (_physics != nullptr)
 			_physics->Update(0.02f);
-
+		if(_renderer != nullptr )
 		_renderer->Update(0.02f); 
 	}
 
 	virtual void Render()
 	{
+		if ( _renderer != nullptr )
 		_renderer->Render();
 	}	
 	Transform* GetTransform() const { return _transform; }
