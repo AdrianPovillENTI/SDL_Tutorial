@@ -1,15 +1,17 @@
 #include "Game.h"
+#include "Gameplay.h"
 #include "ImageObject.h"
 #include "RenderManager.h"
 #include "InputManager.h"
-#include "..\SceneManager.h"
+#include "SceneManager.h"
 #include <cassert>
+#include "TestObject.h"
 
 void Game::Init()
 {
 	RM->Init();
 
-	RM->LoadTexture("recources/xd.png");
+	RM->LoadTexture("resources/xd.png");
 
 	assert(SM.AddScene("Gameplay", new Gameplay()));
 

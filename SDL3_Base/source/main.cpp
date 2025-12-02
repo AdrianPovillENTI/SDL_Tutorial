@@ -7,26 +7,26 @@
 
 int main()
 {
-	Game game;
+	Game* game = new Game();
 	try
 	{
-		game.Init();
+		game->Init();	
 	}
 	catch (std::exception& e)
 	{
 		std::cout << "Error: " << e.what();
-		game.Release();
+		game->Release();
 		return -1;
 	}
 
-	while (game.IsRunning())
+	while (game->IsRunning())
 	{
-		game.HandleEvents();
-		game.Update();
-		game.Render();
+		game->HandleEvents();
+		game->Update();
+		game->Render();
 	}
 
-	game.Release();
+	game->Release();
 
 	return 0;
 }

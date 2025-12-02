@@ -1,12 +1,11 @@
-﻿  TextObject.cpp
-  SDL3_Base.vcxproj -> C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\binaries\x64Debug\SDL3_Base.exe
-  C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\\dependencies\SDL_3.2.22\lib\x64\SDL3.dll
-  1 File(s) copied
-  C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\\dependencies\SDL_image_3.2.4\lib\x64\SDL3_image.dll
-  1 File(s) copied
-  C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\\dependencies\SDL_mixer_2.8.1_compatible\lib\x64\SDL2_mixer.dll
-  1 File(s) copied
-  C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\\dependencies\SDL_ttf-3.2.2\lib\x64\SDL3_ttf.dll
-  1 File(s) copied
-  C:\Users\AdrianPovillPena\Documents\GitHub\SDL_Tutorial\SDL3_Base\\resources\xd.png
-  1 File(s) copied
+﻿  Game.cpp
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\TestObject.h(11,70): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\TestObject.h(11,43): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+  SceneManager.cpp
+  Generando código...
+  SDL3_Base.vcxproj -> D:\GitHub\SDL_Tutorial\SDL3_Base\binaries\x64Debug\SDL3_Base.exe
+  0 archivo(s) copiado(s)
+  0 archivo(s) copiado(s)
+  0 archivo(s) copiado(s)
+  0 archivo(s) copiado(s)
+  0 archivo(s) copiado(s)

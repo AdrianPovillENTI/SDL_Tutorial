@@ -16,10 +16,21 @@ public:
 		_physics->SetLinearDrag(0.1f);
 		_physics->SetAngularDrag(0.1f);
 	}
+	~TestObject() {
+		
+	}
 
 	void Update() override
 	{
-		if (IM->GetEvent(SDLK_S.DOWN))
-			_transform->position.y += 0.05f;
+		if (IM->GetEvent(SDLK_S, DOWN))
+		{
+			_physics->AddForce(Vector2(0.f, 0.01f));
+		}
+		else if (IM->GetEvent(SDLK_R, DOWN))
+		{
+			_physics->AddTorque(1.f);
+		}
+
+		Object::Update(); 
 	}
-}
+};

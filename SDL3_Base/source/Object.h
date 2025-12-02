@@ -32,7 +32,6 @@ public:
 		_renderer = nullptr;
 	}
 
-
 	virtual void Update() 
 	{ 	
 		if (_physics != nullptr)

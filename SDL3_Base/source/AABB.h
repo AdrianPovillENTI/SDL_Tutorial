@@ -14,7 +14,6 @@ public:
 	Vector2 const GetSize() { return _size; }
 	void SetTopLeft(Vector2 newTopLeft) { _topLeft = newTopLeft; }
 	void SetSize(Vector2 newSize) { _size = newSize; }
-
 	bool CheckOverlappingPoint(Vector2 point);
 	bool CheckOverlappingAABB(const AABB* other);
 };

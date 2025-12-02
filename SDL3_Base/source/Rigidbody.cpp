@@ -5,7 +5,7 @@ bool Rigidbody::CheckCollision(const Rigidbody* other)
 {
 	for (AABB* ownCollider : _colliders)
 	{
-		for (AABB* otherCollider : _colliders)
+		for (AABB* otherCollider : other->_colliders)
 		{
 			if (ownCollider->CheckOverlappingAABB(otherCollider))
 				return true;
