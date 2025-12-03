@@ -2,6 +2,7 @@
 
 #include "Object.h"
 #include "Bullet.h"
+#include "Background.h"
 #include <queue>
 
 #define SPAWNER Spawner::Instance()
@@ -23,6 +24,7 @@ public:
 
 
 	void SpawnObject(Object* obj) { spawnedObjects.push(obj); }
+
 	Bullet* SpawnBullet(Transform t, Vector2 offset) 
 	{ 
 		t.position += offset;
@@ -30,6 +32,13 @@ public:
 		spawnedObjects.push(obj); 
 		return obj;
 	}
+
+	Background* SpawnBackground(int index, std::string path) {
+		Background* bckg = new Background(index, path);
+		spawnedObjects.push(bckg);
+		return bckg;
+	}
+
 	bool AreObjectsPendingSpawn ( ) { return !spawnedObjects.empty ( ); }
 	Object* GetSpawnedObjects()
 	{

@@ -12,7 +12,7 @@ protected:
 	vector<GameObject*> children;
 	GameObject * parent;
 public:
-	GameObject ( string _spritePath ) : ImageObject ( _spritePath , Vector2 ( 0.0f , 0.0f ) , Vector2 ( 306.0f , 562.0f ) )
+	GameObject ( string _spritePath) : ImageObject ( _spritePath , Vector2 ( 0.0f , 0.0f ) , Vector2 ( 1306.0f , 1324.0f ) )
 	{
 		Vector2 randomPosition = Vector2 ( rand ( ) % RM->WINDOW_WIDTH , rand ( ) % RM->WINDOW_HEIGHT );
 		active = true;

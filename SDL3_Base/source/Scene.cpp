@@ -3,16 +3,6 @@
 
 void Scene::Update()
 {
-    while ( SPAWNER.AreObjectsPendingSpawn ( ) )
-    {
-        Object * spawned = SPAWNER.GetSpawnedObjects ( );
-        if ( spawned != nullptr )
-        {
-            _objects.push_back ( spawned );
-            GameObject * go = dynamic_cast< GameObject * >( spawned );
-            if ( go ) go->Start ( );
-        }
-    }
 
     for (int i = _objects.size() - 1; i >= 0; i--)
     {
@@ -37,6 +27,17 @@ void Scene::Update()
 
     for (Object* o : _ui)
         o->Update();
+
+    while ( SPAWNER.AreObjectsPendingSpawn ( ) )
+    {
+        Object * spawned = SPAWNER.GetSpawnedObjects ( );
+        if ( spawned != nullptr )
+        {
+            _objects.push_back ( spawned );
+            GameObject * go = dynamic_cast< GameObject * >( spawned );
+            if ( go ) go->Start ( );
+        }
+    }
 
     int objSize = _objects.size();
     for (int i = 0; i < objSize; i++)
