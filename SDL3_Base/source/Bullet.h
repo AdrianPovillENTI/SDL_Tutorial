@@ -25,9 +25,12 @@ public:
     }
     void Update ( ) override
     {
+        if ( !active ) return;
         Object::Update ( );
         GameObject::Update ( );
 
+        if ( _transform->position.x > RM->WINDOW_WIDTH ) SetActive ( false );
+            Destroy();
         _physics->AddForce ( Vector2 ( 0.25f , 0 ) );
     }
     int GetDamage ( ) const { return damage; }
