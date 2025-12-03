@@ -6,6 +6,8 @@
 *.user
 *.cache
 *.pdb
+*.obj
+*.tlog
 *.opendb
 *.VC.opendb
 *.VC.db

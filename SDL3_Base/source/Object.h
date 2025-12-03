@@ -36,7 +36,7 @@ public:
 	virtual void Update() 
 	{ 	
 		if (_physics != nullptr)
-			_physics->Update(0.02f);
+			_physics->Update ( 1.0f / 60.0f );
 		if(_renderer != nullptr )
 		_renderer->Update(0.02f); 
 	}

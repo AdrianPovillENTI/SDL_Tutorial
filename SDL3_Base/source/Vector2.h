@@ -22,15 +22,16 @@ private:
 public:
 	float x;
 	float y;
+
+	static const Vector2 Zero;
+	static const Vector2 One;
+	static const Vector2 Left;
+	static const Vector2 Right;
+	static const Vector2 Up;
+	static const Vector2 Down;
+	
 	Vector2() :x(0.f), y(0.f) {}
 	Vector2(float _x, float _y) : x(_x), y(_y) {}
-
-	Vector2 Zero ( ) { return Vector2 ( 0 , 0 ); };
-	Vector2 One ( ) { return Vector2 ( 1 , 1 ); };
-	Vector2 Left ( ) { return Vector2 ( -1 , 0 ); };
-	Vector2 Up ( ) { return Vector2 ( 0 , 1 ); };
-	Vector2 Down ( ) { return Vector2 ( 0, -1 ); };
-	Vector2 Right ( ) { return Vector2 ( 0 , 1 ); };
 
 	void Normalize()
 	{
@@ -84,6 +85,18 @@ public:
 	{
 		return Vector2(x - other.x, y - other.y);
 	}
+	Vector2& const operator+=(const Vector2& other)
+	{
+		x += other.x;
+		y += other.y;
+		return *this;
+	}
+	Vector2& const operator-=(const Vector2& other)
+	{
+		x -= other.x;
+		y -= other.y;
+		return *this;
+	}
 	Vector2 const operator*(const float& other) const
 	{
 		return Vector2(x * other, y * other);
@@ -92,8 +105,22 @@ public:
 	{
 		return Vector2(x * other.x, y * other.y);
 	}
+	Vector2& const operator*=(const Vector2& other)
+	{
+		x *= other.x;
+		y *= other.y;
+		return *this;
+	}
 	Vector2 const operator/(const float& other) const
 	{
 		return Vector2(x / other, y / other);
+	}
+	bool const operator==( const Vector2 & other ) const
+	{
+		return x == other.x && y == other.y;
+	}
+	bool const operator!=( const Vector2 & other ) const
+	{
+		return x != other.x && y != other.y;
 	}
 };

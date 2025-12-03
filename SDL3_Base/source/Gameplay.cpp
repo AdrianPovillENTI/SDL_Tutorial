@@ -1,10 +1,23 @@
 #include "Gameplay.h"
 #include "TestObject.h"
+#include "Player.h"
+#include "Bullet.h"
+#include "ImageRenderer.h"
+#include "GameObject.h"
+#include "RenderManager.h"
+#include "ImageObject.h"
 
 void Gameplay::OnEnter()
 {
-	TestObject* test1 = new TestObject();
+	Player* test1 = new Player(55);
+	test1->Start ( );
 	_objects.push_back(test1);
-	TestObject * test2 = new TestObject();
-	_objects.push_back(test2);
+	for ( Bullet* b : test1->bullets )
+	{
+        b->Start ( );
+		_objects.push_back ( b );
+	}
+    
+
+
 }

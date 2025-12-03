@@ -1,15 +1,24 @@
-﻿  Game.cpp
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\TestObject.h(11,70): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "source/Game.cpp")
-  
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\TestObject.h(11,43): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "source/Game.cpp")
-  
+﻿  Item.cpp
   Gameplay.cpp
+C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(88,9): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+  (compilando archivo de origen "source/Gameplay.cpp")
+  
+C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(94,9): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+  (compilando archivo de origen "source/Gameplay.cpp")
+  
+C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(108,9): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+  (compilando archivo de origen "source/Gameplay.cpp")
+  
 C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\TestObject.h(11,70): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
   (compilando archivo de origen "source/Gameplay.cpp")
   
 C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\TestObject.h(11,43): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "source/Gameplay.cpp")
+  
+C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\GameObject.h(17,77): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "source/Gameplay.cpp")
+  
+C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\GameObject.h(17,47): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
   (compilando archivo de origen "source/Gameplay.cpp")
   
   Generando código...

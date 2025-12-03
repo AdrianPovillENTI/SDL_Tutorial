@@ -12,6 +12,7 @@ void Game::Init()
 	RM->Init();
 
 	RM->LoadTexture("resources/xd.png");
+	RM->LoadTexture("resources/bullet.png");
 
 	assert(SM.AddScene("Gameplay", new Gameplay()));
 

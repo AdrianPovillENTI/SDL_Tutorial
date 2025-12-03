@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Object.h"
+#include "Bullet.h"
 #include <queue>
 
 #define SPAWNER Spawner::Instance()
@@ -12,8 +13,8 @@ private:
 	Spawner(Spawner&) = delete;
 	Spawner& operator= (const Spawner&) = delete;
 
-	std::queue<Object*> spawnedObjects;
 public:
+	std::queue<Object*> spawnedObjects;
 	static Spawner& Instance()
 	{
 		static Spawner spawner;
@@ -22,8 +23,14 @@ public:
 
 
 	void SpawnObject(Object* obj) { spawnedObjects.push(obj); }
-	bool AreObjectsPendingSpawn() { return spawnedObjects.empty(); }
-
+	Bullet* SpawnBullet(Transform t, Vector2 offset) 
+	{ 
+		t.position += offset;
+        Bullet * obj = new Bullet ( t );
+		spawnedObjects.push(obj); 
+		return obj;
+	}
+	bool AreObjectsPendingSpawn ( ) { return !spawnedObjects.empty ( ); }
 	Object* GetSpawnedObjects()
 	{
 		if (!AreObjectsPendingSpawn())
