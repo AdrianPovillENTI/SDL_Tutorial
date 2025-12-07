@@ -7,15 +7,23 @@ class Turret : public Item
 private:
 	float damageMultiplier;
 	float speedMultiplier;
-	std::string bulletPath;
+	vector<string> bulletAnimationSprites;
 
 public:
-	Turret() : Item("resources/Items/Turret.png", Item::ItemType::TURRET),
-			   bulletPath("resources/Player/DoubleShoot/bulletSprite.png"), damageMultiplier(0.75f),
-			   speedMultiplier(1.5f) { }
+	Turret() : Item("resources/Items/Turret.png", Item::ItemType::TURRET), damageMultiplier(0.75f),
+			   speedMultiplier(1.5f) 
+	{ 
+		bulletAnimationSprites = {
+			"resources/Player/Turret/shot_1.png",
+			"resources/Player/Turret/shot_2.png",
+			"resources/Player/Turret/shot_3.png",
+			"resources/Player/Turret/shot_4.png",
+			"resources/Player/Turret/shot_5.png"
+        };
+	}
 
 	float GetDamageMultiplier() const { return damageMultiplier; }
 	float GetSpeedMultiplier() const { return speedMultiplier; }
-	const std::string& GetBulletPath() const { return bulletPath; }
+	const vector<string> GetBulletPath ( ) const { return bulletAnimationSprites; }
 };
 

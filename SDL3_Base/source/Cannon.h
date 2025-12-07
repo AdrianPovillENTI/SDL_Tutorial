@@ -7,15 +7,22 @@ class Cannon : public Item
 private:
 	float damageMultiplier;
 	float speedMultiplier;
-	std::string bulletPath;
+	vector<string> bulletAnimationSprites;
 public:
-	Cannon() : Item("resources/Items/Cannon.png", Item::ItemType::CANNON),
-			   bulletPath("resources/bulletSprite.png"), damageMultiplier(2.0f),
-			   speedMultiplier(0.75f) { }
-
+	Cannon ( ) : Item ( "resources/Items/Cannon.png" , Item::ItemType::CANNON),
+		damageMultiplier ( 2 ), speedMultiplier ( 0.5f )
+	{
+		bulletAnimationSprites = {
+			"resources/Player/Cannon/shot_1.png",
+			"resources/Player/Cannon/shot_2.png",
+			"resources/Player/Cannon/shot_3.png",
+			"resources/Player/Cannon/shot_4.png",
+			"resources/Player/Cannon/shot_5.png"
+		};
+	}
 	float GetDamageMultiplier() const { return damageMultiplier; }
 	float GetSpeedMultiplier() const { return speedMultiplier; }
-	const std::string& GetBulletPath() const { return bulletPath; }
+	const vector<string> GetBulletPath ( ) const { return bulletAnimationSprites; }
 };
 
 

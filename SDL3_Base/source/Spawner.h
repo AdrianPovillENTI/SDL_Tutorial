@@ -22,7 +22,6 @@ public:
 		return spawner;
 	}
 
-
 	void SpawnObject(Object* obj) { spawnedObjects.push(obj); }
 
 	bool AreObjectsPendingSpawn ( ) { return !spawnedObjects.empty ( ); }

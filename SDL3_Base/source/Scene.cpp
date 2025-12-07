@@ -3,17 +3,14 @@
 
 void Scene::Update()
 {
+    //SPAWNER.ClearSpawnedObjects ( ); //Al pasar a la siguiente escena
 
     while ( SPAWNER.AreObjectsPendingSpawn ( ) )
     {
         Object * spawned = SPAWNER.GetSpawnedObjects ( );
-        if ( spawned != nullptr )
-        {
-            //GOTO: Its entering to spawned objects
-            _objects.push_back ( spawned );
-            GameObject * go = dynamic_cast< GameObject * >( spawned );
-            if ( go ) go->Start ( );
-        }
+        GameObject * gameObject = dynamic_cast< GameObject * >( spawned );
+        if ( gameObject ) gameObject->Start ( );
+        _objects.push_back ( spawned );
     }
 
     for (int i = _objects.size() - 1; i >= 0; i--)

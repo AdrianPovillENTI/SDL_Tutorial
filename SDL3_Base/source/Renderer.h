@@ -21,5 +21,6 @@ class Renderer {
 		virtual void Render() = 0;
 
 		virtual void SetColor(SDL_Color color) { color = _color; }
+        void SetResourcePath(std::string resourcePath) { _resourcePath = resourcePath; }
 		SDL_Color GetColor() { return _color; }
 };

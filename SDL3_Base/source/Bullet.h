@@ -5,17 +5,24 @@
 class Bullet : public DamageableObject
 {
 private:
-	int damage;
-	float speed;
+    int damage;
+    float speed;
+
+    float frameTime;
+    float frameTimeMax;
+    int currentFrame;
+    std::vector<string> spriteAnimationFrames;
 
 public:
-	Bullet(const std::string& path = "resources/bullet.png");
-	~Bullet();
+    Bullet(const string path);
+    ~Bullet();
 
-	void Start() override;
-	void Update() override;
-	void Move() override;
+    void Start() override;
+    void Update() override;
+    void ChangeSpriteFrame();
+    void Move() override;
 
-	void SetDamage(int d) { damage = d; }
-	int GetDamage() const { return damage; }
+    void SetDamage(int d) { damage = d; }
+    int GetDamage() const { return damage; }
+    void SetAnimationSprites ( vector<string> & spriteAnimationFrames );
 };

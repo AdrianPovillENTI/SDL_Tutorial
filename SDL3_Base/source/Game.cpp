@@ -11,8 +11,64 @@ void Game::Init()
 {
 	RM->Init();
 
+	//Player Sprites
 	RM->LoadTexture("resources/Player/Player.png");
-	RM->LoadTexture( "resources/Player/NormalShoot/shot5_1.png" );
+
+	//Bullet Sprites
+    //Normal Bullet
+#pragma region LoadBulletTextures
+	RM->LoadTexture( "resources/Player/NormalShoot/shot_1.png" );
+	RM->LoadTexture( "resources/Player/NormalShoot/shot_2.png" );
+    RM->LoadTexture ( "resources/Player/NormalShoot/shot_3.png" );
+    RM->LoadTexture ( "resources/Player/NormalShoot/shot_4.png" );
+    RM->LoadTexture ( "resources/Player/NormalShoot/shot_5.png" );
+    RM->LoadTexture ( "resources/Player/NormalShoot/shot_6.png" );
+	RM->LoadTexture( "resources/Player/NormalShoot/shot_exp_1.png" );
+	RM->LoadTexture( "resources/Player/NormalShoot/shot_exp_2.png" );
+	RM->LoadTexture( "resources/Player/NormalShoot/shot_exp_3.png" );
+	RM->LoadTexture( "resources/Player/NormalShoot/shot_exp_4.png" );
+	RM->LoadTexture( "resources/Player/NormalShoot/shot_exp_5.png" );
+	RM->LoadTexture( "resources/Player/NormalShoot/shot_exp_6.png" );
+	RM->LoadTexture( "resources/Player/NormalShoot/shot_exp_7.png" );
+	RM->LoadTexture( "resources/Player/NormalShoot/shot_exp_8.png" );
+    //Cannon Bullet
+	RM->LoadTexture ( "resources/Player/Cannon/shot_1.png" );
+	RM->LoadTexture ( "resources/Player/Cannon/shot_2.png" );
+	RM->LoadTexture ( "resources/Player/Cannon/shot_3.png" );
+	RM->LoadTexture ( "resources/Player/Cannon/shot_4.png" );
+	RM->LoadTexture ( "resources/Player/Cannon/shot_exp_1.png" );
+	RM->LoadTexture ( "resources/Player/Cannon/shot_exp_2.png" );
+	RM->LoadTexture ( "resources/Player/Cannon/shot_exp_3.png" );
+	RM->LoadTexture ( "resources/Player/Cannon/shot_exp_4.png" );
+	RM->LoadTexture ( "resources/Player/Cannon/shot_exp_5.png" );
+	RM->LoadTexture ( "resources/Player/Cannon/shot_exp_6.png" );
+	RM->LoadTexture ( "resources/Player/Cannon/shot_exp_7.png" );
+	RM->LoadTexture ( "resources/Player/Cannon/shot_exp_8.png" );
+	RM->LoadTexture ( "resources/Player/Cannon/shot_exp_9.png" );
+	RM->LoadTexture ( "resources/Player/Cannon/shot_exp_10.png" );
+    //Turret Bullet
+	RM->LoadTexture ( "resources/Player/Turret/shot_1.png" );
+	RM->LoadTexture ( "resources/Player/Turret/shot_2.png" );
+	RM->LoadTexture ( "resources/Player/Turret/shot_3.png" );
+	RM->LoadTexture ( "resources/Player/Turret/shot_4.png" );
+	RM->LoadTexture ( "resources/Player/Turret/shot_5.png" );
+	RM->LoadTexture ( "resources/Player/Turret/shot_6.png" );
+	RM->LoadTexture ( "resources/Player/Turret/shot_exp_1.png" );
+	RM->LoadTexture ( "resources/Player/Turret/shot_exp_2.png" );
+	RM->LoadTexture ( "resources/Player/Turret/shot_exp_3.png" );
+	RM->LoadTexture ( "resources/Player/Turret/shot_exp_4.png" );
+	RM->LoadTexture ( "resources/Player/Turret/shot_exp_5.png" );
+    //Laser Bullet
+	RM->LoadTexture ( "resources/Player/Laser/shot_1.png" );
+	RM->LoadTexture ( "resources/Player/Laser/shot_2.png" );
+	RM->LoadTexture ( "resources/Player/Laser/shot_3.png" );
+	RM->LoadTexture ( "resources/Player/Laser/shot_4.png" );
+	RM->LoadTexture ( "resources/Player/Laser/shot_exp_1.png" );
+	RM->LoadTexture ( "resources/Player/Laser/shot_exp_2.png" );
+	RM->LoadTexture ( "resources/Player/Laser/shot_exp_3.png" );
+	RM->LoadTexture ( "resources/Player/Laser/shot_exp_4.png" );
+	RM->LoadTexture ( "resources/Player/Laser/shot_exp_5.png" );
+#pragma endregion LoadBulletTextures
 	RM->LoadTexture("resources/Background.png");
 	RM->LoadTexture("resources/Items/Score.png");
 	RM->LoadTexture("resources/Items/Cannon.png");

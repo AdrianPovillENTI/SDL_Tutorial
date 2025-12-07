@@ -40,7 +40,7 @@ void Player::Start ( )
     maxShootCooldownTime = 30;
     originalMaxShootCooldownTime = maxShootCooldownTime;
 
-    bulletSprite = "resources/Player/NormalShoot/shot5_1.png";
+    bulletSprite = "resources/Player/NormalShoot/shot_1.png";
     bulletDamage = 10;
     originalDamage = bulletDamage;
 

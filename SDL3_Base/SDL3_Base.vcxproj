@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\AnimatedImageRenderer.cpp" />
     <ClCompile Include="source\Cannon.cpp" />
     <ClCompile Include="source\ForceField.cpp" />
     <ClCompile Include="source\Laser.cpp" />
@@ -47,6 +48,7 @@
     <ClCompile Include="source\Turret.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\AnimatedImageRenderer.h" />
     <ClInclude Include="source\Cannon.h" />
     <ClInclude Include="source\ExitPattern.h" />
     <ClInclude Include="source\ForceField.h" />
@@ -93,20 +95,58 @@
     <Image Include="resources\Items\Shield.PNG" />
     <Image Include="resources\Items\SpeedUpgrade.PNG" />
     <Image Include="resources\Items\Turret.PNG" />
-    <Image Include="resources\Player\NormalShoot\shot5_1.png" />
-    <Image Include="resources\Player\NormalShoot\shot5_2.png" />
-    <Image Include="resources\Player\NormalShoot\shot5_3.png" />
-    <Image Include="resources\Player\NormalShoot\shot5_4.png" />
-    <Image Include="resources\Player\NormalShoot\shot5_5.png" />
+    <Image Include="resources\Player\Cannon\shot_1.png" />
+    <Image Include="resources\Player\Cannon\shot_2.png" />
+    <Image Include="resources\Player\Cannon\shot_3.png" />
+    <Image Include="resources\Player\Cannon\shot_4.png" />
+    <Image Include="resources\Player\Cannon\shot6_asset.png" />
+    <Image Include="resources\Player\Cannon\shot_exp_1.png" />
+    <Image Include="resources\Player\Cannon\shot_exp_10.png" />
+    <Image Include="resources\Player\Cannon\shot_exp_2.png" />
+    <Image Include="resources\Player\Cannon\shot_exp_3.png" />
+    <Image Include="resources\Player\Cannon\shot_exp_4.png" />
+    <Image Include="resources\Player\Cannon\shot_exp_5.png" />
+    <Image Include="resources\Player\Cannon\shot_exp_6.png" />
+    <Image Include="resources\Player\Cannon\shot_exp_7.png" />
+    <Image Include="resources\Player\Cannon\shot_exp_8.png" />
+    <Image Include="resources\Player\Cannon\shot_exp_9.png" />
+    <Image Include="resources\Player\NormalShoot\shot_6.png" />
+    <Image Include="resources\Player\Turret\shot_1.png" />
+    <Image Include="resources\Player\Turret\shot_2.png" />
+    <Image Include="resources\Player\Turret\shot_3.png" />
+    <Image Include="resources\Player\Turret\shot_4.png" />
+    <Image Include="resources\Player\Turret\shot_5.png" />
+    <Image Include="resources\Player\Turret\shot_6.png" />
+    <Image Include="resources\Player\Turret\shot2_asset.png" />
+    <Image Include="resources\Player\Turret\shot_exp_1.png" />
+    <Image Include="resources\Player\Turret\shot_exp_2.png" />
+    <Image Include="resources\Player\Turret\shot_exp_3.png" />
+    <Image Include="resources\Player\Turret\shot_exp_4.png" />
+    <Image Include="resources\Player\Turret\shot_exp_5.png" />
+    <Image Include="resources\Player\Laser\shot_1.png" />
+    <Image Include="resources\Player\Laser\shot_2.png" />
+    <Image Include="resources\Player\Laser\shot_3.png" />
+    <Image Include="resources\Player\Laser\shot_4.png" />
+    <Image Include="resources\Player\Laser\shot1_asset.png" />
+    <Image Include="resources\Player\Laser\shot_exp_1.png" />
+    <Image Include="resources\Player\Laser\shot_exp_2.png" />
+    <Image Include="resources\Player\Laser\shot_exp_3.png" />
+    <Image Include="resources\Player\Laser\shot_exp_4.png" />
+    <Image Include="resources\Player\Laser\shot_exp_5.png" />
+    <Image Include="resources\Player\NormalShoot\shot_1.png" />
+    <Image Include="resources\Player\NormalShoot\shot_2.png" />
+    <Image Include="resources\Player\NormalShoot\shot_3.png" />
+    <Image Include="resources\Player\NormalShoot\shot_4.png" />
+    <Image Include="resources\Player\NormalShoot\shot_5.png" />
     <Image Include="resources\Player\NormalShoot\shot5_asset.png" />
-    <Image Include="resources\Player\NormalShoot\shot5_exp1.png" />
-    <Image Include="resources\Player\NormalShoot\shot5_exp2.png" />
-    <Image Include="resources\Player\NormalShoot\shot5_exp3.png" />
-    <Image Include="resources\Player\NormalShoot\shot5_exp4.png" />
-    <Image Include="resources\Player\NormalShoot\shot5_exp5.png" />
-    <Image Include="resources\Player\NormalShoot\shot5_exp6.png" />
-    <Image Include="resources\Player\NormalShoot\shot5_exp7.png" />
-    <Image Include="resources\Player\NormalShoot\shot5_exp8.png" />
+    <Image Include="resources\Player\NormalShoot\shot_exp_1.png" />
+    <Image Include="resources\Player\NormalShoot\shot_exp_2.png" />
+    <Image Include="resources\Player\NormalShoot\shot_exp_3.png" />
+    <Image Include="resources\Player\NormalShoot\shot_exp_4.png" />
+    <Image Include="resources\Player\NormalShoot\shot_exp_5.png" />
+    <Image Include="resources\Player\NormalShoot\shot_exp_6.png" />
+    <Image Include="resources\Player\NormalShoot\shot_exp_7.png" />
+    <Image Include="resources\Player\NormalShoot\shot_exp_8.png" />
     <Image Include="resources\Player\Player.png" />
     <Image Include="resources\xd.png" />
   </ItemGroup>
