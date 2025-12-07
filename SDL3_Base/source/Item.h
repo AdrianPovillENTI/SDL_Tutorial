@@ -1,54 +1,49 @@
 #pragma once
 #include "DamageableObject.h"
 #include <functional>
+
 class Item : public DamageableObject
 {
+public:
+
+    enum ItemType
+    {
+        SCORE = 0 ,
+        CANNON ,
+        LASER ,
+        SPEED_UPGRADE ,
+        TURRET ,
+        FORCEFIELD ,
+        SHIELD ,
+        ITEMTYPE_COUNT 
+    };
+
 private:
     int impactCount;
     int maxImpactCount;
-    function<void ( )> onMaxImpactReached;
-public:
-    Item ( Transform t ) :
-        DamageableObject ( 1 , "resources/bullet.png" ) ,
-        impactCount ( maxImpactCount )
-    {
-        _transform->position = t.position;
-        _transform->scale = Vector2::One;
-        _transform->rotation = 0.f;
-    }
-    ~Item ( );
 
-    void Start ( ) override
-    {
-    }
-    void Update ( ) override
-    {
-        if ( !active ) return;
-        Object::Update ( );
-        GameObject::Update ( );
-        if ( impactCount >= maxImpactCount )
-        {
-            if ( maxImpactCount > ( 4 * 6 ) ) return;
-            if ( onMaxImpactReached != NULL )
-            {
-                onMaxImpactReached ( );
-                maxImpactCount += 4;
-                
-            }
-        }
-    }
-    int GetDamage ( ) const { return 1; }
-    void SetAction ( function<void ( )> action )
+    std::function<void ( )> onMaxImpactReached;
+    ItemType type;
+
+public:
+
+    Item ( std::string _path , ItemType _type );
+    virtual ~Item ( );
+
+    void Update ( ) override;
+    void Move ( ) override;
+
+    ItemType GetType ( ) const { return type; }
+
+    void SetAction ( std::function<void ( )> action )
     {
         onMaxImpactReached = action;
     }
-    int GetImpactCount() const { return impactCount; }
-    int GetMaxImpactCount() const { return maxImpactCount; }
-    bool HasOnMaxImpactReached() const { return onMaxImpactReached != nullptr; }
 
-    void Move ( Vector2 targetPos ) override
-    {
+    int GetImpactCount ( ) const { return impactCount; }
+    int GetMaxImpactCount ( ) const { return maxImpactCount; }
+    bool HasOnMaxImpactReached ( ) const { return onMaxImpactReached != nullptr; }
 
-    }
-
+    void AddImpact ( );
+    void CheckImpact ( );
 };

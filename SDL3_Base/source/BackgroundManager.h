@@ -3,7 +3,8 @@
 #include "Spawner.h"
 #include "Background.h"
 
-class BackgroundManager {
+class BackgroundManager 
+{
 private:
 	std::string background1_path = "resources/Background.png";
 
@@ -13,7 +14,7 @@ public:
 	{
 		for (int i = 0; i < 3; i++)
 		{
-			SPAWNER.SpawnBackground(i, background1_path);
+			//SPAWNER.SpawnBackground(i, background1_path);
 		}
 	}
 };

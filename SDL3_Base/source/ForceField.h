@@ -1,12 +1,14 @@
 #pragma once
 #include "Item.h"
+
 class ForceField : public Item
 {
 private:
-    int points;
-public:
-    ForceField ( ) : Item ( "resources/ForceField.png" ) , points ( 1000 ) { }
+	int duration;
 
-    int GetPoints() const { return points; }
+public:
+	ForceField() : Item("resources/Items/ForceField.png", Item::ItemType::FORCEFIELD), duration(600) { }
+
+	int GetDuration() const { return duration; }
 };
 

@@ -48,8 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Cannon.h" />
+    <ClInclude Include="source\ExitPattern.h" />
     <ClInclude Include="source\ForceField.h" />
     <ClInclude Include="source\Laser.h" />
+    <ClInclude Include="source\MovementPattern.h" />
     <ClInclude Include="source\Score.h" />
     <ClInclude Include="source\Shield.h" />
     <ClInclude Include="source\Item.h" />
@@ -73,6 +75,7 @@
     <ClInclude Include="source\Scene.h" />
     <ClInclude Include="source\SceneManager.h" />
     <ClInclude Include="source\Spawner.h" />
+    <ClInclude Include="source\SpawnPattern.h" />
     <ClInclude Include="source\TestObject.h" />
     <ClInclude Include="source\TextObject.h" />
     <ClInclude Include="source\TextRenderer.h" />
@@ -83,6 +86,28 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bullet.png" />
+    <Image Include="resources\Items\Cannon.PNG" />
+    <Image Include="resources\Items\ForceField.PNG" />
+    <Image Include="resources\Items\Laser.PNG" />
+    <Image Include="resources\Items\Score.PNG" />
+    <Image Include="resources\Items\Shield.PNG" />
+    <Image Include="resources\Items\SpeedUpgrade.PNG" />
+    <Image Include="resources\Items\Turret.PNG" />
+    <Image Include="resources\Player\NormalShoot\shot5_1.png" />
+    <Image Include="resources\Player\NormalShoot\shot5_2.png" />
+    <Image Include="resources\Player\NormalShoot\shot5_3.png" />
+    <Image Include="resources\Player\NormalShoot\shot5_4.png" />
+    <Image Include="resources\Player\NormalShoot\shot5_5.png" />
+    <Image Include="resources\Player\NormalShoot\shot5_asset.png" />
+    <Image Include="resources\Player\NormalShoot\shot5_exp1.png" />
+    <Image Include="resources\Player\NormalShoot\shot5_exp2.png" />
+    <Image Include="resources\Player\NormalShoot\shot5_exp3.png" />
+    <Image Include="resources\Player\NormalShoot\shot5_exp4.png" />
+    <Image Include="resources\Player\NormalShoot\shot5_exp5.png" />
+    <Image Include="resources\Player\NormalShoot\shot5_exp6.png" />
+    <Image Include="resources\Player\NormalShoot\shot5_exp7.png" />
+    <Image Include="resources\Player\NormalShoot\shot5_exp8.png" />
+    <Image Include="resources\Player\Player.png" />
     <Image Include="resources\xd.png" />
   </ItemGroup>
   <ItemGroup>

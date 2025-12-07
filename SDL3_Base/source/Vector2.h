@@ -39,6 +39,22 @@ public:
 		x *= length;
 		y *= length;
 	}
+
+	static Vector2 ClampVectorX ( Vector2 vec , float min , float max )
+	{
+		if ( vec.x < min ) vec.x = min;
+		if ( vec.x > max ) vec.x = max;
+
+		return vec;
+	}
+	static Vector2 ClampVectorY ( Vector2 vec , float min , float max )
+	{
+		if ( vec.y < min ) vec.y = min;
+		if ( vec.y > max ) vec.y = max;
+
+		return vec;
+	}
+
 	float Magnitude ( )
 	{
 		float length = Q_rsqrt ( x * x + y * y );

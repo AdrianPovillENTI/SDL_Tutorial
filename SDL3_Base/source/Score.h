@@ -1,11 +1,13 @@
 #pragma once
 #include "Item.h"
+
 class Score : public Item
 {
 private:
-    int points;
+	int points;
+
 public:
-    Score ( ) : Item ( "resources/Score.png" ) , points ( 1000 ) { }
-    int GetScore ( ) { return points; }
+	Score() : Item("resources/Items/Score.png", Item::ItemType::SCORE), points(1000) { }
+	int GetScore() const { return points; }
 };
 

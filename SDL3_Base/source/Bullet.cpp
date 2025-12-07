@@ -1,27 +1,37 @@
-//#include "Bullet.h"
-//#include "RenderManager.h"   // por si usas RM
-//#include "InputManager.h"    // si hace falta
-//
-//Bullet::Bullet ( int damage , const Vector2 & position , const Vector2 & direction )
-//    : DamageableObject ( 1 , "resources/bullet.png" ) , damage ( damage )
-//{
-//    _transform->position = position;
-//    _physics->SetVelocity ( direction * speed );
-//}
-//
-//Bullet::~Bullet ( ) { }
-//
-//void Bullet::Update ( )
-//{
-//    GameObject::Update ( );
-//
-//    // si quieres que la bala avance sola:
-//    // _physics->AddForce(_physics->GetVelocity());
-//}
-//
-//void Bullet::Move ( Vector2 targetPos )
-//{
-//    Vector2 dir = targetPos - _transform->position;
-//    dir.Normalize ( );
-//    _physics->AddForce ( dir * speed );
-//}
+#include "Bullet.h"
+#include "RenderManager.h"
+
+Bullet::Bullet(const std::string& path)
+	: DamageableObject(1, path),
+	  damage(5),
+	  speed(2)
+{
+	_transform->scale = Vector2(2, 2);
+}
+
+Bullet::~Bullet() = default;
+
+void Bullet::Start()
+{
+	SetActive(true);
+}
+
+void Bullet::Update()
+{
+	if (!active) return;
+
+	GameObject::Update();
+
+	Move();
+
+	if (_transform->position.x > RM->WINDOW_WIDTH * 1.4f || _transform->position.x < 0||
+		_transform->position.y > RM->WINDOW_HEIGHT * 1.3f||_transform->position.y < 0)
+	{
+		Destroy();
+	}
+}
+
+void Bullet::Move()
+{
+	_physics->SetVelocity(Vector2(speed, 0));
+}

@@ -25,20 +25,6 @@ public:
 
 	void SpawnObject(Object* obj) { spawnedObjects.push(obj); }
 
-	Bullet* SpawnBullet(Transform t, Vector2 offset) 
-	{ 
-		t.position += offset;
-        Bullet * obj = new Bullet ( t );
-		spawnedObjects.push(obj); 
-		return obj;
-	}
-
-	Background* SpawnBackground(int index, std::string path) {
-		Background* bckg = new Background(index, path);
-		spawnedObjects.push(bckg);
-		return bckg;
-	}
-
 	bool AreObjectsPendingSpawn ( ) { return !spawnedObjects.empty ( ); }
 	Object* GetSpawnedObjects()
 	{

@@ -11,9 +11,16 @@ void Game::Init()
 {
 	RM->Init();
 
-	RM->LoadTexture("resources/xd.png");
-	RM->LoadTexture("resources/bullet.png");
+	RM->LoadTexture("resources/Player/Player.png");
+	RM->LoadTexture( "resources/Player/NormalShoot/shot5_1.png" );
 	RM->LoadTexture("resources/Background.png");
+	RM->LoadTexture("resources/Items/Score.png");
+	RM->LoadTexture("resources/Items/Cannon.png");
+	RM->LoadTexture("resources/Items/Laser.png");
+	RM->LoadTexture("resources/Items/SpeedUpgrade.png");
+	RM->LoadTexture("resources/Items/Turret.png");
+	RM->LoadTexture("resources/Items/ForceField.png");
+	RM->LoadTexture("resources/Items/Shield.png");
 
 	assert(SM.AddScene("Gameplay", new Gameplay()));
 

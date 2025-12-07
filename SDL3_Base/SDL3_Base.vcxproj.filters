@@ -54,6 +54,45 @@
     <ClCompile Include="source\Button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\Cannon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ForceField.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Laser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Score.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Shield.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Bullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\DamageableObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Vector2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SpeedUpgrade.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Turret.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Game.h">
@@ -116,10 +155,130 @@
     <ClInclude Include="source\MainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\Cannon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ForceField.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Laser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Score.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Shield.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Item.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Bullet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\DamageableObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\IDamageable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SpeedUpgrade.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Turret.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SpawnPattern.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\MovementPattern.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ExitPattern.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\xd.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="resources\bullet.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Items\Cannon.PNG">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Items\ForceField.PNG">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Items\Laser.PNG">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Items\Score.PNG">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Items\Shield.PNG">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Items\SpeedUpgrade.PNG">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Items\Turret.PNG">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Player\Player.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Player\NormalShoot\shot5_1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Player\NormalShoot\shot5_2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Player\NormalShoot\shot5_3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Player\NormalShoot\shot5_4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Player\NormalShoot\shot5_5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Player\NormalShoot\shot5_asset.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Player\NormalShoot\shot5_exp1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Player\NormalShoot\shot5_exp2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Player\NormalShoot\shot5_exp3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Player\NormalShoot\shot5_exp4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Player\NormalShoot\shot5_exp5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Player\NormalShoot\shot5_exp6.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Player\NormalShoot\shot5_exp7.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Player\NormalShoot\shot5_exp8.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
   </ItemGroup>
 </Project>

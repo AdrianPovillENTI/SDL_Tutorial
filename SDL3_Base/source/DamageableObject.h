@@ -8,8 +8,8 @@
         int health;
         int maxHealth;
     public:
-        DamageableObject ( int _maxHealth , string spritePath )
-            : GameObject ( spritePath ), 
+        DamageableObject ( int _maxHealth , string bulletPath )
+            : GameObject ( bulletPath ), 
             maxHealth ( _maxHealth ),
             health ( _maxHealth ) { }    
         void ReceiveDamage ( int _health ) override
@@ -17,7 +17,7 @@
             health -= _health;
             if ( health < 0 ) health = 0;
         }
-        virtual void Move ( Vector2 targetPos ) = 0;
+        virtual void Move ( ) = 0;
         int const GetHealth ( ) const { return health; }
     };
 
