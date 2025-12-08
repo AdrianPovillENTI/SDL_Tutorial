@@ -12,6 +12,7 @@
 #include "SpeedUpgrade.h"
 #include "Score.h"
 #include "Turret.h"
+#include "SpeedVfx.h"
 #pragma endregion Items
 
 class Player : public DamageableObject
@@ -27,10 +28,10 @@ private:
     float shootCooldown;
     float maxShootCooldownTime;
     int originalMaxShootCooldownTime;
-
     std::string bulletSprite;
     int bulletDamage;
     int originalDamage;
+
     bool isDeath;
     float speed;
     float shotSpeed;
@@ -38,6 +39,10 @@ private:
     Vector2 offset;
 
     std::vector<Item *> inventory;
+
+    SpeedVfx* speedVfx;
+    bool isMoving;
+    bool turboActivated;
 
 public:
     Player ( int maxHealth );
@@ -48,7 +53,7 @@ public:
     void Update ( ) override;
 
     void Shoot ( );
-    void SetShootSpeed ( );
+    void ApplyItemEffects ( );
     bool GetInvencibleStatus ( );
 
     void ClampInsideScreen ( ); // <<< NUEVO

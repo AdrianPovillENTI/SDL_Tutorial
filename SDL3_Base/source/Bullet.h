@@ -11,7 +11,7 @@ private:
     float frameTime;
     float frameTimeMax;
     int currentFrame;
-    std::vector<string> spriteAnimationFrames;
+    std::vector<string> animationFrames;
 
 public:
     Bullet(const string path);
@@ -24,5 +24,5 @@ public:
 
     void SetDamage(int d) { damage = d; }
     int GetDamage() const { return damage; }
-    void SetAnimationSprites ( vector<string> & spriteAnimationFrames );
+    void SetAnimationSprites ( vector<string> & animationFrames );
 };

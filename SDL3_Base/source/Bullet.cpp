@@ -1,6 +1,5 @@
 #include "Bullet.h"
 #include "RenderManager.h"
-
 Bullet::Bullet(const string path)
 	: DamageableObject(1, path),
 	  damage(5),
@@ -10,8 +9,7 @@ Bullet::Bullet(const string path)
 	  currentFrame(0)
 {
 	_transform->scale = Vector2(2, 2);
-
-	spriteAnimationFrames = {
+	animationFrames = {
 		"resources/Player/NormalShoot/shot_1.png",
 		"resources/Player/NormalShoot/shot_2.png",
 		"resources/Player/NormalShoot/shot_3.png",
@@ -23,15 +21,9 @@ Bullet::Bullet(const string path)
 
 Bullet::~Bullet() = default;
 
-void Bullet::Start()
-{
-	SetActive(true);
-}
 
 void Bullet::Update()
 {
-	if (!active) return;
-
 	GameObject::Update();
 
 	Move();
@@ -51,10 +43,10 @@ void Bullet::ChangeSpriteFrame()
 	if (frameTime >= frameTimeMax)
 	{
 		frameTime = 0.0f;
-		if ( currentFrame >= spriteAnimationFrames.size ( ) - 1) currentFrame = spriteAnimationFrames.size() - 3;
+		if ( currentFrame >= animationFrames.size ( ) - 1) currentFrame = animationFrames.size() - 3;
 
-		currentFrame = (currentFrame + 1) % spriteAnimationFrames.size ( );
-		_renderer->SetResourcePath(spriteAnimationFrames[currentFrame]);
+		currentFrame = (currentFrame + 1) % animationFrames.size ( );
+		_renderer->SetResourcePath(animationFrames[currentFrame]);
 	}
 }
 
@@ -63,7 +55,7 @@ void Bullet::Move()
 	_physics->SetVelocity(Vector2(speed, 0));
 }
 
-void Bullet::SetAnimationSprites ( vector<string> & _spriteAnimationFrames )
+void Bullet::SetAnimationSprites ( vector<string> & _animationFrames )
 {
-    spriteAnimationFrames = _spriteAnimationFrames;
+    animationFrames = _animationFrames;
 }

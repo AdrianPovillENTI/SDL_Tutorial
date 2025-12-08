@@ -5,6 +5,7 @@
 #include "Rigidbody.h"
 #include <SDL3/SDL.h>
 #include <string>
+#include <functional>
 class Object
 {
 private: 
@@ -52,4 +53,5 @@ public:
 	virtual void Destroy() { _isPendingDestroy = true; }
 
 	Rigidbody* GetRigidbody() { return _physics; }
+	virtual void OnCollision ( Object* collided ) = 0;
 };

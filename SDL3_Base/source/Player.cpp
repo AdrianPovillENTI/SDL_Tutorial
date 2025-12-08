@@ -10,6 +10,7 @@
 #include "ForceField.h"
 #include "Shield.h"
 #include "Bullet.h"
+#include "SpeedVfx.h"
 
 #include "InputManager.h"
 #include "RenderManager.h"
@@ -58,17 +59,48 @@ void Player::Start ( )
 
 void Player::Move ( )
 {
+    isMoving = false;
+
     if ( IM->GetEvent ( SDLK_S , DOWN ) || IM->GetEvent ( SDLK_S , HOLD ) )
+    {
         _physics->AddForce ( Vector2 ( 0 , 0.5f ) );
+        isMoving = true;
+    }
 
     if ( IM->GetEvent ( SDLK_W , DOWN ) || IM->GetEvent ( SDLK_W , HOLD ) )
+    {
         _physics->AddForce ( Vector2 ( 0 , -0.5f ) );
+        isMoving = true;
+    }
 
     if ( IM->GetEvent ( SDLK_D , DOWN ) || IM->GetEvent ( SDLK_D , HOLD ) )
+    {
         _physics->AddForce ( Vector2 ( 0.5f , 0 ) );
+        isMoving = true;
+    }
 
     if ( IM->GetEvent ( SDLK_A , DOWN ) || IM->GetEvent ( SDLK_A , HOLD ) )
+    {
         _physics->AddForce ( Vector2 ( -0.5f , 0 ) );
+        isMoving = true;
+    }
+
+    if ( isMoving && speedVfx == nullptr )
+    {
+        speedVfx = new SpeedVfx ( );
+        AddChild ( speedVfx , Vector2 ( -80.0f , 10.0f ) );
+        SPAWNER.SpawnObject ( speedVfx );
+        turboActivated = true;
+    }
+
+    if ( !isMoving && speedVfx != nullptr )
+    {
+        RemoveChild ( speedVfx );
+        speedVfx->Destroy ( );
+        speedVfx = nullptr;
+        turboActivated = false;
+    }
+    if ( speedVfx != nullptr ) speedVfx->Update ( );
 }
 
 void Player::Update ( )
@@ -118,7 +150,7 @@ void Player::Shoot ( )
     shootCooldown = maxShootCooldownTime;
 }
 
-void Player::SetShootSpeed ( )
+void Player::ApplyItemEffects ( )
 {
     for ( Item * item : inventory )
     {

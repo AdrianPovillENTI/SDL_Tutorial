@@ -8,7 +8,7 @@
         int health;
         int maxHealth;
     public:
-        DamageableObject ( int _maxHealth , string bulletPath )
+        DamageableObject ( const int _maxHealth ,const string bulletPath )
             : GameObject ( bulletPath ), 
             maxHealth ( _maxHealth ),
             health ( _maxHealth ) { }    

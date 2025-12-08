@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\Enemy.cpp" />
     <ClCompile Include="source\AnimatedImageRenderer.cpp" />
     <ClCompile Include="source\Cannon.cpp" />
     <ClCompile Include="source\ForceField.cpp" />
@@ -46,8 +47,10 @@
     <ClCompile Include="source\Vector2.cpp" />
     <ClCompile Include="source\SpeedUpgrade.cpp" />
     <ClCompile Include="source\Turret.cpp" />
+    <ClCompile Include="source\SpeedVfx.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\Enemy.h" />
     <ClInclude Include="source\AnimatedImageRenderer.h" />
     <ClInclude Include="source\Cannon.h" />
     <ClInclude Include="source\ExitPattern.h" />
@@ -85,6 +88,7 @@
     <ClInclude Include="source\Vector2.h" />
     <ClInclude Include="source\SpeedUpgrade.h" />
     <ClInclude Include="source\Turret.h" />
+    <ClInclude Include="source\SpeedVfx.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bullet.png" />

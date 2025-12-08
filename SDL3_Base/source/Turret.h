@@ -5,13 +5,14 @@
 class Turret : public Item
 {
 private:
+	int ammo;
 	float damageMultiplier;
 	float speedMultiplier;
 	vector<string> bulletAnimationSprites;
 
 public:
 	Turret() : Item("resources/Items/Turret.png", Item::ItemType::TURRET), damageMultiplier(0.75f),
-			   speedMultiplier(1.5f) 
+			   speedMultiplier(1.5f), ammo ( 0 )
 	{ 
 		bulletAnimationSprites = {
 			"resources/Player/Turret/shot_1.png",
@@ -25,5 +26,7 @@ public:
 	float GetDamageMultiplier() const { return damageMultiplier; }
 	float GetSpeedMultiplier() const { return speedMultiplier; }
 	const vector<string> GetBulletPath ( ) const { return bulletAnimationSprites; }
+	void ResetAmmo ( ) { ammo = 100; }
+	int GetAmmo ( ) { return ammo; }
 };
 

@@ -45,7 +45,8 @@ void Scene::Update()
         {
             if (_objects[i]->GetRigidbody()->CheckCollision(_objects[j]->GetRigidbody()))
             {
-
+                _objects [ i ]->OnCollision ( _objects [ j ] );
+                _objects [ j ]->OnCollision ( _objects [ i ] );
             }
         }
     }

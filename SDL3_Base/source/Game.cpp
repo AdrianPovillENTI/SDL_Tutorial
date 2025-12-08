@@ -12,17 +12,26 @@ void Game::Init()
 	RM->Init();
 
 	//Player Sprites
-	RM->LoadTexture("resources/Player/Player.png");
 
 	//Bullet Sprites
     //Normal Bullet
+#pragma region LoadPlayerTextures
+	RM->LoadTexture("resources/Player/Player.png");
+
+	RM->LoadTexture( "resources/Player/SpeedVfx/speed_1.png" );
+	RM->LoadTexture( "resources/Player/SpeedVfx/speed_2.png" );
+	RM->LoadTexture( "resources/Player/SpeedVfx/speed_3.png" );
+    RM->LoadTexture ( "resources/Player/SpeedVfx/speed_4.png" );
+#pragma endregion LoadPlayerTextures
 #pragma region LoadBulletTextures
+	//NormalBullet bullet
 	RM->LoadTexture( "resources/Player/NormalShoot/shot_1.png" );
 	RM->LoadTexture( "resources/Player/NormalShoot/shot_2.png" );
     RM->LoadTexture ( "resources/Player/NormalShoot/shot_3.png" );
     RM->LoadTexture ( "resources/Player/NormalShoot/shot_4.png" );
     RM->LoadTexture ( "resources/Player/NormalShoot/shot_5.png" );
     RM->LoadTexture ( "resources/Player/NormalShoot/shot_6.png" );
+	//NormalBullet explosion
 	RM->LoadTexture( "resources/Player/NormalShoot/shot_exp_1.png" );
 	RM->LoadTexture( "resources/Player/NormalShoot/shot_exp_2.png" );
 	RM->LoadTexture( "resources/Player/NormalShoot/shot_exp_3.png" );
@@ -36,6 +45,7 @@ void Game::Init()
 	RM->LoadTexture ( "resources/Player/Cannon/shot_2.png" );
 	RM->LoadTexture ( "resources/Player/Cannon/shot_3.png" );
 	RM->LoadTexture ( "resources/Player/Cannon/shot_4.png" );
+	//Cannon explosion
 	RM->LoadTexture ( "resources/Player/Cannon/shot_exp_1.png" );
 	RM->LoadTexture ( "resources/Player/Cannon/shot_exp_2.png" );
 	RM->LoadTexture ( "resources/Player/Cannon/shot_exp_3.png" );
@@ -53,6 +63,7 @@ void Game::Init()
 	RM->LoadTexture ( "resources/Player/Turret/shot_4.png" );
 	RM->LoadTexture ( "resources/Player/Turret/shot_5.png" );
 	RM->LoadTexture ( "resources/Player/Turret/shot_6.png" );
+	//Turret explosion
 	RM->LoadTexture ( "resources/Player/Turret/shot_exp_1.png" );
 	RM->LoadTexture ( "resources/Player/Turret/shot_exp_2.png" );
 	RM->LoadTexture ( "resources/Player/Turret/shot_exp_3.png" );
@@ -63,6 +74,7 @@ void Game::Init()
 	RM->LoadTexture ( "resources/Player/Laser/shot_2.png" );
 	RM->LoadTexture ( "resources/Player/Laser/shot_3.png" );
 	RM->LoadTexture ( "resources/Player/Laser/shot_4.png" );
+	//Laser explosion
 	RM->LoadTexture ( "resources/Player/Laser/shot_exp_1.png" );
 	RM->LoadTexture ( "resources/Player/Laser/shot_exp_2.png" );
 	RM->LoadTexture ( "resources/Player/Laser/shot_exp_3.png" );
