@@ -6,22 +6,30 @@
 using namespace std;
 class MultiPhasePattern : public MovementPattern
 {
-
+public:
+    struct Phase
+    {
+        MovementPattern * movePattern;
+        float duration;
+        Phase ( MovementPattern * m , float d )
+            : movePattern ( m ) , duration ( d )
+        {
+        }
+    };
+private:
     mutable int currentPhase = 0;
     mutable float phaseTime = 0;
     vector<Phase> phases;
 public:
-    struct Phase
-    {
-        MovementPattern * pattern;
-        float duration;
-    };
-    MultiPhasePattern (vector<Phase> _phases )
+    /*MultiPhasePattern (vector<Phase> _phases )
     {
         phases = _phases;
+    }*/
+    MultiPhasePattern ( std::initializer_list<Phase> list )
+        : phases ( list )
+    {
     }
-
     Vector2 GetDelta ( float dt , float elapsed , int index ) const override;
-    Vector2 GetDeltaOnCondition ( float dt , float elapsed, function<bool> change , int index ) const;
+    Vector2 GetDeltaOnCondition ( float dt , float elapsed, function<bool()> change , int index ) const;
 };
 

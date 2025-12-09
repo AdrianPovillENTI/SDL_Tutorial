@@ -23,8 +23,8 @@ public:
         )
     {
     }
-    void Start ( ) override { Enemy::Start; }
-    void Update ( ) override { Enemy::Update; }
+    void Start ( ) override { Enemy::Start ( ); }
+    void Update ( ) override { Enemy::Update ( ); }
     void OnCollision ( Object * collided ) override { Enemy::OnCollision ( collided ); }
     void Move ( ) override { Enemy::Move ( ); }
 

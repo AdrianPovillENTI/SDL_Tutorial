@@ -5,7 +5,11 @@ Bullet::Bullet(const std::vector<std::string>& _anim, float _speed, int _damage)
 	: GameObject(_anim[0]), Animator(_anim),
 	damage(_damage), speed(_speed)
 {
-	_transform->scale = Vector2(2, 2);
+	_transform->scale = Vector2 ( 2 , 2 );
+}
+
+void Bullet::Start ( )
+{
 }
 
 void Bullet::Update()

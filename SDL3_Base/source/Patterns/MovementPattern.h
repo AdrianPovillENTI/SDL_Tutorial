@@ -17,7 +17,7 @@ class LinearPattern : public MovementPattern
 
 public:
 	LinearPattern ( Vector2 dir , float spd )
-		: direction ( dir.Normalize()) , speed ( spd )
+		: direction ( dir) , speed ( spd )
 	{
 	}
 

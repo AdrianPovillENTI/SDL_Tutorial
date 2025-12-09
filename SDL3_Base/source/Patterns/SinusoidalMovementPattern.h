@@ -9,8 +9,7 @@ private:
     float speed;
 
 public:
-    SinusoidalMovementPattern ( const Vector2 & target = Vector2 ( 1.f , 0.f ) ,
-        float _amplitude = 5 , float _speed = 0.5f )
+    SinusoidalMovementPattern ( Vector2 target, float _amplitude = 5 , float _speed = 0.5f )
         : target ( target ) , amplitude ( _amplitude ) , speed ( _speed )
     {
         target.Normalize ( );

@@ -2,19 +2,19 @@
 
 void Enemy::Start ( )
 {
-    if ( pattern != nullptr ) return;
+    /*if ( pattern != nullptr ) return;
 
     SpawnPattern * spawnPattern = pattern->GetSpawnPattern();
     if ( spawnPattern != nullptr )
     {
-        auto positions = spawnPattern->GetSpawnPositions ( _transform->origin , 4 );
+        auto positions = spawnPattern->GetSpawnPositions ( _transform->position , 4 );
 
         if ( !positions.empty ( ) )
         {
-            _transform->origin = positions [ 0 ];
+            _transform->position = positions [ 0 ];
 
         }
-    }
+    }*/
 }
 
 void Enemy::Update ( )
@@ -40,12 +40,12 @@ void Enemy::Move ( )
         if ( UPDATE_P != nullptr )
         {
             Vector2 delta = UPDATE_P->GetDelta ( 1 / 60 , timeElapsed , 0 );
-            _transform->origin = delta;
+            _transform->position = delta;
         }
     }
     if ( EXIT_P != nullptr )
     {
-        if ( EXIT_P->ShouldExit ( _transform->origin ))
+        if ( EXIT_P->ShouldExit ( _transform->position ))
         {
             state = EnemyState::ON_EXIT;
             isDeath = true;

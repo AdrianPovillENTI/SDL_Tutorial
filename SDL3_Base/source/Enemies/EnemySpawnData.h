@@ -22,7 +22,7 @@ public:
 
         for ( int i = 0; i < enemies.size(); i++)
         {
-            enemies [ i ]->GetTransform ( )->origin = positions [ i ];
+            enemies [ i ]->GetTransform ( )->position = positions [ i ];
             SPAWNER.SpawnObject ( enemies [ i ] );
         }
     }

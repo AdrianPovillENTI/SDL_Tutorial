@@ -118,7 +118,7 @@ void Player::Move ( )
 
     if ( isMoving && speedVfx == nullptr )
     {
-        //speedVfx = new SpeedVfx ( );
+        speedVfx = new SpeedVfx ( );
         AddChild ( speedVfx , Vector2 ( -80.0f , 10.0f ) );
         SPAWNER.SpawnObject ( speedVfx );
         turboActivated = true;

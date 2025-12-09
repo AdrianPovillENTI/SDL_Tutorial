@@ -6,17 +6,17 @@ Vector2 MultiPhasePattern::GetDelta ( float dt , float elapsed , int index ) con
     for ( Phase phase : phases )
     {
         if ( phase.duration < 0 )
-            return phase.pattern->GetDelta ( dt , time , index );
+            return phase.movePattern->GetDelta ( dt , time , index );
         if ( time <= phase.duration )
-            return phase.pattern->GetDelta ( dt , time , index );
+            return phase.movePattern->GetDelta ( dt , time , index );
 
         time -= phase.duration;
         if ( time < 0 ) time = 0;
     }
 
-    return phases.back ( ).pattern->GetDelta ( dt , time , index );
+    return phases.back ( ).movePattern->GetDelta ( dt , time , index );
 }
-Vector2 MultiPhasePattern::GetDeltaOnCondition ( float dt , float elapsed , function<bool> change , int index ) const
+Vector2 MultiPhasePattern::GetDeltaOnCondition ( float dt , float elapsed , function<bool()> change , int index ) const
 {
     phaseTime += dt;
     if ( change ( ) )
@@ -24,6 +24,6 @@ Vector2 MultiPhasePattern::GetDeltaOnCondition ( float dt , float elapsed , func
         currentPhase++;
         phaseTime = 0;
     }
-    return phases [ currentPhase ].pattern->GetDelta ( dt , phaseTime , index );
+    return phases [ currentPhase ].movePattern->GetDelta ( dt , phaseTime , index );
 }
 
