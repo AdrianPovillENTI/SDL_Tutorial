@@ -8,8 +8,8 @@
         int health;
         int maxHealth;
     public:
-        DamageableObject ( const int _maxHealth ,const string bulletPath )
-            : GameObject ( bulletPath ), 
+        DamageableObject ( const int _maxHealth ,const string path )
+            : GameObject ( path ), 
             maxHealth ( _maxHealth ),
             health ( _maxHealth ) { }    
         void ReceiveDamage ( int _health ) override

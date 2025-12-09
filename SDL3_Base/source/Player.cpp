@@ -2,13 +2,7 @@
 
 #include "Spawner.h"
 #include "Item.h"
-#include "Score.h"
-#include "Cannon.h"
-#include "Laser.h"
 #include "SpeedUpgrade.h"
-#include "Turret.h"
-#include "ForceField.h"
-#include "Shield.h"
 #include "Bullet.h"
 #include "SpeedVfx.h"
 
@@ -28,7 +22,24 @@ Player::~Player ( )
 
 void Player::Start ( )
 {
-    _transform->position = Vector2 ( 100.f , RM->WINDOW_HEIGHT / 2.f );
+    InitializeStats();
+    InitializeGuns();
+    InitializePhysics();
+}
+
+void Player::InitializePhysics() 
+{
+    if ( _physics != nullptr )
+    {
+        _physics->SetLinearDrag ( 0.1f );
+        _physics->SetAngularDrag ( 0.1f );
+    }
+}
+
+void Player::InitializeStats()
+{
+
+    _transform->position = Vector2(100.f, RM->WINDOW_HEIGHT / 2.f);
     _transform->scale = Vector2::One;
     _transform->rotation = 0.f;
 
@@ -39,22 +50,42 @@ void Player::Start ( )
     canShoot = true;
     shootCooldown = 0.f;
     maxShootCooldownTime = 30;
-    originalMaxShootCooldownTime = maxShootCooldownTime;
 
-    bulletSprite = "resources/Player/NormalShoot/shot_1.png";
+    bulletSprites = { "resources/Player/NormalShoot/shot_1.png" };
     bulletDamage = 10;
+    bulletSpeed = 5;
     originalDamage = bulletDamage;
+    speedUpgrade = 2.5f;
+}
+
+void Player::InitializeGuns() 
+{
+    laserAnim = {
+        "resources/Player/Laser/shot_1.png",
+        "resources/Player/Laser/shot_2.png",
+        "resources/Player/Laser/shot_3.png",
+        "resources/Player/Laser/shot_4.png"
+    };
+    cannonAnim = {
+         "resources/Player/Cannon/shot_1.png",
+        "resources/Player/Cannon/shot_2.png",
+        "resources/Player/Cannon/shot_3.png",
+        "resources/Player/Cannon/shot_4.png"
+    };
 
     speed = 1.0f;
     shotSpeed = 1.0f;
 
-    inventory.clear ( );
+    inventory.clear();
 
-    if ( _physics != nullptr )
-    {
-        _physics->SetLinearDrag ( 0.1f );
-        _physics->SetAngularDrag ( 0.1f );
-    }
+    cannonPos = Vector2(0.5f, 0.5f);
+    laserPos = Vector2(0.5f, 0.5f);
+    turretsPos = Vector2(-0.5f, 0.5f);
+
+    cannon = new AmmoGun(cannonAnim, 3, 0.3, 5, cannonPos);
+    laser = new AmmoGun(laserAnim, 10, 0.1, 2, laserPos); 
+    turrets = { new Turret(turretAnim, bulletSpeed, maxShootCooldownTime, bulletDamage, turretsPos),
+        new Turret(turretAnim, bulletSpeed, maxShootCooldownTime, bulletDamage, turretsPos + Vector2(0, -1)) };
 }
 
 void Player::Move ( )
@@ -87,7 +118,7 @@ void Player::Move ( )
 
     if ( isMoving && speedVfx == nullptr )
     {
-        speedVfx = new SpeedVfx ( );
+        //speedVfx = new SpeedVfx ( );
         AddChild ( speedVfx , Vector2 ( -80.0f , 10.0f ) );
         SPAWNER.SpawnObject ( speedVfx );
         turboActivated = true;
@@ -139,9 +170,13 @@ void Player::Update ( )
 
 void Player::Shoot ( )
 {
-    if ( !canShoot ) return;
+    if (cannon->GetActive())
+        cannon->Shoot();
+    if (laser->GetActive())
+        laser->Shoot();
 
-    Bullet * bullet = new Bullet ( bulletSprite );
+    if (!canShoot) return;
+    Bullet * bullet = new Bullet ( bulletSprites, bulletSpeed, bulletDamage);
     bullet->GetTransform ( )->position = _transform->position + offset;
 
     SPAWNER.SpawnObject ( bullet );
@@ -150,71 +185,64 @@ void Player::Shoot ( )
     shootCooldown = maxShootCooldownTime;
 }
 
-void Player::ApplyItemEffects ( )
+void Player::ApplyItemEffects (Item* item)
 {
-    for ( Item * item : inventory )
+    switch ( item->GetType ( ) )
     {
-        if ( !item ) continue;
+        case Item::SCORE:
+            // Score ++
+            break;
 
-        switch ( item->GetType ( ) )
+        case Item::CANNON:
         {
-            case Item::SCORE:
-                // Score ++
-                break;
+            if (cannon->GetActive())
+                cannon->ResetAmmo();
+            else
+                cannon->SetActive(true);
 
-            case Item::CANNON:
-            {
-                Cannon * cannon = dynamic_cast< Cannon * >( item );
-                bulletDamage += cannon->GetDamageMultiplier ( );
-                shotSpeed += cannon->GetSpeedMultiplier ( );
-                maxShootCooldownTime = originalMaxShootCooldownTime / shotSpeed;
-                break;
-            }
-
-            case Item::LASER:
-            {
-                Laser * laser = dynamic_cast< Laser * >( item );
-                bulletDamage += laser->GetDamageMultiplier ( );
-                shotSpeed += laser->GetSpeedMultiplier ( );
-                maxShootCooldownTime = originalMaxShootCooldownTime / shotSpeed;
-                break;
-            }
-
-            case Item::SPEED_UPGRADE:
-            {
-                SpeedUpgrade * speedUp = dynamic_cast< SpeedUpgrade * >( item );
-                shotSpeed += speedUp->GetSpeedMultiplier ( );
-                break;
-            }
-
-            case Item::TURRET:
-            {
-                Turret * turret = dynamic_cast< Turret * >( item );
-                bulletDamage += turret->GetDamageMultiplier ( );
-                shotSpeed += turret->GetSpeedMultiplier ( );
-                maxShootCooldownTime = originalMaxShootCooldownTime / shotSpeed;
-                break;
-            }
-
-            case Item::FORCEFIELD:
-            {
-                ForceField * ff = dynamic_cast< ForceField * >( item );
-                invencible = true;
-                invencibleTime = ff->GetDuration ( );
-                break;
-            }
-
-            case Item::SHIELD:
-            {
-                Shield * shield = dynamic_cast< Shield * >( item );
-                health += shield->GetHealthBonus ( );
-                if ( health > maxHealth ) health = maxHealth;
-                break;
-            }
-
-            default:
-                break;
+            break;
         }
+
+        case Item::LASER:
+        {
+            if (laser->GetActive())
+                laser->ResetAmmo();
+            else
+                laser->SetActive(true);
+            break;
+        }
+
+        case Item::SPEED_UPGRADE:
+        {
+            speed += speedUpgrade;
+            break;
+        }
+
+        case Item::TURRET:
+        {
+            if (!turrets[1]->GetActive())
+                if (turrets[0]->GetActive())
+                    turrets[1]->SetActive(true);
+                else
+                    turrets[0]->SetActive(true);
+            break;
+        }
+
+        case Item::FORCEFIELD:
+        {
+            invencible = true;
+            invencibleTime = 5;
+            break;
+        }
+
+        case Item::SHIELD:
+        {
+            health = maxHealth;
+            break;
+        }
+
+        default:
+            break;
     }
 }
 
@@ -228,4 +256,14 @@ void Player::ClampInsideScreen ( )
     Vector2 & pos = _transform->position;
     pos = Vector2::ClampVectorX ( pos , 0.f , RM->WINDOW_WIDTH * 1.4f);
     pos = Vector2::ClampVectorY ( pos , 0.f , RM->WINDOW_HEIGHT * 1.3f);
+}
+
+void Player::OnCollision(Object* collided)
+{
+    if (Item* item = dynamic_cast<Item*>(collided))
+    {
+        ApplyItemEffects(item);
+        collided->Destroy();
+    }
+
 }

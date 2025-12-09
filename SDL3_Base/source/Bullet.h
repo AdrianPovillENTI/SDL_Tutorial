@@ -1,28 +1,23 @@
 #pragma once
 #include "DamageableObject.h"
+#include "Animator.h"
 #include <string>
 
-class Bullet : public DamageableObject
+class Bullet : public GameObject, public Animator
 {
 private:
     int damage;
     float speed;
 
-    float frameTime;
-    float frameTimeMax;
-    int currentFrame;
-    std::vector<string> animationFrames;
-
 public:
-    Bullet(const string path);
-    ~Bullet();
+    Bullet(const std::vector<std::string>& _anim, float _speed, int _damage);
+    ~Bullet() = default;
 
     void Start() override;
     void Update() override;
-    void ChangeSpriteFrame();
-    void Move() override;
 
     void SetDamage(int d) { damage = d; }
     int GetDamage() const { return damage; }
-    void SetAnimationSprites ( vector<string> & animationFrames );
+
+    void OnCollision(Object* collided) override;
 };

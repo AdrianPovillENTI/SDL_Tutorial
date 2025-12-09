@@ -26,6 +26,7 @@ public:
 	{
 	}
 	virtual void Start ( ) { }
+
 	void Update ( ) override
 	{
 		if ( !active ) return;

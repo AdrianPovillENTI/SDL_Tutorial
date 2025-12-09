@@ -7,7 +7,6 @@
 
 int main()
 {
-	Object * obj = new Object();
 	Game* game = new Game();
 	try
 	{
@@ -22,8 +21,6 @@ int main()
 
 	while (game->IsRunning())
 	{
-		obj->Update ( );
-		obj->Render ( );
 		game->HandleEvents();
 		game->Update();
 		game->Render();
