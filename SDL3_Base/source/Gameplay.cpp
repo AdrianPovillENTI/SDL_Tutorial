@@ -11,12 +11,7 @@
 
 #pragma region
 #include "Item.h"
-#include "Cannon.h"
-#include "Laser.h"
-#include "ForceField.h"
-#include "Shield.h"
 #include "SpeedUpgrade.h"
-#include "Score.h"
 #include "Turret.h"
 #pragma endregion Items
 
@@ -27,5 +22,4 @@ void Gameplay::OnEnter()
 		//SPAWNER.SpawnObject ( new Background ( i, "resources/Background.png" ) );
 	}
 	SPAWNER.SpawnObject ( new Player ( 55 ) );
-    SPAWNER.SpawnObject ( new Score ( ) );
 }

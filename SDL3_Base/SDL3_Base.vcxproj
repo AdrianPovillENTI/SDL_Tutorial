@@ -19,13 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\AmmoGun.cpp" />
+    <ClCompile Include="source\Gun.cpp" />
+    <ClCompile Include="source\Animator.cpp" />
     <ClCompile Include="source\Enemy.cpp" />
     <ClCompile Include="source\AnimatedImageRenderer.cpp" />
-    <ClCompile Include="source\Cannon.cpp" />
-    <ClCompile Include="source\ForceField.cpp" />
-    <ClCompile Include="source\Laser.cpp" />
-    <ClCompile Include="source\Score.cpp" />
-    <ClCompile Include="source\Shield.cpp" />
     <ClCompile Include="source\Item.cpp" />
     <ClCompile Include="source\Bullet.cpp" />
     <ClCompile Include="source\Player.cpp" />
@@ -46,19 +44,17 @@
     <ClCompile Include="source\TextRenderer.cpp" />
     <ClCompile Include="source\Vector2.cpp" />
     <ClCompile Include="source\SpeedUpgrade.cpp" />
-    <ClCompile Include="source\Turret.cpp" />
     <ClCompile Include="source\SpeedVfx.cpp" />
+    <ClCompile Include="source\Turret.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\AmmoGun.h" />
+    <ClInclude Include="source\Gun.h" />
+    <ClInclude Include="source\Animator.h" />
     <ClInclude Include="source\Enemy.h" />
     <ClInclude Include="source\AnimatedImageRenderer.h" />
-    <ClInclude Include="source\Cannon.h" />
     <ClInclude Include="source\ExitPattern.h" />
-    <ClInclude Include="source\ForceField.h" />
-    <ClInclude Include="source\Laser.h" />
     <ClInclude Include="source\MovementPattern.h" />
-    <ClInclude Include="source\Score.h" />
-    <ClInclude Include="source\Shield.h" />
     <ClInclude Include="source\Item.h" />
     <ClInclude Include="source\Bullet.h" />
     <ClInclude Include="source\Player.h" />
@@ -87,8 +83,8 @@
     <ClInclude Include="source\Transform.h" />
     <ClInclude Include="source\Vector2.h" />
     <ClInclude Include="source\SpeedUpgrade.h" />
-    <ClInclude Include="source\Turret.h" />
     <ClInclude Include="source\SpeedVfx.h" />
+    <ClInclude Include="source\Turret.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bullet.png" />

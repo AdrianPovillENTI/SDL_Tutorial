@@ -21,7 +21,8 @@ public:
 private:
     int impactCount;
     int maxImpactCount;
-
+    std::vector<std::string> itemsSprites;
+    std::string actualSprite;
     std::function<void ( )> onMaxImpactReached;
     ItemType type;
 
@@ -43,6 +44,8 @@ public:
     int GetImpactCount ( ) const { return impactCount; }
     int GetMaxImpactCount ( ) const { return maxImpactCount; }
     bool HasOnMaxImpactReached ( ) const { return onMaxImpactReached != nullptr; }
+
+    void SpritesInitialization();
 
     void AddImpact ( );
     void CheckImpact ( );
