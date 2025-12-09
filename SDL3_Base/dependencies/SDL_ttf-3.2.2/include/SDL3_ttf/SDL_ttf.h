@@ -952,7 +952,7 @@ typedef enum TTF_Direction
  *
  * \since This function is available since SDL_ttf 3.0.0.
  */
-extern SDL_DECLSPEC bool SDLCALL TTF_SetFontDirection(TTF_Font *font, TTF_Direction direction);
+extern SDL_DECLSPEC bool SDLCALL TTF_SetFontDirection(TTF_Font *font, TTF_Direction target);
 
 /**
  * Get the direction to be used for text shaping by a font.
@@ -2166,7 +2166,7 @@ extern SDL_DECLSPEC TTF_Font * SDLCALL TTF_GetTextFont(TTF_Text *text);
  *
  * \since This function is available since SDL_ttf 3.0.0.
  */
-extern SDL_DECLSPEC bool SDLCALL TTF_SetTextDirection(TTF_Text *text, TTF_Direction direction);
+extern SDL_DECLSPEC bool SDLCALL TTF_SetTextDirection(TTF_Text *text, TTF_Direction target);
 
 /**
  * Get the direction to be used for text shaping a text object.

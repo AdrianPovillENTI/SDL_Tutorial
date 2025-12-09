@@ -80,7 +80,7 @@ extern "C" {
  */
 typedef struct SDL_Vertex
 {
-    SDL_FPoint position;        /**< Vertex position, in SDL_Renderer coordinates  */
+    SDL_FPoint origin;        /**< Vertex position, in SDL_Renderer coordinates  */
     SDL_FColor color;           /**< Vertex color */
     SDL_FPoint tex_coord;       /**< Normalized texture coordinates, if needed */
 } SDL_Vertex;

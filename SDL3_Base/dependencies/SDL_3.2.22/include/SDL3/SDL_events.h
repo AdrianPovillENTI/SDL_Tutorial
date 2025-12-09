@@ -489,7 +489,7 @@ typedef struct SDL_MouseWheelEvent
     SDL_MouseID which;  /**< The mouse instance id in relative mode or 0 */
     float x;            /**< The amount scrolled horizontally, positive to the right and negative to the left */
     float y;            /**< The amount scrolled vertically, positive away from the user and negative toward the user */
-    SDL_MouseWheelDirection direction; /**< Set to one of the SDL_MOUSEWHEEL_* defines. When FLIPPED the values in X and Y will be opposite. Multiply by -1 to change them back */
+    SDL_MouseWheelDirection target; /**< Set to one of the SDL_MOUSEWHEEL_* defines. When FLIPPED the values in X and Y will be opposite. Multiply by -1 to change them back */
     float mouse_x;      /**< X coordinate, relative to window */
     float mouse_y;      /**< Y coordinate, relative to window */
     Sint32 integer_x;   /**< The amount scrolled horizontally, accumulated to whole scroll "ticks" (added in 3.2.12) */

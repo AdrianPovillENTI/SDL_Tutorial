@@ -19,11 +19,30 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\Enemy.cpp" />
+    <ClCompile Include="source\Enemies\EnemySpawnData.cpp" />
+    <ClCompile Include="source\Patterns\LinearToPlayerMovementPattern.cpp" />
+    <ClCompile Include="source\Patterns\MultiPhasePattern.cpp" />
+    <ClCompile Include="source\Enemies\Arachnid.cpp" />
+    <ClCompile Include="source\Enemies\Boosters.cpp" />
+    <ClCompile Include="source\Enemies\Charger.cpp" />
+    <ClCompile Include="source\Enemies\Drifter.cpp" />
+    <ClCompile Include="source\Enemies\Floater.cpp" />
+    <ClCompile Include="source\Enemies\Gearbot.cpp" />
+    <ClCompile Include="source\Enemies\Gulper.cpp" />
+    <ClCompile Include="source\Enemies\Headron.cpp" />
+    <ClCompile Include="source\Enemies\Lifters.cpp" />
+    <ClCompile Include="source\Enemies\Loopers.cpp" />
+    <ClCompile Include="source\Enemies\Mawler.cpp" />
+    <ClCompile Include="source\Enemies\Rammers.cpp" />
+    <ClCompile Include="source\Enemies\Scouts.cpp" />
+    <ClCompile Include="source\Enemies\Sliders.cpp" />
+    <ClCompile Include="source\Patterns\Pattern.cpp" />
+    <ClCompile Include="source\Enemies\Enemy.cpp" />
     <ClCompile Include="source\AnimatedImageRenderer.cpp" />
     <ClCompile Include="source\Cannon.cpp" />
     <ClCompile Include="source\ForceField.cpp" />
     <ClCompile Include="source\Laser.cpp" />
+    <ClCompile Include="source\Patterns\SinusoidalMovementPattern.cpp" />
     <ClCompile Include="source\Score.cpp" />
     <ClCompile Include="source\Shield.cpp" />
     <ClCompile Include="source\Item.cpp" />
@@ -48,15 +67,41 @@
     <ClCompile Include="source\SpeedUpgrade.cpp" />
     <ClCompile Include="source\Turret.cpp" />
     <ClCompile Include="source\SpeedVfx.cpp" />
+    <ClCompile Include="source\Enemies\Splitta.cpp" />
+    <ClCompile Include="source\Enemies\Starforge.cpp" />
+    <ClCompile Include="source\Enemies\Strikers.cpp" />
+    <ClCompile Include="source\Enemies\Swirlers.cpp" />
+    <ClCompile Include="source\Enemies\Tentakor.cpp" />
+    <ClCompile Include="source\Enemies\WaveManager.cpp" />
+    <ClCompile Include="source\Patterns\ZigZagMovementPattern.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\Enemy.h" />
+    <ClInclude Include="source\Enemies\EnemySpawnData.h" />
+    <ClInclude Include="source\Patterns\LinearToPlayerMovementPattern.h" />
+    <ClInclude Include="source\Patterns\MultiPhasePattern.h" />
+    <ClInclude Include="source\Enemies\Arachnid.h" />
+    <ClInclude Include="source\Enemies\Boosters.h" />
+    <ClInclude Include="source\Enemies\Charger.h" />
+    <ClInclude Include="source\Enemies\Drifter.h" />
+    <ClInclude Include="source\Enemies\Floater.h" />
+    <ClInclude Include="source\Enemies\Gearbot.h" />
+    <ClInclude Include="source\Enemies\Gulper.h" />
+    <ClInclude Include="source\Enemies\Headron.h" />
+    <ClInclude Include="source\Enemies\Lifters.h" />
+    <ClInclude Include="source\Enemies\Loopers.h" />
+    <ClInclude Include="source\Enemies\Mawler.h" />
+    <ClInclude Include="source\Enemies\Rammers.h" />
+    <ClInclude Include="source\Enemies\Scouts.h" />
+    <ClInclude Include="source\Enemies\Sliders.h" />
+    <ClInclude Include="source\Patterns\Pattern.h" />
+    <ClInclude Include="source\Enemies\Enemy.h" />
     <ClInclude Include="source\AnimatedImageRenderer.h" />
     <ClInclude Include="source\Cannon.h" />
-    <ClInclude Include="source\ExitPattern.h" />
+    <ClInclude Include="source\Patterns\ExitPattern.h" />
     <ClInclude Include="source\ForceField.h" />
     <ClInclude Include="source\Laser.h" />
-    <ClInclude Include="source\MovementPattern.h" />
+    <ClInclude Include="source\Patterns\MovementPattern.h" />
+    <ClInclude Include="source\Patterns\LineSpawnPattern.h" />
     <ClInclude Include="source\Score.h" />
     <ClInclude Include="source\Shield.h" />
     <ClInclude Include="source\Item.h" />
@@ -80,7 +125,7 @@
     <ClInclude Include="source\Scene.h" />
     <ClInclude Include="source\SceneManager.h" />
     <ClInclude Include="source\Spawner.h" />
-    <ClInclude Include="source\SpawnPattern.h" />
+    <ClInclude Include="source\Patterns\SpawnPattern.h" />
     <ClInclude Include="source\TestObject.h" />
     <ClInclude Include="source\TextObject.h" />
     <ClInclude Include="source\TextRenderer.h" />
@@ -89,6 +134,14 @@
     <ClInclude Include="source\SpeedUpgrade.h" />
     <ClInclude Include="source\Turret.h" />
     <ClInclude Include="source\SpeedVfx.h" />
+    <ClInclude Include="source\Enemies\Splitta.h" />
+    <ClInclude Include="source\Enemies\Starforge.h" />
+    <ClInclude Include="source\Enemies\Strikers.h" />
+    <ClInclude Include="source\Enemies\Swirlers.h" />
+    <ClInclude Include="source\Enemies\Tentakor.h" />
+    <ClInclude Include="source\Enemies\WaveManager.h" />
+    <ClInclude Include="source\Patterns\SinusoidalMovementPattern.h" />
+    <ClInclude Include="source\Patterns\ZigZagMovementPattern.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bullet.png" />
