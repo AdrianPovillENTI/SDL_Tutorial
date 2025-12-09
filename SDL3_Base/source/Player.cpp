@@ -174,7 +174,12 @@ void Player::Shoot ( )
         cannon->Shoot();
     if (laser->GetActive())
         laser->Shoot();
-
+    if (turrets[0]->GetActive())
+    {
+        turrets[0]->Shoot();
+        if (turrets[1]->GetActive())
+            turrets[1]->Shoot();
+    }
     if (!canShoot) return;
     Bullet * bullet = new Bullet ( bulletSprites, bulletSpeed, bulletDamage);
     bullet->GetTransform ( )->position = _transform->position + offset;
