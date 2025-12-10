@@ -8,14 +8,14 @@ class EnemySpawnData
     int id;
     SpawnPattern* spawnPattern;
     vector<Enemy*> enemies;
+    Vector2 origin;
 public:
 
-    EnemySpawnData ( int id , SpawnPattern* _spawnPattern , const vector<Enemy*> enemies )
-        : id ( id ) , spawnPattern ( _spawnPattern ) , enemies ( enemies )
+    EnemySpawnData ( int id, Vector2 _origin , SpawnPattern* _spawnPattern , const vector<Enemy*> enemies )
+        : id ( id ), origin(_origin) , spawnPattern ( _spawnPattern ) , enemies ( enemies )
     { }
     void SpawnEnemies ( )
     {
-        Vector2 origin = Vector2 ( RM->WINDOW_WIDTH , RM->WINDOW_HEIGHT );
         auto positions = spawnPattern->GetSpawnPositions ( origin , enemies.size ( ) );
 
         if ( positions.size ( ) != enemies.size ( ) ) return;

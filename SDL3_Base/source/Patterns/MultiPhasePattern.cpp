@@ -1,4 +1,4 @@
-#include "MultiPhasePattern.h"
+﻿#include "MultiPhasePattern.h"
 Vector2 MultiPhasePattern::GetDelta ( float dt , float elapsed , int index ) const
 {
     float time = elapsed;

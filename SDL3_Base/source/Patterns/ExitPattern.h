@@ -23,9 +23,9 @@ public:
 	bool ShouldExit(const Vector2& origin) const override
 	{
 		if (origin.x < 0 - _margin) return true;
-		if (origin.x > RM->WINDOW_WIDTH + _margin) return true;
+		if (origin.x > RM->WINDOW_WIDTH * 1.4f + _margin) return true;
 		if (origin.y < 0 - _margin) return true;
-		if (origin.y > RM->WINDOW_HEIGHT + _margin) return true;
+		if (origin.y > RM->WINDOW_HEIGHT * 1.3f + _margin) return true;
 		return false;
 	}
 };

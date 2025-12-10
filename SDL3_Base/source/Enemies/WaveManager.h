@@ -6,7 +6,7 @@ class WaveManager : public Object
     vector<EnemySpawnData*> waves;
     int curIndex;
     float wavesTimer = 0;
-    float timeBetweenWaves = 3.0f; 
+    float timeBetweenWaves = 120.0f; 
 public:
     void Update ( ) override
     {
@@ -33,5 +33,7 @@ public:
     WaveManager ( vector<EnemySpawnData *>  _waves ) :
         waves ( _waves ) , curIndex ( 0 ),
         wavesTimer ( 0 ) , timeBetweenWaves ( 3 ) { }
+
+    WaveManager ( ) = default;
 };
 

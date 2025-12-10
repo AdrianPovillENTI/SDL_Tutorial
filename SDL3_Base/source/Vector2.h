@@ -4,7 +4,7 @@
 class Vector2
 {
 private:
-	float Q_rsqrt ( float number )
+	static float Q_rsqrt ( float number )
 	{
 		long i;
 		float x2 , y;
@@ -40,6 +40,14 @@ public:
 		y *= length;
 	}
 
+	Vector2 Normalized()
+	{
+		float length = Q_rsqrt (x * x + y * y);
+		x *= length;
+		y *= length;
+		return Vector2 ( x , y );
+	}
+
 	static Vector2 ClampVectorX ( Vector2 vec , float min , float max )
 	{
 		if ( vec.x < min ) vec.x = min;
@@ -60,7 +68,7 @@ public:
 		float length = Q_rsqrt ( x * x + y * y );
 		return 1 / length;
 	}
-	float Distance ( Vector2 from , Vector2 to )
+	static float Distance ( Vector2 from , Vector2 to )
 	{
 		float dx = from.x - to.x;
 		float dy = from.y - to.y;

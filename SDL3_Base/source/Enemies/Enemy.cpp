@@ -15,12 +15,13 @@ void Enemy::Start ( )
 
         }
     }*/
+    state = EnemyState::ON_UPDATE;
 }
 
 void Enemy::Update ( )
 {
     GameObject::Update ( );
-    timeElapsed += 1 / 60;
+    timeElapsed += 1.f / 60.f;
     Move ( );
 }
 
@@ -33,14 +34,15 @@ void Enemy::OnCollision ( Object * collided )
 }
 
 void Enemy::Move ( )
-{
-    if ( pattern != nullptr ) return;
+    {
     if ( state == EnemyState::ON_UPDATE )
     {
         if ( UPDATE_P != nullptr )
         {
-            Vector2 delta = UPDATE_P->GetDelta ( 1 / 60 , timeElapsed , 0 );
-            _transform->position = delta;
+            Vector2 delta = Vector2::Zero;
+            if ( auto obj = dynamic_cast< CircularMovementPattern * >( UPDATE_P ) ) delta = obj->GetDelta ( 1.f / 60.f );
+            else  delta = UPDATE_P->GetDelta ( 1.f / 60.f , timeElapsed , 0 );
+            _transform->position += delta;
         }
     }
     if ( EXIT_P != nullptr )
@@ -49,6 +51,7 @@ void Enemy::Move ( )
         {
             state = EnemyState::ON_EXIT;
             isDeath = true;
+            Destroy ( );
         }
     }
 }

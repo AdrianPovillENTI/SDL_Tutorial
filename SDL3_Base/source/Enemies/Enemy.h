@@ -4,7 +4,10 @@
 #include "../Player.h"
 #define EXIT_P pattern->GetExitPattern()
 #define UPDATE_P pattern->GetMovementPattern()
-
+#define SC_WIDTH RM->WINDOW_WIDTH
+#define SC_HEIGHT RM->WINDOW_HEIGHT
+#define X _transform->position.x
+#define Y _transform->position.y
 class Enemy : public DamageableObject
 {
     enum EnemyState
@@ -26,6 +29,7 @@ public:
         pattern ( _movePattern )
     {
         timeElapsed = 0;
+        Start ( );
     }
     ~Enemy ( );
 
