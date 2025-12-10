@@ -21,10 +21,6 @@ private:
     mutable float phaseTime = 0;
     vector<Phase> phases;
 public:
-    MultiPhasePattern (vector<Phase> _phases )
-    {
-        phases = _phases;
-    }
     MultiPhasePattern ( std::initializer_list<Phase> list )
         : phases ( list )
     {

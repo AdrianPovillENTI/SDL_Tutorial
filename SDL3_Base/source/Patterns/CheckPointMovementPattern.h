@@ -16,11 +16,9 @@ class CheckPointMovementPattern : public MovementPattern
 public:
 
     CheckPointMovementPattern ( Vector2 * curPosition, MovementPatternData _patternData, 
-        float speed , int curIndex )
+        float speed )
         : curPosition ( curPosition ) , patternData( _patternData ) ,
-        speed ( speed ) , curIndex ( curIndex )
-    {
-    }
+        speed ( speed ) { }
     Vector2 GetDelta ( float dt , float elapsed , int index ) const override
     {
         if ( checkPoints.empty()) return Vector2::Zero;

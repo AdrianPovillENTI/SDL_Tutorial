@@ -20,21 +20,17 @@ public:
             (
                 new MultiPhasePattern
                 ({
-                    { new LinearPattern ( Vector2::Left,0.5f ),120},
-                    { new SinusoidalMovementPattern ( Vector2::Left,100,1 ),120 },
-                    { new CircularMovementPattern ( 1,false ),120 }
+                    {new CheckPointMovementPattern(&_transform->position, movePattern, 0.5f), 120 }
                 }) ,
                 new ScreenBoundsExit ( 16 )
             ) 
         ) 
-    { }
+    { 
+    }
     void Start ( ) override 
     { 
         Enemy::Start ( );
-        movePattern =
-        {
-            { { SC_WIDTH / 3 , Y } , { X - 100, Y + 100 } , { X + 100,Y + 100 } , { X + 100, Y - 100 }, { X + 100, Y - 100 }, {SC_WIDTH,Y}}
-        };
+        movePattern.checkpoints = { { (float)SC_WIDTH / 3 , (float)Y }, { (float)X - 100, (float)Y + 100 }, { (float)X + 100,(float)Y + 100 }, { (float)X + 100, (float)Y - 100 }, { (float)X + 100, (float)Y - 100 }, { (float)SC_WIDTH,Y } };
     }
     void Update ( ) override { Enemy::Update ( ); }
     void OnCollision ( Object * collided ) override { Enemy::OnCollision(collided); }
