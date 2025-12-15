@@ -17,15 +17,15 @@ public:
         }
     };
 private:
-    mutable int currentPhase = 0;
-    mutable float phaseTime = 0;
+    int currentPhase = 0;
+    float phaseTime = 0;
     vector<Phase> phases;
 public:
     MultiPhasePattern ( std::initializer_list<Phase> list )
         : phases ( list )
     {
     }
-    Vector2 GetDelta ( float dt , float elapsed , int index ) const override;
+    Vector2 GetDelta ( float dt , float elapsed , int index ) override;
     Vector2 GetDeltaOnCondition ( float dt , float elapsed, function<bool()> change , int index ) const;
 };
 

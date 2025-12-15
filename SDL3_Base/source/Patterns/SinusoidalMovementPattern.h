@@ -14,5 +14,5 @@ public:
     {
         direction.Normalize ( );
     }
-    Vector2 GetDelta ( float dt , float elapsed , int index ) const override;
+    Vector2 GetDelta ( float dt , float elapsed , int index ) override;
 };

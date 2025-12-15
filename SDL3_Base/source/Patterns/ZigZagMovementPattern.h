@@ -14,5 +14,5 @@ public:
         : target ( target ) , amplitude ( _amplitude ) , speed ( _speed ) , origin (_origin )
     {
     }
-    Vector2 GetDelta ( float dt , float elapsed , int index ) const override;
+    Vector2 GetDelta ( float dt , float elapsed , int index ) override;
 };

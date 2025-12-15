@@ -14,11 +14,11 @@ public:
         elapsed = 0;
     }
 
-    Vector2 GetDelta ( float dt , float elapsed , int index ) const override
+    Vector2 GetDelta ( float dt , float elapsed , int index ) override
     {
-        float dx = cos ( 0.1f * dt ) * radius;
+        /*float dx = cos ( 0.1f * dt ) * radius;
         float dy = sin ( 0.1f * dt ) * radius;
-        return Vector2 ( dx , dy );
+        return Vector2 ( dx , dy );*/
     }
 
     Vector2 GetDelta ( float dt)
@@ -26,10 +26,10 @@ public:
         float angularSpeed = 2 * 3.14f * 0.001f;
         rate += angularSpeed * dt;
 
-        float dx = cos ( rate ) * radius;
-        float dy = sin ( rate ) * radius;
+        float dx = cos ( rate );
+        float dy = sin ( rate );
 
-        if ( rate >= 270 ) return Vector2::Zero;
+        //if ( rate >= 270 ) return Vector2::Zero;
         return Vector2 ( dx , dy );
     }
 };

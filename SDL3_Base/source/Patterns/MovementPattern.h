@@ -7,7 +7,7 @@ class MovementPattern
 public:
 	virtual ~MovementPattern() = default;
 
-	virtual Vector2 GetDelta(float dt, float elapsed, int index = 0) const = 0;
+	virtual Vector2 GetDelta(float dt, float elapsed, int index = 0) = 0;
 };
 
 class LinearPattern : public MovementPattern
@@ -21,7 +21,7 @@ public:
 	{
 	}
 
-	Vector2 GetDelta ( float dt , float elapsed , int index ) const override
+	Vector2 GetDelta ( float dt , float elapsed , int index ) override
 	{
 		return direction * speed * dt;
 	}
