@@ -28,7 +28,7 @@ private:
 
 public:
 
-    Item ( std::string _path , ItemType _type );
+    Item ( std::string _path );
     virtual ~Item ( );
 
     void Update ( ) override;
@@ -47,6 +47,7 @@ public:
 
     void SpritesInitialization();
 
+    void OnCollision(Object* o) override;
     void AddImpact ( );
     void CheckImpact ( );
 };

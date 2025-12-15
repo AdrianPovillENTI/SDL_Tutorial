@@ -2,7 +2,6 @@
 
 #include "Spawner.h"
 #include "Item.h"
-#include "SpeedUpgrade.h"
 #include "Bullet.h"
 #include "SpeedVfx.h"
 
@@ -195,7 +194,7 @@ void Player::ApplyItemEffects (Item* item)
     switch ( item->GetType ( ) )
     {
         case Item::SCORE:
-            // Score ++
+            cout << "Perrrrrro ";
             break;
 
         case Item::CANNON:
@@ -265,10 +264,10 @@ void Player::ClampInsideScreen ( )
 
 void Player::OnCollision(Object* collided)
 {
-    if (Item* item = dynamic_cast<Item*>(collided))
-    {
-        ApplyItemEffects(item);
-        collided->Destroy();
-    }
+    //if (Item* item = dynamic_cast<Item*>(collided))
+    //{
+    //    ApplyItemEffects(item);
+    //    collided->Destroy();
+    //}
 
 }

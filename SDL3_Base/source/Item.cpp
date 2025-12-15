@@ -2,19 +2,19 @@
 #include "Spawner.h"
 #include "Vector2.h"
 #include "RenderManager.h" 
+#include "Player.h"
 #include <cstdlib>  
 
 
-Item::Item ( std::string _path , ItemType _type )
+Item::Item ( std::string _path )
     : DamageableObject ( 1 , _path ) ,
     impactCount ( 0 ) ,
-    maxImpactCount ( 4 ) ,
-    type ( _type )
+    maxImpactCount ( 4 )
 {
     _transform->position = Vector2 ( RM->WINDOW_WIDTH , 500 );
     _transform->scale = Vector2 ( 3 , 3 );
     _transform->rotation = 0.f;
-
+    type = SCORE;
     SpritesInitialization();  
 }
 
@@ -47,6 +47,16 @@ void Item::Move ( )
 {
 }
 
+void Item::OnCollision(Object* o)
+{
+    if (Player* p = dynamic_cast<Player*>(o))
+    {
+        p->ApplyItemEffects(this);
+        Destroy();
+        SetActive(false);
+    }
+}
+
 void Item::AddImpact ( )
 {
     impactCount++;
@@ -62,6 +72,7 @@ void Item::CheckImpact ( )
     {
         type = static_cast< ItemType > ( type + 1 );
         actualSprite = itemsSprites[(int)type];
+        _renderer->SetResourcePath(itemsSprites[(int)type]);
     }
     else
     {

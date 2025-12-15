@@ -25,3 +25,4 @@ bool AABB::CheckOverlappingAABB(const AABB* other)
 
     return intersectionX && intersectionY;
 }
+

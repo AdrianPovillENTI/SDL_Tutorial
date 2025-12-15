@@ -11,7 +11,6 @@
 
 #pragma region
 #include "Item.h"
-#include "SpeedUpgrade.h"
 #include "Turret.h"
 #pragma endregion Items
 
@@ -22,4 +21,29 @@ void Gameplay::OnEnter()
 		//SPAWNER.SpawnObject ( new Background ( i, "resources/Background.png" ) );
 	}
 	SPAWNER.SpawnObject ( new Player ( 55 ) );
+<<<<<<< Updated upstream
+=======
+	SPAWNER.SpawnObject(new Item("resources/Items/Score.png"));
+	WaveManager * waveManager = new WaveManager
+	(
+		{ //enemySpawnData vector
+			new EnemySpawnData 
+			( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
+				1, Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 3 ),
+				new LineSpawnPattern 
+				( 
+					Vector2 ( 1,0 ), //Direction where will spawn
+					100 //Spacing
+				), 
+				{ 
+					new Swirlers ( ),
+					new Swirlers ( ),
+					new Swirlers ( ),
+					new Swirlers ( ) 
+				} 
+			) 
+		}
+	);
+	_objects.push_back ( waveManager );
+>>>>>>> Stashed changes
 }

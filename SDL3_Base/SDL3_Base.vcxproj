@@ -64,7 +64,6 @@
     <ClCompile Include="source\TextObject.cpp" />
     <ClCompile Include="source\TextRenderer.cpp" />
     <ClCompile Include="source\Vector2.cpp" />
-    <ClCompile Include="source\SpeedUpgrade.cpp" />
     <ClCompile Include="source\Turret.cpp" />
     <ClCompile Include="source\SpeedVfx.cpp" />
     <ClCompile Include="source\Enemies\Splitta.cpp" />
@@ -131,7 +130,6 @@
     <ClInclude Include="source\TextRenderer.h" />
     <ClInclude Include="source\Transform.h" />
     <ClInclude Include="source\Vector2.h" />
-    <ClInclude Include="source\SpeedUpgrade.h" />
     <ClInclude Include="source\Turret.h" />
     <ClInclude Include="source\SpeedVfx.h" />
     <ClInclude Include="source\Enemies\Splitta.h" />

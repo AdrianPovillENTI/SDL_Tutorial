@@ -72,9 +72,6 @@
     <ClCompile Include="source\Vector2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\SpeedUpgrade.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="source\AnimatedImageRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -176,6 +173,7 @@
     <ClInclude Include="source\GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
     <ClInclude Include="source\SpeedUpgrade.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -188,6 +186,8 @@
     <ClInclude Include="source\ExitPattern.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+=======
+>>>>>>> Stashed changes
     <ClInclude Include="source\AnimatedImageRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
