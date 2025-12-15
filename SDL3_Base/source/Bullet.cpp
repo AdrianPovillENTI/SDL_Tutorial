@@ -18,7 +18,7 @@ void Bullet::Update()
 
 	_physics->SetVelocity(Vector2(speed, 0.f));
 
-	ChangeSpriteFrame();
+	_renderer->SetResourcePath ( ChangeSpriteFrame ( ) );
 
 	if (_transform->position.x > RM->WINDOW_WIDTH * 1.4f || _transform->position.x < 0 ||
 		_transform->position.y > RM->WINDOW_HEIGHT * 1.3f || _transform->position.y < 0)

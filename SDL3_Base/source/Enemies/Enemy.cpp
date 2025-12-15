@@ -15,6 +15,7 @@ void Enemy::Start ( )
 
         }
     }*/
+
     state = EnemyState::ON_UPDATE;
 }
 

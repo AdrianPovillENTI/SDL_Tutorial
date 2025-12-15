@@ -1,5 +1,5 @@
 ﻿#include "MultiPhasePattern.h"
-Vector2 MultiPhasePattern::GetDelta ( float dt , float elapsed , int index ) const
+Vector2 MultiPhasePattern::GetDelta ( float dt , float elapsed , int index )
 {
     float time = elapsed;
 
@@ -16,7 +16,7 @@ Vector2 MultiPhasePattern::GetDelta ( float dt , float elapsed , int index ) con
 
     return phases.back ( ).movePattern->GetDelta ( dt , time , index );
 }
-Vector2 MultiPhasePattern::GetDeltaOnCondition ( float dt , float elapsed , function<bool()> change , int index ) const
+Vector2 MultiPhasePattern::GetDeltaOnCondition ( float dt , float elapsed , function<bool()> change , int index )
 {
     phaseTime += dt;
     if ( change ( ) )

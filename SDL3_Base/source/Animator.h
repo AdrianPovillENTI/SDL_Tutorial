@@ -4,7 +4,7 @@
 
 class Animator
 {
-private:
+protected:
     float frameTime;
     float frameTimeMax;
     int currentFrame;
@@ -13,6 +13,6 @@ private:
 public:
     Animator(std::vector<std::string> _anim);
     void SetAnimationSprites(std::vector<std::string> _anim);
-    std::string* ChangeSpriteFrame();
+    std::string ChangeSpriteFrame();
 };
 

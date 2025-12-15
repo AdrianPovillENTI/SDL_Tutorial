@@ -16,9 +16,9 @@ public:
 
     Vector2 GetDelta ( float dt , float elapsed , int index ) override
     {
-        /*float dx = cos ( 0.1f * dt ) * radius;
+        float dx = cos ( 0.1f * dt ) * radius;
         float dy = sin ( 0.1f * dt ) * radius;
-        return Vector2 ( dx , dy );*/
+        return Vector2 ( dx , dy );
     }
 
     Vector2 GetDelta ( float dt)

@@ -4,6 +4,7 @@
 #include <functional>
 #include "../Vector2.h"
 using namespace std;
+
 class MultiPhasePattern : public MovementPattern
 {
 public:
@@ -11,10 +12,7 @@ public:
     {
         MovementPattern * movePattern;
         float duration;
-        Phase ( MovementPattern * m , float d )
-            : movePattern ( m ) , duration ( d )
-        {
-        }
+        Phase ( MovementPattern * m , float d ) : movePattern ( m ) , duration ( d ) { }
     };
 private:
     int currentPhase = 0;
@@ -26,6 +24,6 @@ public:
     {
     }
     Vector2 GetDelta ( float dt , float elapsed , int index ) override;
-    Vector2 GetDeltaOnCondition ( float dt , float elapsed, function<bool()> change , int index ) const;
+    Vector2 GetDeltaOnCondition ( float dt , float elapsed, function<bool()> change , int index );
 };
 
