@@ -23,11 +23,21 @@ protected:
     float timeElapsed;
 public:
 
-    Enemy ( float speed, int health, int _damage , string path, EnemyBehaviourPattern * _movePattern )
-        :DamageableObject(health,path), damage (_damage), speed ( speed ), pattern ( _movePattern )
+    Enemy ( float speed, int health, int _damage , string path)
+        :DamageableObject(health,path), damage (_damage), speed ( speed )
     {
 
         _transform->position = Vector2::Zero;
+        _physics->AddCollider ( new AABB ( Vector2::Zero , Vector2::One ) );
+        timeElapsed = 0;
+        Start ( );
+    }
+    Enemy ( float speed , int health , int _damage , string path , EnemyBehaviourPattern * _movePattern )
+        :DamageableObject ( health , path ) , damage ( _damage ) , speed ( speed ) , pattern ( _movePattern )
+    {
+
+        _transform->position = Vector2::Zero;
+        _physics->AddCollider ( new AABB ( Vector2::Zero , Vector2::One ) );
         timeElapsed = 0;
         Start ( );
     }

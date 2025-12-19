@@ -18,12 +18,12 @@ public:
 
 	}
 	void OnExit() override {
-
+		Scene::OnExit ( );
 	}
 	void Update() override {
-
+		Scene::Update( );
 	}
 	void Render() override {
-
+		Scene::Render( );
 	}
 };
