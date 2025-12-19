@@ -6,6 +6,7 @@
 #include "SceneManager.h"
 #include <cassert>
 #include "TestObject.h"
+#include "MainMenu.h"
 
 void Game::Init()
 {
@@ -17,6 +18,7 @@ void Game::Init()
     //Normal Bullet
 #pragma region LoadPlayerTextures
 	RM->LoadTexture("resources/Player/Player.png");
+	//RM->LoadTexture("resources/Player/Player.png");
 
 	RM->LoadTexture( "resources/Player/SpeedVfx/speed_1.png" );
 	RM->LoadTexture( "resources/Player/SpeedVfx/speed_2.png" );
@@ -90,10 +92,11 @@ void Game::Init()
 	RM->LoadTexture("resources/Items/ForceField.png");
 	RM->LoadTexture("resources/Items/Shield.png");
 
+	//RM->LoadFont("resources/fonts/Hyperspace.ttf");
+	assert(SM.AddScene("MainMenu", new MainMenu()));
 	assert(SM.AddScene("Gameplay", new Gameplay()));
 
 	assert(SM.InitFirstScene("Gameplay"));
-
 	_isRunning = true;
 }
 
