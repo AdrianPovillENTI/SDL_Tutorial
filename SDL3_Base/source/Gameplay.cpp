@@ -15,7 +15,9 @@
 #include "Turret.h"
 #include "Enemies/WaveManager.h"
 #include "Enemies/Swirlers.h"
+#include "Enemies/Gulper.h"
 #include "Patterns/LineSpawnPattern.h"
+#include "Patterns/TopBottomSpawnPattern.h"
 #pragma endregion Items
 
 void Gameplay::OnEnter()
@@ -36,21 +38,35 @@ void Gameplay::OnEnter()
 	WaveManager * waveManager = new WaveManager
 	(
 		{ //enemySpawnData vector
-			new EnemySpawnData 
-			( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
-				1, Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 3 ),
-				new LineSpawnPattern 
-				( 
-					Vector2 ( 1,0 ), //Direction where will spawn
-					100 //Spacing
-				), 
-				{ 
-					new Swirlers ( ),
-					new Swirlers ( ),
-					new Swirlers ( ),
-					new Swirlers ( ) 
-				} 
-			) 
+			//new EnemySpawnData 
+			//( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
+			//	1, Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 3 ),
+			//	new LineSpawnPattern 
+			//	( 
+			//		Vector2 ( 1,0 ), //Direction where will spawn
+			//		100 //Spacing
+			//	), 
+			//	{ 
+			//		new Swirlers ( ),
+			//		new Swirlers ( ),
+			//		new Swirlers ( ),
+			//		new Swirlers ( ) 
+			//	} 
+			//) ,
+			new EnemySpawnData
+			(
+				1, Vector2(RM->WINDOW_WIDTH * 0.5f, 0 ),
+				new TopBottomSpawnPattern
+				(
+					100,
+					500
+				),
+				{
+
+					new Gulper ( ),
+					new Gulper ( )
+				}
+			)
 		}
 	);
 	_objects.push_back ( waveManager );
