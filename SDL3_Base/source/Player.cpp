@@ -68,18 +68,20 @@ void Player::InitializeStats()
 
 void Player::InitializeGuns() 
 {
-    laserAnim = {
+    laserBulletAnim = {
         "resources/Player/Laser/shot_1.png",
         "resources/Player/Laser/shot_2.png",
         "resources/Player/Laser/shot_3.png",
         "resources/Player/Laser/shot_4.png"
     };
-    cannonAnim = {
+    laserSprite = "resources/Player/LaserSprite";
+    cannonBulletAnim = {
          "resources/Player/Cannon/shot_1.png",
         "resources/Player/Cannon/shot_2.png",
         "resources/Player/Cannon/shot_3.png",
         "resources/Player/Cannon/shot_4.png"
     };
+    cannonSprite = "resources/Player/CannonSprite";
 
     speed = 1.0f;
     shotSpeed = 1.0f;
@@ -90,10 +92,10 @@ void Player::InitializeGuns()
     laserPos = Vector2(0.5f, 0.5f);
     turretsPos = Vector2(-0.5f, 0.5f);
 
-    cannon = new AmmoGun(cannonAnim, 3, 0.3, 5, cannonPos);
-    laser = new AmmoGun(laserAnim, 10, 0.1, 2, laserPos); 
-    turrets = { new Turret(turretAnim, bulletSpeed, maxShootCooldownTime, bulletDamage, turretsPos),
-        new Turret(turretAnim, bulletSpeed, maxShootCooldownTime, bulletDamage, turretsPos + Vector2(0, -1)) };
+    cannon = new AmmoGun(cannonSprite, cannonBulletAnim, 3, 0.3, 5, cannonPos);
+    laser = new AmmoGun(laserSprite, laserBulletAnim, 10, 0.1, 2, laserPos); 
+    turrets = { new Turret(turretBulletAnim[0]/*Temporal*/, turretBulletAnim, bulletSpeed, maxShootCooldownTime, bulletDamage, turretsPos),
+        new Turret(turretBulletAnim[0]/*Temporal*/, turretBulletAnim, bulletSpeed, maxShootCooldownTime, bulletDamage, turretsPos + Vector2(0, -1))};
 }
 
 void Player::Move ( )

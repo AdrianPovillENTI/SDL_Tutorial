@@ -2,8 +2,9 @@
 #include "Bullet.h"
 #include "Spawner.h"
 
-Gun::Gun(std::vector<std::string> bulletAnim, float _speed, float _cadence, int _dmg, Vector2 spawnBullet) : 
-	GameObject("resources/Items/Cannon.png"), 
+Gun::Gun(string sprite, vector<string> bulletAnim, float _speed, float _cadence, int _dmg, Vector2 spawnBullet) :
+	GameObject("resources/Items/Cannon.png"),
+	gunSprite(sprite),
 	bulletAnimationSprites(bulletAnim),
 	bulletDamage(_dmg), bulletSpeed(_speed), 
 	canShoot(true), 

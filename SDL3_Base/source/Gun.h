@@ -12,10 +12,11 @@ class Gun : public GameObject
 		float maxShootCooldownTime;
 
 		Vector2 bulletSpawnPoint;
-		std::vector<std::string> bulletAnimationSprites;
+		vector<string> bulletAnimationSprites;
+		string gunSprite;
 
 	public:
-		Gun(std::vector<string> bulletAnim, float _speed, float _cadence, int _dmg, Vector2 spawnBullet);
+		Gun(string sprite, vector<string> bulletAnim, float _speed, float _cadence, int _dmg, Vector2 spawnBullet);
 
 		void Update() override;
 		virtual void Shoot();

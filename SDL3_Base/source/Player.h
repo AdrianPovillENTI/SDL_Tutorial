@@ -35,17 +35,19 @@ private:
 
     Vector2 offset;
 
-    std::vector<Item *> inventory;
+    vector<Item *> inventory;
 
     AmmoGun* cannon;
-    std::vector<std::string> cannonAnim;
+    vector<string> cannonBulletAnim;
+    string cannonSprite;
     Vector2 cannonPos;
     AmmoGun* laser;
-    std::vector<std::string> laserAnim;
+    vector<string> laserBulletAnim;
+    string laserSprite;
     Vector2 laserPos;
 
-    std::vector<Turret*> turrets;
-    std::vector<std::string> turretAnim;    
+    vector<Turret*> turrets;
+    vector<string> turretBulletAnim;    
     Vector2 turretsPos;
 
     SpeedVfx* speedVfx;
