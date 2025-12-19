@@ -1,4 +1,5 @@
 #include "Bullet.h"
+#include "Player.h"
 #include "RenderManager.h"
 
 Bullet::Bullet(const std::vector<std::string>& _anim, float _speed, int _damage)
@@ -6,8 +7,8 @@ Bullet::Bullet(const std::vector<std::string>& _anim, float _speed, int _damage)
 	damage(_damage), speed(_speed)
 {
 	_transform->scale = Vector2 ( 2 , 2 );
+	_physics->AddCollider(new AABB(Vector2::Zero, _transform->scale));
 }
-
 void Bullet::Start ( )
 {
 }
@@ -27,6 +28,14 @@ void Bullet::Update()
 
 void Bullet::OnCollision(Object* other)
 {
-	
+	if (dynamic_cast<Bullet*>(other) || dynamic_cast<Player*>(other))
+	{
+		return;
+	}
+	else
+	{
+		Destroy();
+		SetActive(false);
+	}
 }
 

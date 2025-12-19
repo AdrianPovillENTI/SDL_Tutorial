@@ -19,7 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\AmmoGun.cpp" />
+    <ClCompile Include="source\Animator.cpp" />
+    <ClCompile Include="source\Background.cpp" />
     <ClCompile Include="source\Enemies\EnemySpawnData.cpp" />
+    <ClCompile Include="source\Gun.cpp" />
     <ClCompile Include="source\Patterns\LinearToPlayerMovementPattern.cpp" />
     <ClCompile Include="source\Patterns\MultiPhasePattern.cpp" />
     <ClCompile Include="source\Enemies\Arachnid.cpp" />
@@ -39,12 +43,7 @@
     <ClCompile Include="source\Patterns\Pattern.cpp" />
     <ClCompile Include="source\Enemies\Enemy.cpp" />
     <ClCompile Include="source\AnimatedImageRenderer.cpp" />
-    <ClCompile Include="source\Cannon.cpp" />
-    <ClCompile Include="source\ForceField.cpp" />
-    <ClCompile Include="source\Laser.cpp" />
     <ClCompile Include="source\Patterns\SinusoidalMovementPattern.cpp" />
-    <ClCompile Include="source\Score.cpp" />
-    <ClCompile Include="source\Shield.cpp" />
     <ClCompile Include="source\Item.cpp" />
     <ClCompile Include="source\Bullet.cpp" />
     <ClCompile Include="source\Player.cpp" />
@@ -75,7 +74,13 @@
     <ClCompile Include="source\Patterns\ZigZagMovementPattern.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\AmmoGun.h" />
+    <ClInclude Include="source\AnimatedImageObject.h" />
+    <ClInclude Include="source\Animator.h" />
+    <ClInclude Include="source\Background.h" />
+    <ClInclude Include="source\BackgroundManager.h" />
     <ClInclude Include="source\Enemies\EnemySpawnData.h" />
+    <ClInclude Include="source\Gun.h" />
     <ClInclude Include="source\Patterns\LinearToPlayerMovementPattern.h" />
     <ClInclude Include="source\Patterns\MultiPhasePattern.h" />
     <ClInclude Include="source\Enemies\Arachnid.h" />
@@ -95,14 +100,9 @@
     <ClInclude Include="source\Patterns\Pattern.h" />
     <ClInclude Include="source\Enemies\Enemy.h" />
     <ClInclude Include="source\AnimatedImageRenderer.h" />
-    <ClInclude Include="source\Cannon.h" />
     <ClInclude Include="source\Patterns\ExitPattern.h" />
-    <ClInclude Include="source\ForceField.h" />
-    <ClInclude Include="source\Laser.h" />
     <ClInclude Include="source\Patterns\MovementPattern.h" />
     <ClInclude Include="source\Patterns\LineSpawnPattern.h" />
-    <ClInclude Include="source\Score.h" />
-    <ClInclude Include="source\Shield.h" />
     <ClInclude Include="source\Item.h" />
     <ClInclude Include="source\Bullet.h" />
     <ClInclude Include="source\Player.h" />

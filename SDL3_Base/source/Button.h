@@ -33,6 +33,7 @@ public:
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
 	}
 
+	void OnCollision(Object* o) override;
 	virtual void Update() override;
 	virtual void Render() override;
 };

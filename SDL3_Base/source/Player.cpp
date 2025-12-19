@@ -30,6 +30,7 @@ void Player::InitializePhysics()
 {
     if ( _physics != nullptr )
     {
+        _physics->AddCollider(new AABB(Vector2::Zero, _transform->scale));
         _physics->SetLinearDrag ( 0.1f );
         _physics->SetAngularDrag ( 0.1f );
     }
@@ -272,10 +273,5 @@ void Player::ClampInsideScreen ( )
 
 void Player::OnCollision(Object* collided)
 {
-    //if (Item* item = dynamic_cast<Item*>(collided))
-    //{
-    //    ApplyItemEffects(item);
-    //    collided->Destroy();
-    //}
 
 }
