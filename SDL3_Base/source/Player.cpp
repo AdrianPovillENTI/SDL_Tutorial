@@ -50,7 +50,15 @@ void Player::InitializeStats()
     shootCooldown = 0.f;
     maxShootCooldownTime = 30;
 
-    bulletSprites = { "resources/Player/NormalShoot/shot_1.png" };
+    bulletSprites = 
+    { 
+        "resources/Player/NormalShoot/shot_1.png",
+        "resources/Player/NormalShoot/shot_2.png",
+        "resources/Player/NormalShoot/shot_3.png",
+        "resources/Player/NormalShoot/shot_4.png",
+        "resources/Player/NormalShoot/shot_5.png",
+        "resources/Player/NormalShoot/shot_6.png"
+    };
     bulletDamage = 10;
     bulletSpeed = 5;
     originalDamage = bulletDamage;
@@ -117,7 +125,7 @@ void Player::Move ( )
 
     if ( isMoving && speedVfx == nullptr )
     {
-        //speedVfx = new SpeedVfx ( );
+        speedVfx = new SpeedVfx ( );
         AddChild ( speedVfx , Vector2 ( -80.0f , 10.0f ) );
         SPAWNER.SpawnObject ( speedVfx );
         turboActivated = true;

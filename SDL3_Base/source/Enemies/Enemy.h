@@ -3,8 +3,11 @@
 #include "../Patterns/Pattern.h"
 #include "../Player.h"
 #define EXIT_P pattern->GetExitPattern()
-#define UPDATE_P pattern->GetMovementPattern()
-
+#define MOVE_PATTERN pattern->GetMovementPattern()
+#define SC_WIDTH RM->WINDOW_WIDTH
+#define SC_HEIGHT RM->WINDOW_HEIGHT
+#define X _transform->position.x
+#define Y _transform->position.y
 class Enemy : public DamageableObject
 {
     enum EnemyState
@@ -14,7 +17,6 @@ class Enemy : public DamageableObject
 protected:
     float speed;
     int damage;
-    bool isDeath;
     EnemyBehaviourPattern* pattern;
     EnemyState state;
 
@@ -22,10 +24,12 @@ protected:
 public:
 
     Enemy ( float speed, int health, int _damage , string path, EnemyBehaviourPattern * _movePattern )
-        :DamageableObject(health,path), damage (_damage), speed ( speed ) , isDeath ( false ) ,
-        pattern ( _movePattern )
+        :DamageableObject(health,path), damage (_damage), speed ( speed ), pattern ( _movePattern )
     {
+
+        _transform->position = Vector2::Zero;
         timeElapsed = 0;
+        Start ( );
     }
     ~Enemy ( );
 

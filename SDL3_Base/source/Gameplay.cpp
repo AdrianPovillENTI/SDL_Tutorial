@@ -12,6 +12,9 @@
 #pragma region
 #include "Item.h"
 #include "Turret.h"
+#include "Enemies/WaveManager.h"
+#include "Enemies/Swirlers.h"
+#include "Patterns/LineSpawnPattern.h"
 #pragma endregion Items
 
 void Gameplay::OnEnter()

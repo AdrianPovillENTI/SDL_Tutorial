@@ -2,26 +2,29 @@
 
 void Enemy::Start ( )
 {
-    if ( pattern != nullptr ) return;
+    /*if ( pattern != nullptr ) return;
 
     SpawnPattern * spawnPattern = pattern->GetSpawnPattern();
     if ( spawnPattern != nullptr )
     {
-        auto positions = spawnPattern->GetSpawnPositions ( _transform->origin , 4 );
+        auto positions = spawnPattern->GetSpawnPositions ( _transform->position , 4 );
 
         if ( !positions.empty ( ) )
         {
-            _transform->origin = positions [ 0 ];
+            _transform->position = positions [ 0 ];
 
         }
-    }
+    }*/
+
+    state = EnemyState::ON_UPDATE;
 }
 
 void Enemy::Update ( )
 {
     GameObject::Update ( );
-    timeElapsed += 1 / 60;
+    timeElapsed += 1.f / 60.f;
     Move ( );
+    if ( isDeath ) Destroy ( );
 }
 
 void Enemy::OnCollision ( Object * collided )
@@ -33,22 +36,22 @@ void Enemy::OnCollision ( Object * collided )
 }
 
 void Enemy::Move ( )
-{
-    if ( pattern != nullptr ) return;
+    {
     if ( state == EnemyState::ON_UPDATE )
     {
-        if ( UPDATE_P != nullptr )
+        if ( MOVE_PATTERN != nullptr )
         {
-            Vector2 delta = UPDATE_P->GetDelta ( 1 / 60 , timeElapsed , 0 );
-            _transform->origin = delta;
+            Vector2 delta = MOVE_PATTERN->GetDelta ( 1.f / 60.f , timeElapsed , 0 );
+            _transform->position += delta;
         }
     }
     if ( EXIT_P != nullptr )
     {
-        if ( EXIT_P->ShouldExit ( _transform->origin ))
+        if ( EXIT_P->ShouldExit ( _transform->position ))
         {
             state = EnemyState::ON_EXIT;
             isDeath = true;
+            Destroy ( );
         }
     }
 }

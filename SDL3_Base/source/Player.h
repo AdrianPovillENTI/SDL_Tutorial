@@ -66,7 +66,7 @@ public:
     void ApplyItemEffects (Item* item);
     bool GetInvencibleStatus ( );
 
-    void ClampInsideScreen ( ); // <<< NUEVO
+    void ClampInsideScreen ( );
 
     void InitializeStats();
     void InitializeGuns();

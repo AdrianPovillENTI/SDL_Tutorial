@@ -8,9 +8,9 @@ void Animator::SetAnimationSprites(std::vector<std::string> _anim)
 	animationFrames = _anim;
 }
 
-std::string* Animator::ChangeSpriteFrame()
+std::string Animator::ChangeSpriteFrame()
 {
-	frameTime += 1.0f / 60.0f;
+	frameTime += 1.0f / 30.0f;
 
 	if (frameTime >= frameTimeMax)
 	{
@@ -18,7 +18,7 @@ std::string* Animator::ChangeSpriteFrame()
 
 		if (currentFrame >= animationFrames.size() - 1) currentFrame = animationFrames.size() - 3;
 			currentFrame = (currentFrame + 1) % animationFrames.size();
-
-		return &animationFrames[currentFrame];
 	}
+
+	return animationFrames[ currentFrame ];
 }

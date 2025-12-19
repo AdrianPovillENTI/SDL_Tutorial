@@ -1,6 +1,6 @@
 #include "ZigZagMovementPattern.h"
 
-Vector2 ZigZagMovementPattern::GetDelta ( float dt , float elapsed , int index ) const
+Vector2 ZigZagMovementPattern::GetDelta ( float dt , float elapsed , int index )
 {
     Vector2 linealDelta = target * speed * dt;
     Vector2 perp = Vector2 ( -target.y , target.x );

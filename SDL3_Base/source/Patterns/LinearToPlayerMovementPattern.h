@@ -5,14 +5,14 @@ class LinearToPlayerMovementPattern : public MovementPattern
 {
 private:
     Player* player;
-    Vector2 target;
+    Vector2 direction;
     float speed;
 
 public:
     LinearToPlayerMovementPattern ( Player* _player, float _speed  )
-        : target ( player->GetTransform()->position ) , player(_player ), speed(_speed )
+        : direction ( player->GetTransform()->position ) , player(_player ), speed(_speed )
     {
-        target.Normalize ( );
+        direction.Normalize ( );
     }
-    Vector2 GetDelta ( float dt , float elapsed , int index ) const override;
+    Vector2 GetDelta ( float dt , float elapsed , int index ) override;
 };

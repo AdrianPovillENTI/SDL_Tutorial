@@ -21,3 +21,7 @@ void SpeedVfx::SetAnimationSprites ( vector<string> & _animationFrames )
 {
     animationFrames = _animationFrames;
 }
+
+void SpeedVfx::OnCollision ( Object * collided )
+{
+}

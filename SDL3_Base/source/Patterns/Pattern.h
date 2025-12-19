@@ -3,6 +3,9 @@
 #include "SpawnPattern.h"
 #include "MovementPattern.h"
 #include "MultiPhasePattern.h"
+#include "SinusoidalMovementPattern.h"
+#include "CircularMovementPattern.h"
+#include "CheckPointMovementPattern.h"
 #include "ExitPattern.h"
 
 class EnemyBehaviourPattern
