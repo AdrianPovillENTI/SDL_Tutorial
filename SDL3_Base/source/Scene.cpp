@@ -48,6 +48,7 @@ void Scene::Update()
                 _objects [ i ]->OnCollision ( _objects [ j ] );
                 _objects [ j ]->OnCollision ( _objects [ i ] );
             }
+            
         }
     }
 
