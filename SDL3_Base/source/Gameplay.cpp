@@ -24,9 +24,12 @@ void Gameplay::OnEnter()
 		//SPAWNER.SpawnObject ( new Background ( i, "resources/Background.png" ) );
 	}
 	SPAWNER.SpawnObject ( new Player ( 55 ) );
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 	SPAWNER.SpawnObject(new Item("resources/Items/Score.png"));
+=======
+>>>>>>> Develop
 	WaveManager * waveManager = new WaveManager
 	(
 		{ //enemySpawnData vector
@@ -48,5 +51,8 @@ void Gameplay::OnEnter()
 		}
 	);
 	_objects.push_back ( waveManager );
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> Develop
 }
