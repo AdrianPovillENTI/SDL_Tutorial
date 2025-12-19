@@ -5,8 +5,7 @@ Swirlers::Swirlers ( )
     0.5f ,     // Speed
     1 ,        // Health
     2 ,        // Damage
-    "resources/Player/Player.png" ,
-    nullptr   // No pasamos pattern aquí
+    "resources/Player/Player.png"
     )
 {
 }
@@ -27,14 +26,13 @@ void Swirlers::Start ( )
     CheckPointMovementPattern * movement =
         new CheckPointMovementPattern ( &_transform->position , data , 1 );
 
-    behaviourPattern = new EnemyBehaviourPattern (
+    pattern = new EnemyBehaviourPattern (
         new MultiPhasePattern ( {
-            { new CircularMovementPattern(10,0), 120 }
+            { movement, 120 }
         } ) ,
         new ScreenBoundsExit ( 16 )
     );
 
-    pattern = behaviourPattern;
 }
 
 void Swirlers::Update ( )

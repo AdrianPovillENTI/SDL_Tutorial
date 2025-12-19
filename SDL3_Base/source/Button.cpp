@@ -28,3 +28,7 @@ void Button::Render()
 {
 	Object::Render();
 }
+
+void Button::OnCollision ( Object * collided )
+{
+}

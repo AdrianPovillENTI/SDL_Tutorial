@@ -12,12 +12,12 @@ public:
 	{
 		offset = Vector2 ( RM->WINDOW_WIDTH * index , HALF_SCREEN_HEIGHT );
 		_transform->position = offset;
-		speed = -0.25f;
+		speed = -1.f;
 	}
 
 	void Start ( ) override
 	{
-		_transform->scale = Vector2 ( 16 , 15 );
+		_transform->scale = Vector2 ( 15 , 15 );
 	}
 
 	void SetSpeed ( float _speed )
@@ -27,7 +27,6 @@ public:
 
 	void Update ( ) override
 	{
-		Object::Update ( );
 		GameObject::Update ( );
 
 		_physics->AddForce ( Vector2::Right * speed );
@@ -37,7 +36,7 @@ public:
 
 		if ( _transform->position.x <= -width )
 		{
-			_transform->position.x += width * 2;
+			_transform->position.x += width * 3;
 		}
 	}
 	void OnCollision ( Object * collided ) override;

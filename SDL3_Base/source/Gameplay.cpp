@@ -6,6 +6,7 @@
 #include "ImageObject.h"
 
 #include "BackgroundManager.h"
+#include "MapDecorations.h"
 #include "Player.h"
 #include "Bullet.h"
 
@@ -20,9 +21,14 @@
 
 void Gameplay::OnEnter()
 {
+	srand ( time ( NULL ) );
 	for ( int i = 0; i < 3; i++ )
 	{
-		//SPAWNER.SpawnObject ( new Background ( i, "resources/Background.png" ) );
+		SPAWNER.SpawnObject ( new Background ( i, "resources/Background.png" ) );
+	}
+	for ( int i = 0; i < 45; i++ )
+	{
+		SPAWNER.SpawnObject ( new MapDecorations ( "resources/Map/MapDecorations/Ice3.png" ) );
 	}
 	SPAWNER.SpawnObject ( new Player ( 55 ) );
 	WaveManager * waveManager = new WaveManager

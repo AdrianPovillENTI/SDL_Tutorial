@@ -19,8 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\MapDecorations.cpp" />
     <ClCompile Include="source\AmmoGun.cpp" />
     <ClCompile Include="source\Animator.cpp" />
+    <ClCompile Include="source\Background.cpp" />
     <ClCompile Include="source\Enemies\EnemySpawnData.cpp" />
     <ClCompile Include="source\Gun.cpp" />
     <ClCompile Include="source\Patterns\CheckPointMovementPattern.h" />
@@ -76,8 +78,10 @@
     <ClCompile Include="source\Patterns\ZigZagMovementPattern.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\MapDecorations.h" />
     <ClInclude Include="source\AmmoGun.h" />
     <ClInclude Include="source\Animator.h" />
+    <ClInclude Include="source\Background.h" />
     <ClInclude Include="source\Enemies\EnemySpawnData.h" />
     <ClInclude Include="source\Gun.h" />
     <ClInclude Include="source\Patterns\LinearToPlayerMovementPattern.h" />
@@ -151,6 +155,9 @@
     <Image Include="resources\Items\Shield.PNG" />
     <Image Include="resources\Items\SpeedUpgrade.PNG" />
     <Image Include="resources\Items\Turret.PNG" />
+    <Image Include="resources\Map\MapDecorations\Ice1.PNG" />
+    <Image Include="resources\Map\MapDecorations\Ice2.PNG" />
+    <Image Include="resources\Map\MapDecorations\Ice3.PNG" />
     <Image Include="resources\Player\Cannon\shot_1.png" />
     <Image Include="resources\Player\Cannon\shot_2.png" />
     <Image Include="resources\Player\Cannon\shot_3.png" />
@@ -208,6 +215,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\..\..\..\..\Downloads\hyperspace\Hyperspace.ttf" />
+    <Font Include="resources\Fonts\Hyperspace.ttf" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

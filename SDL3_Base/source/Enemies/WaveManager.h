@@ -17,8 +17,7 @@ public:
         if ( wavesTimer >= timeBetweenWaves )
         {
             StartWaveAtIndex ( curIndex );
-            if(curIndex <= waves.size() - 1 )
-            curIndex++;
+            if(curIndex <= waves.size() - 1 ) curIndex++;
             wavesTimer = 0;
         }
     }
