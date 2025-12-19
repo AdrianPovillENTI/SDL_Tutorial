@@ -6,7 +6,7 @@ private:
     Vector2 direction;
     float _spacing;
 
-public:
+public: 
     LineSpawnPattern ( Vector2 _direction, float spacing = 75.f )
         : direction ( _direction.Normalized ( ) ), _spacing ( spacing )
     { }

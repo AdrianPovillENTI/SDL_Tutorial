@@ -105,6 +105,7 @@
     <ClInclude Include="source\Patterns\LineSpawnPattern.h" />
     <ClInclude Include="source\Item.h" />
     <ClInclude Include="source\Bullet.h" />
+    <ClInclude Include="source\Patterns\TopBottomSpawnPattern.h" />
     <ClInclude Include="source\Player.h" />
     <ClInclude Include="source\DamageableObject.h" />
     <ClInclude Include="source\IDamageable.h" />

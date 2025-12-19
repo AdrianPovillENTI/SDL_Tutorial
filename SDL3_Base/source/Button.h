@@ -23,7 +23,7 @@ private:
 
 public:
 
-	Button(OnClick onClick) : ImageObject("resources/xd.png", Vector2(0.f, 0.f), Vector2(306.f, 562.f))
+	Button(OnClick onClick) : ImageObject("resources/xd.png", Vector2(0.f, 0.f), Vector2(1306.f, 900))
 	{
 		_onClick = onClick;
 		//test

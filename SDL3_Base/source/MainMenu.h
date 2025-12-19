@@ -2,6 +2,7 @@
 #include "Scene.h"
 #include "SceneManager.h"
 #include "Button.h"
+#include "TextObject.h"
 
 class MainMenu : public Scene
 {
@@ -14,6 +15,9 @@ public:
 			 SM.SetNextScene(" Gameplay ");
 			}
 		);
+		//TextObject * text = new TextObject ( " Hola " );
+		//_ui.push_back ( text );
+
 		_ui.push_back(button);
 
 	}
