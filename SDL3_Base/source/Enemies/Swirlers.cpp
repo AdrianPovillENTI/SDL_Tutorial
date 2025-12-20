@@ -2,7 +2,7 @@
 
 Swirlers::Swirlers ( )
     : Enemy (
-    0.5f ,     // Speed
+    5.f ,     // Speed
     1 ,        // Health
     2 ,        // Damage
     "resources/Player/Player.png"
@@ -24,7 +24,7 @@ void Swirlers::Start ( )
         } );
 
     CheckPointMovementPattern * movement =
-        new CheckPointMovementPattern ( &_transform->position , data , 1 );
+        new CheckPointMovementPattern ( &_transform->position , data , speed );
 
     pattern = new EnemyBehaviourPattern (
         new MultiPhasePattern ( {

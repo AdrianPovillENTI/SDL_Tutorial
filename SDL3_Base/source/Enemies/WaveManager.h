@@ -11,26 +11,45 @@ public:
     WaveManager ( std::vector<EnemySpawnData *>  _waves, float _timeBetweenWaves = 3.0f )
         : curIndex ( 0 ), waves(_waves) 
     { 
-        StartWaveAtIndex ( curIndex );
+        if ( !waves.empty ( ) && waves [ 0 ] != nullptr )
+            StartWaveAtIndex ( curIndex );
     }
-    WaveManager ( ) = default;
+    WaveManager ( ) : waves ( ), curIndex ( 0 ) { }
    
     void Update ( ) override
     {
         Object::Update ( );
-        waves [ curIndex ]->Update ( );
-        if ( curIndex >= waves.size ( ) ) curIndex = waves.size();
-        if ( waves[curIndex ]->WaveFinished())
+
+        if ( waves.empty ( ) ) return;
+        if ( curIndex < 0 ) curIndex = 0;
+        if ( curIndex >= ( int )waves.size ( ) ) return;
+
+        EnemySpawnData * current = waves [ curIndex ];
+        if ( current == nullptr ) return;
+
+        current->Update ( );
+        if ( current->WaveFinished ( ) )
         {
-            StartWaveAtIndex ( curIndex );
-            if ( curIndex <= waves.size ( ) - 1 ) curIndex++;
+            int nextIndex = curIndex + 1;
+            if ( nextIndex < ( int )waves.size ( ) )
+            {
+                curIndex = nextIndex;
+                StartWaveAtIndex ( curIndex );
+            }
+            else
+            {
+                curIndex = ( int )waves.size ( );
+            }
         }
     }
     void StartWaveAtIndex ( int index )
     {
-        if ( index < 0 || index >= waves.size ( ) ) return;
+        if ( index < 0 || index >= ( int )waves.size ( ) ) return;
 
-        waves [ index ]->SpawnEnemies ( );
+        EnemySpawnData * wave = waves [ index ];
+        if ( wave == nullptr ) return;
+
+        wave->SpawnEnemies ( );
     }
     void OnCollision ( Object * collided ) override { }
 };

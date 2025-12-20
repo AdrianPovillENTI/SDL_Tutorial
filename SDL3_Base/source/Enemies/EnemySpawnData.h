@@ -13,17 +13,17 @@ class EnemySpawnData
     vector<Enemy*> enemies;
     Vector2 origin;
     int enemyAliveCount;
-    Vector2 * lastEnemyPos;
+    Vector2* lastEnemyPos;
     bool canDropitem;
 public:
 
     EnemySpawnData ( int id, Vector2 _origin , SpawnPattern* _spawnPattern , const vector<Enemy*> enemies )
-        : id ( id ), origin(_origin) , spawnPattern ( _spawnPattern ) , enemies ( enemies ),
+        : id ( id ), origin ( _origin ) , spawnPattern ( _spawnPattern ) , enemies ( enemies ),
           enemyAliveCount ( 0 ), canDropitem ( false )
     {
     }
 
-    int GetAliveEnemyCount()
+    int GetAliveEnemyCount ( )
     {
         return enemyAliveCount;
     }
@@ -35,10 +35,12 @@ public:
     void Update ( )
     {
         int alive = 0;
-        for ( Enemy * elem : enemies )
+        for ( Enemy* elem : enemies )
         {
-            if ( !elem->GetActive ( ) ) canDropitem = false;
-            if ( elem->IsDeath() ) continue;
+            if ( elem == nullptr ) continue;
+            if ( elem->IsPendingDestroy ( ) || elem->IsDeath ( ) ) continue;
+            if ( !elem->GetActive ( ) ) continue;
+
             alive++;
         }
         enemyAliveCount = alive;
@@ -48,26 +50,31 @@ public:
 
     void SpawnEnemies ( )
     {
+        if ( spawnPattern == nullptr ) return;
+
         vector<Vector2> positions = spawnPattern->GetSpawnPositions ( origin , enemies.size ( ) );
+        if ( positions.size ( ) != enemies.size ( ) ) return;
 
-        if ( positions.size ( ) != enemies.size ( ) )return;
-
-        for ( int i = 0; i < (int)enemies.size(); i++)
+        int spawned = 0;
+        for ( int i = 0; i < static_cast<int>(enemies.size ( )); i++ )
         {
-            enemies [ i ]->GetTransform ( )->position = positions [ i ];
-            enemies [ i ]->Start ( );
-            SPAWNER.SpawnObject ( enemies [ i ] );
-            std::cout << "Spawned enemy at position: (" << enemies [ i ]->GetTransform ( )->position.x << ", " << enemies [ i ]->GetTransform ( )->position.y << ")\n";
+            Enemy* enemy = enemies [ i ];
+            if ( enemy == nullptr ) continue;
+
+            enemy->GetTransform ( )->position = positions [ i ];
+            SPAWNER.SpawnObject ( enemy );
+            spawned++;
+            std::cout << "Spawned enemy at position: (" << enemy->GetTransform ( )->position.x << ", " << enemy->GetTransform ( )->position.y << ")\n";
         }
 
-        int size = (int)enemies.size ( ) - 1;
-        if ( size >= 0 )
+        int size = static_cast<int>(enemies.size ( )) - 1;
+        if ( size >= 0 && enemies [ size ] != nullptr )
             lastEnemyPos = &( enemies [ size ]->GetTransform ( )->position );
 
-        enemyAliveCount = (int)enemies.size();
+        enemyAliveCount = spawned;
     }
 
-    void DestroyWave()
+    void DestroyWave ( )
     {
         for ( Enemy* elem : enemies )
         {
@@ -77,7 +84,7 @@ public:
 
     void TryDropItem ( )
     {
-        if ( WaveFinished () && canDropitem )
+        if ( WaveFinished ( ) && canDropitem )
         {
             canDropitem = false;
         }

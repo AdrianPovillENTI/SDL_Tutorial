@@ -2,7 +2,7 @@
 
 Gulper::Gulper ( Vector2 _dir )
     : Enemy (
-    0.5f ,
+    2,
     1 ,
     2 ,
     "resources/Player/Player.png"
@@ -13,7 +13,7 @@ Gulper::Gulper ( Vector2 _dir )
 void Gulper::Start ( )
 {
     Enemy::Start ( );
-    LinearPattern * linearPattern = new LinearPattern ( direction , 1.f );
+    LinearPattern * linearPattern = new LinearPattern ( direction , speed );
 
     pattern = new EnemyBehaviourPattern (
         new MultiPhasePattern ( {

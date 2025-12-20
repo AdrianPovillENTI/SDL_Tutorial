@@ -28,7 +28,7 @@ public:
     {
 
         _transform->position = Vector2::Zero;
-        _physics->AddCollider ( new AABB ( Vector2::Zero , Vector2::One ) );
+        _physics->AddCollider ( new AABB ( _transform->position , _transform->size ) );
         timeElapsed = 0;
         Start ( );
     }
@@ -37,7 +37,7 @@ public:
     {
 
         _transform->position = Vector2::Zero;
-        _physics->AddCollider ( new AABB ( Vector2::Zero , Vector2::One ) );
+        _physics->AddCollider ( new AABB ( _transform->position , _transform->size ) );       
         timeElapsed = 0;
         Start ( );
     }
@@ -47,5 +47,6 @@ public:
     void Update ( ) override;
     void OnCollision ( Object * collided ) override;
     void Move ( ) override;
+    bool OutOfLimits ( );
 };
 

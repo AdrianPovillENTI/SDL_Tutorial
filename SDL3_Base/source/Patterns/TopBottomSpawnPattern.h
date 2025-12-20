@@ -6,12 +6,11 @@ class TopBottomSpawnPattern : public SpawnPattern
 private:
     float _topY;
     float _bottomY;
-    float _horizontalSpacing;
-    vector<Vector2> positions;
+    float horizontalSpacing;
 
 public:
-    TopBottomSpawnPattern ( float topY = 0.f, float bottomY = RM->WINDOW_HEIGHT, float horizontalSpacing = 100.f )
-        : _topY ( topY ), _bottomY ( bottomY * 1.3f ), _horizontalSpacing ( horizontalSpacing )
+    TopBottomSpawnPattern ( float horizontalSpacing = 100.f )
+        : _topY ( 0 ), _bottomY ( RM->WINDOW_HEIGHT * 1.3f ), horizontalSpacing ( horizontalSpacing )
     {
     }
 
@@ -27,14 +26,14 @@ public:
 
         for ( int i = 0; i < topCount; ++i )
         {
-            float xOffset = ( i - ( topCount - 1 ) / 2.0f ) * _horizontalSpacing;
-            res.push_back ( Vector2 ( origin.x + xOffset + _horizontalSpacing * 2, _topY ) );
+            float xOffset = ( i - ( topCount - 1 ) / 2.0f ) * horizontalSpacing;
+            res.push_back ( Vector2 ( origin.x + xOffset + horizontalSpacing * 2, _topY ) );
         }
 
         for ( int i = 0; i < bottomCount; ++i )
         {
-            float xOffset = ( i - ( bottomCount - 1 ) / 2.0f ) * _horizontalSpacing;
-            res.push_back ( Vector2 ( origin.x + xOffset - _horizontalSpacing * 2, _bottomY ) );
+            float xOffset = ( i - ( bottomCount - 1 ) / 2.0f ) * horizontalSpacing;
+            res.push_back ( Vector2 ( origin.x + xOffset - horizontalSpacing * 2, _bottomY ) );
         }
 
         return res;

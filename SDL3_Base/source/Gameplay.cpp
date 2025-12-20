@@ -65,7 +65,6 @@ void Gameplay::OnEnter()
 				origin,
 				new TopBottomSpawnPattern
 				(
-					0.f,
 					100.f
 				),
 				{
