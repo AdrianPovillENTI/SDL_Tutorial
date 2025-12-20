@@ -8,8 +8,9 @@
 class Gulper : public Enemy
 {
 private:
+    Vector2 direction;
 
 public:
-    Gulper ( );
+    Gulper ( Vector2 _dir , Vector2 pos );
     void Start ( ) override;
 };

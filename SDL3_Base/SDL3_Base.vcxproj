@@ -24,6 +24,7 @@
     <ClCompile Include="source\Background.cpp" />
     <ClCompile Include="source\Enemies\EnemySpawnData.cpp" />
     <ClCompile Include="source\Gun.cpp" />
+    <ClCompile Include="source\MapDecorations.cpp" />
     <ClCompile Include="source\Patterns\LinearToPlayerMovementPattern.cpp" />
     <ClCompile Include="source\Patterns\MultiPhasePattern.cpp" />
     <ClCompile Include="source\Enemies\Arachnid.cpp" />
@@ -81,6 +82,7 @@
     <ClInclude Include="source\BackgroundManager.h" />
     <ClInclude Include="source\Enemies\EnemySpawnData.h" />
     <ClInclude Include="source\Gun.h" />
+    <ClInclude Include="source\MapDecorations.h" />
     <ClInclude Include="source\Patterns\LinearToPlayerMovementPattern.h" />
     <ClInclude Include="source\Patterns\MultiPhasePattern.h" />
     <ClInclude Include="source\Enemies\Arachnid.h" />

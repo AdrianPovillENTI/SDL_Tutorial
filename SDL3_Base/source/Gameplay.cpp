@@ -35,39 +35,43 @@ void Gameplay::OnEnter()
 
 	SPAWNER.SpawnObject(new Item("resources/Items/Score.png"));
 
+	// Origin.x en la mitad de la pantalla. Y serán determinados por el patrón (bordes).
+	Vector2 origin = Vector2 ( RM->WINDOW_WIDTH * 0.5f , RM->WINDOW_HEIGHT * 2);
+
 	WaveManager * waveManager = new WaveManager
 	(
-		{ //enemySpawnData vector
-			//new EnemySpawnData 
-			//( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
-			//	1, Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 3 ),
-			//	new LineSpawnPattern 
-			//	( 
-			//		Vector2 ( 1,0 ), //Direction where will spawn
-			//		100 //Spacing
-			//	), 
-			//	{ 
-			//		new Swirlers ( ),
-			//		new Swirlers ( ),
-			//		new Swirlers ( ),
-			//		new Swirlers ( ) 
-			//	} 
-			//) ,
+		{ // enemySpawnData vector
+			new EnemySpawnData 
+			( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
+				1, Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 3 ),
+				new LineSpawnPattern 
+				( 
+					Vector2 ( 1,0 ), //Direction where will spawn
+					100 //Spacing
+				), 
+				{ 
+					new Swirlers ( ),
+					new Swirlers ( ),
+					new Swirlers ( ),
+					new Swirlers ( ) 
+				} 
+			) ,
 			new EnemySpawnData
 			(
-				1, Vector2(RM->WINDOW_WIDTH * 0.5f, 0 ),
+				2,
+				origin,
 				new TopBottomSpawnPattern
 				(
-					100,
-					500
+					0.f,
+					100.f
 				),
 				{
-
-					new Gulper ( ),
-					new Gulper ( )
+					new Gulper ( Vector2::Up, Vector2 ( origin.x, 0.f ) ),
+					new Gulper ( Vector2::Down, Vector2 ( origin.x, (float)RM->WINDOW_HEIGHT * 2.f) )
 				}
 			)
 		}
 	);
+
 	_objects.push_back ( waveManager );
 }

@@ -3,6 +3,8 @@
 #include "../Patterns/SpawnPattern.h"
 #include "../Spawner.h"
 #include "../RenderManager.h"
+#include <vector>
+
 class EnemySpawnData
 {
     int id;

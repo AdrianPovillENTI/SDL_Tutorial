@@ -4,13 +4,13 @@
 class TopBottomSpawnPattern : public SpawnPattern
 {
 private:
-    float _verticalSeparation;
+    float _topY;
+    float _bottomY;
     float _horizontalSpacing;
 
 public:
-    TopBottomSpawnPattern ( float verticalSeparation = 100.f , float horizontalSpacing = 100.f )
-        : _verticalSeparation ( verticalSeparation ) ,
-        _horizontalSpacing ( horizontalSpacing )
+    TopBottomSpawnPattern ( float topY = 0.f, float bottomY = RM->WINDOW_HEIGHT, float horizontalSpacing = 100.f )
+        : _topY ( topY ), _bottomY ( bottomY * 1.3f ), _horizontalSpacing ( horizontalSpacing )
     {
     }
 
@@ -19,27 +19,21 @@ public:
         std::vector<Vector2> res;
         res.reserve ( count );
 
-        int half = count / 2;
-        bool odd = ( count % 2 != 0 );
+        if ( count <= 0 ) return res;
 
-        // --- Línea superior ---
-        for ( int i = 0; i < half; ++i )
+        int topCount = ( count + 1 ) / 2;
+        int bottomCount = count - topCount;
+
+        for ( int i = 0; i < topCount; ++i )
         {
-            res.push_back (
-                origin +
-                Vector2 ( _horizontalSpacing * i , -_verticalSeparation )
-            );
+            float xOffset = ( i - ( topCount - 1 ) / 2.0f ) * _horizontalSpacing;
+            res.push_back ( Vector2 ( origin.x + xOffset + _horizontalSpacing * 2, _topY ) );
         }
-        if ( odd )
+
+        for ( int i = 0; i < bottomCount; ++i )
         {
-            res.push_back ( origin );
-        }
-        for ( int i = 0; i < half; ++i )
-        {
-            res.push_back (
-                origin +
-                Vector2 ( _horizontalSpacing * i , _verticalSeparation )
-            );
+            float xOffset = ( i - ( bottomCount - 1 ) / 2.0f ) * _horizontalSpacing;
+            res.push_back ( Vector2 ( origin.x + xOffset - _horizontalSpacing * 2, _bottomY ) );
         }
 
         return res;
