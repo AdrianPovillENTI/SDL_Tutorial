@@ -1,24 +1,29 @@
 #pragma once
 #include "EnemySpawnData.h"
+#include <vector>
+#include <iostream>
+
 class WaveManager : public Object
 {
-
-    vector<EnemySpawnData*> waves;
+    std::vector<EnemySpawnData*> waves;
     int curIndex;
-    float wavesTimer = 0;
-    float timeBetweenWaves = 120.0f; 
 public:
+    WaveManager ( std::vector<EnemySpawnData *>  _waves, float _timeBetweenWaves = 3.0f )
+        : curIndex ( 0 ), waves(_waves) 
+    { 
+        StartWaveAtIndex ( curIndex );
+    }
+    WaveManager ( ) = default;
+   
     void Update ( ) override
     {
-        if ( curIndex >= waves.size ( ) ) return;
-
-        wavesTimer += 1.0f/60.0f;
-
-        if ( wavesTimer >= timeBetweenWaves )
+        Object::Update ( );
+        waves [ curIndex ]->Update ( );
+        if ( curIndex >= waves.size ( ) ) curIndex = waves.size();
+        if ( waves[curIndex ]->WaveFinished())
         {
             StartWaveAtIndex ( curIndex );
-            if(curIndex <= waves.size() - 1 ) curIndex++;
-            wavesTimer = 0;
+            if ( curIndex <= waves.size ( ) - 1 ) curIndex++;
         }
     }
     void StartWaveAtIndex ( int index )
@@ -28,11 +33,5 @@ public:
         waves [ index ]->SpawnEnemies ( );
     }
     void OnCollision ( Object * collided ) override { }
-
-    WaveManager ( vector<EnemySpawnData *>  _waves ) :
-        waves ( _waves ) , curIndex ( 0 ),
-        wavesTimer ( 0 ) , timeBetweenWaves ( 3 ) { }
-
-    WaveManager ( ) = default;
 };
 
