@@ -6,18 +6,14 @@
 #include "SinusoidalMovementPattern.h"
 #include "CircularMovementPattern.h"
 #include "CheckPointMovementPattern.h"
-#include "ExitPattern.h"
 
 class EnemyBehaviourPattern
 {
     MovementPattern* movementPattern;
-    ExitPattern* exitPattern;
 public:
 
-    EnemyBehaviourPattern (MovementPattern * _movePattern , ExitPattern * _exitPattern )
-        : movementPattern ( _movePattern ) , exitPattern ( _exitPattern )
-    { }
+    EnemyBehaviourPattern (MovementPattern * _movePattern)
+        : movementPattern ( _movePattern ) { }
     MovementPattern * GetMovementPattern ( ) const { return movementPattern; }
-    ExitPattern * GetExitPattern ( ) const { return exitPattern; }
 };
 

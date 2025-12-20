@@ -68,8 +68,8 @@ void Gameplay::OnEnter()
 					100.f
 				),
 				{
-					new Gulper ( Vector2::Up, Vector2 ( origin.x, 0.f ) ),
-					new Gulper ( Vector2::Down, Vector2 ( origin.x, (float)RM->WINDOW_HEIGHT * 2.f) )
+					new Gulper ( Vector2::Up),
+					new Gulper ( Vector2::Down )
 				}
 			)
 		}

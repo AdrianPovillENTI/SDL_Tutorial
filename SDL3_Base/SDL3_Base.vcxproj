@@ -83,7 +83,10 @@
     <ClInclude Include="source\Enemies\EnemySpawnData.h" />
     <ClInclude Include="source\Gun.h" />
     <ClInclude Include="source\MapDecorations.h" />
+    <ClInclude Include="source\Patterns\CheckPointMovementPattern.h" />
+    <ClInclude Include="source\Patterns\CircularMovementPattern.h" />
     <ClInclude Include="source\Patterns\LinearToPlayerMovementPattern.h" />
+    <ClInclude Include="source\Patterns\MovementPatternData.h" />
     <ClInclude Include="source\Patterns\MultiPhasePattern.h" />
     <ClInclude Include="source\Enemies\Arachnid.h" />
     <ClInclude Include="source\Enemies\Boosters.h" />
@@ -102,7 +105,6 @@
     <ClInclude Include="source\Patterns\Pattern.h" />
     <ClInclude Include="source\Enemies\Enemy.h" />
     <ClInclude Include="source\AnimatedImageRenderer.h" />
-    <ClInclude Include="source\Patterns\ExitPattern.h" />
     <ClInclude Include="source\Patterns\MovementPattern.h" />
     <ClInclude Include="source\Patterns\LineSpawnPattern.h" />
     <ClInclude Include="source\Item.h" />

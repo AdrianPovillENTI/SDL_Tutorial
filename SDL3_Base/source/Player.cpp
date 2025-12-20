@@ -9,7 +9,7 @@
 #include "RenderManager.h"
 
 Player::Player ( int maxHealth )
-    : DamageableObject ( maxHealth , "resources/Player/Playerxd.png" ) ,
+    : DamageableObject ( maxHealth , "resources/Player/Player.png" ) ,
     bulletSpawnPoint ( Vector2 ( 75.f , 0.f ) )
 {
     Start ( );

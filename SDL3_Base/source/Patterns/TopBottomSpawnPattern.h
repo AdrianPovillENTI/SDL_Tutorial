@@ -7,6 +7,7 @@ private:
     float _topY;
     float _bottomY;
     float _horizontalSpacing;
+    vector<Vector2> positions;
 
 public:
     TopBottomSpawnPattern ( float topY = 0.f, float bottomY = RM->WINDOW_HEIGHT, float horizontalSpacing = 100.f )
