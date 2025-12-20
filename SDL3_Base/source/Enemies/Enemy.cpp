@@ -45,7 +45,7 @@ void Enemy::Move ( )
             _transform->position += delta;
         }
     }
-    if ( EXIT_P != nullptr )
+    /*if ( EXIT_P != nullptr )
     {
         if ( EXIT_P->ShouldExit ( _transform->position ))
         {
@@ -53,6 +53,6 @@ void Enemy::Move ( )
             isDeath = true;
             Destroy ( );
         }
-    }
+    }*/
 }
 

@@ -45,7 +45,8 @@ void Gameplay::OnEnter()
 		{ // enemySpawnData vector
 			new EnemySpawnData 
 			( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
-				1, Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 3 ),
+				1, 
+				Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 3 ),
 				new LineSpawnPattern 
 				( 
 					Vector2 ( 1,0 ), //Direction where will spawn

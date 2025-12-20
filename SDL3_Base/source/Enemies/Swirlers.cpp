@@ -29,8 +29,7 @@ void Swirlers::Start ( )
     pattern = new EnemyBehaviourPattern (
         new MultiPhasePattern ( {
             { movement, 120 }
-        } ) ,
-        new ScreenBoundsExit ( 16 )
+        } )
     );
 
 }
