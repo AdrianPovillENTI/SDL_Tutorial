@@ -17,8 +17,10 @@ void Game::Init()
 	//Bullet Sprites
     //Normal Bullet
 #pragma region LoadPlayerTextures
-	RM->LoadTexture("resources/Player/Player.png");
-	//RM->LoadTexture("resources/Player/Player.png");
+	RM->LoadTexture("resources/Player/Playerxd.png");
+	RM->LoadTexture("resources/Player/CannonSprite.png");
+	RM->LoadTexture("resources/Player/LaserSprite.png");
+	RM->LoadTexture("resources/Player/ShieldSprite.png");
 
 	RM->LoadTexture( "resources/Player/SpeedVfx/speed_1.png" );
 	RM->LoadTexture( "resources/Player/SpeedVfx/speed_2.png" );

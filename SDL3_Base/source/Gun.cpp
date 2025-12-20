@@ -2,13 +2,10 @@
 #include "Bullet.h"
 #include "Spawner.h"
 
-Gun::Gun(std::vector<std::string> bulletAnim, float _speed, float _cadence, int _dmg, Vector2 spawnBullet) : 
-	GameObject("resources/Items/Cannon.png"), 
+Gun::Gun(string sprite, vector<string> bulletAnim, float _speed, int _dmg, Vector2 spawnBullet) :
+	GameObject(sprite),
 	bulletAnimationSprites(bulletAnim),
 	bulletDamage(_dmg), bulletSpeed(_speed), 
-	canShoot(true), 
-	shootCooldown(0), 
-	maxShootCooldownTime(_cadence),  
 	bulletSpawnPoint(spawnBullet)
 { 
 	active = false;
@@ -16,26 +13,11 @@ Gun::Gun(std::vector<std::string> bulletAnim, float _speed, float _cadence, int 
 
 void Gun::Shoot()
 {
-	if (!canShoot) return;
+	Bullet* bullet1 = new Bullet(bulletAnimationSprites, bulletSpeed, bulletDamage);
+	bullet1->GetTransform()->position = _transform->position + bulletSpawnPoint;
+	Bullet* bullet2 = new Bullet(bulletAnimationSprites, bulletSpeed, bulletDamage);
+	bullet2->GetTransform()->position = _transform->position + bulletSpawnPoint + Vector2::Left;
 
-	Bullet* bullet = new Bullet(bulletAnimationSprites, bulletSpeed, bulletDamage);
-	bullet->GetTransform()->position = _transform->position + bulletSpawnPoint;
-
-	SPAWNER.SpawnObject(bullet);
-
-	canShoot = false;
-	shootCooldown = maxShootCooldownTime;
-}
-
-void Gun::Update()
-{
-	if (!canShoot)
-	{
-		shootCooldown -= 1.f / 60.f;
-		if (shootCooldown <= 0.f)
-		{
-			canShoot = true;
-			shootCooldown = 0.f;
-		}
-	}
+	SPAWNER.SpawnObject(bullet1);
+	SPAWNER.SpawnObject(bullet2);
 }

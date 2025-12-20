@@ -9,8 +9,8 @@
 #include "RenderManager.h"
 
 Player::Player ( int maxHealth )
-    : DamageableObject ( maxHealth , "resources/Player/Player.png" ) ,
-    offset ( Vector2 ( 75.f , 0.f ) )
+    : DamageableObject ( maxHealth , "resources/Player/Playerxd.png" ) ,
+    bulletSpawnPoint ( Vector2 ( 75.f , 0.f ) )
 {
     Start ( );
 }
@@ -30,7 +30,7 @@ void Player::InitializePhysics()
 {
     if ( _physics != nullptr )
     {
-        _physics->AddCollider(new AABB(Vector2::Zero, _transform->scale));
+        _physics->AddCollider(new AABB(_transform->position, Vector2(_transform->size.x, _transform->size.y/2)));
         _physics->SetLinearDrag ( 0.1f );
         _physics->SetAngularDrag ( 0.1f );
     }
@@ -40,7 +40,7 @@ void Player::InitializeStats()
 {
 
     _transform->position = Vector2(100.f, RM->WINDOW_HEIGHT / 2.f);
-    _transform->scale = Vector2::One;
+    _transform->size = Vector2(100.f, 50.f);
     _transform->rotation = 0.f;
 
     invencible = false;
@@ -61,39 +61,40 @@ void Player::InitializeStats()
         "resources/Player/NormalShoot/shot_6.png"
     };
     bulletDamage = 10;
-    bulletSpeed = 5;
-    originalDamage = bulletDamage;
+    bulletSpeed = 15;
     speedUpgrade = 2.5f;
 }
 
 void Player::InitializeGuns() 
 {
-    laserAnim = {
+    laserBulletAnim = {
         "resources/Player/Laser/shot_1.png",
         "resources/Player/Laser/shot_2.png",
         "resources/Player/Laser/shot_3.png",
         "resources/Player/Laser/shot_4.png"
     };
-    cannonAnim = {
+    laserSprite = "resources/Player/LaserSprite.png";
+    cannonBulletAnim = {
          "resources/Player/Cannon/shot_1.png",
         "resources/Player/Cannon/shot_2.png",
         "resources/Player/Cannon/shot_3.png",
         "resources/Player/Cannon/shot_4.png"
     };
-
+    cannonSprite = "resources/Player/CannonSprite.png";
     speed = 1.0f;
-    shotSpeed = 1.0f;
 
-    inventory.clear();
+    cannonBulletSpawnPoint = Vector2(30.f, 35.f);
+    laserBulletSpawnPoint = Vector2(55.f, -20.f);
+    turretsBulletSpawnPoint = Vector2(-0.5f, 0.5f);
 
-    cannonPos = Vector2(0.5f, 0.5f);
-    laserPos = Vector2(0.5f, 0.5f);
-    turretsPos = Vector2(-0.5f, 0.5f);
-
-    cannon = new AmmoGun(cannonAnim, 3, 0.3, 5, cannonPos);
-    laser = new AmmoGun(laserAnim, 10, 0.1, 2, laserPos); 
-    turrets = { new Turret(turretAnim, bulletSpeed, maxShootCooldownTime, bulletDamage, turretsPos),
-        new Turret(turretAnim, bulletSpeed, maxShootCooldownTime, bulletDamage, turretsPos + Vector2(0, -1)) };
+    cannon = new AmmoGun(cannonSprite, cannonBulletAnim, 10, 5, cannonBulletSpawnPoint);
+    AddChild(cannon, Vector2::Zero);
+    SPAWNER.SpawnObject(cannon);
+    laser = new AmmoGun(laserSprite, laserBulletAnim, 30, 2, laserBulletSpawnPoint); 
+    AddChild(laser, Vector2::Zero);
+    SPAWNER.SpawnObject(laser);
+    turrets = { new Turret(cannonSprite/*Temporal*/, cannonBulletAnim, bulletSpeed, bulletDamage, turretsBulletSpawnPoint),
+       new Turret(cannonSprite/*Temporal*/, cannonBulletAnim, bulletSpeed, bulletDamage, turretsBulletSpawnPoint + Vector2(0, -1))};
 }
 
 void Player::Move ( )
@@ -129,7 +130,6 @@ void Player::Move ( )
         speedVfx = new SpeedVfx ( );
         AddChild ( speedVfx , Vector2 ( -80.0f , 10.0f ) );
         SPAWNER.SpawnObject ( speedVfx );
-        turboActivated = true;
     }
 
     if ( !isMoving && speedVfx != nullptr )
@@ -137,7 +137,6 @@ void Player::Move ( )
         RemoveChild ( speedVfx );
         speedVfx->Destroy ( );
         speedVfx = nullptr;
-        turboActivated = false;
     }
     if ( speedVfx != nullptr ) speedVfx->Update ( );
 }
@@ -178,6 +177,13 @@ void Player::Update ( )
 
 void Player::Shoot ( )
 {
+    if (!canShoot) return;
+
+    Bullet * bullet = new Bullet ( bulletSprites, bulletSpeed, bulletDamage);
+    bullet->GetTransform ( )->position = _transform->position + bulletSpawnPoint;
+
+    SPAWNER.SpawnObject ( bullet );
+
     if (cannon->GetActive())
         cannon->Shoot();
     if (laser->GetActive())
@@ -188,11 +194,6 @@ void Player::Shoot ( )
         if (turrets[1]->GetActive())
             turrets[1]->Shoot();
     }
-    if (!canShoot) return;
-    Bullet * bullet = new Bullet ( bulletSprites, bulletSpeed, bulletDamage);
-    bullet->GetTransform ( )->position = _transform->position + offset;
-
-    SPAWNER.SpawnObject ( bullet );
 
     canShoot = false;
     shootCooldown = maxShootCooldownTime;
@@ -203,7 +204,6 @@ void Player::ApplyItemEffects (Item* item)
     switch ( item->GetType ( ) )
     {
         case Item::SCORE:
-            cout << "Perrrrrro ";
             break;
 
         case Item::CANNON:

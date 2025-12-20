@@ -11,8 +11,8 @@ Item::Item ( std::string _path )
     impactCount ( 0 ) ,
     maxImpactCount ( 4 )
 {
-    _transform->scale = Vector2 ( 3 , 3 );
-    _physics->AddCollider(new AABB(Vector2::Zero, _transform->scale));
+    _transform->scale = Vector2::One;
+    _physics->AddCollider(new AABB(_transform->position, _transform->size));
     _transform->position = Vector2 ( RM->WINDOW_WIDTH , 500 );
     _transform->rotation = 0.f;
     type = SCORE;
@@ -78,7 +78,6 @@ void Item::CheckImpact ( )
         type = static_cast< ItemType > ( type + 1 );
         actualSprite = itemsSprites[(int)type];
         _renderer->SetResourcePath(itemsSprites[(int)type]);
-        std::cout << itemsSprites[(int)type] << std::endl;
     }
     else
     {

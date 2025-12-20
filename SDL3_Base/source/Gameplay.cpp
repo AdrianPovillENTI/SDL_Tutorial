@@ -34,6 +34,8 @@ void Gameplay::OnEnter()
 	SPAWNER.SpawnObject ( new Player ( 55 ) );
 
 	SPAWNER.SpawnObject(new Item("resources/Items/Score.png"));
+	SPAWNER.SpawnObject(new Item("resources/Items/Score.png"));
+	SPAWNER.SpawnObject(new Item("resources/Items/Score.png"));
 
 	// Origin.x en la mitad de la pantalla. Y serán determinados por el patrón (bordes).
 	Vector2 origin = Vector2 ( RM->WINDOW_WIDTH * 0.5f , RM->WINDOW_HEIGHT * 2);
