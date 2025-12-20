@@ -16,8 +16,7 @@ public:
         new MultiPhasePattern
         ( {
             { new LinearPattern ( Vector2::Left,0.5f ),2 }
-        } ) ,
-        new ScreenBoundsExit ( 16 )
+        } ) 
         )
         )
     {

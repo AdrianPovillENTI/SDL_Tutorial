@@ -1,6 +1,6 @@
 #include "Gulper.h"
 
-Gulper::Gulper ( Vector2 _dir, Vector2 pos )
+Gulper::Gulper ( Vector2 _dir )
     : Enemy (
     0.5f ,
     1 ,
@@ -9,7 +9,6 @@ Gulper::Gulper ( Vector2 _dir, Vector2 pos )
     ) ,
     direction ( _dir )
 {
-    _transform->position = pos;
 }
 void Gulper::Start ( )
 {
@@ -19,8 +18,7 @@ void Gulper::Start ( )
     pattern = new EnemyBehaviourPattern (
         new MultiPhasePattern ( {
             { linearPattern, 120 }
-        } ) ,
-        new ScreenBoundsExit ( 16 )
+        } )
     );
 
 }

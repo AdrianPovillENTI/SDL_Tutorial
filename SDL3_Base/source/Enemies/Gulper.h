@@ -11,6 +11,6 @@ private:
     Vector2 direction;
 
 public:
-    Gulper ( Vector2 _dir , Vector2 pos );
+    Gulper ( Vector2 _dir );
     void Start ( ) override;
 };
