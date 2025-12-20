@@ -8,7 +8,7 @@ private:
     Vector2 aim;
 
 public: 
-    Turret(string sprite, vector<string> bulletAnim, float speed, float cadence, int dmg, Vector2 spawnBullet) : Gun(sprite, bulletAnim, speed, cadence, dmg, spawnBullet), angle(0), rotSpeed(10), aim(Vector2(0.f, 0.f)) {}
+    Turret(string sprite, vector<string> bulletAnim, float speed, int dmg, Vector2 spawnBullet) : Gun(sprite, bulletAnim, speed, dmg, spawnBullet), angle(0), rotSpeed(10), aim(Vector2(0.f, 0.f)) {}
 
     void Update() override;
 };

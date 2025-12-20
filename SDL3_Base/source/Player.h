@@ -24,35 +24,29 @@ private:
     float maxShootCooldownTime;
     std::vector<std::string> bulletSprites;
     int bulletDamage;
-    int originalDamage;
     float bulletSpeed;
 
     bool isDeath;
     float speed;
-    float shotSpeed;
-
     float speedUpgrade;
 
-    Vector2 offset;
-
-    vector<Item *> inventory;
+    Vector2 bulletSpawnPoint;
 
     AmmoGun* cannon;
     vector<string> cannonBulletAnim;
     string cannonSprite;
-    Vector2 cannonPos;
+    Vector2 cannonBulletSpawnPoint;
     AmmoGun* laser;
     vector<string> laserBulletAnim;
     string laserSprite;
-    Vector2 laserPos;
+    Vector2 laserBulletSpawnPoint;
 
     vector<Turret*> turrets;
     vector<string> turretBulletAnim;    
-    Vector2 turretsPos;
+    Vector2 turretsBulletSpawnPoint;
 
     SpeedVfx* speedVfx;
     bool isMoving;
-    bool turboActivated;
 
 public:
     Player ( int maxHealth );
