@@ -12,5 +12,6 @@ public:
     void Shoot() override;
     void ResetAmmo() { ammo = maxAmmo; }
     int GetAmmo() { return ammo; }
+    int GetMaxAmmo() { return maxAmmo; }
 };
 

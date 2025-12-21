@@ -9,6 +9,8 @@ public:
 
 private:
 	int totalCount;
+	int xSize;
+	Vector2 initialPos;
 	string fillSprite;
 };
 

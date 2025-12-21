@@ -62,7 +62,7 @@ void Player::InitializeStats()
         "resources/Player/NormalShoot/shot_6.png"
     };
     bulletDamage = 10;
-    bulletSpeed = 20;
+    bulletSpeed = 40;
     speedUpgrade = 2.5f;
     speed = 50.0f;
 }
@@ -88,10 +88,10 @@ void Player::InitializeGuns()
     laserBulletSpawnPoint = Vector2(55.f, -20.f);
     turretsBulletSpawnPoint = Vector2(-0.5f, 0.5f);
 
-    cannon = new AmmoGun(cannonSprite, cannonBulletAnim, 10, 5, 50, cannonBulletSpawnPoint);
+    cannon = new AmmoGun(cannonSprite, cannonBulletAnim, 10, 5, 10, cannonBulletSpawnPoint);
     AddChild(cannon, Vector2::Zero);
     SPAWNER.SpawnObject(cannon);
-    laser = new AmmoGun(laserSprite, laserBulletAnim, 30, 2, 50,laserBulletSpawnPoint); 
+    laser = new AmmoGun(laserSprite, laserBulletAnim, 50, 2, 50,laserBulletSpawnPoint); 
     AddChild(laser, Vector2::Zero);
     SPAWNER.SpawnObject(laser);
     turrets = { new Turret(cannonSprite/*Temporal*/, cannonBulletAnim, bulletSpeed, bulletDamage, turretsBulletSpawnPoint),
@@ -186,9 +186,15 @@ void Player::Shoot ( )
     SPAWNER.SpawnObject ( bullet );
 
     if (cannon->GetActive())
+    {
         cannon->Shoot();
+        UIM->UpdateCannonAmmo(cannon->GetAmmo(), cannon->GetMaxAmmo());
+    }
     if (laser->GetActive())
+    {
         laser->Shoot();
+        UIM->UpdateLaserAmmo(laser->GetAmmo(), laser->GetMaxAmmo());
+    }
     if (turrets[0]->GetActive())
     {
         turrets[0]->Shoot();
@@ -210,7 +216,10 @@ void Player::ApplyItemEffects (Item* item)
         case Item::CANNON:
         {
             if (cannon->GetActive())
+            {
                 cannon->ResetAmmo();
+                UIM->UpdateCannonAmmo(cannon->GetMaxAmmo(), cannon->GetMaxAmmo());
+            }
             else
                 cannon->SetActive(true);
 
@@ -220,7 +229,10 @@ void Player::ApplyItemEffects (Item* item)
         case Item::LASER:
         {
             if (laser->GetActive())
+            {
                 laser->ResetAmmo();
+                UIM->UpdateLaserAmmo(laser->GetMaxAmmo(), laser->GetMaxAmmo());
+            }
             else
                 laser->SetActive(true);
             break;

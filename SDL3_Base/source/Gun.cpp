@@ -13,11 +13,8 @@ Gun::Gun(string sprite, vector<string> bulletAnim, float _speed, int _dmg, Vecto
 
 void Gun::Shoot()
 {
-	Bullet* bullet1 = new Bullet(bulletAnimationSprites, bulletSpeed, bulletDamage);
-	bullet1->GetTransform()->position = _transform->position + bulletSpawnPoint;
-	Bullet* bullet2 = new Bullet(bulletAnimationSprites, bulletSpeed, bulletDamage);
-	bullet2->GetTransform()->position = _transform->position + bulletSpawnPoint + Vector2::Left;
+	Bullet* b = new Bullet(bulletAnimationSprites, bulletSpeed, bulletDamage);
+	b->GetTransform()->position = _transform->position + bulletSpawnPoint;
 
-	SPAWNER.SpawnObject(bullet1);
-	SPAWNER.SpawnObject(bullet2);
+	SPAWNER.SpawnObject(b);
 }
