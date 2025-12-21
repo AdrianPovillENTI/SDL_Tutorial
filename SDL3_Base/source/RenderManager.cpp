@@ -27,7 +27,7 @@ void RenderManager::InitSDL()
 
 void RenderManager::CreateWindowAndRenderer()
 {
-	if (!SDL_CreateWindowAndRenderer("Test main ", 512, 512, SDL_WINDOW_RESIZABLE, &_window, &_renderer))
+	if (!SDL_CreateWindowAndRenderer("Test main ", 1360, 768, SDL_WINDOW_RESIZABLE, &_window, &_renderer))
 		throw SDL_GetError();
 }
 

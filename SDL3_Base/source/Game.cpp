@@ -94,6 +94,12 @@ void Game::Init()
 	RM->LoadTexture("resources/Items/ForceField.png");
 	RM->LoadTexture("resources/Items/Shield.png");
 
+	RM->LoadTexture("resources/UI/CannonBar.png");
+	RM->LoadTexture("resources/UI/LaserBar.png");
+	RM->LoadTexture("resources/UI/ShieldBar.png");
+	RM->LoadTexture("resources/UI/EmptySprite.png");
+	RM->LoadTexture("resources/UI/StaticUI.png");
+
 	//RM->LoadFont("resources/fonts/Hyperspace.ttf");
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 	assert(SM.AddScene("Gameplay", new Gameplay()));

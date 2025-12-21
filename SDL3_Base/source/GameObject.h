@@ -13,7 +13,7 @@ protected:
 	GameObject * parent;
 	Vector2 parentOffset;
 public:
-	GameObject ( string _spritePath) : ImageObject ( _spritePath , Vector2 ( 0.0f , 0.0f ) , Vector2 ( 1306.0f , 1324.0f ) )
+	GameObject ( string _spritePath) : ImageObject ( _spritePath , Vector2 ( 0.0f , 0.0f ) , Vector2 ( 1360.0f , 768.0f ) )
 	{
 		active = true;
 		_physics->SetLinearDrag ( 0.1f );
@@ -22,6 +22,7 @@ public:
 		parent = nullptr;
 		parentOffset = Vector2::Zero;
 	}
+
 	~GameObject ( )
 	{
 	}
@@ -62,4 +63,7 @@ public:
 			gameObject->parentOffset = Vector2::Zero;
 		}
 	}
+
+	// Heredado vía ImageObject
+	virtual void OnCollision(Object* collided) override;
 };

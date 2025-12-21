@@ -1,4 +1,5 @@
 #include "AmmoGun.h"
+#include "UI/UIManager.h"
 
 void AmmoGun::Shoot()
 {
@@ -6,5 +7,6 @@ void AmmoGun::Shoot()
 	{
 		Gun::Shoot();
 		ammo--;
+		UIM->UpdateCannonAmmo(ammo);
 	}
 }
