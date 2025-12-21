@@ -10,7 +10,7 @@ private:
 
 public:
     TopBottomSpawnPattern ( float horizontalSpacing = 100.f )
-        : _topY ( 0 ), _bottomY ( RM->WINDOW_HEIGHT * 1.3f ), horizontalSpacing ( horizontalSpacing )
+        : _topY ( 0 ), _bottomY ( RM->WINDOW_HEIGHT ), horizontalSpacing ( horizontalSpacing )
     {
     }
 
@@ -27,7 +27,7 @@ public:
         for ( int i = 0; i < topCount; ++i )
         {
             float xOffset = ( i - ( topCount - 1 ) / 2.0f ) * horizontalSpacing;
-            res.push_back ( Vector2 ( origin.x + xOffset + horizontalSpacing * 2, _topY ) );
+            res.push_back ( Vector2 ( origin.x + xOffset + horizontalSpacing * 2, 0 ) );
         }
 
         for ( int i = 0; i < bottomCount; ++i )

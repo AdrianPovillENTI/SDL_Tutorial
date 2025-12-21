@@ -12,7 +12,7 @@ Swirlers::Swirlers ( )
 
 void Swirlers::Start ( )
 {
-    Enemy::Start ( );
+    playOnStart = true;
 
     MovementPatternData * data = new MovementPatternData ( {
         { ( float ) SC_WIDTH / 3, ( float ) SC_HEIGHT / 3 },
@@ -31,6 +31,7 @@ void Swirlers::Start ( )
             { movement, 120 }
         } )
     );
+    Enemy::Start ( );
 
 }
 

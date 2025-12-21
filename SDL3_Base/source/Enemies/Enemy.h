@@ -19,7 +19,7 @@ protected:
     int damage;
     EnemyBehaviourPattern* pattern;
     EnemyState state;
-
+    bool playOnStart = true;
     float timeElapsed;
 public:
 
@@ -27,21 +27,25 @@ public:
         :DamageableObject(health,path), damage (_damage), speed ( speed )
     {
 
-        _transform->position = Vector2::Zero;
         _physics->AddCollider ( new AABB ( _transform->position , _transform->size ) );
         timeElapsed = 0;
         Start ( );
     }
     Enemy ( float speed , int health , int _damage , string path , EnemyBehaviourPattern * _movePattern )
-        :DamageableObject ( health , path ) , damage ( _damage ) , speed ( speed ) , pattern ( _movePattern )
+        :DamageableObject ( health , path ) , damage ( _damage ) , speed ( speed ) , pattern ( _movePattern ),
+        state(ON_ENTER)
     {
 
-        _transform->position = Vector2::Zero;
         _physics->AddCollider ( new AABB ( _transform->position , _transform->size ) );       
         timeElapsed = 0;
         Start ( );
     }
-    ~Enemy ( );
+
+    ~Enemy ( )
+    {
+        delete pattern;
+        pattern = nullptr;
+    }
 
     void Start ( ) override;
     void Update ( ) override;

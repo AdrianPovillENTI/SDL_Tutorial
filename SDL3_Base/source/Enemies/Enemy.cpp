@@ -1,42 +1,67 @@
-#include "Enemy.h"
+﻿#include "Enemy.h"
 
 void Enemy::Start ( )
 {
-    state = EnemyState::ON_UPDATE;
+    timeElapsed = 0.f;
+
+    if ( playOnStart )
+        state = EnemyState::ON_UPDATE;
+    else
+        state = EnemyState::ON_ENTER;
+
+    // Seguridad: sin inercia inicial
+    if ( _physics )
+        _physics->SetVelocity ( Vector2::Zero );
 }
 
 void Enemy::Update ( )
 {
+    const float startX = (RM->WINDOW_WIDTH * 1.4f) / 2.f;
+
+    if ( state == EnemyState::ON_ENTER )
+    {
+        _transform->position += Vector2::Left * speed * 1.f / 15.f;;
+
+        if ( _transform->position.x <= startX )
+        {
+            state = EnemyState::ON_UPDATE;
+            timeElapsed = 0.f;
+
+        }
+        return;
+    }
+
+    if ( state != EnemyState::ON_UPDATE )
+        return;
 
     GameObject::Update ( );
-    timeElapsed += 1.f / 60.f;
+    timeElapsed += 1.f / 15.f;;
     Move ( );
-    if ( isDeath ) Destroy ( );
+
+    if ( isDeath )
+        Destroy ( );
 }
 
 void Enemy::OnCollision ( Object * collided )
 {
     if ( Player * p = dynamic_cast< Player * >( collided ) )
-    {
         p->ReceiveDamage ( damage );
-    }
 }
 
 void Enemy::Move ( )
+{
+    if ( state != EnemyState::ON_UPDATE ) return;
+    if ( !pattern ) return;
+
+    auto * movePattern = pattern->GetMovementPattern ( );
+    if ( movePattern != nullptr )
     {
-    if ( state == EnemyState::ON_UPDATE )
-    {
-        if ( MOVE_PATTERN != nullptr )
-        {
-            Vector2 delta = MOVE_PATTERN->GetDelta ( 1.f / 60.f , timeElapsed , 0 );
-            delta += Vector2::Right * -0.01f;
-            _transform->position += delta;
-        }
+        Vector2 delta = movePattern->GetDelta ( 1.f / 15.f , timeElapsed , 0 );
+        delta += Vector2::Left * 0.01f;
+
+        _transform->position += delta;
     }
-    else if ( _transform->position.x <= RM->WINDOW_WIDTH )
-    {
-        state = EnemyState::ON_UPDATE;
-    }
+
     if ( OutOfLimits ( ) )
     {
         state = EnemyState::ON_EXIT;
@@ -44,12 +69,17 @@ void Enemy::Move ( )
         Destroy ( );
     }
 }
+
 bool Enemy::OutOfLimits ( )
 {
-    Vector2 & pos = _transform->position;
-    pos = Vector2::ClampVectorX ( pos , 0.f , RM->WINDOW_WIDTH * 1.4f );
-    pos = Vector2::ClampVectorY ( pos , 0.f , RM->WINDOW_HEIGHT * 1.3f );
-    return ( pos.x <= 0.f || pos.x >= RM->WINDOW_WIDTH * 1.4f ||
-        pos.y <= 0.f || pos.y >= RM->WINDOW_HEIGHT * 1.3f );
-}
+    float margin = 80.f;
+    Vector2 pos = _transform->position;
 
+    if ( pos.x < -margin || pos.x > SC_WIDTH * 1.4f + margin ||
+        pos.y < -margin || pos.y > SC_HEIGHT * 1.5f + margin )
+    {
+        return true;
+    }
+
+    return false;
+}

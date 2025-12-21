@@ -44,6 +44,7 @@
     <ClCompile Include="source\Patterns\Pattern.cpp" />
     <ClCompile Include="source\Enemies\Enemy.cpp" />
     <ClCompile Include="source\AnimatedImageRenderer.cpp" />
+    <ClCompile Include="source\Patterns\RandomSpawnPattern.h" />
     <ClCompile Include="source\Patterns\SinusoidalMovementPattern.cpp" />
     <ClCompile Include="source\Item.cpp" />
     <ClCompile Include="source\Bullet.cpp" />
