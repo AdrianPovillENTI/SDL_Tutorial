@@ -37,5 +37,5 @@ public:
 	virtual void Render() override;
 
 	// Heredado vía ImageObject
-	void OnCollision ( Object * collided ) override;
+	virtual void OnCollision(Object* collided) override;
 };

@@ -7,6 +7,7 @@
 
 #include "InputManager.h"
 #include "RenderManager.h"
+#include "UI/UIManager.h"
 
 Player::Player ( int maxHealth )
     : DamageableObject ( maxHealth , "resources/Player/Player.png" ) ,
@@ -31,8 +32,8 @@ void Player::InitializePhysics()
     if ( _physics != nullptr )
     {
         _physics->AddCollider(new AABB(_transform->position, Vector2(_transform->size.x, _transform->size.y/2)));
-        _physics->SetLinearDrag ( 0.1f );
-        _physics->SetAngularDrag ( 0.1f );
+        _physics->SetLinearDrag ( 1.f );
+        _physics->SetAngularDrag (1.f );
     }
 }
 
@@ -49,7 +50,7 @@ void Player::InitializeStats()
 
     canShoot = true;
     shootCooldown = 0.f;
-    maxShootCooldownTime = 30;
+    maxShootCooldownTime = 1;
 
     bulletSprites = 
     { 
@@ -61,8 +62,9 @@ void Player::InitializeStats()
         "resources/Player/NormalShoot/shot_6.png"
     };
     bulletDamage = 10;
-    bulletSpeed = 15;
+    bulletSpeed = 1500;
     speedUpgrade = 2.5f;
+    speed = 100.0f;
 }
 
 void Player::InitializeGuns() 
@@ -81,7 +83,6 @@ void Player::InitializeGuns()
         "resources/Player/Cannon/shot_4.png"
     };
     cannonSprite = "resources/Player/CannonSprite.png";
-    speed = 1.0f;
 
     cannonBulletSpawnPoint = Vector2(30.f, 35.f);
     laserBulletSpawnPoint = Vector2(55.f, -20.f);
@@ -103,25 +104,25 @@ void Player::Move ( )
 
     if ( IM->GetEvent ( SDLK_S , DOWN ) || IM->GetEvent ( SDLK_S , HOLD ) )
     {
-        _physics->AddForce ( Vector2 ( 0 , 0.5f ) );
+        _physics->AddForce ( Vector2 ( 0 , 0.5f ) * speed );
         isMoving = true;
     }
 
     if ( IM->GetEvent ( SDLK_W , DOWN ) || IM->GetEvent ( SDLK_W , HOLD ) )
     {
-        _physics->AddForce ( Vector2 ( 0 , -0.5f ) );
+        _physics->AddForce ( Vector2 ( 0 , -0.5f ) * speed);
         isMoving = true;
     }
 
     if ( IM->GetEvent ( SDLK_D , DOWN ) || IM->GetEvent ( SDLK_D , HOLD ) )
     {
-        _physics->AddForce ( Vector2 ( 0.5f , 0 ) );
+        _physics->AddForce ( Vector2 ( 0.5f , 0 ) * speed);
         isMoving = true;
     }
 
     if ( IM->GetEvent ( SDLK_A , DOWN ) || IM->GetEvent ( SDLK_A , HOLD ) )
     {
-        _physics->AddForce ( Vector2 ( -0.5f , 0 ) );
+        _physics->AddForce ( Vector2 ( -0.5f , 0 ) * speed);
         isMoving = true;
     }
 

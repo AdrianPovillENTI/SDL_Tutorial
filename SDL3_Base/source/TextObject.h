@@ -10,6 +10,14 @@ public:
 		_renderer->SetColor({ 1, 1, 1, 0xFF });
 	}
 
+	TextObject(std::string text, Vector2 pos, Vector2 size) : Object()
+	{
+		_transform->position = pos;
+		_transform->size = size;
+		_renderer = new TextRenderer(_transform, text);
+		_renderer->SetColor({ 1, 1, 1, 0xFF });
+	}
+
 	void SetText(std::string text)
 	{
 		dynamic_cast<TextRenderer*>(_renderer)->SetText(text);

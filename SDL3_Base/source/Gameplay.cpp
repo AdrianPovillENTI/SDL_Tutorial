@@ -5,6 +5,7 @@
 #include "RenderManager.h"
 #include "ImageObject.h"
 
+#include "UI/UIManager.h"
 #include "BackgroundManager.h"
 #include "MapDecorations.h"
 #include "Player.h"
@@ -23,6 +24,10 @@
 void Gameplay::OnEnter()
 {
 	srand ( time ( NULL ) );
+
+	UIManager* uiManager = new UIManager();
+
+
 	for ( int i = 0; i < 3; i++ )
 	{
 		SPAWNER.SpawnObject ( new Background ( i, "resources/Background.png" ) );
@@ -36,6 +41,8 @@ void Gameplay::OnEnter()
 	SPAWNER.SpawnObject(new Item("resources/Items/Score.png"));
 	SPAWNER.SpawnObject(new Item("resources/Items/Score.png"));
 	SPAWNER.SpawnObject(new Item("resources/Items/Score.png"));
+
+	uiManager->InitializeUI();
 
 	// Origin.x en la mitad de la pantalla. Y serán determinados por el patrón (bordes).
 	Vector2 origin = Vector2 ( RM->WINDOW_WIDTH * 0.5f , RM->WINDOW_HEIGHT * 2);
