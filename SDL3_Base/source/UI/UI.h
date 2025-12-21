@@ -14,15 +14,22 @@ public:
 	UIBar* shieldUI;
 	TextObject* scoreUI;
 	TextObject* lifesUI;
+
+private:
 	UIStaticImages* staticUI;
 	UIStaticImages* staticUIBackground;
 
-private:
 	TextObject* scoreLabelUI;
 	TextObject* lifesLabelUI;
 	TextObject* shieldLabelUI;
 	TextObject* laserLabelUI;
 	TextObject* cannonLabelUI;
+
+	string scoreText = "SCORE:";
+	string lifesText = "LIFES:";
+	string cannonText = "Cannon";
+	string laserText = "Laser";
+	string shieldText = "Shield";
 
 	string cannonBarSprite;
 	string laserBarSprite;

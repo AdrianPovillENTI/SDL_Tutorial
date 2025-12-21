@@ -11,19 +11,18 @@ public:
 		return &instance;
 	}
 
-	UIManager() = default;
+	UIManager() { InitializeUI(); };
 	UIManager(UIManager&) = delete;
 	UIManager& operator = (const UIManager&) = delete;
 	~UIManager() {}
 
 	void InitializeUI();
 	void UpdateLifes(int lifes);
-	void UpdateCannonAmmo(int ammo);
-	void UpdateLaserAmmo(int ammo);
-	void UpdateShield(int hp);
+	void UpdateCannonAmmo(int ammo, int maxAmmo);
+	void UpdateLaserAmmo(int ammo, int maxAmmo);
+	void UpdateShield(int hp, int maxHp);
 	void UpdateScore(int score);
 
-private:
-	UI* ui;
+	UI* gameUI;
 };
 

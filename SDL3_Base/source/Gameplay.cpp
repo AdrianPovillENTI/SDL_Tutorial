@@ -25,7 +25,6 @@ void Gameplay::OnEnter()
 {
 	srand ( time ( NULL ) );
 
-	UIManager* uiManager = new UIManager();
 
 
 	for ( int i = 0; i < 3; i++ )
@@ -41,8 +40,8 @@ void Gameplay::OnEnter()
 	SPAWNER.SpawnObject(new Item("resources/Items/Score.png"));
 	SPAWNER.SpawnObject(new Item("resources/Items/Score.png"));
 	SPAWNER.SpawnObject(new Item("resources/Items/Score.png"));
+	UIManager* uiManager = new UIManager();
 
-	uiManager->InitializeUI();
 
 	// Origin.x en la mitad de la pantalla. Y serán determinados por el patrón (bordes).
 	Vector2 origin = Vector2 ( RM->WINDOW_WIDTH * 0.5f , RM->WINDOW_HEIGHT * 2);

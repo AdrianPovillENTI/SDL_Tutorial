@@ -2,30 +2,30 @@
 
 void UIManager::InitializeUI()
 {
-	ui = new UI();
+	gameUI = new UI();
 }
 
-void UIManager::UpdateCannonAmmo(int ammo)
+void UIManager::UpdateCannonAmmo(int ammo, int maxAmmo)
 {
-	ui->cannonAmmoUI->RedrawBar(ammo);
+	gameUI->cannonAmmoUI->RedrawBar(ammo, maxAmmo);
 }
 
-void UIManager::UpdateLaserAmmo(int ammo)
+void UIManager::UpdateLaserAmmo(int ammo, int maxAmmo)
 {
-	ui->laserAmmoUI->RedrawBar(ammo);
+	gameUI->laserAmmoUI->RedrawBar(ammo, maxAmmo);
 }
 
-void UIManager::UpdateShield(int hp)
+void UIManager::UpdateShield(int hp, int maxHp)
 {
-	ui->shieldUI->RedrawBar(hp);
+	gameUI->shieldUI->RedrawBar(hp, maxHp);
 }
 
 void UIManager::UpdateLifes(int lifes)
 {
-	ui->lifesUI->SetText(to_string(lifes));
+	gameUI->lifesUI->SetText(to_string(lifes));
 }
 
 void UIManager::UpdateScore(int score)
 {
-	ui->scoreUI->SetText(to_string(score));
+	gameUI->scoreUI->SetText(to_string(score));
 }
