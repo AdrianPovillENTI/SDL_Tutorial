@@ -63,6 +63,10 @@
     <ClCompile Include="source\SceneManager.cpp" />
     <ClCompile Include="source\TextObject.cpp" />
     <ClCompile Include="source\TextRenderer.cpp" />
+    <ClCompile Include="source\UI\UI.cpp" />
+    <ClCompile Include="source\UI\UIBar.cpp" />
+    <ClCompile Include="source\UI\UIManager.cpp" />
+    <ClCompile Include="source\UI\UIStaticImages.cpp" />
     <ClCompile Include="source\Vector2.cpp" />
     <ClCompile Include="source\Turret.cpp" />
     <ClCompile Include="source\SpeedVfx.cpp" />
@@ -132,6 +136,10 @@
     <ClInclude Include="source\TextObject.h" />
     <ClInclude Include="source\TextRenderer.h" />
     <ClInclude Include="source\Transform.h" />
+    <ClInclude Include="source\UI\UI.h" />
+    <ClInclude Include="source\UI\UIBar.h" />
+    <ClInclude Include="source\UI\UIManager.h" />
+    <ClInclude Include="source\UI\UIStaticImages.h" />
     <ClInclude Include="source\Vector2.h" />
     <ClInclude Include="source\Turret.h" />
     <ClInclude Include="source\SpeedVfx.h" />

@@ -7,6 +7,6 @@ void AmmoGun::Shoot()
 	{
 		Gun::Shoot();
 		ammo--;
-		UIM->UpdateCannonAmmo(ammo);
+		UIM->UpdateCannonAmmo(ammo, maxAmmo);
 	}
 }

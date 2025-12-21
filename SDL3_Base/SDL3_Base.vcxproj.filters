@@ -21,12 +21,7 @@
     <ClCompile Include="source\Patterns\Pattern.cpp" />
     <ClCompile Include="source\Enemies\Enemy.cpp" />
     <ClCompile Include="source\AnimatedImageRenderer.cpp" />
-    <ClCompile Include="source\Cannon.cpp" />
-    <ClCompile Include="source\ForceField.cpp" />
-    <ClCompile Include="source\Laser.cpp" />
     <ClCompile Include="source\Patterns\SinusoidalMovementPattern.cpp" />
-    <ClCompile Include="source\Score.cpp" />
-    <ClCompile Include="source\Shield.cpp" />
     <ClCompile Include="source\Item.cpp" />
     <ClCompile Include="source\Bullet.cpp" />
     <ClCompile Include="source\Player.cpp" />
@@ -59,6 +54,11 @@
     <ClCompile Include="source\Animator.cpp" />
     <ClCompile Include="source\Background.cpp" />
     <ClCompile Include="source\Gun.cpp" />
+    <ClCompile Include="source\MapDecorations.cpp" />
+    <ClCompile Include="source\UI\UI.cpp" />
+    <ClCompile Include="source\UI\UIBar.cpp" />
+    <ClCompile Include="source\UI\UIManager.cpp" />
+    <ClCompile Include="source\UI\UIStaticImages.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Enemies\EnemySpawnData.h" />
@@ -81,14 +81,9 @@
     <ClInclude Include="source\Patterns\Pattern.h" />
     <ClInclude Include="source\Enemies\Enemy.h" />
     <ClInclude Include="source\AnimatedImageRenderer.h" />
-    <ClInclude Include="source\Cannon.h" />
     <ClInclude Include="source\Patterns\ExitPattern.h" />
-    <ClInclude Include="source\ForceField.h" />
-    <ClInclude Include="source\Laser.h" />
     <ClInclude Include="source\Patterns\MovementPattern.h" />
     <ClInclude Include="source\Patterns\LineSpawnPattern.h" />
-    <ClInclude Include="source\Score.h" />
-    <ClInclude Include="source\Shield.h" />
     <ClInclude Include="source\Item.h" />
     <ClInclude Include="source\Bullet.h" />
     <ClInclude Include="source\Player.h" />
@@ -132,6 +127,12 @@
     <ClInclude Include="source\Background.h" />
     <ClInclude Include="source\BackgroundManager.h" />
     <ClInclude Include="source\Gun.h" />
+    <ClInclude Include="source\MapDecorations.h" />
+    <ClInclude Include="source\Patterns\TopBottomSpawnPattern.h" />
+    <ClInclude Include="source\UI\UI.h" />
+    <ClInclude Include="source\UI\UIBar.h" />
+    <ClInclude Include="source\UI\UIManager.h" />
+    <ClInclude Include="source\UI\UIStaticImages.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bullet.png" />
