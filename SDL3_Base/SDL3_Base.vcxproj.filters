@@ -201,4 +201,7 @@
   <ItemGroup>
     <None Include=".gitignore" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="resources\Fonts\Hyperspace.ttf" />
+  </ItemGroup>
 </Project>

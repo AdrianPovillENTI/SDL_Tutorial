@@ -10,10 +10,10 @@ public:
 		_renderer->SetColor({ 1, 1, 1, 0xFF });
 	}
 
-	TextObject(std::string text, Vector2 pos, Vector2 size) : Object()
+	TextObject(std::string text, Vector2 pos, Vector2 scale) : Object()
 	{
 		_transform->position = pos;
-		_transform->size = size;
+		_transform->scale = scale;
 		_renderer = new TextRenderer(_transform, text);
 		_renderer->SetColor({ 1, 1, 1, 0xFF });
 	}

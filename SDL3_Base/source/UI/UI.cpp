@@ -10,20 +10,37 @@ UI::UI()
 	staticUISprite = "resources/UI/StaticUI.png";
 	emptySprite = "resources/UI/EmptySprite.png";
 
-	cannonAmmoUI = new UIBar(cannonBarSprite, 100);
-	laserAmmoUI = new UIBar(laserBarSprite, 100);
-	shieldUI = new UIBar(shieldBarSprite, 100);
 	staticUI = new UIStaticImages(staticUISprite);
 	staticUIBackground = new UIStaticImages(emptySprite);
 
+	cannonAmmoUI = new UIBar(cannonBarSprite, 100);
+	laserAmmoUI = new UIBar(laserBarSprite, 100);
+	shieldUI = new UIBar(shieldBarSprite, 100);
+
+
 	SPAWNER.SpawnObject(staticUIBackground);
+
 	SPAWNER.SpawnObject(cannonAmmoUI);
 	SPAWNER.SpawnObject(laserAmmoUI);
 	SPAWNER.SpawnObject(shieldUI);
-	SPAWNER.SpawnObject(staticUI);
-	//scoreUI = new TextObject(to_string(0), Vector2(RM->WINDOW_WIDTH * 2 / 3, RM->WINDOW_HEIGHT - 100), Vector2(100.f, 100.f));
-	//lifesUI = new TextObject(to_string(3), Vector2(RM->WINDOW_WIDTH * 2 / 3, RM->WINDOW_HEIGHT - 200), Vector2(100.f, 100.f));
 
-	//SPAWNER.SpawnObject(scoreUI);
-	//SPAWNER.SpawnObject(lifesUI);
+	SPAWNER.SpawnObject(staticUI);
+
+	scoreUI = new TextObject("00000", Vector2(150, RM->WINDOW_HEIGHT + 15), Vector2::One * 2);
+	lifesUI = new TextObject("3", Vector2(700, RM->WINDOW_HEIGHT + 30), Vector2::One * 3);
+
+	SPAWNER.SpawnObject(scoreUI);
+	SPAWNER.SpawnObject(lifesUI);
+
+	scoreLabelUI = new TextObject(scoreText, Vector2(150, RM->WINDOW_HEIGHT - 25), Vector2::One * 2);
+	lifesLabelUI = new TextObject(lifesText, Vector2(400, RM->WINDOW_HEIGHT + 30), Vector2::One * 3);
+	cannonLabelUI = new TextObject(cannonText, Vector2(700, RM->WINDOW_HEIGHT - 5), Vector2::One * 1);
+	laserLabelUI = new TextObject(laserText, Vector2(700, RM->WINDOW_HEIGHT - 40), Vector2::One * 1);
+	shieldLabelUI = new TextObject(shieldText, Vector2(700, RM->WINDOW_HEIGHT - 75), Vector2::One * 1);
+
+	SPAWNER.SpawnObject(scoreLabelUI);
+	SPAWNER.SpawnObject(lifesLabelUI);
+	SPAWNER.SpawnObject(cannonLabelUI);
+	SPAWNER.SpawnObject(laserLabelUI);
+	SPAWNER.SpawnObject(shieldLabelUI);
 }

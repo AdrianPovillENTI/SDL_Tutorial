@@ -6,7 +6,7 @@
 #include "Renderer.h"
 #include "RenderManager.h"
 
-#define FONT_PATH "resources/fonts/hyperspace.ttf"
+#define FONT_PATH "resources/fonts/Hyperspace.ttf"
 
 class TextRenderer : public Renderer
 {
@@ -56,7 +56,7 @@ public:
 	{
 		Vector2 offset = (Vector2(-_transform->size.x, -_transform->size.y) / 2.0f) * _transform->scale;
 
-		_destinationRect.y = _transform->position.x + offset.x;
+		_destinationRect.x = _transform->position.x + offset.x;
 		_destinationRect.y = _transform->position.y + offset.x;
 
 		if (_autoSize)

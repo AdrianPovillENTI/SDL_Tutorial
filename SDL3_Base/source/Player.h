@@ -30,6 +30,8 @@ private:
     float speed;
     float speedUpgrade;
 
+    int score;
+
     Vector2 bulletSpawnPoint;
 
     AmmoGun* cannon;

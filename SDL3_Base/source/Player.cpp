@@ -44,6 +44,8 @@ void Player::InitializeStats()
     _transform->size = Vector2(100.f, 50.f);
     _transform->rotation = 0.f;
 
+    score = 0;
+
     invencible = false;
     invencibleTime = 0.f;
     isDeath = false;
@@ -211,6 +213,8 @@ void Player::ApplyItemEffects (Item* item)
     switch ( item->GetType ( ) )
     {
         case Item::SCORE:
+            score += 1000;
+            UIM->UpdateScore(score);
             break;
 
         case Item::CANNON:
