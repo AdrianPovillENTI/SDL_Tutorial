@@ -10,11 +10,11 @@
 #define Y _transform->position.y
 class Enemy : public DamageableObject
 {
+protected:
     enum EnemyState
     {
         ON_ENTER, ON_UPDATE, ON_EXIT
     };
-protected:
     float speed;
     int damage;
     EnemyBehaviourPattern* pattern;
@@ -52,5 +52,6 @@ public:
     void OnCollision ( Object * collided ) override;
     void Move ( ) override;
     bool OutOfLimits ( );
+    virtual void OnEnterFunction ( );
 };
 

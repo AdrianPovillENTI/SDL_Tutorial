@@ -7,7 +7,7 @@ Gulper::Gulper ( Vector2 _dir )
     2 ,  // damage
     "resources/Player/Player.png"
     ) ,
-    direction ( _dir )
+    targetPos ( _dir )
 {
     Start ( );
 }
@@ -15,7 +15,7 @@ Gulper::Gulper ( Vector2 _dir )
 void Gulper::Start ( )
 {
     playOnStart = false;
-    LinearPattern * linearPattern = new LinearPattern ( direction , speed );
+    LinearPattern * linearPattern = new LinearPattern ( targetPos , speed );
 
     pattern = new EnemyBehaviourPattern (
         new MultiPhasePattern ( {

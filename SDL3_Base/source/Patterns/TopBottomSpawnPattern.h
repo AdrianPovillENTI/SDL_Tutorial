@@ -14,7 +14,7 @@ public:
     {
     }
 
-    std::vector<Vector2> GetSpawnPositions ( const Vector2 & origin , int count ) const override
+    std::vector<Vector2> GetSpawnPositions ( Vector2 origin , int count ) override
     {
         std::vector<Vector2> res;
         res.reserve ( count );

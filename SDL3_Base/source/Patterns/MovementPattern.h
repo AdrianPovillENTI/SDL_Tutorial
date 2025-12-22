@@ -12,17 +12,17 @@ public:
 
 class LinearPattern : public MovementPattern
 {
-	Vector2 direction;
+	Vector2 targetPos;
 	float speed;
 
 public:
 	LinearPattern ( Vector2 dir , float spd )
-		: direction ( dir) , speed ( spd )
+		: targetPos ( dir) , speed ( spd )
 	{
 	}
 
 	Vector2 GetDelta ( float dt , float elapsed , int index ) override
 	{
-		return direction * speed * dt;
+		return targetPos * speed * dt;
 	}
 };

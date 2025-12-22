@@ -22,8 +22,8 @@ public:
         if ( checkPoints.empty()) return Vector2::Zero;
 
         Vector2 checkpoint = checkPoints [ curIndex ];
-        Vector2 direction = ( checkpoint - *curPosition );
-        direction.Normalize ( );
+        Vector2 targetPos = ( checkpoint - *curPosition );
+        targetPos.Normalize ( );
 
         if ( Vector2::Distance ( *curPosition , checkpoint ) <= 1.f )
         {
@@ -34,6 +34,6 @@ public:
             }
         }
 
-        return direction * speed * dt;
+        return targetPos * speed * dt;
     }
 };
