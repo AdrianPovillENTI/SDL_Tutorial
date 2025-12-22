@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\EnemyBullet.cpp" />
     <ClCompile Include="source\AmmoGun.cpp" />
     <ClCompile Include="source\Animator.cpp" />
     <ClCompile Include="source\Background.cpp" />
@@ -80,6 +81,7 @@
     <ClCompile Include="source\Patterns\ZigZagMovementPattern.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\EnemyBullet.h" />
     <ClInclude Include="source\AmmoGun.h" />
     <ClInclude Include="source\AnimatedImageObject.h" />
     <ClInclude Include="source\Animator.h" />
