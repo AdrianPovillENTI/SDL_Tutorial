@@ -1,12 +1,25 @@
-﻿  Splitta.cpp
+﻿  Gameplay.cpp
 D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(112,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
 D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(118,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
 D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(132,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\Patterns\CheckPointMovementPattern.h(33,1): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\TestObject.h(11,70): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\TestObject.h(11,43): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
 D:\GitHub\SDL_Tutorial\SDL3_Base\source\Background.h(13,39): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
 D:\GitHub\SDL_Tutorial\SDL3_Base\source\Background.h(34,15): warning C4244: 'inicializando': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
 D:\GitHub\SDL_Tutorial\SDL3_Base\source\Background.h(35,16): warning C4244: 'inicializando': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\Enemies\Splitta.cpp(22,76): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\MapDecorations.h(20,52): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\MapDecorations.h(21,37): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\MapDecorations.h(24,52): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\MapDecorations.h(25,37): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Patterns\CheckPointMovementPattern.h(33,1): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Enemies\EnemySpawnData.h(55,1): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Patterns\TopBottomSpawnPattern.h(13,33): warning C4244: 'inicializando': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Patterns\CornerSpawnPattern.h(15,50): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Patterns\CornerSpawnPattern.h(16,58): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Patterns\CornerSpawnPattern.h(16,39): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Patterns\CornerSpawnPattern.h(31,1): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Gameplay.cpp(36,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Gameplay.cpp(192,15): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
   SDL3_Base.vcxproj -> D:\GitHub\SDL_Tutorial\SDL3_Base\binaries\x64Debug\SDL3_Base.exe
   0 archivo(s) copiado(s)
   0 archivo(s) copiado(s)

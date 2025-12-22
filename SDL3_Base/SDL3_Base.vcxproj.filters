@@ -60,6 +60,7 @@
     <ClCompile Include="source\UI\UIBar.cpp" />
     <ClCompile Include="source\UI\UIManager.cpp" />
     <ClCompile Include="source\UI\UIStaticImages.cpp" />
+    <ClCompile Include="source\Enemies\ArachnidTail.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Enemies\EnemySpawnData.h" />
@@ -139,6 +140,7 @@
     <ClInclude Include="source\UI\UIStaticImages.h" />
     <ClInclude Include="source\Patterns\SplitPattern.h" />
     <ClInclude Include="source\Patterns\JoinPattern.h" />
+    <ClInclude Include="source\Enemies\ArachnidTail.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bullet.png" />
