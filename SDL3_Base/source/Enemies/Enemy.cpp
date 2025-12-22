@@ -8,28 +8,11 @@ void Enemy::Start ( )
         state = EnemyState::ON_UPDATE;
     else
         state = EnemyState::ON_ENTER;
-
-    // Seguridad: sin inercia inicial
-    if ( _physics )
-        _physics->SetVelocity ( Vector2::Zero );
 }
 
 void Enemy::Update ( )
 {
-    const float startX = (RM->WINDOW_WIDTH * 1.4f) / 2.f;
-
-    if ( state == EnemyState::ON_ENTER )
-    {
-        _transform->position += Vector2::Left * speed * 1.f / 15.f;;
-
-        if ( _transform->position.x <= startX )
-        {
-            state = EnemyState::ON_UPDATE;
-            timeElapsed = 0.f;
-
-        }
-        return;
-    }
+    OnEnterFunction ( );
 
     if ( state != EnemyState::ON_UPDATE )
         return;
@@ -57,7 +40,7 @@ void Enemy::Move ( )
     if ( movePattern != nullptr )
     {
         Vector2 delta = movePattern->GetDelta ( 1.f / 15.f , timeElapsed , 0 );
-        delta += Vector2::Left * 0.01f;
+        //delta += Vector2::Left * 0.01f;
 
         _transform->position += delta;
     }
@@ -82,4 +65,23 @@ bool Enemy::OutOfLimits ( )
     }
 
     return false;
+}
+void Enemy::OnEnterFunction ( )
+{
+    float startX = ( RM->WINDOW_WIDTH * 1.4f ) / 2.f;
+
+    if ( state == EnemyState::ON_ENTER )
+    {
+        _transform->position += Vector2::Left * speed * 1.f / 15.f;;
+
+        if ( _transform->position.x <= startX )
+        {
+            state = EnemyState::ON_UPDATE;
+            timeElapsed = 0.f;
+
+        }
+        return;
+    }
+
+
 }
