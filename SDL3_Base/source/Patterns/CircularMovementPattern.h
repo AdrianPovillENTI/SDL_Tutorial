@@ -2,34 +2,43 @@
 #include "MovementPattern.h"
 class CircularMovementPattern : public MovementPattern
 {
+    float speed;
+    float hSpeed;
     float radius;
-    bool clockwise;
-    float elapsed;        
-    float rate = 0.0f;
+    float offsetx;
+    float offsety;
+    bool xBack;
+    bool yBack;
+    Vector2 dir;
 
 public:
-    CircularMovementPattern ( float r , bool cw )
-        : radius ( r ) , clockwise ( cw )
+    CircularMovementPattern ( float r, float _speed, float _hspeed = 0 )
+        : radius(1 / r), speed(_speed), hSpeed(_hspeed)
     {
-        elapsed = 0;
+        xBack = true;
+        yBack = false;
+        offsetx = radius;
+        offsety = radius;
+        dir = Vector2(1.f, 0.f);
     }
 
-    Vector2 GetDelta ( float dt , float elapsed , int index ) override
+    Vector2 GetDelta(float dt, float elapsed, int index = 0)
     {
-        float dx = cos ( 0.1f * dt ) * radius;
-        float dy = sin ( 0.1f * dt ) * radius;
-        return Vector2 ( dx , dy );
-    }
+        offsetx = xBack ? -0.001f : 0.001f;
+        offsety = yBack ? -0.001f : 0.001f;
 
-    Vector2 GetDelta ( float dt)
-    {
-        float angularSpeed = 2 * 3.14f * 0.001f;
-        rate += angularSpeed * dt;
+        dir.x += offsetx;
+        dir.y += offsety;
 
-        float dx = cos ( rate );
-        float dy = sin ( rate );
+        if (xBack)
+            xBack = dir.x <= -1 ? false : true;
+        else
+            xBack = dir.x >= 1 ? true : false;
+        if (yBack)
+            yBack = dir.y <= -1 ? false : true;
+        else
+            yBack = dir.y >= 1 ? true : false;
 
-        //if ( rate >= 270 ) return Vector2::Zero;
-        return Vector2 ( dx , dy );
+        return Vector2(dir.x + hSpeed, dir.y) * speed;
     }
 };
