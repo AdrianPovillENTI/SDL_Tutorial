@@ -23,6 +23,7 @@
 #include "Enemies/Charger.h"
 #include "Enemies/Mawler.h"
 #include "Enemies/Splitta.h"
+#include "Enemies/Tentakor.h"
 #include "Patterns/LineSpawnPattern.h"
 #include "Patterns/TopBottomSpawnPattern.h"
 #include "Patterns/RandomSpawnPattern.h"
@@ -166,7 +167,7 @@ void Gameplay::OnEnter()
 			//		new Mawler()
 			//	}
 			//)
-			new EnemySpawnData
+			/*new EnemySpawnData
 			(
 				3,
 				Vector2(0,RM->GAME_WINDOW_HEIGHT / 2),
@@ -184,6 +185,19 @@ void Gameplay::OnEnter()
 					new Splitta(5),
 					new Splitta(6),
 					new Splitta(7)
+				}
+			)*/
+			new EnemySpawnData
+			(
+				3,
+				Vector2(RM->WINDOW_WIDTH,RM->GAME_WINDOW_HEIGHT / 2),
+				new LineSpawnPattern
+				(
+					Vector2::Zero,
+					0
+				),
+				{
+					new Tentakor()
 				}
 			)
 		}
