@@ -23,7 +23,8 @@
 #include "Enemies/Charger.h"
 #include "Enemies/Mawler.h"
 #include "Enemies/Splitta.h"
-#include "Enemies/Tentakor.h"
+#include "Enemies/Arachnid.h"
+#include "Enemies/ArachnidTail.h"
 #include "Patterns/LineSpawnPattern.h"
 #include "Patterns/TopBottomSpawnPattern.h"
 #include "Patterns/RandomSpawnPattern.h"
@@ -52,8 +53,6 @@ void Gameplay::OnEnter()
 	UIManager* uiManager = new UIManager();
 
 
-	// Origin.x en la mitad de la pantalla. Y serán determinados por el patrón (bordes).
-	Vector2 origin = Vector2 ( RM->WINDOW_WIDTH * 0.5f , RM->WINDOW_HEIGHT * 2);
 	WaveManager* waveManager = new WaveManager
 	(
 		{ // enemySpawnData vector
@@ -76,7 +75,7 @@ void Gameplay::OnEnter()
 			//new EnemySpawnData
 			//(
 			//	2,
-			//	origin,
+			//	 Vector2 ( RM->WINDOW_WIDTH * 0.5f , RM->WINDOW_HEIGHT * 2);,
 			//	new TopBottomSpawnPattern
 			//	(
 			//		300.f
@@ -167,7 +166,7 @@ void Gameplay::OnEnter()
 			//		new Mawler()
 			//	}
 			//)
-			/*new EnemySpawnData
+		/*	new EnemySpawnData
 			(
 				3,
 				Vector2(0,RM->GAME_WINDOW_HEIGHT / 2),
@@ -190,14 +189,21 @@ void Gameplay::OnEnter()
 			new EnemySpawnData
 			(
 				3,
-				Vector2(RM->WINDOW_WIDTH,RM->GAME_WINDOW_HEIGHT / 2),
+				Vector2(RM->WINDOW_WIDTH, -100),
 				new LineSpawnPattern
 				(
-					Vector2::Zero,
-					0
+					Vector2::Down,
+					50
 				),
 				{
-					new Tentakor()
+					new Arachnid(),
+					new ArachnidTail(30.f),
+					new ArachnidTail(60.f),
+					new ArachnidTail(90.f),
+					new ArachnidTail(120.f),
+					new ArachnidTail(4.5f),
+					new ArachnidTail(5.5f),
+					new ArachnidTail(6.5f)
 				}
 			)
 		}

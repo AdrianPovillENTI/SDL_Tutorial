@@ -5,7 +5,7 @@
 #define EXIT_P pattern->GetExitPattern()
 #define MOVE_PATTERN pattern->GetMovementPattern()
 #define SC_WIDTH RM->WINDOW_WIDTH
-#define SC_HEIGHT RM->WINDOW_HEIGHT
+#define SC_HEIGHT RM->GAME_WINDOW_HEIGHT
 #define X _transform->position.x
 #define Y _transform->position.y
 class Enemy : public DamageableObject
@@ -51,7 +51,7 @@ public:
     void Update ( ) override;
     void OnCollision ( Object * collided ) override;
     void Move ( ) override;
-    bool OutOfLimits ( );
+    virtual bool OutOfLimits ( );
     virtual void OnEnterFunction ( );
 };
 
