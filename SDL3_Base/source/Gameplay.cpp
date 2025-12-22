@@ -21,6 +21,8 @@
 #include "Enemies/Floater.h"
 #include "Enemies/Drifter.h"
 #include "Enemies/Charger.h"
+#include "Enemies/Mawler.h"
+#include "Enemies/Splitta.h"
 #include "Patterns/LineSpawnPattern.h"
 #include "Patterns/TopBottomSpawnPattern.h"
 #include "Patterns/RandomSpawnPattern.h"
@@ -51,7 +53,7 @@ void Gameplay::OnEnter()
 
 	// Origin.x en la mitad de la pantalla. Y serán determinados por el patrón (bordes).
 	Vector2 origin = Vector2 ( RM->WINDOW_WIDTH * 0.5f , RM->WINDOW_HEIGHT * 2);
-	WaveManager * waveManager = new WaveManager
+	WaveManager* waveManager = new WaveManager
 	(
 		{ // enemySpawnData vector
 			//new EnemySpawnData 
@@ -125,23 +127,63 @@ void Gameplay::OnEnter()
 					new Floater ()
 				}
 			),*/
+			//new EnemySpawnData
+			//(
+			//	3,
+			//	Vector2 ( 0,0 ),
+			//	new CornerSpawnPattern
+			//	(
+			//		150
+			//	),
+			//	{
+			//		new Charger ( ),
+			//		new Charger ( ),
+			//		new Charger ( ),
+			//		new Charger ( ),
+			//		new Charger ( ),
+			//		new Charger ( ),
+			//		new Charger ( ),
+			//		new Charger ( )
+			//	}
+			//)
+			//new EnemySpawnData
+			//(
+			//	3,
+			//	Vector2(RM->WINDOW_WIDTH,100),
+			//	new LineSpawnPattern
+			//	(
+			//		Vector2::Up,
+			//		50
+			//	),
+			//	{
+			//		new Mawler(),
+			//		new Mawler(),
+			//		new Mawler(),
+			//		new Mawler(),
+			//		new Mawler(),
+			//		new Mawler(),
+			//		new Mawler(),
+			//		new Mawler()
+			//	}
+			//)
 			new EnemySpawnData
 			(
 				3,
-				Vector2 ( 0,0 ),
-				new CornerSpawnPattern
+				Vector2(0,RM->GAME_WINDOW_HEIGHT / 2),
+				new LineSpawnPattern
 				(
-					150
+					Vector2::Zero,
+					0
 				),
 				{
-					new Charger ( ),
-					new Charger ( ),
-					new Charger ( ),
-					new Charger ( ),
-					new Charger ( ),
-					new Charger ( ),
-					new Charger ( ),
-					new Charger ( )
+					new Splitta(0),
+					new Splitta(1),
+					new Splitta(2),
+					new Splitta(3),
+					new Splitta(4),
+					new Splitta(5),
+					new Splitta(6),
+					new Splitta(7)
 				}
 			)
 		}

@@ -27,8 +27,10 @@ void Enemy::Update ( )
 
 void Enemy::OnCollision ( Object * collided )
 {
-    if ( Player * p = dynamic_cast< Player * >( collided ) )
+    if ( Player* p = dynamic_cast<Player*>( collided ) )
         p->ReceiveDamage ( damage );
+    if (Bullet* b = dynamic_cast<Bullet*>(collided))
+        ReceiveDamage(b->GetDamage());
 }
 
 void Enemy::Move ( )
