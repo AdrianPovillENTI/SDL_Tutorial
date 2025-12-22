@@ -4,12 +4,13 @@ class CircularMovementPattern : public MovementPattern
 {
     float radius;
     bool clockwise;
-    float elapsed;        
+    float elapsed;     
+    Vector2 center;
     float rate = 0.0f;
 
 public:
-    CircularMovementPattern ( float r , bool cw )
-        : radius ( r ) , clockwise ( cw )
+    CircularMovementPattern ( float r , Vector2 c)
+        : radius ( r ) , center ( c )
     {
         elapsed = 0;
     }
@@ -20,16 +21,16 @@ public:
         float dy = sin ( 0.1f * dt ) * radius;
         return Vector2 ( dx , dy );
     }
-
+    float angle = 0.f;
     Vector2 GetDelta ( float dt)
     {
-        float angularSpeed = 2 * 3.14f * 0.001f;
-        rate += angularSpeed * dt;
+        angle += 2 * dt;
+        
 
-        float dx = cos ( rate );
-        float dy = sin ( rate );
-
+        float dx = cos ( angle );
+        float dy = sin ( angle );
+        Vector2 dir = Vector2 ( dx , dy ) * radius;
         //if ( rate >= 270 ) return Vector2::Zero;
-        return Vector2 ( dx , dy );
+        return center + dir;
     }
 };

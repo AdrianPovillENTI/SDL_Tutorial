@@ -90,6 +90,7 @@
     <ClInclude Include="source\MapDecorations.h" />
     <ClInclude Include="source\Patterns\CheckPointMovementPattern.h" />
     <ClInclude Include="source\Patterns\CircularMovementPattern.h" />
+    <ClInclude Include="source\Patterns\CornerSpawnPattern.h" />
     <ClInclude Include="source\Patterns\LinearToPlayerMovementPattern.h" />
     <ClInclude Include="source\Patterns\MovementPatternData.h" />
     <ClInclude Include="source\Patterns\MultiPhasePattern.h" />

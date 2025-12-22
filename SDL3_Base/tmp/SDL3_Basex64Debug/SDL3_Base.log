@@ -1,46 +1,24 @@
-﻿  CornerSpawnPattern.h
+﻿  Charger.cpp
 C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(112,9): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
-  (compilando archivo de origen "source/Patterns/CornerSpawnPattern.h")
+  (compilando archivo de origen "source/Enemies/Charger.cpp")
   
 C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(118,9): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
-  (compilando archivo de origen "source/Patterns/CornerSpawnPattern.h")
+  (compilando archivo de origen "source/Enemies/Charger.cpp")
   
 C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(132,9): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
-  (compilando archivo de origen "source/Patterns/CornerSpawnPattern.h")
-  
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Patterns\CornerSpawnPattern.h(16,58): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Patterns\CornerSpawnPattern.h(16,39): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
-  RandomSpawnPattern.h
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(112,9): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
-  (compilando archivo de origen "source/Patterns/RandomSpawnPattern.h")
-  
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(118,9): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
-  (compilando archivo de origen "source/Patterns/RandomSpawnPattern.h")
-  
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(132,9): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
-  (compilando archivo de origen "source/Patterns/RandomSpawnPattern.h")
-  
-  Bullet.cpp
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(112,9): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
-  (compilando archivo de origen "source/Bullet.cpp")
-  
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(118,9): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
-  (compilando archivo de origen "source/Bullet.cpp")
-  
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(132,9): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
-  (compilando archivo de origen "source/Bullet.cpp")
+  (compilando archivo de origen "source/Enemies/Charger.cpp")
   
 C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Patterns\CheckPointMovementPattern.h(33,49): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
-  (compilando archivo de origen "source/Bullet.cpp")
+  (compilando archivo de origen "source/Enemies/Charger.cpp")
   
 C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Background.h(13,39): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "source/Bullet.cpp")
+  (compilando archivo de origen "source/Enemies/Charger.cpp")
   
 C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Background.h(34,15): warning C4244: 'inicializando': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "source/Bullet.cpp")
+  (compilando archivo de origen "source/Enemies/Charger.cpp")
   
 C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Background.h(35,16): warning C4244: 'inicializando': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "source/Bullet.cpp")
+  (compilando archivo de origen "source/Enemies/Charger.cpp")
   
   Gameplay.cpp
 C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(112,9): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
@@ -88,36 +66,20 @@ C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Enemies\
 C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Patterns\TopBottomSpawnPattern.h(13,33): warning C4244: 'inicializando': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
   (compilando archivo de origen "source/Gameplay.cpp")
   
+C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Patterns\CornerSpawnPattern.h(15,50): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "source/Gameplay.cpp")
+  
 C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Patterns\CornerSpawnPattern.h(16,58): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
   (compilando archivo de origen "source/Gameplay.cpp")
   
 C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Patterns\CornerSpawnPattern.h(16,39): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
   (compilando archivo de origen "source/Gameplay.cpp")
   
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Gameplay.cpp(31,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Gameplay.cpp(49,57): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
-  Strikers.cpp
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(112,9): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
-  (compilando archivo de origen "source/Enemies/Strikers.cpp")
+C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Patterns\CornerSpawnPattern.h(31,67): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
+  (compilando archivo de origen "source/Gameplay.cpp")
   
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(118,9): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
-  (compilando archivo de origen "source/Enemies/Strikers.cpp")
-  
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(132,9): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
-  (compilando archivo de origen "source/Enemies/Strikers.cpp")
-  
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Patterns\CheckPointMovementPattern.h(33,49): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
-  (compilando archivo de origen "source/Enemies/Strikers.cpp")
-  
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Background.h(13,39): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "source/Enemies/Strikers.cpp")
-  
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Background.h(34,15): warning C4244: 'inicializando': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "source/Enemies/Strikers.cpp")
-  
-C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Background.h(35,16): warning C4244: 'inicializando': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "source/Enemies/Strikers.cpp")
-  
+C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Gameplay.cpp(32,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\source\Gameplay.cpp(53,73): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
   Generando código...
   SDL3_Base.vcxproj -> C:\Users\xasa7\OneDrive\Documentos\GitHub\SDL_Tutorial\SDL3_Base\binaries\x64Debug\SDL3_Base.exe
   0 archivo(s) copiado(s)
