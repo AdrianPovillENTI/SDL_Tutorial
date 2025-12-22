@@ -24,8 +24,8 @@ public:
 
     Vector2 GetDelta(float dt, float elapsed, int index = 0)
     {
-        offsetx = xBack ? -0.001f : 0.001f;
-        offsety = yBack ? -0.001f : 0.001f;
+        offsetx = xBack ? -radius : radius;
+        offsety = yBack ? -radius : radius;
 
         dir.x += offsetx;
         dir.y += offsety;
@@ -39,6 +39,6 @@ public:
         else
             yBack = dir.y >= 1 ? true : false;
 
-        return Vector2(dir.x + hSpeed, dir.y) * speed;
+        return Vector2(dir.x + hSpeed, dir.y) * speed * dt;
     }
 };

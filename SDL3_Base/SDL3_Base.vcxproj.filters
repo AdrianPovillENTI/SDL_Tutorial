@@ -55,6 +55,11 @@
     <ClCompile Include="source\Background.cpp" />
     <ClCompile Include="source\Gun.cpp" />
     <ClCompile Include="source\MapDecorations.cpp" />
+    <ClCompile Include="source\Patterns\RandomSpawnPattern.h" />
+    <ClCompile Include="source\UI\UI.cpp" />
+    <ClCompile Include="source\UI\UIBar.cpp" />
+    <ClCompile Include="source\UI\UIManager.cpp" />
+    <ClCompile Include="source\UI\UIStaticImages.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Enemies\EnemySpawnData.h" />
@@ -127,6 +132,13 @@
     <ClInclude Include="source\Patterns\CheckPointMovementPattern.h" />
     <ClInclude Include="source\Patterns\CircularMovementPattern.h" />
     <ClInclude Include="source\Patterns\MovementPatternData.h" />
+    <ClInclude Include="source\Patterns\CornerSpawnPattern.h" />
+    <ClInclude Include="source\UI\UI.h" />
+    <ClInclude Include="source\UI\UIBar.h" />
+    <ClInclude Include="source\UI\UIManager.h" />
+    <ClInclude Include="source\UI\UIStaticImages.h" />
+    <ClInclude Include="source\Patterns\SplitPattern.h" />
+    <ClInclude Include="source\Patterns\JoinPattern.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bullet.png" />
@@ -194,5 +206,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="resources\Fonts\Hyperspace.ttf" />
   </ItemGroup>
 </Project>

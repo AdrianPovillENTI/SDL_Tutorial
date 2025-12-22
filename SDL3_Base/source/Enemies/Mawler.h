@@ -5,6 +5,10 @@ class Mawler : public Enemy
 {
 public:
     Mawler();
-    void Start ( ) override { Enemy::Start ( ); }
+    void Start() override;
+
+private:
+    float _hSpeed;
+    int radius;
 };
 

@@ -6,6 +6,8 @@
 #include "SinusoidalMovementPattern.h"
 #include "CircularMovementPattern.h"
 #include "CheckPointMovementPattern.h"
+#include "JoinPattern.h"
+#include "SplitPattern.h"
 
 class EnemyBehaviourPattern
 {

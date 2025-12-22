@@ -91,6 +91,7 @@
     <ClInclude Include="source\Patterns\CheckPointMovementPattern.h" />
     <ClInclude Include="source\Patterns\CircularMovementPattern.h" />
     <ClInclude Include="source\Patterns\CornerSpawnPattern.h" />
+    <ClInclude Include="source\Patterns\JoinPattern.h" />
     <ClInclude Include="source\Patterns\LinearToPlayerMovementPattern.h" />
     <ClInclude Include="source\Patterns\MovementPatternData.h" />
     <ClInclude Include="source\Patterns\MultiPhasePattern.h" />
@@ -115,6 +116,7 @@
     <ClInclude Include="source\Patterns\LineSpawnPattern.h" />
     <ClInclude Include="source\Item.h" />
     <ClInclude Include="source\Bullet.h" />
+    <ClInclude Include="source\Patterns\SplitPattern.h" />
     <ClInclude Include="source\Patterns\TopBottomSpawnPattern.h" />
     <ClInclude Include="source\Player.h" />
     <ClInclude Include="source\DamageableObject.h" />

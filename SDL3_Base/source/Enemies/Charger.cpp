@@ -71,7 +71,7 @@ void Charger::Move ( )
 {
     if ( !pattern ) return;
 
-    const float dt = 1.f / 60.f;
+    float dt = 1.f / 60.f;
     phaseTimer += dt;
 
     Enemy::Move ( );
