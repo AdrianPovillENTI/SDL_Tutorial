@@ -5,16 +5,17 @@
 class Charger : public Enemy
 {
 private:
+    Vector2 targetPoint;
+
     float phaseTimer = 0.f;
-
-    float moveTime = 0.75f; // tiempo moviéndose
-    float stopTime = 1.0f;  // tiempo parado
-
     bool isMoving = true;
 
-    Vector2 ChooseDirection ( );
+    float moveTime = 5.0f; // se mueven bastante
+    float stopTime = 1.0f;
 
-    void CreatePattern ( Vector2 dir );
+    Vector2 ChooseSmartTarget ( );
+    Vector2 DirectionToTarget ( ) const;
+    void CreatePattern ( const Vector2 & dir );
 
 public:
     Charger ( );

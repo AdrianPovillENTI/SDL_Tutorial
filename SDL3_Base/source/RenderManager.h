@@ -18,6 +18,7 @@ public:
 
 	const unsigned int WINDOW_WIDTH = 1360;
 	const unsigned int WINDOW_HEIGHT = 768;
+	const unsigned int GAME_WINDOW_HEIGHT = 568;
 
 	void Init();
 	void Release();

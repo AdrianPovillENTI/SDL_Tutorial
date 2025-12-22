@@ -12,13 +12,19 @@
 #include "Bullet.h"
 
 #pragma region
+
 #include "Item.h"
 #include "Turret.h"
 #include "Enemies/WaveManager.h"
 #include "Enemies/Swirlers.h"
 #include "Enemies/Gulper.h"
+#include "Enemies/Floater.h"
+#include "Enemies/Drifter.h"
+#include "Enemies/Charger.h"
 #include "Patterns/LineSpawnPattern.h"
 #include "Patterns/TopBottomSpawnPattern.h"
+#include "Patterns/RandomSpawnPattern.h"
+#include "Patterns/CornerSpawnPattern.h"
 #pragma endregion Items
 
 void Gameplay::OnEnter()
@@ -45,37 +51,97 @@ void Gameplay::OnEnter()
 
 	// Origin.x en la mitad de la pantalla. Y serán determinados por el patrón (bordes).
 	Vector2 origin = Vector2 ( RM->WINDOW_WIDTH * 0.5f , RM->WINDOW_HEIGHT * 2);
-
 	WaveManager * waveManager = new WaveManager
 	(
 		{ // enemySpawnData vector
-			new EnemySpawnData 
-			( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
-				1, 
-				Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 3 ),
-				new LineSpawnPattern 
-				( 
-					Vector2 ( 1,0 ), //Direction where will spawn
-					100 //Spacing
-				), 
-				{ 
-					new Swirlers ( ),
-					new Swirlers ( ),
-					new Swirlers ( ),
-					new Swirlers ( ) 
-				} 
-			) ,
-			new EnemySpawnData
+			//new EnemySpawnData 
+			//( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
+			//	1, 
+			//	Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 3 ),
+			//	new LineSpawnPattern 
+			//	( 
+			//		Vector2 ( 1,0 ), //Direction where will spawn
+			//		100 //Spacing
+			//	), 
+			//	{ 
+			//		new Swirlers ( ),
+			//		new Swirlers ( ),
+			//		new Swirlers ( ),
+			//		new Swirlers ( ) 
+			//	} 
+			//) ,
+			//new EnemySpawnData
+			//(
+			//	2,
+			//	origin,
+			//	new TopBottomSpawnPattern
+			//	(
+			//		300.f
+			//	),
+			//	{
+			//		new Gulper ( Vector2::Up),
+			//		new Gulper ( Vector2::Down )
+			//	}
+			//),
+			/*new EnemySpawnData
 			(
-				2,
+				3,
 				origin,
-				new TopBottomSpawnPattern
+				new RandomSpawnPattern
 				(
-					100.f
+					Vector2::Down,
+					100,
+					50.f
 				),
 				{
-					new Gulper ( Vector2::Up),
-					new Gulper ( Vector2::Down )
+					new Drifter ( Vector2::Left ),
+					new Drifter ( Vector2::Left ),
+					new Drifter ( Vector2::Left ),
+					new Drifter ( Vector2::Left ),
+					new Drifter ( Vector2::Left ),
+					new Drifter ( Vector2::Left ),
+					new Drifter ( Vector2::Left ),
+					new Drifter ( Vector2::Left ),
+					new Drifter ( Vector2::Left )
+				}
+			)*/
+			/*new EnemySpawnData
+			(
+				3,
+				Vector2(50,RM->WINDOW_HEIGHT),
+				new LineSpawnPattern
+				(
+					Vector2::Right,
+					150
+				),
+				{
+					new Floater (),
+					new Floater (),
+					new Floater (),
+					new Floater (),
+					new Floater (),
+					new Floater (),
+					new Floater (),
+					new Floater ()
+				}
+			),*/
+			new EnemySpawnData
+			(
+				3,
+				Vector2 ( 0,0 ),
+				new CornerSpawnPattern
+				(
+					150
+				),
+				{
+					new Charger ( ),
+					new Charger ( ),
+					new Charger ( ),
+					new Charger ( ),
+					new Charger ( ),
+					new Charger ( ),
+					new Charger ( ),
+					new Charger ( )
 				}
 			)
 		}
