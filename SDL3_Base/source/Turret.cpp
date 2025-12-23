@@ -1,6 +1,9 @@
 #include "Turret.h"
+#include "Bullet.h"
+#include "Spawner.h"
+
 Turret::Turret(string sprite, vector<string> bulletAnim, float speed, int dmg, Vector2 spawnBullet, bool _lowerTurret) : 
-	Gun(sprite, bulletAnim, speed, dmg, spawnBullet), angle(0), rotSpeed(10), aim(Vector2(0.f, 0.f)), lowerTurret(_lowerTurret)
+	Gun(sprite, bulletAnim, speed, dmg, spawnBullet), lowerTurret(_lowerTurret)
 {
 	_transform->scale = (Vector2(0.5f, 0.5f));
 	_transform->rotation = 90;
@@ -27,7 +30,9 @@ void Turret::Update() {
 			if (_transform->position.x - checkXpos > offset)
 			{
 				if (lowerTurret && _transform->rotation < topRotation * 3)
+				{
 					_transform->rotation += 45;
+				}
 				else if (!lowerTurret && _transform->rotation > -topRotation)
 					_transform->rotation -= 45;
 
@@ -56,4 +61,33 @@ void Turret::Update() {
 	}
 
 	lastX = _transform->position.x;
+}
+
+void Turret::Shoot()
+{
+	Vector2 aim;
+
+	if (_transform->rotation == 90)
+		aim = Vector2::Right;
+	else if (_transform->rotation == 45)
+		aim = Vector2(1, -1);
+	else if (_transform->rotation == 0)
+		aim = Vector2::Down;
+	else if (_transform->rotation == -45)
+		aim = Vector2(-1, -1);
+	else if (_transform->rotation == -90)
+		aim = Vector2::Left;
+	else if (_transform->rotation == 135)
+		aim = Vector2(1, 1);
+	else if (_transform->rotation == 180)
+		aim = Vector2::Up;
+	else if (_transform->rotation == 225)
+		aim = Vector2(-1, 1);
+	else
+		aim = Vector2::Left;
+
+	Bullet* b = new Bullet(bulletAnimationSprites, bulletSpeed, bulletDamage, aim);
+	b->GetTransform()->position = _transform->position + bulletSpawnPoint;
+
+	SPAWNER.SpawnObject(b);
 }

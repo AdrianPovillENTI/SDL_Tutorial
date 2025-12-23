@@ -144,7 +144,7 @@ void Player::InitializeGuns()
 
     cannonBulletSpawnPoint = Vector2(30.f, 35.f);
     laserBulletSpawnPoint = Vector2(55.f, -20.f);
-    turretsBulletSpawnPoint = Vector2(-0.5f, 0.5f);
+    turretsBulletSpawnPoint = Vector2(0.f, 0.f);
 
     cannon = new AmmoGun(cannonSprite, cannonBulletAnim, 10, 5, 10, cannonBulletSpawnPoint);
     AddChild(cannon, Vector2::Zero);

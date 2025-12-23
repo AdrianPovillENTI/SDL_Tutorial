@@ -3,18 +3,17 @@
 
 class Gun : public GameObject
 {
-	private:
-		float bulletSpeed;
-		int bulletDamage;
+protected:
+	float bulletSpeed;
+	int bulletDamage;
+	Vector2 bulletSpawnPoint;
+	vector<string> bulletAnimationSprites;
+	string gunSprite;
 
-		Vector2 bulletSpawnPoint;
-		vector<string> bulletAnimationSprites;
-		string gunSprite;
+public:
+	Gun(string sprite, vector<string> bulletAnim, float _speed, int _dmg, Vector2 spawnBullet);
 
-	public:
-		Gun(string sprite, vector<string> bulletAnim, float _speed, int _dmg, Vector2 spawnBullet);
-
-		virtual void Shoot();
-		void OnCollision(Object* collided) override {}
+	virtual void Shoot();
+	void OnCollision(Object* collided) override {}
 };
 
