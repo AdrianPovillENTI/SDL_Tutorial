@@ -43,3 +43,18 @@ void Angrygons::Start ( )
     );
     Enemy::Start ( );
 }
+
+
+bool Angrygons::OutOfLimits ( )
+{
+    float margin = 500.f;
+    Vector2 pos = _transform->position;
+
+    if ( pos.x < -margin || pos.x > SC_WIDTH * 1.4f + margin ||
+        pos.y < -margin || pos.y > SC_HEIGHT * 1.5f + margin )
+    {
+        return true;
+    }
+
+    return false;
+}

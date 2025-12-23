@@ -23,7 +23,9 @@ void Enemy::Update ( )
     Move ( );
 
     if ( isDeath )
+    {
         Destroy ( );
+    }
 }
 
 void Enemy::OnCollision ( Object * collided )
@@ -31,7 +33,10 @@ void Enemy::OnCollision ( Object * collided )
     if ( Player* p = dynamic_cast<Player*>( collided ) )
         p->ReceiveDamage ( damage );
     if (Bullet* b = dynamic_cast<Bullet*>(collided))
-        ReceiveDamage(b->GetDamage());
+    {
+        ReceiveDamage ( b->GetDamage ( ) );
+        if ( health <= 0 ) killedByPlayer = true;
+    }
 }
 
 void Enemy::Move ( )
@@ -51,6 +56,7 @@ void Enemy::Move ( )
     if ( OutOfLimits ( ) )
     {
         active = false;
+        killedByPlayer = false;
         Destroy ( );
     }
 }
@@ -83,4 +89,9 @@ void Enemy::OnEnterFunction ( )
         }
         return;
     }
+}
+
+bool Enemy::WasKilledByPlayer ( )
+{
+    return killedByPlayer;
 }

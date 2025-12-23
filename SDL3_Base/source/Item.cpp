@@ -6,14 +6,14 @@
 #include <cstdlib>  
 
 
-Item::Item ( std::string _path )
+Item::Item ( std::string _path, Vector2 pos )
     : DamageableObject ( 1 , _path ) ,
     impactCount ( 0 ) ,
     maxImpactCount ( 4 )
 {
     _transform->scale = Vector2::One;
     _physics->AddCollider(new AABB(_transform->position, _transform->size));
-    _transform->position = Vector2 ( RM->WINDOW_WIDTH , 500 );
+    _transform->position = pos;
     _transform->rotation = 0.f;
     type = SCORE;
     SpritesInitialization();  

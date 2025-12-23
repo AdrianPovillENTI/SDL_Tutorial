@@ -28,8 +28,8 @@ private:
 
 public:
 
-    Item ( std::string _path );
-    virtual ~Item ( );
+    Item ( std::string _path, Vector2 pos );
+    ~Item ( );
 
     void Update ( ) override;
     void Move ( ) override;

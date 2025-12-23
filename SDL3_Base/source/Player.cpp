@@ -55,8 +55,11 @@ void Player::Start ( )
     InitializePhysics();
     onReceiveDamage = [this]() 
     {
-        invencible = true;
-        invencibleTime = 10.0f;
+        if(!invencible )
+        {
+            invencible = true;
+            invencibleTime = 10.0f;
+        }
     };
 }
 
@@ -324,7 +327,7 @@ void Player::ApplyItemEffects (Item* item)
         case Item::FORCEFIELD:
         {
             invencible = true;
-            invencibleTime = 5;
+            invencibleTime = 200;
             break;
         }
 

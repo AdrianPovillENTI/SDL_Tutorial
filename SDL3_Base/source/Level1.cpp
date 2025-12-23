@@ -56,9 +56,6 @@ void Level1::OnEnter ( )
     Player * player = new Player ( 55 );
 	SPAWNER.SpawnObject ( player );
 
-	SPAWNER.SpawnObject ( new Item ( "resources/Items/Score.png" ) );
-	SPAWNER.SpawnObject ( new Item ( "resources/Items/Score.png" ) );
-	SPAWNER.SpawnObject ( new Item ( "resources/Items/Score.png" ) );
 	UIManager * uiManager = new UIManager ( );
 
 
@@ -354,9 +351,12 @@ void Level1::OnEnter ( )
 				new LineSpawnPattern
 				(
 					Vector2::Left ,
-					0
+					50.f
 				),
 				{
+					new Angrygons (),
+					new Angrygons (),
+					new Angrygons (),
 					new Angrygons (),
 					new Angrygons (),
 					new Angrygons (),

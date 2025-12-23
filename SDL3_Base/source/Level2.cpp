@@ -46,9 +46,6 @@ void Level2::OnEnter ( )
 	}
 	SPAWNER.SpawnObject ( new Player ( 55 ) );
 
-	SPAWNER.SpawnObject ( new Item ( "resources/Items/Score.png" ) );
-	SPAWNER.SpawnObject ( new Item ( "resources/Items/Score.png" ) );
-	SPAWNER.SpawnObject ( new Item ( "resources/Items/Score.png" ) );
 	UIManager * uiManager = new UIManager ( );
 
 

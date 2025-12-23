@@ -5,5 +5,6 @@ class Angrygons : public Enemy
 public:
     Angrygons ( );
     void Start ( ) override;
+    bool OutOfLimits ( ) override;
 };
 

@@ -21,8 +21,8 @@ private:
 public:
     Button(OnClick onClick,
            Vector2 position = Vector2(200.f, 100.f),
-           Vector2 size = Vector2(350, 100),
-           std::string texturePath = "resources/xd.png")
+           Vector2 size = Vector2(450, 100),
+           std::string texturePath = "resources/ButtonBKG.png")
         : ImageObject(texturePath, position, size),
           _isHovered(false),
           _onClick(onClick)
