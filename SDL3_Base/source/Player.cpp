@@ -77,10 +77,15 @@ void Player::ReceiveDamage ( int _health )
     health -= _health;
     if ( onReceiveDamage != nullptr ) onReceiveDamage ( );
     std::cout << "Received damage: " << _health << " | Current health: " << health << std::endl;
-    if ( health < 0 )
+
+    UIM->UpdateShield(health, maxHealth);
+
+    if (health <= 0 && lifes > 0)
     {
-        health = 0;
-        isDeath = true;
+        lifes--;
+        health = maxHealth;
+        UIM->UpdateShield(health, maxHealth);
+        UIM->UpdateLifes(lifes);
     }
 }
 
@@ -92,6 +97,7 @@ void Player::InitializeStats()
     _transform->rotation = 0.f;
 
     score = 0;
+    lifes = 3;
 
     invencible = false;
     invencibleTime = 0.f;
@@ -133,6 +139,9 @@ void Player::InitializeGuns()
     };
     cannonSprite = "resources/Player/CannonSprite.png";
 
+    turretSprite = "resources/Player/TomasTurretlina.png";
+
+
     cannonBulletSpawnPoint = Vector2(30.f, 35.f);
     laserBulletSpawnPoint = Vector2(55.f, -20.f);
     turretsBulletSpawnPoint = Vector2(-0.5f, 0.5f);
@@ -140,11 +149,17 @@ void Player::InitializeGuns()
     cannon = new AmmoGun(cannonSprite, cannonBulletAnim, 10, 5, 10, cannonBulletSpawnPoint);
     AddChild(cannon, Vector2::Zero);
     SPAWNER.SpawnObject(cannon);
+
     laser = new AmmoGun(laserSprite, laserBulletAnim, 50, 2, 50,laserBulletSpawnPoint); 
     AddChild(laser, Vector2::Zero);
     SPAWNER.SpawnObject(laser);
-    turrets = { new Turret(cannonSprite/*Temporal*/, cannonBulletAnim, bulletSpeed, bulletDamage, turretsBulletSpawnPoint),
-       new Turret(cannonSprite/*Temporal*/, cannonBulletAnim, bulletSpeed, bulletDamage, turretsBulletSpawnPoint + Vector2(0, -1))};
+
+    turrets = { new Turret(turretSprite, bulletSprites, bulletSpeed, bulletDamage, turretsBulletSpawnPoint, false),
+       new Turret(turretSprite, bulletSprites, bulletSpeed, bulletDamage, turretsBulletSpawnPoint + Vector2(0, -1), true)};
+    AddChild(turrets[0], Vector2(-55.f, -35.f));
+    AddChild(turrets[1], Vector2(-55.f, 35.f));
+    SPAWNER.SpawnObject(turrets[0]);
+    SPAWNER.SpawnObject(turrets[1]);
 }
 
 void Player::Move ( )
@@ -218,10 +233,10 @@ void Player::Update ( )
             invencible = false;
     }
 
-    if ( health <= 0 && !isDeath )
+    if (lifes <= 0)
     {
-        isDeath = true;
-        Destroy ( );
+            isDeath = true;
+            Destroy ( );
     }
 }
 
@@ -297,6 +312,7 @@ void Player::ApplyItemEffects (Item* item)
 
         case Item::TURRET:
         {
+            cout << "geting turret" << endl;
             if (!turrets[1]->GetActive())
                 if (turrets[0]->GetActive())
                     turrets[1]->SetActive(true);
@@ -315,6 +331,7 @@ void Player::ApplyItemEffects (Item* item)
         case Item::SHIELD:
         {
             health = maxHealth;
+            UIM->UpdateShield(health, maxHealth);
             break;
         }
 

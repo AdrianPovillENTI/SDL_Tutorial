@@ -16,6 +16,7 @@ public:
     static const int maxEquippedItem = 3;
 
 private:
+    int lifes;
     bool invencible;
     float invencibleTime;
 
@@ -48,6 +49,7 @@ private:
 
     vector<Turret*> turrets;
     vector<string> turretBulletAnim;    
+    string turretSprite;    
     Vector2 turretsBulletSpawnPoint;
 
     SpeedVfx* speedVfx;

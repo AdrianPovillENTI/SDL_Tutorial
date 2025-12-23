@@ -3,12 +3,18 @@
 class Turret : public Gun
 {
 private:
+    bool lowerTurret;
     float angle;
     float rotSpeed;
     Vector2 aim;
+    bool goingRight;
+    float lastX;
+    float checkXpos;
+    float offset;
+    float topRotation;
 
 public: 
-    Turret(string sprite, vector<string> bulletAnim, float speed, int dmg, Vector2 spawnBullet) : Gun(sprite, bulletAnim, speed, dmg, spawnBullet), angle(0), rotSpeed(10), aim(Vector2(0.f, 0.f)) {}
+    Turret(string sprite, vector<string> bulletAnim, float speed, int dmg, Vector2 spawnBullet, bool _lowerTurret);
 
     void Update() override;
 };
