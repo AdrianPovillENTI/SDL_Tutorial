@@ -186,6 +186,7 @@ void Gameplay::OnEnter()
 					new Splitta(7)
 				}
 			)*/
+			/*
 			new EnemySpawnData
 			(
 				3,
@@ -206,6 +207,7 @@ void Gameplay::OnEnter()
 					new ArachnidTail(35.f)
 				}
 			)
+		*/
 		}
 	);
 
