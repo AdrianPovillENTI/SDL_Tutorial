@@ -1,15 +1,15 @@
 #include "Drifter.h"
 
-Drifter::Drifter ( Vector2 _dir )
-: Enemy
-(
-    0.5f + ( rand ( ) % 12 ) / 10.f,
-    3 , //Health
-    1 , //Damage
-    "resources/Player/Player.png" 
-) ,
-direction ( _dir )
+Drifter::Drifter()
+    : Enemy
+    (
+        0.5f + (rand() % 12) / 10.f,
+        3, //Health
+        1, //Damage
+        "resources/Player/Player.png"
+    )
 {
+    direction = Vector2::Left;
     Start ( );
 }
 

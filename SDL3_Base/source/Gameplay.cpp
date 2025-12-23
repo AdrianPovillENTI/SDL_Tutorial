@@ -25,6 +25,7 @@
 #include "Enemies/Splitta.h"
 #include "Enemies/Arachnid.h"
 #include "Enemies/ArachnidTail.h"
+#include "Enemies/Scouts.h"
 #include "Patterns/LineSpawnPattern.h"
 #include "Patterns/TopBottomSpawnPattern.h"
 #include "Patterns/RandomSpawnPattern.h"
@@ -96,15 +97,15 @@ void Gameplay::OnEnter()
 					50.f
 				),
 				{
-					new Drifter ( Vector2::Left ),
-					new Drifter ( Vector2::Left ),
-					new Drifter ( Vector2::Left ),
-					new Drifter ( Vector2::Left ),
-					new Drifter ( Vector2::Left ),
-					new Drifter ( Vector2::Left ),
-					new Drifter ( Vector2::Left ),
-					new Drifter ( Vector2::Left ),
-					new Drifter ( Vector2::Left )
+					new Drifter ( ),
+					new Drifter ( ),
+					new Drifter ( ),
+					new Drifter ( ),
+					new Drifter ( ),
+					new Drifter ( ),
+					new Drifter ( ),
+					new Drifter ( ),
+					new Drifter ( )
 				}
 			)*/
 			/*new EnemySpawnData
@@ -208,6 +209,24 @@ void Gameplay::OnEnter()
 				}
 			)
 		*/
+			new EnemySpawnData
+			(
+				3,
+				Vector2(RM->WINDOW_WIDTH + 100.f, 50.f),
+				new LineSpawnPattern
+				(
+					Vector2::Up,
+					75.f
+				),
+				{
+					new Scouts(Vector2::Left),
+					new Scouts(Vector2::Left),
+					new Scouts(Vector2::Left),
+					new Scouts(Vector2::Left),
+					new Scouts(Vector2::Left),
+					new Scouts(Vector2::Left)
+				}
+			)
 		}
 	);
 

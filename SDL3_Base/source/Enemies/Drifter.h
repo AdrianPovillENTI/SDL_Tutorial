@@ -6,7 +6,7 @@ class Drifter : public Enemy
 private:
     Vector2 direction;
 public:
-    Drifter ( Vector2 _dir );
+    Drifter();
     void Start ( ) override;
 
 };
