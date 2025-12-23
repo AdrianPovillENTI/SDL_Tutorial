@@ -21,6 +21,10 @@ public:
 	{
 	}
 
+	void SetDirection ( const Vector2 & dir )
+	{
+		targetPos = dir;
+	}
 	Vector2 GetDelta ( float dt , float elapsed , int index ) override
 	{
 		return targetPos * speed * dt;

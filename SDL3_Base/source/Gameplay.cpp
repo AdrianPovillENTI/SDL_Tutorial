@@ -26,6 +26,7 @@
 #include "Enemies/Arachnid.h"
 #include "Enemies/ArachnidTail.h"
 #include "Enemies/Scouts.h"
+#include "Enemies/Tentakor.h"
 #include "Patterns/LineSpawnPattern.h"
 #include "Patterns/TopBottomSpawnPattern.h"
 #include "Patterns/RandomSpawnPattern.h"

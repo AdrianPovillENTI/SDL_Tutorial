@@ -26,6 +26,7 @@
 #include "Enemies/Arachnid.h"
 #include "Enemies/ArachnidTail.h"
 #include "Enemies/Tentakor.h"
+#include "Enemies/Headron.h"
 #include "Patterns/LineSpawnPattern.h"
 #include "Patterns/TopBottomSpawnPattern.h"
 #include "Patterns/RandomSpawnPattern.h"
@@ -44,7 +45,8 @@ void Level1::OnEnter ( )
 	{
 		SPAWNER.SpawnObject ( new MapDecorations ( "resources/Map/MapDecorations/Ice3.png" ) );
 	}
-	SPAWNER.SpawnObject ( new Player ( 55 ) );
+    Player * player = new Player ( 55 );
+	SPAWNER.SpawnObject ( player );
 
 	SPAWNER.SpawnObject ( new Item ( "resources/Items/Score.png" ) );
 	SPAWNER.SpawnObject ( new Item ( "resources/Items/Score.png" ) );
@@ -205,7 +207,7 @@ void Level1::OnEnter ( )
 					new ArachnidTail(6.5f)
 				}
 			),*/
-			new EnemySpawnData
+			/*new EnemySpawnData
 			(
 				3 ,
 				Vector2 ( RM->WINDOW_WIDTH , RM->GAME_WINDOW_HEIGHT / 2 ) ,
@@ -216,6 +218,25 @@ void Level1::OnEnter ( )
 				) ,
 				{
 					new Tentakor ( )
+				}
+			)*/
+			new EnemySpawnData
+			(
+				3,
+				Vector2 ( 0,0 ),
+				new CornerSpawnPattern
+				(
+					150
+				),
+				{
+					new Gearbot ( player ),
+					new Gearbot ( player ),
+					new Gearbot ( player ),
+					new Gearbot ( player ),
+					new Gearbot ( player ),
+					new Gearbot ( player ),
+					new Gearbot ( player ),
+					new Gearbot ( player )
 				}
 			)
 		}

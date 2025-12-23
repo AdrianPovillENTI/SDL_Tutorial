@@ -13,8 +13,8 @@ private:
     float moveTime = 5.0f; // se mueven bastante
     float stopTime = 1.0f;
 
-    Vector2 ChooseSmartTarget ( );
-    Vector2 DirectionToTarget ( ) const;
+    Vector2 DirectionToPlayer ( );
+    Vector2 DirectionToTarget ( );
     void CreatePattern ( const Vector2 & dir );
 
 public:
