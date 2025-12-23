@@ -1,31 +1,16 @@
 #pragma once
 #include "Enemy.h"
-
-//Disquetes
+//DISQUETES
 class Loopers : public Enemy
 {
+private:
+    float timeToPlay;
+    float counterToPlay;
+    Vector2 direction;
+    Vector2 origin;
 public:
-    Loopers ( string path ) :
-        Enemy
-        (
-        0.5f , //Speed
-        5 , //Health
-        1 , //Damage
-        path , //Sprite path
-        new EnemyBehaviourPattern
-        (
-        new MultiPhasePattern
-        ( {
-            { new LinearPattern ( Vector2::Left,0.5f ),2 }
-        } )
-        )
-        )
-    {
-    }
-    void Start ( ) override { Enemy::Start ( ); }
-    void Update ( ) override { Enemy::Update ( ); }
-    void OnCollision ( Object * collided ) override { Enemy::OnCollision ( collided ); }
-    void Move ( ) override { Enemy::Move ( ); }
-
+    Loopers ( float i , Vector2 _dir, Vector2 _origin = Vector2::Zero );
+    void Start ( ) override;
+	void OnEnterFunction() override;
 };
 

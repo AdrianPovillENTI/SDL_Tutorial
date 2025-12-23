@@ -10,16 +10,16 @@ class CircularMovementPattern : public MovementPattern
     bool xBack;
     bool yBack;
     Vector2 dir;
-
+    bool clockWise;
 public:
-    CircularMovementPattern ( float r, float _speed, float _hspeed = 0 )
-        : radius(1 / r), speed(_speed), hSpeed(_hspeed)
+    CircularMovementPattern ( float r, float _speed, float _hspeed = 0 , bool cW = false)
+        : radius ( 1 / r ) , speed ( _speed ) , hSpeed ( _hspeed ) , clockWise ( cW )
     {
         xBack = true;
         yBack = false;
         offsetx = radius;
         offsety = radius;
-        dir = Vector2(1.f, 0.f);
+        dir = Vector2(clockWise ? -1.f : 1.f, 0.f);
     }
 
     Vector2 GetDelta(float dt, float elapsed, int index = 0)

@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\Enemies\Angrygons.cpp" />
     <ClCompile Include="source\Level1.cpp" />
     <ClCompile Include="source\Level2.cpp" />
     <ClCompile Include="source\Enemies\ArachnidTail.cpp" />
@@ -84,6 +85,7 @@
     <ClCompile Include="source\Patterns\ZigZagMovementPattern.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\Enemies\Angrygons.h" />
     <ClInclude Include="source\Level1.h" />
     <ClInclude Include="source\Level2.h" />
     <ClInclude Include="source\Enemies\ArachnidTail.h" />

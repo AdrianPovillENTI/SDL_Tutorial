@@ -1,9 +1,9 @@
 #pragma once
 #include "Enemy.h"
-
-class Swirlers : public Enemy
+class Angrygons : public Enemy
 {
 public:
-    Swirlers ( );
+    Angrygons ( );
     void Start ( ) override;
 };
+
