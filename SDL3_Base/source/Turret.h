@@ -6,7 +6,6 @@ private:
     bool lowerTurret;
     float angle;
     float rotSpeed;
-    Vector2 aim;
     bool goingRight;
     float lastX;
     float checkXpos;
@@ -17,5 +16,6 @@ public:
     Turret(string sprite, vector<string> bulletAnim, float speed, int dmg, Vector2 spawnBullet, bool _lowerTurret);
 
     void Update() override;
+    void Shoot() override;
 };
 

@@ -3,9 +3,9 @@
 
 #include "RenderManager.h"
 
-Bullet::Bullet(const std::vector<std::string>& _anim, float _speed, int _damage)
+Bullet::Bullet(const std::vector<std::string>& _anim, float _speed, int _damage, Vector2 _dir)
 	: GameObject(_anim[0]), Animator(_anim),
-	damage(_damage), speed(_speed)
+	damage(_damage), speed(_speed), dir(_dir)
 {
 	_transform->scale = Vector2 ( 0.2f , 0.2f );
 	_physics->AddCollider(new AABB(_transform->position, _transform->size));
@@ -18,7 +18,7 @@ void Bullet::Update()
 {
 	GameObject::Update();
 
-	_physics->SetVelocity(Vector2(speed, 0.f));
+	_physics->SetVelocity(dir * speed);
 
 	_renderer->SetResourcePath ( ChangeSpriteFrame ( ) );
 

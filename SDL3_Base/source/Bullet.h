@@ -8,9 +8,10 @@ class Bullet : public GameObject, public Animator
 private:
     int damage;
     float speed;
+    Vector2 dir;
 
 public:
-    Bullet(const std::vector<std::string>& _anim, float _speed, int _damage);
+    Bullet(const std::vector<std::string>& _anim, float _speed, int _damage, Vector2 _dir = Vector2::Right);
     ~Bullet() = default;
 
     void Start() override;
