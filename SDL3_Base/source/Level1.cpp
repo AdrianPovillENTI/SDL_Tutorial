@@ -26,7 +26,15 @@
 #include "Enemies/Arachnid.h"
 #include "Enemies/ArachnidTail.h"
 #include "Enemies/Tentakor.h"
+//level 2
 #include "Enemies/Headron.h"
+#include "Enemies/Gearbot.h"
+#include "Enemies/Boosters.h"
+#include "Enemies/Lifters.h"
+#include "Enemies/Strikers.h"
+#include "Enemies/Loopers.h"
+#include "Enemies/Angrygons.h"
+
 #include "Patterns/LineSpawnPattern.h"
 #include "Patterns/TopBottomSpawnPattern.h"
 #include "Patterns/RandomSpawnPattern.h"
@@ -45,7 +53,8 @@ void Level1::OnEnter ( )
 	{
 		SPAWNER.SpawnObject ( new MapDecorations ( "resources/Map/MapDecorations/Ice3.png" ) );
 	}
-	SPAWNER.SpawnObject ( new Player ( 55 ) );
+    Player * player = new Player ( 55 );
+	SPAWNER.SpawnObject ( player );
 
 	SPAWNER.SpawnObject ( new Item ( "resources/Items/Score.png" ) );
 	SPAWNER.SpawnObject ( new Item ( "resources/Items/Score.png" ) );
@@ -206,6 +215,7 @@ void Level1::OnEnter ( )
 					new ArachnidTail(6.5f)
 				}
 			),*/
+			/*new EnemySpawnData
 			/*
 						new EnemySpawnData
 						(
@@ -220,8 +230,9 @@ void Level1::OnEnter ( )
 								new Tentakor ( )
 							}
 						)
-			*/
-			new EnemySpawnData
+			*/ 
+//LEVEL 2
+			/*new EnemySpawnData
 			(
 				3,
 				Vector2(-150, RM->GAME_WINDOW_HEIGHT/ 2 - 50),
@@ -239,6 +250,119 @@ void Level1::OnEnter ( )
 					new Headron(false, 20.f),
 					new Headron(true, 30.f),
 					new Headron(false, 30.f)
+				}
+			),
+			new EnemySpawnData
+			(
+				3,
+				Vector2 ( 0,0 ),
+				new CornerSpawnPattern
+				(
+					150
+				),
+				{
+					new Gearbot ( player ),
+					new Gearbot ( player ),
+					new Gearbot ( player ),
+					new Gearbot ( player ),
+					new Gearbot ( player ),
+					new Gearbot ( player ),
+					new Gearbot ( player ),
+					new Gearbot ( player )
+				}
+			),*/
+			/*new EnemySpawnData
+			(
+				3,
+				Vector2 ( RM->WINDOW_WIDTH,0 ),
+				new LineSpawnPattern
+				(
+					Vector2::Up ,
+					50.f
+				),
+				{
+					new Boosters ( Vector2::Left),
+					new Boosters ( Vector2::Left),
+					new Boosters ( Vector2::Left),
+					new Boosters ( Vector2::Left),
+					new Boosters ( Vector2::Left),
+					new Boosters ( Vector2::Left),
+					new Boosters ( Vector2::Left),
+					new Boosters ( Vector2::Left)
+				}
+			),
+			new EnemySpawnData
+			(
+				3,
+				Vector2 ( RM->WINDOW_WIDTH ,0 ),
+				new LineSpawnPattern
+				(
+					Vector2::Up ,
+					50.f
+				),
+				{
+					new Lifters ( Vector2::Left),
+					new Lifters ( Vector2::Left),
+					new Lifters ( Vector2::Left),
+					new Lifters ( Vector2::Left),
+					new Lifters ( Vector2::Left),
+					new Lifters ( Vector2::Left),
+					new Lifters ( Vector2::Left),
+					new Lifters ( Vector2::Left)
+				}
+			),
+			new EnemySpawnData
+			(
+				3,
+				Vector2 ( RM->WINDOW_WIDTH / 2, RM->GAME_WINDOW_HEIGHT),
+				new LineSpawnPattern
+				(
+					Vector2::Right ,
+					100.f
+				),
+				{
+					new Strikers ( Vector2::Down ),
+					new Strikers ( Vector2::Down ),
+					new Strikers ( Vector2::Down ),
+					new Strikers ( Vector2::Down)
+				}
+			),*/
+			/*new EnemySpawnData
+			(
+				3,
+				Vector2 ( 0, RM->GAME_WINDOW_HEIGHT / 2),
+				new LineSpawnPattern
+				(
+					Vector2::Zero ,
+					0
+				),
+				{
+					new Loopers (10.f, Vector2::Right),
+					new Loopers (20.f, Vector2::Right),
+					new Loopers (30.f, Vector2::Right),
+					new Loopers (40.f, Vector2::Right),
+					new Loopers (10.f, Vector2::Left,Vector2 ( RM->WINDOW_WIDTH, RM->GAME_WINDOW_HEIGHT / 2 ) ),
+					new Loopers (20.f, Vector2::Left,Vector2 ( RM->WINDOW_WIDTH, RM->GAME_WINDOW_HEIGHT / 2 ) ),
+					new Loopers (30.f, Vector2::Left,Vector2 ( RM->WINDOW_WIDTH, RM->GAME_WINDOW_HEIGHT / 2 ) ),
+					new Loopers (40.f, Vector2::Left,Vector2 ( RM->WINDOW_WIDTH, RM->GAME_WINDOW_HEIGHT / 2 ) )
+				}
+			),*/
+			new EnemySpawnData
+			(
+				3,
+				Vector2 ( 0, RM->GAME_WINDOW_HEIGHT / 3),
+				new LineSpawnPattern
+				(
+					Vector2::Left ,
+					0
+				),
+				{
+					new Angrygons (),
+					new Angrygons (),
+					new Angrygons (),
+					new Angrygons (),
+					new Angrygons (),
+					new Angrygons ()
 				}
 			)
 		}

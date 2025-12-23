@@ -10,7 +10,7 @@ Charger::Charger ( )
 {
 }
 
-Vector2 Charger::ChooseSmartTarget ( )
+Vector2 Charger::DirectionToPlayer ( )
 {
     const float margin = 100.f;
 
@@ -32,7 +32,7 @@ Vector2 Charger::ChooseSmartTarget ( )
     return target;
 }
 
-Vector2 Charger::DirectionToTarget ( ) const
+Vector2 Charger::DirectionToTarget ( )
 {
     Vector2 dir = targetPoint - _transform->position;
 
@@ -61,7 +61,7 @@ void Charger::Start ( )
     moveTime = 5.0f + ( rand ( ) % 40 ) / 10.f;
     stopTime = 1.0f + ( rand ( ) % 20 ) / 10.f;
 
-    targetPoint = ChooseSmartTarget ( );
+    targetPoint = DirectionToPlayer ( );
     CreatePattern ( DirectionToTarget ( ) );
 
     Enemy::Start ( );
@@ -101,7 +101,7 @@ void Charger::Move ( )
         phaseTimer = 0.f;
         moveTime = 5.0f + ( rand ( ) % 40 ) / 10.f;
 
-        targetPoint = ChooseSmartTarget ( );
+        targetPoint = DirectionToPlayer ( );
         CreatePattern ( DirectionToTarget ( ) );
     }
 }
