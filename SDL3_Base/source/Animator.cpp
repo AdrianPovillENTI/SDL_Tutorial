@@ -10,7 +10,7 @@ void Animator::SetAnimationSprites(std::vector<std::string> _anim)
 
 std::string Animator::ChangeSpriteFrame()
 {
-	frameTime += 1.0f / 30.0f;
+	frameTime += 1.0f / 5.f;
 
 	if (frameTime >= frameTimeMax)
 	{

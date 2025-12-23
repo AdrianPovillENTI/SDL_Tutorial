@@ -31,6 +31,9 @@ private:
     float speedUpgrade;
 
     int score;
+    float hitMaxTime;
+    float hitCounter;
+    bool hitted;
 
     Vector2 bulletSpawnPoint;
 
@@ -66,6 +69,7 @@ public:
 
     void ClampInsideScreen ( );
 
+    void ReceiveDamage ( int _health ) override;
     void InitializeStats();
     void InitializeGuns();
     void InitializePhysics();

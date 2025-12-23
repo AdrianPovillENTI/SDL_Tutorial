@@ -1,5 +1,8 @@
 #include "Game.h"
 #include "Gameplay.h"
+#include "Level1.h"
+#include "Level2.h"
+
 #include "ImageObject.h"
 #include "RenderManager.h"
 #include "InputManager.h"
@@ -17,6 +20,7 @@ void Game::Init()
 	//Bullet Sprites
     //Normal Bullet
 #pragma region LoadPlayerTextures
+	RM->LoadTexture("resources/xd.png");
 	RM->LoadTexture("resources/Player/Player.png");
 	RM->LoadTexture("resources/Player/CannonSprite.png");
 	RM->LoadTexture("resources/Player/LaserSprite.png");
@@ -103,9 +107,10 @@ void Game::Init()
 	RM->LoadFont("resources/fonts/Hyperspace.ttf");
 
 	assert(SM.AddScene("MainMenu", new MainMenu()));
-	assert(SM.AddScene("Gameplay", new Gameplay()));
+	assert(SM.AddScene("Level1", new Level1()));
+	assert(SM.AddScene("Level2", new Level2()));
 
-	assert(SM.InitFirstScene("Gameplay"));
+	assert(SM.InitFirstScene("MainMenu"));
 	_isRunning = true;
 }
 
