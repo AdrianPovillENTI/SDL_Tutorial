@@ -55,9 +55,9 @@ void Gameplay::OnEnter()
 	UIManager* uiManager = new UIManager();
 
 
-	WaveManager* waveManager = new WaveManager
-	(
-		{ // enemySpawnData vector
+	//WaveManager* waveManager = new WaveManager
+	//(
+		//{ // enemySpawnData vector
 			//new EnemySpawnData 
 			//( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
 			//	1, 
@@ -210,6 +210,7 @@ void Gameplay::OnEnter()
 				}
 			)
 		*/
+		/*
 			new EnemySpawnData
 			(
 				3,
@@ -217,19 +218,20 @@ void Gameplay::OnEnter()
 				new LineSpawnPattern
 				(
 					Vector2::Up,
-					75.f
+					95.f
 				),
 				{
-					new Scouts(Vector2::Left),
-					new Scouts(Vector2::Left),
-					new Scouts(Vector2::Left),
-					new Scouts(Vector2::Left),
-					new Scouts(Vector2::Left),
-					new Scouts(Vector2::Left)
+					new Scouts(),
+					new Scouts(),
+					new Scouts(),
+					new Scouts(),
+					new Scouts(),
+					new Scouts()
 				}
 			)
-		}
-	);
+			*/
+		//}
+	//);
 
-	_objects.push_back ( waveManager );
+	//_objects.push_back ( waveManager );
 }

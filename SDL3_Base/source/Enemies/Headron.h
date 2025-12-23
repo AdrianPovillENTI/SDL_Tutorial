@@ -5,18 +5,16 @@
 
 class Headron : public Enemy
 {
-public:
-    Headron ( Player * p );
-
-    void Start ( ) override;
-    void Move ( ) override;
-
 private:
-    Player * player;
-    LinearPattern * movePattern;
+    EnemyBehaviourPattern* behaviourPattern = nullptr;
+    bool up;
+    float limitMargin;
+    float timeToPlay;
+    float counterToPlay;
 
-    bool hasJumped;
-    float jumpForceX;
-    float jumpForceY;
-    float triggerDistanceX;
+public:
+    Headron(bool up, float _spawnDelay);
+    void Start() override;
+    bool OutOfLimits() override;
+    void OnEnterFunction() override;
 };

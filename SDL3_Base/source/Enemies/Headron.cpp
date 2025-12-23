@@ -1,52 +1,85 @@
 #include "Headron.h"
-#include <cmath>
-
-Headron::Headron ( Player * p )
-    : Enemy (
-    1.8f ,
-    3 ,
-    1 ,
-    "resources/Player/Player.png" ,
-    new EnemyBehaviourPattern (
-    new LinearPattern ( Vector2::Left , 1.8f )
-    )
-    ) ,
-    player ( p ) ,
-    hasJumped ( false ) ,
-    jumpForceX ( 12.0f ) ,
-    jumpForceY ( 6.0f ) ,
-    triggerDistanceX ( 1.5f )
+Headron::Headron(bool _up, float _spawnDelay)
+    : Enemy(
+        3.f,     // Speed
+        1,        // Health
+        2,        // Damage
+        "resources/Player/Player.png"
+    ), up(_up), timeToPlay(_spawnDelay)
 {
-    movePattern = static_cast< LinearPattern * >( pattern->GetMovementPattern ( ) );
+    limitMargin = 50;
 }
 
-void Headron::Start ( )
+void Headron::Start()
 {
-    Enemy::Start ( );
+    playOnStart = false;
+
+    MovementPatternData* dataUp = new MovementPatternData({
+
+        { -limitMargin * 2, limitMargin},
+        { (float)SC_WIDTH - limitMargin, limitMargin},
+        { (float)SC_WIDTH - limitMargin, (float)SC_HEIGHT / 2 - limitMargin },
+        { limitMargin, (float)SC_HEIGHT / 2 - limitMargin },
+        { limitMargin, (float)SC_HEIGHT / 3  },
+        { (float)SC_WIDTH / 6, (float)SC_HEIGHT / 3  },
+        { (float)SC_WIDTH / 6, (float)SC_HEIGHT * 2 / 3  },
+        { (float)SC_WIDTH * 2 / 6, (float)SC_HEIGHT * 2 / 3 },
+        { (float)SC_WIDTH * 2 / 6, (float)SC_HEIGHT / 3 },
+        { (float)SC_WIDTH * 3 / 6, (float)SC_HEIGHT / 3 },
+        { (float)SC_WIDTH * 3 / 6, (float)SC_HEIGHT * 2 / 3 },
+        { (float)SC_WIDTH - limitMargin, (float)SC_HEIGHT * 2 / 3 },
+        { (float)SC_WIDTH - limitMargin, (float)SC_HEIGHT - limitMargin},
+        { - 3 * limitMargin, (float)SC_HEIGHT - limitMargin}
+        });
+
+    MovementPatternData* dataDown = new MovementPatternData({
+        { -limitMargin * 2, (float)SC_HEIGHT - limitMargin},
+        { (float)SC_WIDTH - limitMargin, (float)SC_HEIGHT - limitMargin},
+        { (float)SC_WIDTH - limitMargin, (float)SC_HEIGHT / 2 + limitMargin },
+        { limitMargin, (float)SC_HEIGHT / 2 + limitMargin },
+        { limitMargin, (float)SC_HEIGHT * 2 / 3  },
+        { (float)SC_WIDTH / 6, (float)SC_HEIGHT * 2 / 3  },
+        { (float)SC_WIDTH / 6, (float)SC_HEIGHT / 3  },
+        { (float)SC_WIDTH * 2 / 6, (float)SC_HEIGHT / 3 },
+        { (float)SC_WIDTH * 2 / 6, (float)SC_HEIGHT * 2 / 3 },
+        { (float)SC_WIDTH * 3 / 6, (float)SC_HEIGHT * 2/ 3 },
+        { (float)SC_WIDTH * 3 / 6, (float)SC_HEIGHT / 3 },
+        { (float)SC_WIDTH - limitMargin, (float)SC_HEIGHT / 3 },
+        { (float)SC_WIDTH - limitMargin, limitMargin},
+        { -3 * limitMargin, limitMargin}
+        });
+
+    CheckPointMovementPattern* movement = up ? 
+        new CheckPointMovementPattern(&_transform->position, dataUp, speed) : 
+        new CheckPointMovementPattern(&_transform->position, dataDown, speed);
+
+    pattern = new EnemyBehaviourPattern(
+        new MultiPhasePattern({
+            { movement, 120 }
+            })
+    );
+    Enemy::Start();
 }
 
-void Headron::Move ( )
+bool Headron::OutOfLimits()
 {
-    if ( !player ) return;
+    float margin = 1000.f;
+    Vector2 pos = _transform->position;
 
-    float directionToTarget = player->GetTransform ( )->position.x - _transform->position.x;
-    Vector2 direction = player->GetTransform ( )->position - _transform->position;
+    if (pos.x < -margin || pos.x > SC_WIDTH * 1.4f + margin ||
+        pos.y < -margin || pos.y > SC_HEIGHT * 1.5f + margin)
+    {
+        return true;
+    }
 
-    if ( directionToTarget > 0.05f ) movePattern->SetDirection ( Vector2::Right );
-    else if ( directionToTarget < -0.05f ) movePattern->SetDirection ( Vector2::Left );
-    else
-    {
-        movePattern->SetDirection ( Vector2::Zero );
-    }
-    hasJumped = directionToTarget > 0.05f || directionToTarget < -0.05f;
-    if ( !hasJumped  )
-    {
-        float dir = ( directionToTarget > 0.f ) ? 1.f : -1.f;
-        _physics->AddForce ( Vector2 ( 0 , speed * 1.f / 2.f * direction.Normalized().y ) );
-    }
-    else
-    {
-        Enemy::Move ( );
+    return false;
+}
 
-    }
+void Headron::OnEnterFunction()
+{
+    counterToPlay += 1.f / 60.f;
+
+    if (counterToPlay < timeToPlay) return;
+    playOnStart = true;
+    state = Enemy::EnemyState::ON_UPDATE;
 }

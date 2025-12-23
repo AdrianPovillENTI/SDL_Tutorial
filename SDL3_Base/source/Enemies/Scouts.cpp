@@ -1,13 +1,14 @@
 #include "Scouts.h"
 
-Scouts::Scouts(Vector2 _direction) : direction(_direction), Enemy
+Scouts::Scouts() : Enemy
 (
-    0.5f + (rand() % 12) / 10.f,
+    5.f,
     3, //Health
     1, //Damage
     "resources/Player/Player.png"
 )
 {
+    direction = Vector2::Left;
     Start();
 }
 
@@ -20,13 +21,13 @@ void Scouts::Start()
 
     pattern = new EnemyBehaviourPattern(
         new MultiPhasePattern({
-            { GoLeft, 120 },
+            { GoLeft, 150 },
             { Stop, 120},
-            {GoRight, 120},
+            {GoRight, 150},
             {Stop, 120},
-            {GoLeft, 120},
+            {GoLeft, 150},
             { Stop, 120},
-            {GoRight, 120}
+            {GoRight, 300}
             }));
 }
 
