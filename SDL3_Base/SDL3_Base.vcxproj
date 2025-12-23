@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\Level1.cpp" />
+    <ClCompile Include="source\Level2.cpp" />
+    <ClCompile Include="source\Enemies\ArachnidTail.cpp" />
     <ClCompile Include="source\EnemyBullet.cpp" />
     <ClCompile Include="source\AmmoGun.cpp" />
     <ClCompile Include="source\Animator.cpp" />
@@ -53,7 +56,7 @@
     <ClCompile Include="source\DamageableObject.cpp" />
     <ClCompile Include="source\GameObject.cpp" />
     <ClCompile Include="source\AABB.cpp" />
-    <ClCompile Include="source\Button.cpp" />
+    <ClCompile Include="source\UI\Button.cpp" />
     <ClCompile Include="source\Game.cpp" />
     <ClCompile Include="source\Gameplay.cpp" />
     <ClCompile Include="source\ImageRenderer.cpp" />
@@ -81,6 +84,9 @@
     <ClCompile Include="source\Patterns\ZigZagMovementPattern.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\Level1.h" />
+    <ClInclude Include="source\Level2.h" />
+    <ClInclude Include="source\Enemies\ArachnidTail.h" />
     <ClInclude Include="source\EnemyBullet.h" />
     <ClInclude Include="source\AmmoGun.h" />
     <ClInclude Include="source\AnimatedImageObject.h" />
@@ -125,7 +131,7 @@
     <ClInclude Include="source\IDamageable.h" />
     <ClInclude Include="source\GameObject.h" />
     <ClInclude Include="source\AABB.h" />
-    <ClInclude Include="source\Button.h" />
+    <ClInclude Include="source\UI\Button.h" />
     <ClInclude Include="source\Game.h" />
     <ClInclude Include="source\Gameplay.h" />
     <ClInclude Include="source\InputManager.h" />
@@ -222,6 +228,11 @@
     <Image Include="resources\Player\NormalShoot\shot_exp_7.png" />
     <Image Include="resources\Player\NormalShoot\shot_exp_8.png" />
     <Image Include="resources\Player\Player.png" />
+    <Image Include="resources\UI\CannonBar.png" />
+    <Image Include="resources\UI\EmptySprite.png" />
+    <Image Include="resources\UI\LaserBar.png" />
+    <Image Include="resources\UI\ShieldBar.png" />
+    <Image Include="resources\UI\StaticUI.png" />
     <Image Include="resources\xd.png" />
   </ItemGroup>
   <ItemGroup>

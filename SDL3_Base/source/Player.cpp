@@ -15,16 +15,49 @@ Player::Player ( int maxHealth )
 {
     Start ( );
 }
-
 Player::~Player ( )
 {
-}
+    if ( speedVfx )
+    {
+        RemoveChild ( speedVfx );
+        delete speedVfx;
+        speedVfx = nullptr;
+    }
 
+    if ( cannon )
+    {
+        RemoveChild ( cannon );
+        delete cannon;
+        cannon = nullptr;
+    }
+
+    if ( laser )
+    {
+        RemoveChild ( laser );
+        delete laser;
+        laser = nullptr;
+    }
+
+    for ( Turret * t : turrets )
+    {
+        if ( t )
+        {
+            RemoveChild ( t );
+            delete t;
+        }
+    }
+    turrets.clear ( );
+}
 void Player::Start ( )
 {
     InitializeStats();
     InitializeGuns();
     InitializePhysics();
+    onReceiveDamage = [this]() 
+    {
+        invencible = true;
+        invencibleTime = 10.0f;
+    };
 }
 
 void Player::InitializePhysics() 
@@ -34,6 +67,20 @@ void Player::InitializePhysics()
         _physics->AddCollider(new AABB(_transform->position, Vector2(_transform->size.x, _transform->size.y/2)));
         _physics->SetLinearDrag ( 1.f );
         _physics->SetAngularDrag (1.f );
+    }
+}
+
+void Player::ReceiveDamage ( int _health )
+{
+    if ( invencible ) return;
+
+    health -= _health;
+    if ( onReceiveDamage != nullptr ) onReceiveDamage ( );
+    std::cout << "Received damage: " << _health << " | Current health: " << health << std::endl;
+    if ( health < 0 )
+    {
+        health = 0;
+        isDeath = true;
     }
 }
 
@@ -166,7 +213,7 @@ void Player::Update ( )
 
     if ( invencible )
     {
-        invencibleTime -= 1.f / 60.f;
+        invencibleTime -= 1.f / 30.f;
         if ( invencibleTime <= 0 )
             invencible = false;
     }

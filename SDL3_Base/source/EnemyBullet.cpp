@@ -7,8 +7,8 @@ EnemyBullet::EnemyBullet ( const std::vector<std::string> & _anim , float _speed
 	: GameObject ( _anim [ 0 ] ) , Animator ( _anim ) ,
 	damage ( _damage ) , speed ( _speed )
 {
-	_transform->scale = Vector2 ( 2 , 2 );
-	_physics->AddCollider ( new AABB ( _transform->position , _transform->size ) );
+	_transform->scale = Vector2 ( 0.2f , 0.2f );
+	_physics->AddCollider ( new AABB ( _transform->position , _transform->scale ) );
 }
 void EnemyBullet::Start ( )
 {
@@ -29,7 +29,11 @@ void EnemyBullet::Update ( )
 
 void EnemyBullet::OnCollision ( Object * other )
 {
-	if ( dynamic_cast< Player * > ( other ) )
+
+	if ( Player * p = dynamic_cast< Player * > ( other ) )
+	{
+		p->ReceiveDamage ( damage );	
 		Destroy ( );
+	}
 }
 

@@ -1,4 +1,4 @@
-#include "Gameplay.h"
+#include "Level1.h"
 #include "TestObject.h"
 #include "ImageRenderer.h"
 #include "GameObject.h"
@@ -32,15 +32,13 @@
 #include "Patterns/CornerSpawnPattern.h"
 #pragma endregion Items
 
-void Gameplay::OnEnter()
+void Level1::OnEnter ( )
 {
 	srand ( time ( NULL ) );
 
-
-
 	for ( int i = 0; i < 3; i++ )
 	{
-		SPAWNER.SpawnObject ( new Background ( i, "resources/Background.png" ) );
+		SPAWNER.SpawnObject ( new Background ( i , "resources/Background.png" ) );
 	}
 	for ( int i = 0; i < 45; i++ )
 	{
@@ -48,13 +46,13 @@ void Gameplay::OnEnter()
 	}
 	SPAWNER.SpawnObject ( new Player ( 55 ) );
 
-	SPAWNER.SpawnObject(new Item("resources/Items/Score.png"));
-	SPAWNER.SpawnObject(new Item("resources/Items/Score.png"));
-	SPAWNER.SpawnObject(new Item("resources/Items/Score.png"));
-	UIManager* uiManager = new UIManager();
+	SPAWNER.SpawnObject ( new Item ( "resources/Items/Score.png" ) );
+	SPAWNER.SpawnObject ( new Item ( "resources/Items/Score.png" ) );
+	SPAWNER.SpawnObject ( new Item ( "resources/Items/Score.png" ) );
+	UIManager * uiManager = new UIManager ( );
 
 
-	WaveManager* waveManager = new WaveManager
+	WaveManager * waveManager = new WaveManager
 	(
 		{ // enemySpawnData vector
 			//new EnemySpawnData 

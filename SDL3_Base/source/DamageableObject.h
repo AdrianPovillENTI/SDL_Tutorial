@@ -5,17 +5,20 @@
     class DamageableObject : public GameObject, public IDamageable
     {
     protected:
-        int health;
         int maxHealth;
         bool isDeath;
+        function<void ( )> onReceiveDamage;
     public:
+        int health;
         DamageableObject ( const int _maxHealth ,const string path )
             : GameObject ( path ), 
             maxHealth ( _maxHealth ),
             health ( _maxHealth ) { }    
-        void ReceiveDamage ( int _health ) override
+        virtual void ReceiveDamage ( int _health ) override
         {
             health -= _health;
+            if(onReceiveDamage != nullptr) onReceiveDamage ( );
+            std::cout << "Received damage: " << _health << " | Current health: " << health << std::endl;
             if ( health < 0 )
             {
                 health = 0;

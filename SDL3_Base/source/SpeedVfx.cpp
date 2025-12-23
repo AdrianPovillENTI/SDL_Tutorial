@@ -1,5 +1,9 @@
 #include "SpeedVfx.h"
 
+SpeedVfx::~SpeedVfx ( )
+{
+}
+
 void SpeedVfx::Update ( )
 {
     GameObject::Update ( );

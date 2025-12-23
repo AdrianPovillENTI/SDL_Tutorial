@@ -9,7 +9,6 @@ class EnemyBullet : public GameObject , public Animator
 private:
     int damage;
     float speed;
-
 public:
     EnemyBullet ( const std::vector<std::string> & _anim , float _speed , int _damage );
     ~EnemyBullet ( ) = default;
