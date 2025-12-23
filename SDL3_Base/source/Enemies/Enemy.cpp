@@ -12,7 +12,8 @@ void Enemy::Start ( )
 
 void Enemy::Update ( )
 {
-    OnEnterFunction ( );
+    if (!playOnStart)
+        OnEnterFunction ( );
 
     if ( state != EnemyState::ON_UPDATE )
         return;
@@ -49,7 +50,6 @@ void Enemy::Move ( )
 
     if ( OutOfLimits ( ) )
     {
-        state = EnemyState::ON_EXIT;
         active = false;
         Destroy ( );
     }
@@ -80,10 +80,7 @@ void Enemy::OnEnterFunction ( )
         {
             state = EnemyState::ON_UPDATE;
             timeElapsed = 0.f;
-
         }
         return;
     }
-
-
 }

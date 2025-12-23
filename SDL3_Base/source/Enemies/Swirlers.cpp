@@ -32,20 +32,4 @@ void Swirlers::Start ( )
         } )
     );
     Enemy::Start ( );
-
-}
-
-void Swirlers::Update ( )
-{
-    Enemy::Update ( );
-}
-
-void Swirlers::Move ( )
-{
-    Enemy::Move ( );
-}
-
-void Swirlers::OnCollision ( Object * collided )
-{
-    Enemy::OnCollision ( collided );
 }

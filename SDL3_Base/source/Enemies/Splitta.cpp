@@ -50,7 +50,6 @@ void Splitta::Move()
 
     if (OutOfLimits())
     {
-        state = EnemyState::ON_EXIT;
         active = false;
         Destroy();
     }

@@ -189,21 +189,21 @@ void Gameplay::OnEnter()
 			new EnemySpawnData
 			(
 				3,
-				Vector2(RM->WINDOW_WIDTH, -100),
+				Vector2(500.f, -100.f),
 				new LineSpawnPattern
 				(
-					Vector2::Down,
-					50
+					Vector2::Zero,
+					0
 				),
 				{
 					new Arachnid(),
+					new ArachnidTail(5.f),
+					new ArachnidTail(10.f),
+					new ArachnidTail(15.f),
+					new ArachnidTail(20.f),
+					new ArachnidTail(25.f),
 					new ArachnidTail(30.f),
-					new ArachnidTail(60.f),
-					new ArachnidTail(90.f),
-					new ArachnidTail(120.f),
-					new ArachnidTail(4.5f),
-					new ArachnidTail(5.5f),
-					new ArachnidTail(6.5f)
+					new ArachnidTail(35.f)
 				}
 			)
 		}

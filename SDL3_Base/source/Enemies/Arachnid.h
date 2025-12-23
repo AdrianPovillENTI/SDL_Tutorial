@@ -7,13 +7,9 @@ public:
     Arachnid();
     void Start() override;
     bool OutOfLimits() override;
-    void OnEnterFunction() override;
 private:
     int radius;
     int radiusReduction;
     float _hSpeed;
-protected:
-    float timeToPlay;
-    float counterToPlay;
 };
 

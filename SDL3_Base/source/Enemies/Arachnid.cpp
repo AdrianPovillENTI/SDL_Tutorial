@@ -3,26 +3,22 @@
 
 Arachnid::Arachnid()
     : Enemy(
-        2,  // speed
+        4,  // speed
         1,  // health
         2,  // damage
         "resources/Player/Player.png"
     )
 {
-    radius = 1000;
-    radiusReduction = 100;
+    radius = 1800;
+    radiusReduction = 200;
     _hSpeed = 0;
     Start();
 }
 
 void Arachnid::Start()
 {
-    timeToPlay = 1.f;
-    counterToPlay = 0.f;
-    playOnStart = false;
- 
     MovementPatternData* entranceData = new MovementPatternData({
-        { (float)SC_WIDTH / 2, 100.f },
+        {500.f, 100.f },
         });
     CheckPointMovementPattern* entrance = new CheckPointMovementPattern(&_transform->position, entranceData, speed);
     CircularMovementPattern* circularPattern1 = new CircularMovementPattern(radius, speed, _hSpeed);
@@ -38,11 +34,11 @@ void Arachnid::Start()
     pattern = new EnemyBehaviourPattern(
         new MultiPhasePattern({
             { entrance, 60},
-            { circularPattern1, 600 },
-            { circularPattern2, 600 },
-            { circularPattern3, 600 },
-            { circularPattern4, 600 },
-            { circularPattern5, 600 },
+            { circularPattern1, 500 },
+            { circularPattern2, 450 },
+            { circularPattern3, 400 },
+            { circularPattern4, 350 },
+            { circularPattern5, 300 },
             { exit, 200 }
             })
     );
@@ -62,13 +58,4 @@ bool Arachnid::OutOfLimits()
     }
 
     return false;
-}
-
-void Arachnid::OnEnterFunction()
-{
-    counterToPlay += 1.f / 60.f;
-
-    if (counterToPlay <= timeToPlay) return;
-    playOnStart = true;
-    state = Enemy::EnemyState::ON_UPDATE;
 }

@@ -13,7 +13,7 @@ class Enemy : public DamageableObject
 protected:
     enum EnemyState
     {
-        ON_ENTER, ON_UPDATE, ON_EXIT
+        ON_ENTER, ON_UPDATE
     };
     float speed;
     int damage;
@@ -35,7 +35,6 @@ public:
         :DamageableObject ( health , path ) , damage ( _damage ) , speed ( speed ) , pattern ( _movePattern ),
         state(ON_ENTER)
     {
-
         _physics->AddCollider ( new AABB ( _transform->position , _transform->size ) );       
         timeElapsed = 0;
         Start ( );

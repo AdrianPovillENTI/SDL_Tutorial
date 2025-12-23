@@ -13,7 +13,4 @@ private:
 public:
     Swirlers ( );
     void Start ( ) override;
-    void Update ( ) override;
-    void Move ( ) override;
-    void OnCollision ( Object * collided ) override;
 };
