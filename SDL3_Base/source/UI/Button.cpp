@@ -14,6 +14,7 @@ void Button::OnClicked() {
 
 void Button::Update()
 {
+	Object::Update();
 	if (!_isHovered && _physics->CheckOverlappingPoint({ (float)IM->GetMouseX(), (float)IM->GetMouseY() }))
 		OnHoverEnter();
 	else if (_isHovered && !_physics->CheckOverlappingPoint({ (float)IM->GetMouseX() , (float)IM->GetMouseY() }))
@@ -21,12 +22,12 @@ void Button::Update()
 	else if (_isHovered && IM->GetLeftClick())
 		OnClicked();
 
-	Object::Update();
 }
 
 void Button::Render()
 {
 	Object::Render();
+	ImageObject::Render ( );
 }
 
 void Button::OnCollision ( Object * collided )
