@@ -12,16 +12,40 @@ public:
 
 	void OnEnter() override 
 	{
-		Button* button = new Button([]()
+		Button* level1Button = new Button([]()
 			{
 			 assert(SM.SetNextScene("Level1"));
-             std::cout << "Button Clicked! Starting Level 1..." << std::endl;
-			}
+			}, Vector2 ( 200.f , 100.f ) 
 		);
-		TextObject * text = new TextObject ( " Start Game ", button->GetTransform()->position + Vector2(-60, 75), Vector2::One * 2 );
+		TextObject * level1Text = new TextObject ( " Start Game ", 
+			level1Button->GetTransform()->position + Vector2(-60, 75), Vector2::One * 2 );
 
-		_ui.push_back(button);
-		_ui.push_back ( text );
+		Button* highScoresButton = new Button([]()
+			{
+            std::cout << "Going to High Scores Scene but still not defined" << std::endl;
+			 //assert(SM.SetNextScene("HighScoresScene"));
+			}, Vector2 ( 200.f , 300.f )
+		);
+		TextObject * highScoresText = new TextObject ( " High Scores ", 
+			highScoresButton->GetTransform()->position + Vector2(-60, 75), Vector2::One * 2 );
+		
+		Button* quitGameButton = new Button([]()
+			{
+
+				std::cout << "ExitGame" << std::endl;
+				terminate ( );
+			}, Vector2 ( 200.f , 500.f )
+		);
+		TextObject * quitGameText = new TextObject ( " Quit Game ", 
+			quitGameButton->GetTransform()->position + Vector2(-60, 75), Vector2::One * 2 );
+
+		_ui.push_back(level1Button);
+		_ui.push_back( highScoresButton );
+		_ui.push_back( quitGameButton );
+
+		_ui.push_back ( level1Text );
+		_ui.push_back ( highScoresText );
+		_ui.push_back ( quitGameText );
 
 	}
 	void OnExit() override {

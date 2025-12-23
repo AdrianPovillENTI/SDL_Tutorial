@@ -19,7 +19,7 @@ private:
     float phaseTime = 0;
     vector<Phase> phases;
 public:
-    MultiPhasePattern ( std::initializer_list<Phase> list )
+    MultiPhasePattern ( vector<Phase> list )
         : phases ( list )
     {
     }

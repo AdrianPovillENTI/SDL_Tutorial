@@ -21,6 +21,7 @@ void Game::Init()
     //Normal Bullet
 #pragma region LoadPlayerTextures
 	RM->LoadTexture("resources/xd.png");
+	RM->LoadTexture("resources/ButtonBKG.png");
 	RM->LoadTexture("resources/Player/Player.png");
 	RM->LoadTexture("resources/Player/CannonSprite.png");
 	RM->LoadTexture("resources/Player/LaserSprite.png");

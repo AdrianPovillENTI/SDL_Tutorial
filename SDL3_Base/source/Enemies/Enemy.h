@@ -21,6 +21,7 @@ protected:
     EnemyState state;
     bool playOnStart = true;
     float timeElapsed;
+    bool killedByPlayer = false;
 public:
 
     Enemy ( float speed, int health, int _damage , string path)
@@ -52,5 +53,6 @@ public:
     void Move ( ) override;
     virtual bool OutOfLimits ( );
     virtual void OnEnterFunction ( );
+    bool WasKilledByPlayer ( );
 };
 
