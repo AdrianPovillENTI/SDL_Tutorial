@@ -6,7 +6,7 @@ Strikers::Strikers ( Vector2 _dir )
     3 ,
     3 , //Health
     1 , //Damage
-    "resources/Player/Player.png"
+    "resources/Enemies/Imagen16.png"
     ) ,
     direction ( _dir )
 {

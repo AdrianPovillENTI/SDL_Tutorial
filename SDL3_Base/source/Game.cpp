@@ -122,6 +122,7 @@ void Game::Init()
 	RM->LoadTexture("resources/Enemies/Imagen13");
 	RM->LoadTexture("resources/Enemies/Imagen14");
 	RM->LoadTexture("resources/Enemies/Imagen15");
+	RM->LoadTexture("resources/Enemies/Imagen16");
 
 	RM->LoadFont("resources/fonts/Hyperspace.ttf");
 
