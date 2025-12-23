@@ -1,30 +1,21 @@
 #pragma once
 #include "Enemy.h"
-//Boss
+#include "../EnemyBullet.h"
 class Starforge : public Enemy
 {
+private:
+    float timeToShoot;
+    float shootCooldown;
+    int bulletDamage;
+    int lastPosIndex;
+    float bulletSpeed;
+    vector<Vector2>bulletSpawnPoints;
+    Vector2 lastSpawnPos;
+    vector<string>bulletAnimationSprites;
 public:
-    Starforge ( string path ) :
-        Enemy
-        (
-        0.5f , //Speed
-        5 , //Health
-        1 , //Damage
-        path , //Sprite path
-        new EnemyBehaviourPattern
-        (
-        new MultiPhasePattern
-        ( {
-            { new LinearPattern ( Vector2::Left,0.5f ),2 }
-        } )
-        )
-        )
-    {
-    }
-    void Start ( ) override { Enemy::Start ( ); }
-    void Update ( ) override { Enemy::Update ( ); }
-    void OnCollision ( Object * collided ) override { Enemy::OnCollision ( collided ); }
-    void Move ( ) override { Enemy::Move ( ); }
-
+    Starforge ( );
+    void Start ( ) override;
+    void Shoot ( );
+    void Update ( ) override;
 };
 

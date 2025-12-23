@@ -21,6 +21,7 @@ protected:
     EnemyState state;
     bool playOnStart = true;
     float timeElapsed;
+    function <void ( )> onDie;
     bool killedByPlayer = false;
 public:
 

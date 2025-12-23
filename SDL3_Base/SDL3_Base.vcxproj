@@ -172,6 +172,7 @@
   <ItemGroup>
     <Image Include="resources\bullet.png" />
     <Image Include="resources\ButtonBKG.png" />
+    <Image Include="resources\EduBoss.png" />
     <Image Include="resources\Items\Cannon.PNG" />
     <Image Include="resources\Items\ForceField.PNG" />
     <Image Include="resources\Items\Laser.PNG" />

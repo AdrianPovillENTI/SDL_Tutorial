@@ -1,15 +1,21 @@
 #include "Tentakor.h"
+#include "../SceneManager.h"
+#include <cassert>
 
 Tentakor::Tentakor ()
     : Enemy (
     0 ,  // speed
-    100 ,  // health
-    5 ,  // damage
-    "resources/Player/Player.png"
+    300 ,  // health
+    10 ,  // damage
+    "resources/EduBoss.png"
     )
 {
 
     Start ( );
+    onDie = [ this ] ( )
+    {
+        assert ( SM.SetNextScene ( "Level2" ) );
+    };
 }
 
 void Tentakor::Start ( )

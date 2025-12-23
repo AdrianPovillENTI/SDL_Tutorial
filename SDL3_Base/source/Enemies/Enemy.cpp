@@ -24,6 +24,7 @@ void Enemy::Update ( )
 
     if ( isDeath )
     {
+        if ( onDie ) onDie ( );
         Destroy ( );
     }
 }
