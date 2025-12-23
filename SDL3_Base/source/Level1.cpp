@@ -64,40 +64,40 @@ void Level1::OnEnter ( )
 
 	WaveManager * waveManager = new WaveManager
 	(
-		{ // enemySpawnData vector
-			//new EnemySpawnData 
-			//( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
-			//	1, 
-			//	Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 3 ),
-			//	new LineSpawnPattern 
-			//	( 
-			//		Vector2 ( 1,0 ), //Direction where will spawn
-			//		100 //Spacing
-			//	), 
-			//	{ 
-			//		new Swirlers ( ),
-			//		new Swirlers ( ),
-			//		new Swirlers ( ),
-			//		new Swirlers ( ) 
-			//	} 
-			//) ,
-			//new EnemySpawnData
-			//(
-			//	2,
-			//	 Vector2 ( RM->WINDOW_WIDTH * 0.5f , RM->WINDOW_HEIGHT * 2);,
-			//	new TopBottomSpawnPattern
-			//	(
-			//		300.f
-			//	),
-			//	{
-			//		new Gulper ( Vector2::Up),
-			//		new Gulper ( Vector2::Down )
-			//	}
-			//),
-			/*new EnemySpawnData
+		{
+			new EnemySpawnData 
+			( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
+				1, 
+				Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 3 ),
+				new LineSpawnPattern 
+				( 
+					Vector2 ( 1,0 ), //Direction where will spawn
+					100 //Spacing
+				), 
+				{ 
+					new Swirlers ( ),
+					new Swirlers ( ),
+					new Swirlers ( ),
+					new Swirlers ( ) 
+				} 
+			),
+			new EnemySpawnData
+			(
+				2,
+				Vector2 ( RM->WINDOW_WIDTH * 0.5f , RM->WINDOW_HEIGHT * 2),
+				new TopBottomSpawnPattern
+				(
+					300.f
+				),
+				{
+					new Gulper ( Vector2::Up),
+					new Gulper ( Vector2::Down )
+				}
+			),
+			new EnemySpawnData
 			(
 				3,
-				origin,
+				Vector2(RM->WINDOW_WIDTH + 50, 50),
 				new RandomSpawnPattern
 				(
 					Vector2::Down,
@@ -105,18 +105,38 @@ void Level1::OnEnter ( )
 					50.f
 				),
 				{
-					new Drifter ( Vector2::Left ),
-					new Drifter ( Vector2::Left ),
-					new Drifter ( Vector2::Left ),
-					new Drifter ( Vector2::Left ),
-					new Drifter ( Vector2::Left ),
-					new Drifter ( Vector2::Left ),
-					new Drifter ( Vector2::Left ),
-					new Drifter ( Vector2::Left ),
-					new Drifter ( Vector2::Left )
+					new Drifter ( ),
+					new Drifter ( ),
+					new Drifter ( ),
+					new Drifter ( ),
+					new Drifter ( ),
+					new Drifter ( ),
+					new Drifter ( ),
+					new Drifter ( ),
+					new Drifter ( )
 				}
-			)*/
-			/*new EnemySpawnData
+			),
+			new EnemySpawnData
+			(
+				3,
+				Vector2(RM->WINDOW_WIDTH, -100),
+				new LineSpawnPattern
+				(
+					Vector2::Down,
+					50
+				),
+				{
+					new Arachnid(),
+					new ArachnidTail(10.f),
+					new ArachnidTail(20.f),
+					new ArachnidTail(30.f),
+					new ArachnidTail(40.f),
+					new ArachnidTail(50.f),
+					new ArachnidTail(60.f),
+					new ArachnidTail(70.f)
+				}
+			),
+			new EnemySpawnData
 			(
 				3,
 				Vector2(50,RM->WINDOW_HEIGHT),
@@ -135,47 +155,60 @@ void Level1::OnEnter ( )
 					new Floater (),
 					new Floater ()
 				}
-			),*/
-			//new EnemySpawnData
-			//(
-			//	3,
-			//	Vector2 ( 0,0 ),
-			//	new CornerSpawnPattern
-			//	(
-			//		150
-			//	),
-			//	{
-			//		new Charger ( ),
-			//		new Charger ( ),
-			//		new Charger ( ),
-			//		new Charger ( ),
-			//		new Charger ( ),
-			//		new Charger ( ),
-			//		new Charger ( ),
-			//		new Charger ( )
-			//	}
-			//)
-			//new EnemySpawnData
-			//(
-			//	3,
-			//	Vector2(RM->WINDOW_WIDTH,100),
-			//	new LineSpawnPattern
-			//	(
-			//		Vector2::Up,
-			//		50
-			//	),
-			//	{
-			//		new Mawler(),
-			//		new Mawler(),
-			//		new Mawler(),
-			//		new Mawler(),
-			//		new Mawler(),
-			//		new Mawler(),
-			//		new Mawler(),
-			//		new Mawler()
-			//	}
-			//)
-		/*	new EnemySpawnData
+			),
+			new EnemySpawnData
+			(
+				3,
+				Vector2 ( 0,0 ),
+				new CornerSpawnPattern
+				(
+					150
+				),
+				{
+					new Charger ( ),
+					new Charger ( ),
+					new Charger ( ),
+					new Charger ( ),
+					new Charger ( ),
+					new Charger ( ),
+					new Charger ( ),
+					new Charger ( )
+				}
+			),
+			new EnemySpawnData
+			(
+				2,
+				Vector2 ( RM->WINDOW_WIDTH * 0.5f , RM->WINDOW_HEIGHT * 2),
+				new TopBottomSpawnPattern
+				(
+					300.f
+				),
+				{
+					new Gulper ( Vector2::Up),
+					new Gulper ( Vector2::Down )
+				}
+			),
+			new EnemySpawnData
+			(
+				3,
+				Vector2(RM->WINDOW_WIDTH,100),
+				new LineSpawnPattern
+				(
+					Vector2::Up,
+					50
+				),
+				{
+					new Mawler(),
+					new Mawler(),
+					new Mawler(),
+					new Mawler(),
+					new Mawler(),
+					new Mawler(),
+					new Mawler(),
+					new Mawler()
+				}
+			),
+			new EnemySpawnData
 			(
 				3,
 				Vector2(0,RM->GAME_WINDOW_HEIGHT / 2),
@@ -194,8 +227,59 @@ void Level1::OnEnter ( )
 					new Splitta(6),
 					new Splitta(7)
 				}
-			),*/
-			/*new EnemySpawnData
+			),
+			new EnemySpawnData
+			( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
+				1,
+				Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 3),
+				new LineSpawnPattern
+				(
+					Vector2(1, 0), //Direction where will spawn
+					100 //Spacing
+				),
+				{
+					new Swirlers(),
+					new Swirlers(),
+					new Swirlers(),
+					new Swirlers()
+				}
+			),
+			new EnemySpawnData
+			(
+				2,
+				Vector2(RM->WINDOW_WIDTH * 0.5f, RM->WINDOW_HEIGHT * 2),
+				new TopBottomSpawnPattern
+				(
+					300.f
+				),
+				{
+					new Gulper(Vector2::Up),
+					new Gulper(Vector2::Down)
+				}
+			),
+			new EnemySpawnData
+			(
+				3,
+				Vector2(RM->WINDOW_WIDTH + 50, 50),
+				new RandomSpawnPattern
+				(
+					Vector2::Down,
+					100,
+					50.f
+				),
+				{
+					new Drifter(),
+					new Drifter(),
+					new Drifter(),
+					new Drifter(),
+					new Drifter(),
+					new Drifter(),
+					new Drifter(),
+					new Drifter(),
+					new Drifter()
+				}
+			),
+			new EnemySpawnData
 			(
 				3,
 				Vector2(RM->WINDOW_WIDTH, -100),
@@ -206,163 +290,26 @@ void Level1::OnEnter ( )
 				),
 				{
 					new Arachnid(),
+					new ArachnidTail(10.f),
+					new ArachnidTail(20.f),
 					new ArachnidTail(30.f),
+					new ArachnidTail(40.f),
+					new ArachnidTail(50.f),
 					new ArachnidTail(60.f),
-					new ArachnidTail(90.f),
-					new ArachnidTail(120.f),
-					new ArachnidTail(4.5f),
-					new ArachnidTail(5.5f),
-					new ArachnidTail(6.5f)
-				}
-			),*/
-			/*new EnemySpawnData
-			/*
-						new EnemySpawnData
-						(
-							3 ,
-							Vector2 ( RM->WINDOW_WIDTH , RM->GAME_WINDOW_HEIGHT / 2 ) ,
-							new LineSpawnPattern
-							(
-								Vector2::Zero ,
-								0
-							) ,
-							{
-								new Tentakor ( )
-							}
-						)
-			*/ 
-//LEVEL 2
-			/*new EnemySpawnData
-			(
-				3,
-				Vector2(-150, RM->GAME_WINDOW_HEIGHT/ 2 - 50),
-				new LineSpawnPattern
-				(
-					Vector2::Zero,
-					0
-				),
-				{
-					new Headron(true, 0.f),
-					new Headron(false, 0.f),
-					new Headron(true, 10.f),
-					new Headron(false, 10.f),
-					new Headron(true, 20.f),
-					new Headron(false, 20.f),
-					new Headron(true, 30.f),
-					new Headron(false, 30.f)
+					new ArachnidTail(70.f)
 				}
 			),
 			new EnemySpawnData
 			(
-				3,
-				Vector2 ( 0,0 ),
-				new CornerSpawnPattern
-				(
-					150
-				),
-				{
-					new Gearbot ( player ),
-					new Gearbot ( player ),
-					new Gearbot ( player ),
-					new Gearbot ( player ),
-					new Gearbot ( player ),
-					new Gearbot ( player ),
-					new Gearbot ( player ),
-					new Gearbot ( player )
-				}
-			),*/
-			/*new EnemySpawnData
-			(
-				3,
-				Vector2 ( RM->WINDOW_WIDTH,0 ),
-				new LineSpawnPattern
-				(
-					Vector2::Up ,
-					50.f
-				),
-				{
-					new Boosters ( Vector2::Left),
-					new Boosters ( Vector2::Left),
-					new Boosters ( Vector2::Left),
-					new Boosters ( Vector2::Left),
-					new Boosters ( Vector2::Left),
-					new Boosters ( Vector2::Left),
-					new Boosters ( Vector2::Left),
-					new Boosters ( Vector2::Left)
-				}
-			),
-			new EnemySpawnData
-			(
-				3,
-				Vector2 ( RM->WINDOW_WIDTH ,0 ),
-				new LineSpawnPattern
-				(
-					Vector2::Up ,
-					50.f
-				),
-				{
-					new Lifters ( Vector2::Left),
-					new Lifters ( Vector2::Left),
-					new Lifters ( Vector2::Left),
-					new Lifters ( Vector2::Left),
-					new Lifters ( Vector2::Left),
-					new Lifters ( Vector2::Left),
-					new Lifters ( Vector2::Left),
-					new Lifters ( Vector2::Left)
-				}
-			),
-			new EnemySpawnData
-			(
-				3,
-				Vector2 ( RM->WINDOW_WIDTH / 2, RM->GAME_WINDOW_HEIGHT),
-				new LineSpawnPattern
-				(
-					Vector2::Right ,
-					100.f
-				),
-				{
-					new Strikers ( Vector2::Down ),
-					new Strikers ( Vector2::Down ),
-					new Strikers ( Vector2::Down ),
-					new Strikers ( Vector2::Down)
-				}
-			),*/
-			/*new EnemySpawnData
-			(
-				3,
-				Vector2 ( 0, RM->GAME_WINDOW_HEIGHT / 2),
+				3 ,
+				Vector2 ( RM->WINDOW_WIDTH , RM->GAME_WINDOW_HEIGHT / 2 ) ,
 				new LineSpawnPattern
 				(
 					Vector2::Zero ,
 					0
-				),
+				) ,
 				{
-					new Loopers (10.f, Vector2::Right),
-					new Loopers (20.f, Vector2::Right),
-					new Loopers (30.f, Vector2::Right),
-					new Loopers (40.f, Vector2::Right),
-					new Loopers (10.f, Vector2::Left,Vector2 ( RM->WINDOW_WIDTH, RM->GAME_WINDOW_HEIGHT / 2 ) ),
-					new Loopers (20.f, Vector2::Left,Vector2 ( RM->WINDOW_WIDTH, RM->GAME_WINDOW_HEIGHT / 2 ) ),
-					new Loopers (30.f, Vector2::Left,Vector2 ( RM->WINDOW_WIDTH, RM->GAME_WINDOW_HEIGHT / 2 ) ),
-					new Loopers (40.f, Vector2::Left,Vector2 ( RM->WINDOW_WIDTH, RM->GAME_WINDOW_HEIGHT / 2 ) )
-				}
-			),*/
-			new EnemySpawnData
-			(
-				3,
-				Vector2 ( 0, RM->GAME_WINDOW_HEIGHT / 3),
-				new LineSpawnPattern
-				(
-					Vector2::Left ,
-					0
-				),
-				{
-					new Angrygons (),
-					new Angrygons (),
-					new Angrygons (),
-					new Angrygons (),
-					new Angrygons (),
-					new Angrygons ()
+					new Tentakor ( )
 				}
 			)
 		}
