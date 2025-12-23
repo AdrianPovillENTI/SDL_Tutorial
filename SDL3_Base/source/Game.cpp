@@ -108,21 +108,22 @@ void Game::Init()
 
 	//ENEMIES TEXTURES
 
-	RM->LoadTexture("resources/Enemies/Imagen1");
-	RM->LoadTexture("resources/Enemies/Imagen2");
-	RM->LoadTexture("resources/Enemies/Imagen3");
-	RM->LoadTexture("resources/Enemies/Imagen4");
-	RM->LoadTexture("resources/Enemies/Imagen5");
-	RM->LoadTexture("resources/Enemies/Imagen6");
-	RM->LoadTexture("resources/Enemies/Imagen7");
-	RM->LoadTexture("resources/Enemies/Imagen8");
-	RM->LoadTexture("resources/Enemies/Imagen9");
-	RM->LoadTexture("resources/Enemies/Imagen10");
-	RM->LoadTexture("resources/Enemies/Imagen11");
-	RM->LoadTexture("resources/Enemies/Imagen12");
-	RM->LoadTexture("resources/Enemies/Imagen13");
-	RM->LoadTexture("resources/Enemies/Imagen14");
-	RM->LoadTexture("resources/Enemies/Imagen15");
+	RM->LoadTexture("resources/Enemies/Imagen1.png");
+	RM->LoadTexture("resources/Enemies/Imagen2.png");
+	RM->LoadTexture("resources/Enemies/Imagen3.png");
+	RM->LoadTexture("resources/Enemies/Imagen4.png");
+	RM->LoadTexture("resources/Enemies/Imagen5.png");
+	RM->LoadTexture("resources/Enemies/Imagen6.png");
+	RM->LoadTexture("resources/Enemies/Imagen7.png");
+	RM->LoadTexture("resources/Enemies/Imagen8.png");
+	RM->LoadTexture("resources/Enemies/Imagen9.png");
+	RM->LoadTexture("resources/Enemies/Imagen10.png");
+	RM->LoadTexture("resources/Enemies/Imagen11.png");
+	RM->LoadTexture("resources/Enemies/Imagen12.png");
+	RM->LoadTexture("resources/Enemies/Imagen13.png");
+	RM->LoadTexture("resources/Enemies/Imagen14.png");
+	RM->LoadTexture("resources/Enemies/Imagen15.png");
+	RM->LoadTexture("resources/Enemies/Imagen16.png");
 
 	RM->LoadFont("resources/fonts/Hyperspace.ttf");
 

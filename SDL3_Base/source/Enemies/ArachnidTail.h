@@ -11,7 +11,7 @@ public:
 		counterToPlay = 0;
 	};
 	
-	void OnCollision(Object* collided) override;
+	//void OnCollision(Object* collided) override;
 	void OnEnterFunction() override;
 private:
 	float timeToPlay;

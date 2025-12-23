@@ -5,7 +5,7 @@ Swirlers::Swirlers ( )
     5.f ,     // Speed
     1 ,        // Health
     2 ,        // Damage
-    "resources/Player/Player.png"
+    "resources/Enemies/Imagen14.png"
     )
 {
 }
