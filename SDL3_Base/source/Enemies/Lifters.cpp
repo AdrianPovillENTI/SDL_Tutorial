@@ -6,7 +6,7 @@ Lifters::Lifters ( Vector2 _dir )
     1.f + ( rand ( ) % 12 ) / 10.f ,
     3 , //Health
     1 , //Damage
-    "resources/Player/Player.png"
+    "resources/Enemies/Imagen12.png"
     ) ,
     direction ( _dir )
 {

@@ -5,7 +5,7 @@ Charger::Charger ( )
     1.8f ,
     3 ,
     1 ,
-    "resources/Player/Player.png"
+    "resources/Enemies/Imagen4.png"
     )
 {
 }

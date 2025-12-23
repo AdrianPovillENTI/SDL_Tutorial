@@ -6,7 +6,7 @@ Arachnid::Arachnid()
         4,  // speed
         1,  // health
         2,  // damage
-        "resources/Player/Player.png"
+        "resources/Enemies/Imagen9.png"
     )
 {
     radius = 1800;

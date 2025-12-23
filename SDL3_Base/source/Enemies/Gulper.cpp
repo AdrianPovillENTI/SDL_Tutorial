@@ -5,7 +5,7 @@ Gulper::Gulper ( Vector2 _dir )
     2 ,  // speed
     1 ,  // health
     2 ,  // damage
-    "resources/Player/Player.png"
+    "resources/Enemies/Imagen7.png"
     ) ,
     targetPos ( _dir )
 {

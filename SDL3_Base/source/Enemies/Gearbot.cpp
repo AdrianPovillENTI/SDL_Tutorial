@@ -5,7 +5,7 @@ Gearbot::Gearbot ( Player * p )
     1.8f ,
     3 ,
     1 ,
-    "resources/Player/Player.png" ,
+    "resources/Enemy/Imagen6.png" ,
     new EnemyBehaviourPattern (
     new LinearPattern ( Vector2::Left , 1.8f )
     )
