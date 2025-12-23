@@ -6,7 +6,7 @@ Drifter::Drifter()
         0.5f + (rand() % 12) / 10.f,
         3, //Health
         1, //Damage
-        "resources/Player/Player.png"
+        "resources/Enemies/Imagen13.png"
     )
 {
     direction = Vector2::Left;

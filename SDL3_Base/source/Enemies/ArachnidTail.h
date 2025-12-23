@@ -5,6 +5,7 @@ class ArachnidTail : public Arachnid
 {
 public:
 	ArachnidTail(float i) {
+		_renderer->SetResourcePath("resources/Enemies/Imagen10.png");
 		playOnStart = false;
 		timeToPlay = i;
 		counterToPlay = 0;

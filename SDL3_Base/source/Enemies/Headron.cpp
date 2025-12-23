@@ -4,7 +4,7 @@ Headron::Headron(bool _up, float _spawnDelay)
         3.f,     // Speed
         1,        // Health
         2,        // Damage
-        "resources/Player/Player.png"
+        "resources/Enemies/Imagen2.png"
     ), up(_up), timeToPlay(_spawnDelay)
 {
     limitMargin = 50;

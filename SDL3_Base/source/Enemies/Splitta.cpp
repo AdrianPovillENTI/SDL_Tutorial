@@ -5,7 +5,7 @@ Splitta::Splitta(int i)
         2,  // speed
         1,  // health
         2,  // damage
-        "resources/Player/Player.png"
+        "resources/Enemies/Imagen15.png"
     )
 {
     index = i;

@@ -5,7 +5,7 @@ Scouts::Scouts() : Enemy
     5.f,
     3, //Health
     1, //Damage
-    "resources/Player/Player.png"
+    "resources/Enemies/Imagen8.png"
 )
 {
     direction = Vector2::Left;

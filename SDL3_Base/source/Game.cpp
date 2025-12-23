@@ -106,6 +106,24 @@ void Game::Init()
 	RM->LoadTexture("resources/UI/EmptySprite.png");
 	RM->LoadTexture("resources/UI/StaticUI.png");
 
+	//ENEMIES TEXTURES
+
+	RM->LoadTexture("resources/Enemies/Imagen1");
+	RM->LoadTexture("resources/Enemies/Imagen2");
+	RM->LoadTexture("resources/Enemies/Imagen3");
+	RM->LoadTexture("resources/Enemies/Imagen4");
+	RM->LoadTexture("resources/Enemies/Imagen5");
+	RM->LoadTexture("resources/Enemies/Imagen6");
+	RM->LoadTexture("resources/Enemies/Imagen7");
+	RM->LoadTexture("resources/Enemies/Imagen8");
+	RM->LoadTexture("resources/Enemies/Imagen9");
+	RM->LoadTexture("resources/Enemies/Imagen10");
+	RM->LoadTexture("resources/Enemies/Imagen11");
+	RM->LoadTexture("resources/Enemies/Imagen12");
+	RM->LoadTexture("resources/Enemies/Imagen13");
+	RM->LoadTexture("resources/Enemies/Imagen14");
+	RM->LoadTexture("resources/Enemies/Imagen15");
+
 	RM->LoadFont("resources/fonts/Hyperspace.ttf");
 
 	assert(SM.AddScene("MainMenu", new MainMenu()));

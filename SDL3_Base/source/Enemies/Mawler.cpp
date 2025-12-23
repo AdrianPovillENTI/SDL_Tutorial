@@ -5,7 +5,7 @@ Mawler::Mawler()
         5.f,  // speed
         1,  // health
         2,  // damage
-        "resources/Player/Player.png"
+        "resources/Enemies/Imagen3.png"
     )
 {
     radius = 200;
