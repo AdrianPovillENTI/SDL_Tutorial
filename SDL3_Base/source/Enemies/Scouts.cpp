@@ -1,6 +1,6 @@
 #include "Scouts.h"
 
-Scouts::Scouts(Vector2 _direction) : direction(_direction), Enemy
+Scouts::Scouts() : Enemy
 (
     0.5f + (rand() % 12) / 10.f,
     3, //Health
@@ -8,6 +8,7 @@ Scouts::Scouts(Vector2 _direction) : direction(_direction), Enemy
     "resources/Player/Player.png"
 )
 {
+    direction = Vector2::Left;
     Start();
 }
 

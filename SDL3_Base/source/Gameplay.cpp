@@ -219,12 +219,12 @@ void Gameplay::OnEnter()
 					75.f
 				),
 				{
-					new Scouts(Vector2::Left),
-					new Scouts(Vector2::Left),
-					new Scouts(Vector2::Left),
-					new Scouts(Vector2::Left),
-					new Scouts(Vector2::Left),
-					new Scouts(Vector2::Left)
+					new Scouts(),
+					new Scouts(),
+					new Scouts(),
+					new Scouts(),
+					new Scouts(),
+					new Scouts()
 				}
 			)
 		}
