@@ -209,6 +209,7 @@ void Gameplay::OnEnter()
 				}
 			)
 		*/
+		/*
 			new EnemySpawnData
 			(
 				3,
@@ -216,7 +217,7 @@ void Gameplay::OnEnter()
 				new LineSpawnPattern
 				(
 					Vector2::Up,
-					75.f
+					95.f
 				),
 				{
 					new Scouts(),
@@ -227,6 +228,7 @@ void Gameplay::OnEnter()
 					new Scouts()
 				}
 			)
+			*/
 		}
 	);
 
