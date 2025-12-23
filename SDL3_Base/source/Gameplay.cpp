@@ -54,9 +54,9 @@ void Gameplay::OnEnter()
 	UIManager* uiManager = new UIManager();
 
 
-	WaveManager* waveManager = new WaveManager
-	(
-		{ // enemySpawnData vector
+	//WaveManager* waveManager = new WaveManager
+	//(
+		//{ // enemySpawnData vector
 			//new EnemySpawnData 
 			//( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
 			//	1, 
@@ -229,8 +229,8 @@ void Gameplay::OnEnter()
 				}
 			)
 			*/
-		}
-	);
+		//}
+	//);
 
-	_objects.push_back ( waveManager );
+	//_objects.push_back ( waveManager );
 }

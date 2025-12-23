@@ -26,6 +26,7 @@
 #include "Enemies/Arachnid.h"
 #include "Enemies/ArachnidTail.h"
 #include "Enemies/Tentakor.h"
+#include "Enemies/Headron.h"
 #include "Patterns/LineSpawnPattern.h"
 #include "Patterns/TopBottomSpawnPattern.h"
 #include "Patterns/RandomSpawnPattern.h"
@@ -205,17 +206,39 @@ void Level1::OnEnter ( )
 					new ArachnidTail(6.5f)
 				}
 			),*/
+			/*
+						new EnemySpawnData
+						(
+							3 ,
+							Vector2 ( RM->WINDOW_WIDTH , RM->GAME_WINDOW_HEIGHT / 2 ) ,
+							new LineSpawnPattern
+							(
+								Vector2::Zero ,
+								0
+							) ,
+							{
+								new Tentakor ( )
+							}
+						)
+			*/
 			new EnemySpawnData
 			(
-				3 ,
-				Vector2 ( RM->WINDOW_WIDTH , RM->GAME_WINDOW_HEIGHT / 2 ) ,
+				3,
+				Vector2(-150, RM->GAME_WINDOW_HEIGHT/ 2 - 50),
 				new LineSpawnPattern
 				(
-					Vector2::Zero ,
+					Vector2::Zero,
 					0
-				) ,
+				),
 				{
-					new Tentakor ( )
+					new Headron(true, 0.f),
+					new Headron(false, 0.f),
+					new Headron(true, 10.f),
+					new Headron(false, 10.f),
+					new Headron(true, 20.f),
+					new Headron(false, 20.f),
+					new Headron(true, 30.f),
+					new Headron(false, 30.f)
 				}
 			)
 		}
