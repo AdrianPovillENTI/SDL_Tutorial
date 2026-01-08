@@ -4,7 +4,6 @@
 #include "Bullet.h"
 
 #pragma region
-#include "Item.h"
 #include "AmmoGun.h"
 #include "SpeedVfx.h"
 #include "Turret.h"
@@ -66,7 +65,12 @@ public:
     void OnCollision(Object* collided) override;
 
     void Shoot ( );
-    void ApplyItemEffects (Item* item);
+    void FillShield();
+    void SetCannon();
+    void SetLaser();
+    void SetTurret();
+    void SetInvincible();
+    void SetSpeedUpgrade();
     bool GetInvencibleStatus ( );
 
     void ClampInsideScreen ( );

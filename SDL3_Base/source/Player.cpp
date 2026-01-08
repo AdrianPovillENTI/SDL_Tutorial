@@ -1,7 +1,6 @@
 #include "Player.h"
 
 #include "Spawner.h"
-#include "Item.h"
 #include "Bullet.h"
 #include "SpeedVfx.h"
 
@@ -85,9 +84,8 @@ void Player::ReceiveDamage ( int _health )
 
     if (health <= 0 && lifes > 0)
     {
+        FillShield();
         lifes--;
-        health = maxHealth;
-        UIM->UpdateShield(health, maxHealth);
         UIM->UpdateLifes(lifes);
     }
 }
@@ -273,74 +271,46 @@ void Player::Shoot ( )
     shootCooldown = maxShootCooldownTime;
 }
 
-void Player::ApplyItemEffects (Item* item)
-{
-    switch ( item->GetType ( ) )
+void Player::SetCannon() {
+    if (cannon->GetActive())
     {
-        case Item::SCORE:
-            score += 1000;
-            UIM->UpdateScore(score);
-            break;
-
-        case Item::CANNON:
-        {
-            if (cannon->GetActive())
-            {
-                cannon->ResetAmmo();
-                UIM->UpdateCannonAmmo(cannon->GetMaxAmmo(), cannon->GetMaxAmmo());
-            }
-            else
-                cannon->SetActive(true);
-
-            break;
-        }
-
-        case Item::LASER:
-        {
-            if (laser->GetActive())
-            {
-                laser->ResetAmmo();
-                UIM->UpdateLaserAmmo(laser->GetMaxAmmo(), laser->GetMaxAmmo());
-            }
-            else
-                laser->SetActive(true);
-            break;
-        }
-
-        case Item::SPEED_UPGRADE:
-        {
-            speed += speedUpgrade;
-            break;
-        }
-
-        case Item::TURRET:
-        {
-            cout << "geting turret" << endl;
-            if (!turrets[1]->GetActive())
-                if (turrets[0]->GetActive())
-                    turrets[1]->SetActive(true);
-                else
-                    turrets[0]->SetActive(true);
-            break;
-        }
-
-        case Item::FORCEFIELD:
-        {
-            invencible = true;
-            invencibleTime = 200;
-            break;
-        }
-
-        case Item::SHIELD:
-        {
-            health = maxHealth;
-            UIM->UpdateShield(health, maxHealth);
-            break;
-        }
-
-        default:
-            break;
+        cannon->ResetAmmo();
+        UIM->UpdateCannonAmmo(cannon->GetMaxAmmo(), cannon->GetMaxAmmo());
     }
+    else
+        cannon->SetActive(true);
+}
+
+void Player::SetLaser() {
+    if (laser->GetActive())
+    {
+        laser->ResetAmmo();
+        UIM->UpdateLaserAmmo(laser->GetMaxAmmo(), laser->GetMaxAmmo());
+    }
+    else
+        laser->SetActive(true);
+}
+
+void Player::SetSpeedUpgrade() {
+    speed += speedUpgrade;
+}
+
+void Player::SetTurret() {
+    if (!turrets[1]->GetActive())
+        if (turrets[0]->GetActive())
+            turrets[1]->SetActive(true);
+        else
+            turrets[0]->SetActive(true);
+}
+
+void Player::SetInvincible() {
+    invencible = true;
+    invencibleTime = 200;
+}
+
+void Player::FillShield() {
+    health = maxHealth;
+    UIM->UpdateShield(health, maxHealth);
 }
 
 bool Player::GetInvencibleStatus ( )

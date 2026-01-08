@@ -2,6 +2,7 @@
 #include "Spawner.h"
 #include "Vector2.h"
 #include "RenderManager.h" 
+#include "ScoreManager.h"
 #include "Player.h"
 #include <cstdlib>  
 
@@ -51,7 +52,17 @@ void Item::OnCollision(Object* o)
 {
     if (Player* p = dynamic_cast<Player*>(o))
     {
-        p->ApplyItemEffects(this);
+        switch (type)
+        {
+        case Item::SCORE: SCR->AddScore(1000); break; }
+        case Item::CANNON: { p->SetCannon(); break; }
+        case Item::LASER: { p->SetLaser(); break; }
+        case Item::SPEED_UPGRADE: { p->SetSpeedUpgrade(); break; }
+        case Item::TURRET: { p->SetTurret(); break; }
+        case Item::FORCEFIELD: { p->SetInvincible(); break; }
+        case Item::SHIELD: { p->FillShield();  break; }
+        default: break;
+        }
         Destroy();
         SetActive(false);
     }
