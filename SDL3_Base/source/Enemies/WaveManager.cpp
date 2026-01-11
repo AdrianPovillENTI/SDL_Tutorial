@@ -48,7 +48,3 @@ void WaveManager::StartWaveAtIndex ( int index )
 
     wave->SpawnEnemies ( );
 }
-
-void WaveManager::OnCollision ( Object * collided )
-{
-}

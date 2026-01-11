@@ -1,8 +1,9 @@
 #pragma once
 #include "GameObject.h"
+#include "ICollisionable.h"
 #define HALF_SCREEN_HEIGHT RM->WINDOW_HEIGHT * 0.5f
 
-class MapDecorations : public GameObject
+class MapDecorations : public GameObject, public ICollisionable
 {
 private:
 	enum Border{ UP, BOTTOM, COUNT };

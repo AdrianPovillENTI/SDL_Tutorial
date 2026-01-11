@@ -7,6 +7,7 @@ UIBar::UIBar(string _fillSprite, int _totalCount) : totalCount(_totalCount), Gam
 	xSize = 500;
 	initialPos = _transform->position;
 }
+
 void UIBar::RedrawBar(int fill,int max)
 {
 	_transform->position = initialPos - Vector2((max - fill) * xSize / max, 0.f);

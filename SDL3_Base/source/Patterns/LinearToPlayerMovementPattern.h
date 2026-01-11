@@ -4,13 +4,12 @@
 class LinearToPlayerMovementPattern : public MovementPattern
 {
 private:
-    Player* player;
     Vector2 targetPos;
     float speed;
 
 public:
-    LinearToPlayerMovementPattern ( Player* _player, float _speed  )
-        : targetPos ( player->GetTransform()->position ) , player(_player ), speed(_speed )
+    LinearToPlayerMovementPattern ( Transform* _target, float _speed  )
+        : targetPos ( _target->position ), speed(_speed )
     {
         targetPos.Normalize ( );
     }

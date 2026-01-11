@@ -14,15 +14,16 @@ public:
         float duration;
         Phase ( MovementPattern * m , float d ) : movePattern ( m ) , duration ( d ) { }
     };
+
 private:
     int currentPhase = 0;
     float phaseTime = 0;
     vector<Phase> phases;
+
 public:
     MultiPhasePattern ( vector<Phase> list )
-        : phases ( list )
-    {
-    }
+        : phases ( list ) { }
+
     Vector2 GetDelta ( float dt , float elapsed , int index ) override;
     Vector2 GetDeltaOnCondition ( float dt , float elapsed, function<bool()> change , int index );
 };

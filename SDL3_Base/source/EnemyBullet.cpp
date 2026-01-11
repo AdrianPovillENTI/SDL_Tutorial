@@ -29,8 +29,7 @@ void EnemyBullet::Update ( )
 
 void EnemyBullet::OnCollision ( Object * other )
 {
-
-	if ( Player * p = dynamic_cast< Player * > ( other ) )
+	if ( Player* p = dynamic_cast< Player * > ( other ) )
 	{
 		p->ReceiveDamage ( damage );	
 		Destroy ( );

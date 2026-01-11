@@ -14,6 +14,5 @@ public:
 	Gun(string sprite, vector<string> bulletAnim, float _speed, int _dmg, Vector2 spawnBullet);
 
 	virtual void Shoot();
-	void OnCollision(Object* collided) override {}
 };
 

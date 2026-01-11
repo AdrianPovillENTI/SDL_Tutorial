@@ -54,13 +54,13 @@ void Item::OnCollision(Object* o)
     {
         switch (type)
         {
-        case Item::SCORE: SCR->AddScore(1000); break; }
-        case Item::CANNON: { p->SetCannon(); break; }
-        case Item::LASER: { p->SetLaser(); break; }
-        case Item::SPEED_UPGRADE: { p->SetSpeedUpgrade(); break; }
-        case Item::TURRET: { p->SetTurret(); break; }
-        case Item::FORCEFIELD: { p->SetInvincible(); break; }
-        case Item::SHIELD: { p->FillShield();  break; }
+        case Item::SCORE: SCR.AddScore(1000); break; 
+        case Item::CANNON: p->SetCannon(); break; 
+        case Item::LASER: p->SetLaser(); break; 
+        case Item::SPEED_UPGRADE: p->SetSpeedUpgrade(); break; 
+        case Item::TURRET: p->SetTurret(); break; 
+        case Item::FORCEFIELD: p->SetInvincible(); break; 
+        case Item::SHIELD: p->FillShield();  break; 
         default: break;
         }
         Destroy();

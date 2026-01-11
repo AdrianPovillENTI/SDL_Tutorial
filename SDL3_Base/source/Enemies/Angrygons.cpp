@@ -3,12 +3,10 @@
 Angrygons::Angrygons ( )
     : Enemy (
     2.f ,     // Speed
-    1 ,        // Health
-    2 ,        // Damage
+    1 ,       // Health
+    2 ,       // Damage
     "resources/Enemies/Imagen11.png"
-    )
-{
-}
+    ) { }
 
 void Angrygons::Start ( )
 {
@@ -51,10 +49,7 @@ bool Angrygons::OutOfLimits ( )
     Vector2 pos = _transform->position;
 
     if ( pos.x < -margin || pos.x > SC_WIDTH * 1.4f + margin ||
-        pos.y < -margin || pos.y > SC_HEIGHT * 1.5f + margin )
-    {
-        return true;
-    }
+        pos.y < -margin || pos.y > SC_HEIGHT * 1.5f + margin ) return true;
 
     return false;
 }

@@ -53,5 +53,5 @@ public:
 	virtual void Destroy() { _isPendingDestroy = true; }
 
 	Rigidbody* GetRigidbody() { return _physics; }
-	virtual void OnCollision ( Object* collided ) = 0;
+
 };

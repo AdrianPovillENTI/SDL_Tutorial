@@ -1,6 +1,5 @@
 #include "Animator.h"
 
-
 Animator::Animator(std::vector<std::string> _anim) : animationFrames(_anim), frameTime(0.0f), frameTimeMax(30), currentFrame(0) {}
 
 void Animator::SetAnimationSprites(std::vector<std::string> _anim)

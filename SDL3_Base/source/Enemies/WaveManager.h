@@ -13,5 +13,4 @@ public:
 
     void Update ( ) override;
     void StartWaveAtIndex ( int index );
-    void OnCollision ( Object * collided ) override;
 };

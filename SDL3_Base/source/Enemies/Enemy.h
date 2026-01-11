@@ -8,6 +8,7 @@
 #define SC_HEIGHT RM->GAME_WINDOW_HEIGHT
 #define X _transform->position.x
 #define Y _transform->position.y
+
 class Enemy : public DamageableObject
 {
 protected:
@@ -33,6 +34,7 @@ public:
         timeElapsed = 0;
         Start ( );
     }
+
     Enemy ( float speed , int health , int _damage , string path , EnemyBehaviourPattern * _movePattern )
         :DamageableObject ( health , path ) , damage ( _damage ) , speed ( speed ) , pattern ( _movePattern ),
         state(ON_ENTER)

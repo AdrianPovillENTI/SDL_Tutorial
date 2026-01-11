@@ -6,7 +6,6 @@
 #include "ImageObject.h"
 
 #include "UI/UIManager.h"
-#include "BackgroundManager.h"
 #include "MapDecorations.h"
 #include "Player.h"
 #include "Bullet.h"

@@ -18,9 +18,7 @@
     <ClCompile Include="source\Enemies\Rammers.cpp" />
     <ClCompile Include="source\Enemies\Scouts.cpp" />
     <ClCompile Include="source\Enemies\Sliders.cpp" />
-    <ClCompile Include="source\Patterns\Pattern.cpp" />
     <ClCompile Include="source\Enemies\Enemy.cpp" />
-    <ClCompile Include="source\AnimatedImageRenderer.cpp" />
     <ClCompile Include="source\Patterns\SinusoidalMovementPattern.cpp" />
     <ClCompile Include="source\Item.cpp" />
     <ClCompile Include="source\Bullet.cpp" />
@@ -28,7 +26,6 @@
     <ClCompile Include="source\DamageableObject.cpp" />
     <ClCompile Include="source\GameObject.cpp" />
     <ClCompile Include="source\AABB.cpp" />
-    <ClCompile Include="source\Button.cpp" />
     <ClCompile Include="source\Game.cpp" />
     <ClCompile Include="source\Gameplay.cpp" />
     <ClCompile Include="source\ImageRenderer.cpp" />
@@ -61,6 +58,20 @@
     <ClCompile Include="source\UI\UIManager.cpp" />
     <ClCompile Include="source\UI\UIStaticImages.cpp" />
     <ClCompile Include="source\Enemies\ArachnidTail.cpp" />
+    <ClCompile Include="source\Enemies\Angrygons.cpp" />
+    <ClCompile Include="source\Level1.cpp" />
+    <ClCompile Include="source\Level2.cpp" />
+    <ClCompile Include="source\EnemyBullet.cpp" />
+    <ClCompile Include="source\UI\Button.cpp" />
+    <ClCompile Include="source\ScoreManager.cpp" />
+    <ClCompile Include="source\Patterns\CheckPointMovementPattern.cpp" />
+    <ClCompile Include="source\Patterns\CircularMovementPattern.cpp" />
+    <ClCompile Include="source\Patterns\CornerSpawnPattern.cpp" />
+    <ClCompile Include="source\Patterns\JoinPattern.cpp" />
+    <ClCompile Include="source\Patterns\LineSpawnPattern.cpp" />
+    <ClCompile Include="source\Patterns\RandomSpawnPattern.cpp" />
+    <ClCompile Include="source\Patterns\SplitPattern.cpp" />
+    <ClCompile Include="source\Patterns\TopBottomSpawnPattern.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Enemies\EnemySpawnData.h" />
@@ -82,17 +93,14 @@
     <ClInclude Include="source\Enemies\Sliders.h" />
     <ClInclude Include="source\Patterns\Pattern.h" />
     <ClInclude Include="source\Enemies\Enemy.h" />
-    <ClInclude Include="source\AnimatedImageRenderer.h" />
     <ClInclude Include="source\Patterns\MovementPattern.h" />
     <ClInclude Include="source\Patterns\LineSpawnPattern.h" />
     <ClInclude Include="source\Item.h" />
     <ClInclude Include="source\Bullet.h" />
     <ClInclude Include="source\Player.h" />
     <ClInclude Include="source\DamageableObject.h" />
-    <ClInclude Include="source\IDamageable.h" />
     <ClInclude Include="source\GameObject.h" />
     <ClInclude Include="source\AABB.h" />
-    <ClInclude Include="source\Button.h" />
     <ClInclude Include="source\Game.h" />
     <ClInclude Include="source\Gameplay.h" />
     <ClInclude Include="source\InputManager.h" />
@@ -107,7 +115,6 @@
     <ClInclude Include="source\SceneManager.h" />
     <ClInclude Include="source\Spawner.h" />
     <ClInclude Include="source\Patterns\SpawnPattern.h" />
-    <ClInclude Include="source\TestObject.h" />
     <ClInclude Include="source\TextObject.h" />
     <ClInclude Include="source\TextRenderer.h" />
     <ClInclude Include="source\Transform.h" />
@@ -123,10 +130,8 @@
     <ClInclude Include="source\Patterns\SinusoidalMovementPattern.h" />
     <ClInclude Include="source\Patterns\ZigZagMovementPattern.h" />
     <ClInclude Include="source\AmmoGun.h" />
-    <ClInclude Include="source\AnimatedImageObject.h" />
     <ClInclude Include="source\Animator.h" />
     <ClInclude Include="source\Background.h" />
-    <ClInclude Include="source\BackgroundManager.h" />
     <ClInclude Include="source\Gun.h" />
     <ClInclude Include="source\MapDecorations.h" />
     <ClInclude Include="source\Patterns\TopBottomSpawnPattern.h" />
@@ -141,6 +146,15 @@
     <ClInclude Include="source\Patterns\SplitPattern.h" />
     <ClInclude Include="source\Patterns\JoinPattern.h" />
     <ClInclude Include="source\Enemies\ArachnidTail.h" />
+    <ClInclude Include="source\Enemies\Angrygons.h" />
+    <ClInclude Include="source\HighScoresScene.h" />
+    <ClInclude Include="source\Level1.h" />
+    <ClInclude Include="source\Level2.h" />
+    <ClInclude Include="source\EnemyBullet.h" />
+    <ClInclude Include="source\UI\Button.h" />
+    <ClInclude Include="source\ICollisionable.h" />
+    <ClInclude Include="source\ScoreManager.h" />
+    <ClInclude Include="source\Patterns\LinearMovementPattern.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bullet.png" />
@@ -205,6 +219,13 @@
     <Image Include="resources\Player\NormalShoot\shot_exp_8.png" />
     <Image Include="resources\Player\Player.png" />
     <Image Include="resources\xd.png" />
+    <Image Include="resources\ButtonBKG.png" />
+    <Image Include="resources\EduBoss.png" />
+    <Image Include="resources\UI\CannonBar.png" />
+    <Image Include="resources\UI\EmptySprite.png" />
+    <Image Include="resources\UI\LaserBar.png" />
+    <Image Include="resources\UI\ShieldBar.png" />
+    <Image Include="resources\UI\StaticUI.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

@@ -6,7 +6,6 @@
 #include "ImageObject.h"
 
 #include "UI/UIManager.h"
-#include "BackgroundManager.h"
 #include "MapDecorations.h"
 #include "Player.h"
 #include "Bullet.h"
@@ -39,6 +38,7 @@
 #include "Patterns/TopBottomSpawnPattern.h"
 #include "Patterns/RandomSpawnPattern.h"
 #include "Patterns/CornerSpawnPattern.h"
+
 #pragma endregion Items
 
 void Level1::OnEnter ( )
@@ -56,9 +56,6 @@ void Level1::OnEnter ( )
     Player * player = new Player ( 55 );
 	SPAWNER.SpawnObject ( player );
 
-	SPAWNER.SpawnObject ( new Item ( "resources/Items/Score.png" ) );
-	SPAWNER.SpawnObject ( new Item ( "resources/Items/Score.png" ) );
-	SPAWNER.SpawnObject ( new Item ( "resources/Items/Score.png" ) );
 	UIManager * uiManager = new UIManager ( );
 
 

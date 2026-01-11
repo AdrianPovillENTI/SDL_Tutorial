@@ -1,4 +1,5 @@
 #include "EnemySpawnData.h"
+#include "../Item.h"
 
 EnemySpawnData::EnemySpawnData ( int id , Vector2 _origin , SpawnPattern * _spawnPattern , const std::vector<Enemy *> enemies )
     : id ( id ) , origin ( _origin ) , spawnPattern ( _spawnPattern ) , enemies ( enemies ) ,

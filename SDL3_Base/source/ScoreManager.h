@@ -6,7 +6,7 @@ class ScoreManager
 {
 private:
 	ScoreManager() = default;
-	ScoreManager(SceneManager&) = delete;
+	ScoreManager(ScoreManager&) = delete;
 	ScoreManager& operator =(const ScoreManager&) = delete;
 
 public:

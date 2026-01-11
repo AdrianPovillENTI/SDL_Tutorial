@@ -8,36 +8,11 @@ private:
 	float speed;
 	Vector2 offset;
 public:
-	Background ( int index , std::string imagePath ) : GameObject ( imagePath )
-	{
-		offset = Vector2 ( RM->WINDOW_WIDTH * index , HALF_SCREEN_HEIGHT );
-		_transform->position = offset;
-		speed = -1.f;
-	}
+	Background(int index, std::string imagePath);
 
-	void Start ( ) override
-	{
-		_transform->scale = Vector2 ( 15 , 15 );
-	}
+	void Start ( ) override { _transform->scale = Vector2 ( 15 , 15 ); }
 
-	void SetSpeed ( float _speed )
-	{
-		speed = _speed;
-	}
+	void SetSpeed ( float _speed ) { speed = _speed; }
 
-	void Update ( ) override
-	{
-		GameObject::Update ( );
-
-		_physics->AddForce ( Vector2::Right * speed );
-
-		float width = RM->WINDOW_WIDTH;
-		float height = RM->WINDOW_HEIGHT;
-
-		if ( _transform->position.x <= -width )
-		{
-			_transform->position.x += width * 3;
-		}
-	}
-	void OnCollision ( Object * collided ) override;
+	void Update() override;
 };

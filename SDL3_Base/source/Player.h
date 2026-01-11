@@ -61,8 +61,6 @@ public:
     void Move ( ) override;
     void Start ( ) override;
     void Update ( ) override;
-    
-    void OnCollision(Object* collided) override;
 
     void Shoot ( );
     void FillShield();
@@ -75,6 +73,7 @@ public:
 
     void ClampInsideScreen ( );
 
+    void OnCollision(Object* o) override;
     void ReceiveDamage ( int _health ) override;
     void InitializeStats();
     void InitializeGuns();

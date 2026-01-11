@@ -70,19 +70,19 @@ void Turret::Shoot()
 	if (_transform->rotation == 90)
 		aim = Vector2::Right;
 	else if (_transform->rotation == 45)
-		aim = Vector2(1, -1);
+		aim = Vector2::Right + Vector2::Down;
 	else if (_transform->rotation == 0)
 		aim = Vector2::Down;
 	else if (_transform->rotation == -45)
-		aim = Vector2(-1, -1);
+		aim = Vector2::Left + Vector2::Down;
 	else if (_transform->rotation == -90)
 		aim = Vector2::Left;
 	else if (_transform->rotation == 135)
-		aim = Vector2(1, 1);
+		aim = Vector2::Right + Vector2::Up;
 	else if (_transform->rotation == 180)
 		aim = Vector2::Up;
 	else if (_transform->rotation == 225)
-		aim = Vector2(-1, 1);
+		aim = Vector2::Left + Vector2::Down;
 	else
 		aim = Vector2::Left;
 

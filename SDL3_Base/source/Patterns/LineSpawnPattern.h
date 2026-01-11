@@ -11,14 +11,5 @@ public:
         : targetPos ( _direction.Normalized ( ) ), spacing ( spacing )
     { }
 
-    std::vector<Vector2> GetSpawnPositions ( Vector2 origin , int count ) override
-    {
-        std::vector<Vector2> res;
-        res.reserve ( count );
-
-        for ( int i = 0; i < count; ++i )
-            res.push_back ( origin + (targetPos * ( spacing * i )));
-
-        return res;
-    }
+    std::vector<Vector2> GetSpawnPositions(Vector2 origin, int count) override;
 };

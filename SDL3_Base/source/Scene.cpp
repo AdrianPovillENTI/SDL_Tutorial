@@ -1,5 +1,6 @@
 #include "Scene.h"
 #include "Spawner.h"
+#include "ICollisionable.h"
 
 void Scene::Update()
 {
@@ -37,7 +38,6 @@ void Scene::Update()
     for (Object* o : _ui)
         o->Update();
 
-
     int objSize = _objects.size();
     for (int i = 0; i < objSize; i++)
     {
@@ -45,10 +45,11 @@ void Scene::Update()
         {
             if (_objects[i]->GetRigidbody()->CheckCollision(_objects[j]->GetRigidbody()))
             {
-                _objects [ i ]->OnCollision ( _objects [ j ] );
-                _objects [ j ]->OnCollision ( _objects [ i ] );
+                if (auto* o = dynamic_cast<ICollisionable*>(_objects[i]))
+                    o->OnCollision(_objects[j]);
+                if (auto* o = dynamic_cast<ICollisionable*>(_objects[j]))
+                    o->OnCollision(_objects[i]);
             }
-            
         }
     }
 

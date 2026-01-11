@@ -17,23 +17,6 @@ public:
 
     CheckPointMovementPattern ( Vector2 * curPosition, MovementPatternData* _patternData, float speed )
         : curPosition ( curPosition ) , patternData( _patternData ) , speed ( speed ) { }
-    Vector2 GetDelta ( float dt , float elapsed , int index ) override
-    {
-        if ( checkPoints.empty()) return Vector2::Zero;
 
-        Vector2 checkpoint = checkPoints [ curIndex ];
-        Vector2 targetPos = ( checkpoint - *curPosition );
-        targetPos.Normalize ( );
-
-        if ( Vector2::Distance ( *curPosition , checkpoint ) <= 1.f )
-        {
-            curIndex++;
-            if ( curIndex >= checkPoints.size ( ) )
-            {
-                curIndex = checkPoints.size ( ) - 1;
-            }
-        }
-
-        return targetPos * speed * dt;
-    }
+    Vector2 GetDelta(float dt, float elapsed, int index) override;
 };

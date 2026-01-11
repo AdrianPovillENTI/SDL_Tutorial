@@ -23,8 +23,5 @@ public:
     void Update ( ) override;
     void ChangeSpriteFrame ( );
     void SetAnimationSprites ( vector<string> & _animationFrames );
-
-    // Heredado vía GameObject
-    void OnCollision ( Object * collided ) override;
 };
 

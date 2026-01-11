@@ -1,9 +1,10 @@
 #pragma once
-#include "DamageableObject.h"
+#include "ICollisionable.h"
+#include "GameObject.h"
 #include "Animator.h"
 #include <string>
 
-class Bullet : public GameObject, public Animator
+class Bullet : public GameObject, public Animator, public ICollisionable
 {
 private:
     int damage;

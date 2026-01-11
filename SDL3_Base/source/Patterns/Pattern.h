@@ -1,5 +1,6 @@
 #pragma once
 #include "../GameObject.h"
+#include "LinearMovementPattern.h"
 #include "SpawnPattern.h"
 #include "MovementPattern.h"
 #include "MultiPhasePattern.h"
