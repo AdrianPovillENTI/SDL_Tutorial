@@ -17,6 +17,11 @@ public:
 
     EnemyBehaviourPattern (MovementPattern * _movePattern)
         : movementPattern ( _movePattern ) { }
+    ~EnemyBehaviourPattern() {
+        delete movementPattern;
+        movementPattern = nullptr;
+    }
+
     MovementPattern * GetMovementPattern ( ) const { return movementPattern; }
 };
 

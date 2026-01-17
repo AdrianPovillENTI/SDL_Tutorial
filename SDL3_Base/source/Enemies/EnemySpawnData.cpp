@@ -56,9 +56,6 @@ void EnemySpawnData::SpawnEnemies ( )
         enemy->GetTransform ( )->position = positions [ i ];
         SPAWNER.SpawnObject ( enemy );
         spawned++;
-        std::cout << "Spawned enemy at position: ("
-            << enemy->GetTransform ( )->position.x << ", "
-            << enemy->GetTransform ( )->position.y << ")\n";
     }
 
     int size = enemies.size ( ) - 1;

@@ -3,14 +3,14 @@
 
 Arachnid::Arachnid()
     : Enemy(
-        4,  // speed
-        1,  // health
+        10,  // speed
+        30,  // health
         2,  // damage
         "resources/Enemies/Imagen9.png"
     )
 {
-    radius = 1800;
-    radiusReduction = 200;
+    radius = 1000;
+    radiusReduction = 150;
     _hSpeed = 0;
     Start();
 }

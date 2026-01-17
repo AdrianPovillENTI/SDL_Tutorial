@@ -7,7 +7,7 @@ class UI
 {
 public:
 	UI();
-	~UI() = delete;
+	~UI();
 
 	UIBar* cannonAmmoUI;
 	UIBar* laserAmmoUI;

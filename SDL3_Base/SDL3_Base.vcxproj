@@ -374,6 +374,7 @@ xcopy /d /y "$(SolutionDir)\resources\*.*" "$(TargetDir)\resources\"</Command>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)\dependencies\SDL_3.2.22\include;$(SolutionDir)\dependencies\SDL_image_3.2.4\include;$(SolutionDir)\dependencies\SDL_mixer_2.8.1_compatible\include;$(SolutionDir)\dependencies\SDL_ttf-3.2.2\include</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

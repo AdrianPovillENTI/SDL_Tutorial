@@ -21,6 +21,7 @@ public:
 private:
     int impactCount;
     int maxImpactCount;
+    float speed;
     std::vector<std::string> itemsSprites;
     std::string actualSprite;
     std::function<void ( )> onMaxImpactReached;

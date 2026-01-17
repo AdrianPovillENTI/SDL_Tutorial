@@ -37,7 +37,6 @@ void Turret::Update() {
 					_transform->rotation -= 45;
 
 				checkXpos = _transform->position.x;
-				cout << _transform->rotation << endl;
 			}
 		}
 		else
@@ -50,7 +49,6 @@ void Turret::Update() {
 					_transform->rotation += 45;
 
 				checkXpos = _transform->position.x;
-				cout << _transform->rotation << endl;
 			}
 		}
 	}

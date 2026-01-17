@@ -1,6 +1,6 @@
 #include "CircularMovementPattern.h"
 
-CircularMovementPattern::CircularMovementPattern(float inc, float _speed, float _hspeed = 0, bool cW = false)
+CircularMovementPattern::CircularMovementPattern(float inc, float _speed, float _hspeed, bool cW)
     : increment(1 / inc), speed(_speed), hSpeed(_hspeed), clockWise(cW) {
     xBack = true;
     yBack = false;

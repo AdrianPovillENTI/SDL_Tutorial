@@ -8,7 +8,7 @@
 class Gulper : public Enemy
 {
 private:
-    Vector2 targetPos;
+    Vector2 dir;
 
 public:
     Gulper ( Vector2 _dir );

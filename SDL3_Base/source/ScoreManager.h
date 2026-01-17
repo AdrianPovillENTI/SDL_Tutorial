@@ -21,4 +21,4 @@ public:
 	void RestartScore();
 private:
 	int score;
-}
+};

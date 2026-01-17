@@ -2,24 +2,25 @@
 
 Gulper::Gulper ( Vector2 _dir )
     : Enemy (
-    2 ,  // speed
-    1 ,  // health
+    10 ,  // speed
+    10 ,  // health
     2 ,  // damage
     "resources/Enemies/Imagen7.png"
     ) ,
-    targetPos ( _dir )
+    dir ( _dir )
 {
     Start ( );
 }
 
 void Gulper::Start ( )
 {
-    playOnStart = false;
-    LinearPattern * linearPattern = new LinearPattern ( targetPos , speed );
+    LinearPattern * horizontalMove = new LinearPattern ( Vector2::Left , 5 );
+    LinearPattern * verticalMove = new LinearPattern ( dir , speed );
 
     pattern = new EnemyBehaviourPattern (
         new MultiPhasePattern ( {
-            { linearPattern, 120 }
+            { horizontalMove, 200 },
+            {  verticalMove, 200 }
         } )
     );
 

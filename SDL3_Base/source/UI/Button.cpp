@@ -1,9 +1,9 @@
 #include "Button.h"
 
 Button::Button(OnClick onClick,
-	Vector2 position = Vector2(200.f, 100.f),
-	Vector2 size = Vector2(450, 100),
-	std::string texturePath = "resources/ButtonBKG.png")
+	Vector2 position,
+	Vector2 size,
+	std::string texturePath)
 	: ImageObject(texturePath, position, size),
 	_isHovered(false),
 	_onClick(onClick)

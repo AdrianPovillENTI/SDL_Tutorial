@@ -17,6 +17,7 @@ Item::Item ( std::string _path, Vector2 pos )
     _transform->position = pos;
     _transform->rotation = 0.f;
     type = SCORE;
+    speed = -1.f;
     SpritesInitialization();  
 }
 
@@ -40,7 +41,7 @@ void Item::SpritesInitialization()
 
 void Item::Update ( )
 {
-    Object::Update ( );
+    _physics->AddForce(Vector2::Right * speed);
     GameObject::Update ( );
 }
 
@@ -63,8 +64,8 @@ void Item::OnCollision(Object* o)
         case Item::SHIELD: p->FillShield();  break; 
         default: break;
         }
-        Destroy();
         SetActive(false);
+        Destroy();
     }
 
     if (Bullet* b = dynamic_cast<Bullet*>(o))

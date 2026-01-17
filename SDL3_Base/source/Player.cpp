@@ -19,21 +19,21 @@ Player::~Player ( )
     if ( speedVfx )
     {
         RemoveChild ( speedVfx );
-        delete speedVfx;
+        speedVfx->Destroy();
         speedVfx = nullptr;
     }
 
     if ( cannon )
     {
         RemoveChild ( cannon );
-        delete cannon;
+        cannon->Destroy();
         cannon = nullptr;
     }
 
     if ( laser )
     {
         RemoveChild ( laser );
-        delete laser;
+        laser->Destroy();
         laser = nullptr;
     }
 
@@ -42,13 +42,17 @@ Player::~Player ( )
         if ( t )
         {
             RemoveChild ( t );
-            delete t;
+            t->Destroy();
         }
     }
     turrets.clear ( );
 }
 void Player::Start ( )
 {
+    speedVfx = new SpeedVfx();
+    AddChild(speedVfx, Vector2(-80.0f, 10.0f));
+    SPAWNER.SpawnObject(speedVfx);
+    speedVfx->SetActive(false);
     InitializeStats();
     InitializeGuns();
     InitializePhysics();
@@ -78,7 +82,6 @@ void Player::ReceiveDamage ( int _health )
 
     health -= _health;
     if ( onReceiveDamage != nullptr ) onReceiveDamage ( );
-    std::cout << "Received damage: " << _health << " | Current health: " << health << std::endl;
 
     UIM->UpdateShield(health, maxHealth);
 
@@ -147,11 +150,11 @@ void Player::InitializeGuns()
     laserBulletSpawnPoint = Vector2(55.f, -20.f);
     turretsBulletSpawnPoint = Vector2(0.f, 0.f);
 
-    cannon = new AmmoGun(cannonSprite, cannonBulletAnim, 10, 5, 10, cannonBulletSpawnPoint);
+    cannon = new AmmoGun(cannonSprite, cannonBulletAnim, 30, 30, 10, cannonBulletSpawnPoint);
     AddChild(cannon, Vector2::Zero);
     SPAWNER.SpawnObject(cannon);
 
-    laser = new AmmoGun(laserSprite, laserBulletAnim, 50, 2, 50,laserBulletSpawnPoint); 
+    laser = new AmmoGun(laserSprite, laserBulletAnim, 60, 15, 50,laserBulletSpawnPoint); 
     AddChild(laser, Vector2::Zero);
     SPAWNER.SpawnObject(laser);
 
@@ -191,20 +194,11 @@ void Player::Move ( )
         isMoving = true;
     }
 
-    if ( isMoving && speedVfx == nullptr )
-    {
-        speedVfx = new SpeedVfx ( );
-        AddChild ( speedVfx , Vector2 ( -80.0f , 10.0f ) );
-        SPAWNER.SpawnObject ( speedVfx );
-    }
+    if ( isMoving )
+        speedVfx->SetActive(true);
+    else
+        speedVfx->SetActive(false);
 
-    if ( !isMoving && speedVfx != nullptr )
-    {
-        RemoveChild ( speedVfx );
-        speedVfx->Destroy ( );
-        speedVfx = nullptr;
-    }
-    if ( speedVfx != nullptr ) speedVfx->Update ( );
 }
 
 void Player::Update ( )
@@ -272,22 +266,20 @@ void Player::Shoot ( )
 }
 
 void Player::SetCannon() {
-    if (cannon->GetActive())
-    {
-        cannon->ResetAmmo();
-        UIM->UpdateCannonAmmo(cannon->GetMaxAmmo(), cannon->GetMaxAmmo());
-    }
-    else
+
+    cannon->ResetAmmo();
+    UIM->UpdateCannonAmmo(cannon->GetMaxAmmo(), cannon->GetMaxAmmo());
+
+    if (!cannon->GetActive())
         cannon->SetActive(true);
 }
 
 void Player::SetLaser() {
-    if (laser->GetActive())
-    {
-        laser->ResetAmmo();
-        UIM->UpdateLaserAmmo(laser->GetMaxAmmo(), laser->GetMaxAmmo());
-    }
-    else
+
+    laser->ResetAmmo();
+    UIM->UpdateLaserAmmo(laser->GetMaxAmmo(), laser->GetMaxAmmo());
+
+    if (!laser->GetActive())
         laser->SetActive(true);
 }
 

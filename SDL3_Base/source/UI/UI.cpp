@@ -44,3 +44,20 @@ UI::UI()
 	SPAWNER.SpawnObject(laserLabelUI);
 	SPAWNER.SpawnObject(shieldLabelUI);
 }
+
+UI::~UI() {
+	delete cannonAmmoUI;
+	delete laserAmmoUI;
+	delete shieldUI;
+	delete scoreUI;
+	delete lifesUI;
+
+	delete staticUI;
+	delete staticUIBackground;
+
+	delete scoreLabelUI;
+	delete lifesLabelUI;
+	delete shieldLabelUI;
+	delete laserLabelUI;
+	delete cannonLabelUI;
+}

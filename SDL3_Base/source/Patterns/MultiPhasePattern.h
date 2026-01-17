@@ -23,6 +23,13 @@ private:
 public:
     MultiPhasePattern ( vector<Phase> list )
         : phases ( list ) { }
+    ~MultiPhasePattern() {
+        for (auto& phase : phases)
+        {
+            delete phase.movePattern;
+            phase.movePattern = nullptr;
+        }
+    }
 
     Vector2 GetDelta ( float dt , float elapsed , int index ) override;
     Vector2 GetDeltaOnCondition ( float dt , float elapsed, function<bool()> change , int index );

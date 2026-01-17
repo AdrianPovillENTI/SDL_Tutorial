@@ -22,7 +22,7 @@ public:
 		_physics = new Rigidbody(_transform);
 	}
 
-	~Object() {
+	virtual ~Object() {
 
 		delete _transform;
 		_transform = nullptr;

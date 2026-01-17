@@ -2,25 +2,16 @@
 
 std::vector<Vector2> TopBottomSpawnPattern::GetSpawnPositions(Vector2 origin, int count)
 {
-    std::vector<Vector2> res;
-    res.reserve(count);
+    std::vector<Vector2> spawnPoints;
+    spawnPoints.reserve(count);
 
-    if (count <= 0) return res;
-
-    int topCount = (count + 1) / 2;
-    int bottomCount = count - topCount;
-
-    for (int i = 0; i < topCount; ++i)
+    for (int i = 0; i < count; i++)
     {
-        float xOffset = (i - (topCount - 1) / 2.0f) * horizontalSpacing;
-        res.push_back(Vector2(origin.x + xOffset + horizontalSpacing * 2, 0));
+        if (i == 0)
+            spawnPoints.push_back(Vector2(RM->WINDOW_WIDTH, 0));
+        else
+            spawnPoints.push_back(Vector2(RM->WINDOW_WIDTH + horizontalSpacing, RM->WINDOW_HEIGHT - 150));
     }
 
-    for (int i = 0; i < bottomCount; ++i)
-    {
-        float xOffset = (i - (bottomCount - 1) / 2.0f) * horizontalSpacing;
-        res.push_back(Vector2(origin.x + xOffset - horizontalSpacing * 2, _bottomY));
-    }
-
-    return res;
+    return spawnPoints;
 }

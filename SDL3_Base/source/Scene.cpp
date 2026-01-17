@@ -41,7 +41,7 @@ void Scene::Update()
     int objSize = _objects.size();
     for (int i = 0; i < objSize; i++)
     {
-        for (int j = i + 1; j < _objects.size(); j++)
+        for (int j = i + 1; j < objSize; j++)
         {
             if (_objects[i]->GetRigidbody()->CheckCollision(_objects[j]->GetRigidbody()))
             {
@@ -56,7 +56,7 @@ void Scene::Update()
     int uiSize = _ui.size();
     for (int i = 0; i < uiSize; i++)
     {
-        for (int j = i + 1; j < _objects.size(); j++)
+        for (int j = i + 1; j < uiSize; j++)
         {
             if (_ui[i]->GetRigidbody()->CheckCollision(_ui[j]->GetRigidbody()))
             {

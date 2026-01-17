@@ -27,7 +27,7 @@ protected:
 public:
 
     Enemy ( float speed, int health, int _damage , string path)
-        :DamageableObject(health,path), damage (_damage), speed ( speed )
+        :DamageableObject(health,path), damage (_damage), speed ( speed ), pattern(nullptr)
     {
 
         _physics->AddCollider ( new AABB ( _transform->position , _transform->size ) );

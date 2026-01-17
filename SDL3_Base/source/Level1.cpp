@@ -87,7 +87,7 @@ void Level1::OnEnter ( )
 					300.f
 				),
 				{
-					new Gulper ( Vector2::Up),
+					new Gulper ( Vector2::Up ),
 					new Gulper ( Vector2::Down )
 				}
 			),
@@ -124,13 +124,13 @@ void Level1::OnEnter ( )
 				),
 				{
 					new Arachnid(),
+					new ArachnidTail(5.f),
 					new ArachnidTail(10.f),
+					new ArachnidTail(15.f),
 					new ArachnidTail(20.f),
+					new ArachnidTail(25.f),
 					new ArachnidTail(30.f),
-					new ArachnidTail(40.f),
-					new ArachnidTail(50.f),
-					new ArachnidTail(60.f),
-					new ArachnidTail(70.f)
+					new ArachnidTail(35.f)
 				}
 			),
 			new EnemySpawnData
@@ -178,11 +178,11 @@ void Level1::OnEnter ( )
 				Vector2 ( RM->WINDOW_WIDTH * 0.5f , RM->WINDOW_HEIGHT * 2),
 				new TopBottomSpawnPattern
 				(
-					300.f
+					600.f
 				),
 				{
 					new Gulper ( Vector2::Up),
-					new Gulper ( Vector2::Down )
+					new Gulper ( Vector2::Down)
 				}
 			),
 			new EnemySpawnData
