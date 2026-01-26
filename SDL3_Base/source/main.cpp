@@ -6,7 +6,7 @@
 #include "RenderManager.h"
 
 int main()
-{
+    {
 	Game* game = new Game();
 	try
 	{

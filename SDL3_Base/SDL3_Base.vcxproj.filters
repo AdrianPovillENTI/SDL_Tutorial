@@ -20,9 +20,9 @@
     <ClCompile Include="source\Enemies\Sliders.cpp" />
     <ClCompile Include="source\Enemies\Enemy.cpp" />
     <ClCompile Include="source\Patterns\SinusoidalMovementPattern.cpp" />
-    <ClCompile Include="source\Item.cpp" />
-    <ClCompile Include="source\Bullet.cpp" />
-    <ClCompile Include="source\Player.cpp" />
+    <ClCompile Include="source\Player\Item.cpp" />
+    <ClCompile Include="source\Player\Gun\Bullet.cpp" />
+    <ClCompile Include="source\Player\Player.cpp" />
     <ClCompile Include="source\DamageableObject.cpp" />
     <ClCompile Include="source\GameObject.cpp" />
     <ClCompile Include="source\AABB.cpp" />
@@ -38,7 +38,7 @@
     <ClCompile Include="source\TextObject.cpp" />
     <ClCompile Include="source\TextRenderer.cpp" />
     <ClCompile Include="source\Vector2.cpp" />
-    <ClCompile Include="source\Turret.cpp" />
+    <ClCompile Include="source\Player\Gun\Turret.cpp" />
     <ClCompile Include="source\SpeedVfx.cpp" />
     <ClCompile Include="source\Enemies\Splitta.cpp" />
     <ClCompile Include="source\Enemies\Starforge.cpp" />
@@ -47,10 +47,10 @@
     <ClCompile Include="source\Enemies\Tentakor.cpp" />
     <ClCompile Include="source\Enemies\WaveManager.cpp" />
     <ClCompile Include="source\Patterns\ZigZagMovementPattern.cpp" />
-    <ClCompile Include="source\AmmoGun.cpp" />
+    <ClCompile Include="source\Player\Gun\AmmoGun.cpp" />
     <ClCompile Include="source\Animator.cpp" />
     <ClCompile Include="source\Background.cpp" />
-    <ClCompile Include="source\Gun.cpp" />
+    <ClCompile Include="source\Player\Gun\Gun.cpp" />
     <ClCompile Include="source\MapDecorations.cpp" />
     <ClCompile Include="source\Patterns\RandomSpawnPattern.h" />
     <ClCompile Include="source\UI\UI.cpp" />
@@ -72,6 +72,7 @@
     <ClCompile Include="source\Patterns\RandomSpawnPattern.cpp" />
     <ClCompile Include="source\Patterns\SplitPattern.cpp" />
     <ClCompile Include="source\Patterns\TopBottomSpawnPattern.cpp" />
+    <ClCompile Include="source\Player\PlayerHealth.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Enemies\EnemySpawnData.h" />
@@ -95,9 +96,9 @@
     <ClInclude Include="source\Enemies\Enemy.h" />
     <ClInclude Include="source\Patterns\MovementPattern.h" />
     <ClInclude Include="source\Patterns\LineSpawnPattern.h" />
-    <ClInclude Include="source\Item.h" />
-    <ClInclude Include="source\Bullet.h" />
-    <ClInclude Include="source\Player.h" />
+    <ClInclude Include="source\Player\Item.h" />
+    <ClInclude Include="source\Player\Gun\Bullet.h" />
+    <ClInclude Include="source\Player\Player.h" />
     <ClInclude Include="source\DamageableObject.h" />
     <ClInclude Include="source\GameObject.h" />
     <ClInclude Include="source\AABB.h" />
@@ -119,7 +120,7 @@
     <ClInclude Include="source\TextRenderer.h" />
     <ClInclude Include="source\Transform.h" />
     <ClInclude Include="source\Vector2.h" />
-    <ClInclude Include="source\Turret.h" />
+    <ClInclude Include="source\Player\Gun\Turret.h" />
     <ClInclude Include="source\SpeedVfx.h" />
     <ClInclude Include="source\Enemies\Splitta.h" />
     <ClInclude Include="source\Enemies\Starforge.h" />
@@ -129,10 +130,10 @@
     <ClInclude Include="source\Enemies\WaveManager.h" />
     <ClInclude Include="source\Patterns\SinusoidalMovementPattern.h" />
     <ClInclude Include="source\Patterns\ZigZagMovementPattern.h" />
-    <ClInclude Include="source\AmmoGun.h" />
+    <ClInclude Include="source\Player\Gun\AmmoGun.h" />
     <ClInclude Include="source\Animator.h" />
     <ClInclude Include="source\Background.h" />
-    <ClInclude Include="source\Gun.h" />
+    <ClInclude Include="source\Player\Gun\Gun.h" />
     <ClInclude Include="source\MapDecorations.h" />
     <ClInclude Include="source\Patterns\TopBottomSpawnPattern.h" />
     <ClInclude Include="source\Patterns\CheckPointMovementPattern.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="source\ICollisionable.h" />
     <ClInclude Include="source\ScoreManager.h" />
     <ClInclude Include="source\Patterns\LinearMovementPattern.h" />
+    <ClInclude Include="source\Player\PlayerHealth.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bullet.png" />
