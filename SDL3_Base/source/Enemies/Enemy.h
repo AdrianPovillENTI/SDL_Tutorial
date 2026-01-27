@@ -22,10 +22,11 @@ protected:
     EnemyState state;
     bool playOnStart = true;
     float timeElapsed;
-    function <void ( )> onDie;
     bool killedByPlayer = false;
+    bool onDieProcess = false;
     int scorePoints;
 public:
+    function <void ( )> onDie;
 
     Enemy ( float speed, int health, int _damage , string path)
         :DamageableObject(health,path), damage (_damage), speed ( speed ), pattern(nullptr)
@@ -55,8 +56,10 @@ public:
     void Update ( ) override;
     void OnCollision ( Object * collided ) override;
     void Move ( ) override;
+    void ReceiveDamage(int dmg) override;
     virtual bool OutOfLimits ( );
     virtual void OnEnterFunction ( );
     bool WasKilledByPlayer ( );
+    void Die(bool Killed);
 };
 

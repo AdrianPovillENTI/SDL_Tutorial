@@ -7,13 +7,13 @@
 
 #include "UI/UIManager.h"
 #include "MapDecorations.h"
-#include "Player.h"
-#include "Bullet.h"
+#include "Player/Player.h"
+#include "Player/Gun/Bullet.h"
 
 #pragma region
 
-#include "Item.h"
-#include "Turret.h"
+#include "Player/Item.h"
+#include "Player/Gun/Turret.h"
 #include "Enemies/WaveManager.h"
 #include "Enemies/Swirlers.h"
 #include "Enemies/Gulper.h"

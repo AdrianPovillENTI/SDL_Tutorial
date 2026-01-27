@@ -23,8 +23,9 @@ void Enemy::Update ( )
     timeElapsed += 1.f / 15.f;;
     Move ( );
 
-    if ( IsPendingDestroy() )
+    if ( IsPendingDestroy() && !onDieProcess)
     {
+        onDieProcess = true;
         if ( onDie ) onDie ( );
     }
 }
@@ -36,12 +37,6 @@ void Enemy::OnCollision ( Object * collided )
     if (Bullet* b = dynamic_cast<Bullet*>(collided))
     {
         ReceiveDamage ( b->GetDamage ( ) );
-        if (health <= 0)
-        {
-            killedByPlayer = true;
-            SCR.AddScore(scorePoints);
-            Destroy();
-        }
     }
 }
 
@@ -61,9 +56,7 @@ void Enemy::Move ( )
 
     if ( OutOfLimits ( ) )
     {
-        active = false;
-        killedByPlayer = false;
-        Destroy ( );
+        Die(false);
     }
 }
 
@@ -100,4 +93,23 @@ void Enemy::OnEnterFunction ( )
 bool Enemy::WasKilledByPlayer ( )
 {
     return killedByPlayer;
+}
+
+void Enemy::Die(bool killed)
+{
+    if (IsPendingDestroy()) return; // evita doble mort
+
+    killedByPlayer = killed;
+
+    if (killedByPlayer)
+        SCR.AddScore(scorePoints);
+
+    Destroy();
+}
+
+void Enemy::ReceiveDamage(int dmg)
+{
+    health -= dmg;
+    if (health <= 0)
+        Die(true);
 }

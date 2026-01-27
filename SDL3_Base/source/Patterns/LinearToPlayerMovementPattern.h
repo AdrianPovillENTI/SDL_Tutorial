@@ -1,6 +1,6 @@
 #pragma once
 #include "MovementPattern.h"
-#include "../Player.h"
+#include "../Player/Player.h"
 class LinearToPlayerMovementPattern : public MovementPattern
 {
 private:

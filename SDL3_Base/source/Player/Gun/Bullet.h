@@ -1,7 +1,7 @@
 #pragma once
-#include "ICollisionable.h"
-#include "GameObject.h"
-#include "Animator.h"
+#include "../../ICollisionable.h"
+#include "../../GameObject.h"
+#include "../../Animator.h"
 #include <string>
 
 class Bullet : public GameObject, public Animator, public ICollisionable

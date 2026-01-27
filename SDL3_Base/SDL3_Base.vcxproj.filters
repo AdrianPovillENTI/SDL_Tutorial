@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="source\Enemies\EnemySpawnData.cpp" />
+    <ClCompile Include="source\Enemies\Wave.cpp" />
     <ClCompile Include="source\Patterns\LinearToPlayerMovementPattern.cpp" />
     <ClCompile Include="source\Patterns\MultiPhasePattern.cpp" />
     <ClCompile Include="source\Enemies\Arachnid.cpp" />
@@ -76,7 +76,7 @@
     <ClCompile Include="source\Player\Gun\PlayerGuns.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\Enemies\EnemySpawnData.h" />
+    <ClInclude Include="source\Enemies\Wave.h" />
     <ClInclude Include="source\Patterns\LinearToPlayerMovementPattern.h" />
     <ClInclude Include="source\Patterns\MultiPhasePattern.h" />
     <ClInclude Include="source\Enemies\Arachnid.h" />

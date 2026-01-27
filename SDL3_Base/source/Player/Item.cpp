@@ -70,11 +70,11 @@ void Item::OnCollision(Object* o)
 
     if (Bullet* b = dynamic_cast<Bullet*>(o))
     {
-        AddImpact();
+        ReceiveDamage(1);
     }
 }
 
-void Item::AddImpact ( )
+void Item::ReceiveDamage(int dmg)
 {
     impactCount++;
     CheckImpact ( );

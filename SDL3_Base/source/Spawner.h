@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Object.h"
-#include "Bullet.h"
+#include "Player/Gun/Bullet.h"
 #include "Background.h"
 #include <queue>
 

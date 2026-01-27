@@ -1,5 +1,5 @@
 #pragma once
-#include "DamageableObject.h"
+#include "../DamageableObject.h"
 #include <functional>
 
 class Item : public DamageableObject
@@ -49,6 +49,6 @@ public:
     void SpritesInitialization();
 
     void OnCollision(Object* o) override;
-    void AddImpact ( );
+    void ReceiveDamage(int dmg) override;
     void CheckImpact ( );
 };

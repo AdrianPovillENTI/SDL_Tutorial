@@ -1,6 +1,6 @@
 #include "Turret.h"
 #include "Bullet.h"
-#include "Spawner.h"
+#include "../../Spawner.h"
 
 Turret::Turret(string sprite, vector<string> bulletAnim, float speed, int dmg, Vector2 spawnBullet, bool _lowerTurret) : 
 	Gun(sprite, bulletAnim, speed, dmg, spawnBullet), lowerTurret(_lowerTurret)

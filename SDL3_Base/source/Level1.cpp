@@ -7,13 +7,13 @@
 
 #include "UI/UIManager.h"
 #include "MapDecorations.h"
-#include "Player.h"
-#include "Bullet.h"
+#include "Player/Player.h"
+#include "Player/Gun/Bullet.h"
 
 #pragma region
 
-#include "Item.h"
-#include "Turret.h"
+#include "Player/Item.h"
+#include "Player/Gun/Turret.h"
 #include "Enemies/WaveManager.h"
 #include "Enemies/Swirlers.h"
 #include "Enemies/Gulper.h"
@@ -62,7 +62,7 @@ void Level1::OnEnter ( )
 	WaveManager * waveManager = new WaveManager
 	(
 		{
-			new EnemySpawnData 
+			new Wave 
 			( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
 				1, 
 				Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 3 ),
@@ -78,7 +78,7 @@ void Level1::OnEnter ( )
 					new Swirlers ( ) 
 				} 
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				2,
 				Vector2 ( RM->WINDOW_WIDTH * 0.5f , RM->WINDOW_HEIGHT * 2),
@@ -91,7 +91,7 @@ void Level1::OnEnter ( )
 					new Gulper ( Vector2::Down )
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3,
 				Vector2(RM->WINDOW_WIDTH + 50, 50),
@@ -113,7 +113,7 @@ void Level1::OnEnter ( )
 					new Drifter ( )
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3,
 				Vector2(RM->WINDOW_WIDTH, -100),
@@ -133,7 +133,7 @@ void Level1::OnEnter ( )
 					new ArachnidTail(35.f)
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3,
 				Vector2(50,RM->WINDOW_HEIGHT),
@@ -153,7 +153,7 @@ void Level1::OnEnter ( )
 					new Floater ()
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3,
 				Vector2 ( 0,0 ),
@@ -172,7 +172,7 @@ void Level1::OnEnter ( )
 					new Charger ( )
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				2,
 				Vector2 ( RM->WINDOW_WIDTH * 0.5f , RM->WINDOW_HEIGHT * 2),
@@ -185,7 +185,7 @@ void Level1::OnEnter ( )
 					new Gulper ( Vector2::Down)
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3,
 				Vector2(RM->WINDOW_WIDTH,100),
@@ -205,7 +205,7 @@ void Level1::OnEnter ( )
 					new Mawler()
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3,
 				Vector2(0,RM->GAME_WINDOW_HEIGHT / 2),
@@ -225,7 +225,7 @@ void Level1::OnEnter ( )
 					new Splitta(7)
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
 				1,
 				Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 3),
@@ -241,7 +241,7 @@ void Level1::OnEnter ( )
 					new Swirlers()
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				2,
 				Vector2(RM->WINDOW_WIDTH * 0.5f, RM->WINDOW_HEIGHT * 2),
@@ -254,7 +254,7 @@ void Level1::OnEnter ( )
 					new Gulper(Vector2::Down)
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3,
 				Vector2(RM->WINDOW_WIDTH + 50, 50),
@@ -276,7 +276,7 @@ void Level1::OnEnter ( )
 					new Drifter()
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3,
 				Vector2(RM->WINDOW_WIDTH, -100),
@@ -296,7 +296,7 @@ void Level1::OnEnter ( )
 					new ArachnidTail(70.f)
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3 ,
 				Vector2 ( RM->WINDOW_WIDTH , RM->GAME_WINDOW_HEIGHT / 2 ) ,
@@ -311,6 +311,4 @@ void Level1::OnEnter ( )
 			)
 		}
 	);
-
-	_objects.push_back ( waveManager );
 }

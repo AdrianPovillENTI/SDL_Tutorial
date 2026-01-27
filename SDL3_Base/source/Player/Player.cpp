@@ -70,7 +70,7 @@ void Player::InitializePhysics()
     }
 }
 
-void Player::ReceiveDamage(int _health) { healthManager.ReceiveDamage(_health); }
+void Player::ReceiveDamage(int dmg) { healthManager.ReceiveDamage(dmg); }
 
 void Player::InitializeStats()
 {

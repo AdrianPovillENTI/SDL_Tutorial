@@ -7,13 +7,13 @@
 
 #include "UI/UIManager.h"
 #include "MapDecorations.h"
-#include "Player.h"
-#include "Bullet.h"
+#include "Player/Player.h"
+#include "Player/Gun/Bullet.h"
 
 #pragma region
 
-#include "Item.h"
-#include "Turret.h"
+#include "Player/Item.h"
+#include "Player/Gun/Turret.h"
 #include "Enemies/WaveManager.h"
 
 #pragma region
@@ -55,7 +55,7 @@ void Level2::OnEnter ( )
 	WaveManager * waveManager = new WaveManager
 	(
 		{ // enemySpawnData vector
-			new EnemySpawnData
+			new Wave
 			(
 				3,
 				Vector2 ( RM->WINDOW_WIDTH,0 ),
@@ -75,7 +75,7 @@ void Level2::OnEnter ( )
 					new Boosters ( Vector2::Left )
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3,
 				Vector2 ( 0, RM->GAME_WINDOW_HEIGHT / 2 ),
@@ -95,7 +95,7 @@ void Level2::OnEnter ( )
 					new Loopers ( 40.f, Vector2::Left,Vector2 ( RM->WINDOW_WIDTH, RM->GAME_WINDOW_HEIGHT / 2 ) )
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3,
 				Vector2 ( 0,0 ),
@@ -114,7 +114,7 @@ void Level2::OnEnter ( )
 					new Gearbot ( player )
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3,
 				Vector2 ( RM->WINDOW_WIDTH / 2, RM->GAME_WINDOW_HEIGHT ),
@@ -130,7 +130,7 @@ void Level2::OnEnter ( )
 					new Strikers ( Vector2::Down )
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3,
 				Vector2 ( RM->WINDOW_WIDTH ,0 ),
@@ -150,7 +150,7 @@ void Level2::OnEnter ( )
 					new Lifters ( Vector2::Left )
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3,
 				Vector2(-150, RM->GAME_WINDOW_HEIGHT/ 2 - 50),
@@ -170,7 +170,7 @@ void Level2::OnEnter ( )
 					new Headron(false, 30.f)
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3 ,
 				Vector2 ( RM->WINDOW_WIDTH + 100.f , 50.f ) ,
@@ -188,7 +188,7 @@ void Level2::OnEnter ( )
 					new Scouts ( )
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3,
 				Vector2 ( 0, RM->GAME_WINDOW_HEIGHT / 3 ),
@@ -209,7 +209,7 @@ void Level2::OnEnter ( )
 					new Angrygons ( )
 				}
 			),
-			new EnemySpawnData
+			new Wave
 			(
 				3 ,
 				Vector2 ( RM->WINDOW_WIDTH , RM->GAME_WINDOW_HEIGHT / 2 ) ,

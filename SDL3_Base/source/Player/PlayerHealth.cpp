@@ -10,6 +10,12 @@ void PlayerHealth::Init(int _maxHp, int _initialLifes)
 	if (onLifesChanged) onLifesChanged(lifes);
 }
 
+void PlayerHealth::SetInvincible(float seconds)
+{
+	invincible = true;
+	invincibleTimer = seconds;
+}
+
 void PlayerHealth::ReceiveDamage(int dmg)
 {
 	if (invincible) return;

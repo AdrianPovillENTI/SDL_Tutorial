@@ -1,8 +1,8 @@
 #include "Bullet.h"
-#include "Enemies/Enemy.h"
+#include "../../Enemies/Enemy.h"
 
-#include "RenderManager.h"
-#include "Item.h"
+#include "../../RenderManager.h"
+#include "../Item.h"
 
 Bullet::Bullet(const std::vector<std::string>& _anim, float _speed, int _damage, Vector2 _dir)
 	: GameObject(_anim[0]), Animator(_anim),

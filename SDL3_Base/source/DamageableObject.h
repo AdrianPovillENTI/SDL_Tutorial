@@ -13,7 +13,7 @@
             : GameObject ( path ), 
             maxHealth ( _maxHealth ),
             health ( _maxHealth ) { }    
-        virtual void ReceiveDamage(int damage);
+        virtual void ReceiveDamage(int damage) = 0;
         virtual void Move ( ) = 0;
         int const GetHealth ( ) const { return health; }
     };

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Enemy.h"
-#include "../Player.h"
+#include "../Player/Player.h"
 
 class Gearbot : public Enemy
 {
