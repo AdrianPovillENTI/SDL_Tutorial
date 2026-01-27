@@ -1,4 +1,5 @@
 ﻿#include "Enemy.h"
+#include "../Score/ScoreManager.h"
 
 void Enemy::Start ( )
 {
@@ -22,10 +23,9 @@ void Enemy::Update ( )
     timeElapsed += 1.f / 15.f;;
     Move ( );
 
-    if ( isDeath )
+    if ( IsPendingDestroy() )
     {
         if ( onDie ) onDie ( );
-        Destroy ( );
     }
 }
 
@@ -36,7 +36,12 @@ void Enemy::OnCollision ( Object * collided )
     if (Bullet* b = dynamic_cast<Bullet*>(collided))
     {
         ReceiveDamage ( b->GetDamage ( ) );
-        if ( health <= 0 ) killedByPlayer = true;
+        if (health <= 0)
+        {
+            killedByPlayer = true;
+            SCR.AddScore(scorePoints);
+            Destroy();
+        }
     }
 }
 

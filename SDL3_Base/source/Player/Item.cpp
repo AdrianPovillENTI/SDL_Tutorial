@@ -1,8 +1,8 @@
 #include "Item.h"
-#include "Spawner.h"
-#include "Vector2.h"
-#include "RenderManager.h" 
-#include "ScoreManager.h"
+#include "../Spawner.h"
+#include "../Vector2.h"
+#include "../RenderManager.h" 
+#include "../Score/ScoreManager.h"
 #include "Player.h"
 #include <cstdlib>  
 

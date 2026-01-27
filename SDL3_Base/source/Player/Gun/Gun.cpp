@@ -1,6 +1,6 @@
 #include "Gun.h"
 #include "Bullet.h"
-#include "Spawner.h"
+#include "../../Spawner.h"
 
 Gun::Gun(string sprite, vector<string> bulletAnim, float _speed, int _dmg, Vector2 spawnBullet) :
 	GameObject(sprite),

@@ -2,6 +2,7 @@
 #include "../DamageableObject.h"
 #include "../Spawner.h"
 #include "Gun/Bullet.h"
+#include "Gun/Gun.h"
 
 #include "PlayerHealth.h"
 
@@ -18,9 +19,6 @@ private:
     bool canShoot;
     float shootCooldown;
     float maxShootCooldownTime;
-    std::vector<std::string> bulletSprites;
-    int bulletDamage;
-    float bulletSpeed;
 
     float speed;
     float speedUpgrade;
@@ -30,22 +28,10 @@ private:
     float hitCounter;
     bool hitted;
 
-    Vector2 bulletSpawnPoint;
-
+    Gun* primaryGun;
     AmmoGun* cannon;
-    vector<string> cannonBulletAnim;
-    string cannonSprite;
-    Vector2 cannonBulletSpawnPoint;
-
     AmmoGun* laser;
-    vector<string> laserBulletAnim;
-    string laserSprite;
-    Vector2 laserBulletSpawnPoint;
-
     vector<Turret*> turrets;
-    vector<string> turretBulletAnim;    
-    string turretSprite;    
-    Vector2 turretsBulletSpawnPoint;
 
     bool isMoving;
 

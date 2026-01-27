@@ -1,5 +1,4 @@
 #include "AmmoGun.h"
-#include "UI/UIManager.h"
 
 void AmmoGun::Shoot()
 {
@@ -7,5 +6,14 @@ void AmmoGun::Shoot()
 	{
 		Gun::Shoot();
 		ammo--;
+
+		if (onAmmoChanged)
+			onAmmoChanged(ammo, maxAmmo);
 	}
+}
+
+void AmmoGun::ResetAmmo()
+{
+	ammo = maxAmmo;
+	if (onAmmoChanged) onAmmoChanged(ammo, maxAmmo);
 }

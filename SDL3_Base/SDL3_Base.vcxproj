@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\Player\Gun\PlayerGuns.cpp" />
     <ClCompile Include="source\Player\PlayerHealth.cpp" />
     <ClCompile Include="source\Enemies\Angrygons.cpp" />
     <ClCompile Include="source\Level1.cpp" />
@@ -64,7 +65,7 @@
     <ClCompile Include="source\DamageableObject.cpp" />
     <ClCompile Include="source\GameObject.cpp" />
     <ClCompile Include="source\AABB.cpp" />
-    <ClCompile Include="source\ScoreManager.cpp" />
+    <ClCompile Include="source\Score\ScoreManager.cpp" />
     <ClCompile Include="source\UI\Button.cpp" />
     <ClCompile Include="source\Game.cpp" />
     <ClCompile Include="source\Gameplay.cpp" />
@@ -93,6 +94,7 @@
     <ClCompile Include="source\Patterns\ZigZagMovementPattern.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\Player\Gun\PlayerGuns.h" />
     <ClInclude Include="source\Player\PlayerHealth.h" />
     <ClInclude Include="source\ICollisionable.h" />
     <ClInclude Include="source\Enemies\Angrygons.h" />
@@ -141,7 +143,7 @@
     <ClInclude Include="source\DamageableObject.h" />
     <ClInclude Include="source\GameObject.h" />
     <ClInclude Include="source\AABB.h" />
-    <ClInclude Include="source\ScoreManager.h" />
+    <ClInclude Include="source\Score\ScoreManager.h" />
     <ClInclude Include="source\UI\Button.h" />
     <ClInclude Include="source\Game.h" />
     <ClInclude Include="source\Gameplay.h" />

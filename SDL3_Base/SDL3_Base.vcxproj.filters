@@ -63,7 +63,7 @@
     <ClCompile Include="source\Level2.cpp" />
     <ClCompile Include="source\EnemyBullet.cpp" />
     <ClCompile Include="source\UI\Button.cpp" />
-    <ClCompile Include="source\ScoreManager.cpp" />
+    <ClCompile Include="source\Score\ScoreManager.cpp" />
     <ClCompile Include="source\Patterns\CheckPointMovementPattern.cpp" />
     <ClCompile Include="source\Patterns\CircularMovementPattern.cpp" />
     <ClCompile Include="source\Patterns\CornerSpawnPattern.cpp" />
@@ -73,6 +73,7 @@
     <ClCompile Include="source\Patterns\SplitPattern.cpp" />
     <ClCompile Include="source\Patterns\TopBottomSpawnPattern.cpp" />
     <ClCompile Include="source\Player\PlayerHealth.cpp" />
+    <ClCompile Include="source\Player\Gun\PlayerGuns.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Enemies\EnemySpawnData.h" />
@@ -154,9 +155,10 @@
     <ClInclude Include="source\EnemyBullet.h" />
     <ClInclude Include="source\UI\Button.h" />
     <ClInclude Include="source\ICollisionable.h" />
-    <ClInclude Include="source\ScoreManager.h" />
+    <ClInclude Include="source\Score\ScoreManager.h" />
     <ClInclude Include="source\Patterns\LinearMovementPattern.h" />
     <ClInclude Include="source\Player\PlayerHealth.h" />
+    <ClInclude Include="source\Player\Gun\PlayerGuns.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bullet.png" />

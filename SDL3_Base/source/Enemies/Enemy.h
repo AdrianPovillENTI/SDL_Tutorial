@@ -1,7 +1,7 @@
 #pragma once
 #include "../DamageableObject.h"
 #include "../Patterns/Pattern.h"
-#include "../Player.h"
+#include "../Player/Player.h"
 #define EXIT_P pattern->GetExitPattern()
 #define MOVE_PATTERN pattern->GetMovementPattern()
 #define SC_WIDTH RM->WINDOW_WIDTH
@@ -24,6 +24,7 @@ protected:
     float timeElapsed;
     function <void ( )> onDie;
     bool killedByPlayer = false;
+    int scorePoints;
 public:
 
     Enemy ( float speed, int health, int _damage , string path)

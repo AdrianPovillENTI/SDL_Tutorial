@@ -6,7 +6,6 @@
     {
     protected:
         int maxHealth;
-        bool isDeath;
         function<void ( )> onReceiveDamage;
     public:
         int health;
@@ -17,6 +16,5 @@
         virtual void ReceiveDamage(int damage);
         virtual void Move ( ) = 0;
         int const GetHealth ( ) const { return health; }
-        bool IsDeath ( ) { return isDeath; }
     };
 
