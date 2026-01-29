@@ -3,7 +3,7 @@
 Drifter::Drifter()
     : Enemy
     (
-        0.5f + (rand() % 12) / 10.f,
+        1 + (rand() % 36) / 10.f,
         3, //Health
         1, //Damage
         "resources/Enemies/Imagen13.png"

@@ -22,6 +22,10 @@ void PlayerHealth::ReceiveDamage(int dmg)
 
 	hp -= dmg;
 
+	if (onShieldChanged) onShieldChanged(hp, maxHp);
+	
+	SetInvincible(0.5f);
+
 	if (hp <= 0)
 	{
 		if (lifes > 0)
@@ -30,7 +34,7 @@ void PlayerHealth::ReceiveDamage(int dmg)
 			if (onLifesChanged) onLifesChanged(lifes);
 
 			FillShield();
-			SetInvincible(0.5f);
+			SetInvincible(1);
 		}
 		else
 		{

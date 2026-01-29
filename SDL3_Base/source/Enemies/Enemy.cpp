@@ -20,7 +20,7 @@ void Enemy::Update ( )
         return;
 
     GameObject::Update ( );
-    timeElapsed += 1.f / 15.f;;
+    timeElapsed += 1.f / 60.f;;
     Move ( );
 
     if ( IsPendingDestroy() && !onDieProcess)
@@ -48,7 +48,7 @@ void Enemy::Move ( )
     auto * movePattern = pattern->GetMovementPattern ( );
     if ( movePattern != nullptr )
     {
-        Vector2 delta = movePattern->GetDelta ( 1.f / 15.f , timeElapsed , 0 );
+        Vector2 delta = movePattern->GetDelta ( 1.f / 45.f , timeElapsed , 0 );
         //delta += Vector2::Left * 0.01f;
 
         _transform->position += delta;
@@ -79,7 +79,7 @@ void Enemy::OnEnterFunction ( )
 
     if ( state == EnemyState::ON_ENTER )
     {
-        _transform->position += Vector2::Left * speed * 1.f / 15.f;;
+        _transform->position += Vector2::Left * speed * 1.f / 60.f;;
 
         if ( _transform->position.x <= startX )
         {

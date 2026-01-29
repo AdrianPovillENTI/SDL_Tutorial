@@ -2,7 +2,7 @@
 
 Swirlers::Swirlers ( )
     : Enemy (
-    5.f ,     // Speed
+    8 ,     // Speed
     1 ,        // Health
     2 ,        // Damage
     "resources/Enemies/Imagen14.png"

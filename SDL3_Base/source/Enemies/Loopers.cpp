@@ -1,7 +1,7 @@
 #include "Loopers.h"
 
 Loopers::Loopers ( float _timeToPlay, Vector2 _dir, Vector2 _origin ) : 
-    Enemy( 2.5f, 3,1 , "resources/Enemies/Imagen14.png" ),
+    Enemy( 4.5f, 6,3 , "resources/Enemies/Imagen14.png" ),
     direction ( _dir ), origin ( _origin )
 {
     playOnStart = false;

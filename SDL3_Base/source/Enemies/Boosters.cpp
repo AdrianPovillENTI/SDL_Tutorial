@@ -3,9 +3,9 @@
 Boosters::Boosters(Vector2 _dir)
     : Enemy
     (
-        2.5f + (rand() % 12) / 10.f,
+        4.5f + (rand() % 65) / 10.f,
         3, //Health
-        1, //Damage
+        5, //Damage
         "resources/Enemies/Imagen8.png"
     ),
     direction(_dir)

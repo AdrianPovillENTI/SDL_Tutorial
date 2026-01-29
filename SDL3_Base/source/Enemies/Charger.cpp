@@ -2,8 +2,8 @@
 
 Charger::Charger ( )
     : Enemy (
-    1.8f ,
     3 ,
+    8 ,
     1 ,
     "resources/Enemies/Imagen4.png"
     )

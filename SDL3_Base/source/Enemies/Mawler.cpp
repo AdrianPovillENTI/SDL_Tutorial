@@ -2,7 +2,7 @@
 
 Mawler::Mawler()
     : Enemy(
-        5.f,  // speed
+        8 ,  // speed
         1,  // health
         2,  // damage
         "resources/Enemies/Imagen3.png"

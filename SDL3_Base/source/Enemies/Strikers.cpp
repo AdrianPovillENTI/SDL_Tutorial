@@ -3,9 +3,9 @@
 Strikers::Strikers ( Vector2 _dir )
     : Enemy
     (
-    3 ,
-    3 , //Health
-    1 , //Damage
+    6 ,
+    6 , //Health
+    3 , //Damage
     "resources/Enemies/Imagen16.png"
     ) ,
     direction ( _dir )

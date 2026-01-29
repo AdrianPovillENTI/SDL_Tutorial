@@ -20,10 +20,10 @@ Starforge::Starforge ( )
 
 void Starforge::Start ( )
 {
-    timeToShoot = 60.f;
+    timeToShoot = 10;
     shootCooldown = 1.f;
     bulletSpeed = 2.f;
-    bulletDamage = 5;
+    bulletDamage = 10;
     lastPosIndex = -1;
     bulletAnimationSprites =
     {
