@@ -84,6 +84,7 @@
     <ClCompile Include="source\SceneManager.cpp" />
     <ClCompile Include="source\TextObject.cpp" />
     <ClCompile Include="source\TextRenderer.cpp" />
+    <ClCompile Include="source\MainMenu.cpp" />
     <ClCompile Include="source\UI\UI.cpp" />
     <ClCompile Include="source\UI\UIBar.cpp" />
     <ClCompile Include="source\UI\UIManager.cpp" />
@@ -98,6 +99,7 @@
     <ClCompile Include="source\Enemies\Tentakor.cpp" />
     <ClCompile Include="source\Enemies\Waves\WaveManager.cpp" />
     <ClCompile Include="source\Patterns\ZigZagMovementPattern.cpp" />
+    <ClCompile Include="source\SplashScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\rapidxml\rapidxml.hpp" />
@@ -193,6 +195,7 @@
     <ClInclude Include="source\Enemies\Waves\WaveManager.h" />
     <ClInclude Include="source\Patterns\SinusoidalMovementPattern.h" />
     <ClInclude Include="source\Patterns\ZigZagMovementPattern.h" />
+    <ClInclude Include="source\SplashScreen.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bullet.png" />

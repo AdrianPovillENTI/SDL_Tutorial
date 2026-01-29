@@ -11,6 +11,7 @@
 #include "TestObject.h"
 #include "MainMenu.h"
 #include "Leaderboard.h"
+#include "SplashScreen.h"
 
 void Game::Init()
 {
@@ -129,12 +130,13 @@ void Game::Init()
 
 	RM->LoadFont("resources/fonts/Hyperspace.ttf");
 
+	assert(SM.AddScene("SplashScreen", new SplashScreen()));
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 	assert(SM.AddScene("Level1", new Level1()));
 	assert(SM.AddScene("Level2", new Level2()));
 	assert(SM.AddScene("Leaderboard", new Leaderboard()));
 
-	assert(SM.InitFirstScene("MainMenu"));
+	assert(SM.InitFirstScene("SplashScreen"));
 	_isRunning = true;
 }
 

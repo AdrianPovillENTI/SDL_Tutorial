@@ -74,8 +74,10 @@
     <ClCompile Include="source\Patterns\TopBottomSpawnPattern.cpp" />
     <ClCompile Include="source\Player\PlayerHealth.cpp" />
     <ClCompile Include="source\Player\Gun\PlayerGuns.cpp" />
-    <ClCompile Include="source\GameOver.cpp" />
     <ClCompile Include="source\Score\ScoreData.cpp" />
+    <ClCompile Include="source\Leaderboard.cpp" />
+    <ClCompile Include="source\SplashScreen.cpp" />
+    <ClCompile Include="source\MainMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Enemies\Waves\Wave.h" />
@@ -161,8 +163,13 @@
     <ClInclude Include="source\Patterns\LinearMovementPattern.h" />
     <ClInclude Include="source\Player\PlayerHealth.h" />
     <ClInclude Include="source\Player\Gun\PlayerGuns.h" />
-    <ClInclude Include="source\GameOver.h" />
     <ClInclude Include="source\Score\ScoreData.h" />
+    <ClInclude Include="include\rapidxml\rapidxml.hpp" />
+    <ClInclude Include="include\rapidxml\rapidxml_iterators.hpp" />
+    <ClInclude Include="include\rapidxml\rapidxml_print.hpp" />
+    <ClInclude Include="include\rapidxml\rapidxml_utils.hpp" />
+    <ClInclude Include="source\Leaderboard.h" />
+    <ClInclude Include="source\SplashScreen.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bullet.png" />
