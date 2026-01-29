@@ -1,9 +1,9 @@
 #include "Headron.h"
 Headron::Headron(bool _up, float _spawnDelay)
     : Enemy(
-        3.f,     // Speed
-        1,        // Health
-        2,        // Damage
+        8,     // Speed
+        16,        // Health
+        12,        // Damage
         "resources/Enemies/Imagen2.png"
     ), up(_up), timeToPlay(_spawnDelay)
 {

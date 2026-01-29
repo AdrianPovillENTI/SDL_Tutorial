@@ -2,8 +2,8 @@
 
 Splitta::Splitta(int i)
     : Enemy(
-        2,  // speed
-        1,  // health
+        4,  // speed
+        3,  // health
         2,  // damage
         "resources/Enemies/Imagen15.png"
     )
@@ -24,11 +24,11 @@ void Splitta::Start()
 
     pattern = new EnemyBehaviourPattern(
         new MultiPhasePattern({
-            { linear, 320},
+            { linear, 100},
             { split, 60},
-            { circularPattern, 600 },
+            { circularPattern, 150 },
             { join, 60},
-            { linear, 220}
+            { linear, 100}
             })
     );
 
@@ -43,7 +43,7 @@ void Splitta::Move()
     auto* movePattern = pattern->GetMovementPattern();
     if (movePattern != nullptr)
     {
-        Vector2 delta = movePattern->GetDelta(1.f / 15.f, timeElapsed, index);
+        Vector2 delta = movePattern->GetDelta(1.f / 60.f, timeElapsed, index);
 
         _transform->position += delta;
     }

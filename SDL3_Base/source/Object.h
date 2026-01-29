@@ -39,13 +39,13 @@ public:
 		if (_physics != nullptr)
 			_physics->Update ( 1.0f / 60.0f );
 		if(_renderer != nullptr )
-		_renderer->Update(0.02f); 
+			_renderer->Update( 1.0f / 60.0f );
 	}
 
 	virtual void Render()
 	{
 		if ( _renderer != nullptr )
-		_renderer->Render();
+			_renderer->Render();
 	}	
 	Transform* GetTransform() const { return _transform; }
 

@@ -2,9 +2,9 @@
 
 Scouts::Scouts() : Enemy
 (
-    5.f,
-    3, //Health
-    1, //Damage
+    7.f,
+    4, //Health
+    3, //Damage
     "resources/Enemies/Imagen8.png"
 )
 {

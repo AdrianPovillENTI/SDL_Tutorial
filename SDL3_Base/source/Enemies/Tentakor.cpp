@@ -20,10 +20,10 @@ Tentakor::Tentakor ()
 
 void Tentakor::Start ( )
 {
-    timeToShoot = 60.f;
-    shootCooldown = 1.f;
-    bulletSpeed = 2.f;
-    bulletDamage = 5;
+    timeToShoot = 25;
+    shootCooldown = 0;
+    bulletSpeed = 15;
+    bulletDamage = 10;
     lastPosIndex = -1;
     bulletAnimationSprites =
     {

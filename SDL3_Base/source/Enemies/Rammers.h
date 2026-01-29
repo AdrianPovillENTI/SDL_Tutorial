@@ -7,15 +7,15 @@ public:
     Rammers ( string path ) :
         Enemy
         (
-        0.5f , //Speed
-        5 , //Health
-        1 , //Damage
+        2 , //Speed
+        17 , //Health
+        4 , //Damage
         path , //Sprite path
         new EnemyBehaviourPattern
         (
         new MultiPhasePattern
         ( {
-            { new LinearPattern ( Vector2::Left,0.5f ),2 }
+            { new LinearPattern ( Vector2::Left,speed ),2 }
         } ) 
         )
         )

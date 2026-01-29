@@ -2,12 +2,12 @@
 
 Gearbot::Gearbot ( Player * p )
     : Enemy (
-    1.8f ,
-    3 ,
-    1 ,
+    3.8f ,
+    12 ,
+    7 ,
     "resources/Enemy/Imagen6.png" ,
     new EnemyBehaviourPattern (
-    new LinearPattern ( Vector2::Left , 1.8f )
+    new LinearPattern ( Vector2::Left , speed )
     )
     ) ,
     player ( p ) ,

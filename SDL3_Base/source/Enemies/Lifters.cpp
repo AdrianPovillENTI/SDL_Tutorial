@@ -3,9 +3,9 @@
 Lifters::Lifters ( Vector2 _dir )
     : Enemy
     (
-    1.f + ( rand ( ) % 12 ) / 10.f ,
-    3 , //Health
-    1 , //Damage
+    2 + ( rand ( ) % 36 ) / 10.f ,
+    6 , //Health
+    6 , //Damage
     "resources/Enemies/Imagen12.png"
     ) ,
     direction ( _dir )

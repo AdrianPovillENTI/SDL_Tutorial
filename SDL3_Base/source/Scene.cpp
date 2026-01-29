@@ -41,8 +41,12 @@ void Scene::Update()
     int objSize = _objects.size();
     for (int i = 0; i < objSize; i++)
     {
+        if (_objects[i]->IsPendingDestroy()) continue;
+        
         for (int j = i + 1; j < objSize; j++)
         {
+            if (_objects[j]->IsPendingDestroy()) continue;
+            
             if (_objects[i]->GetRigidbody()->CheckCollision(_objects[j]->GetRigidbody()))
             {
                 if (auto* o = dynamic_cast<ICollisionable*>(_objects[i]))

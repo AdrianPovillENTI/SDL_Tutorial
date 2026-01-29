@@ -2,8 +2,8 @@
 
 Angrygons::Angrygons ( )
     : Enemy (
-    2.f ,     // Speed
-    1 ,       // Health
+    4 ,     // Speed
+    6 ,       // Health
     2 ,       // Damage
     "resources/Enemies/Imagen11.png"
     ) { }

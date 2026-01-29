@@ -16,7 +16,7 @@ protected:
 public:
 
 	GameObject(string _spritePath);
-	~GameObject ( ) { }
+	~GameObject ( );
 
 	virtual void Start ( ) { }
 	void Update() override;

@@ -10,6 +10,17 @@ GameObject::GameObject(string _spritePath): ImageObject(_spritePath, Vector2(0.0
 	parentOffset = Vector2::Zero;
 }
 
+GameObject::~GameObject() 
+{ 
+    for (GameObject* child : children) {
+        if (child != nullptr) {
+            child->parent = nullptr;
+        }
+    }
+    if (parent != nullptr) {
+        parent->RemoveChild(this);
+    }
+}
 void GameObject::Update()
 {
 	if (!active) return;

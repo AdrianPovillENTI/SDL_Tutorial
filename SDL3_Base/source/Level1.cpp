@@ -60,7 +60,7 @@ void Level1::OnEnter ( )
 			new Wave 
 			( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
 				1, 
-				Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 3 ),
+				Vector2(RM->WINDOW_WIDTH, RM->GAME_WINDOW_HEIGHT / 3 ),
 				new LineSpawnPattern 
 				( 
 					Vector2 ( 1,0 ), //Direction where will spawn
@@ -76,7 +76,7 @@ void Level1::OnEnter ( )
 			new Wave
 			(
 				2,
-				Vector2 ( RM->WINDOW_WIDTH * 0.5f , RM->WINDOW_HEIGHT * 2),
+				Vector2 ( RM->WINDOW_WIDTH * 0.5f , RM->GAME_WINDOW_HEIGHT * 2),
 				new TopBottomSpawnPattern
 				(
 					300.f
@@ -131,7 +131,7 @@ void Level1::OnEnter ( )
 			new Wave
 			(
 				3,
-				Vector2(50,RM->WINDOW_HEIGHT),
+				Vector2(50,RM->GAME_WINDOW_HEIGHT ),
 				new LineSpawnPattern
 				(
 					Vector2::Right,
@@ -222,8 +222,8 @@ void Level1::OnEnter ( )
 			),
 			new Wave
 			( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
-				1,
-				Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT / 3),
+				3,
+				Vector2(RM->WINDOW_WIDTH, RM->GAME_WINDOW_HEIGHT / 3),
 				new LineSpawnPattern
 				(
 					Vector2(1, 0), //Direction where will spawn
@@ -239,7 +239,7 @@ void Level1::OnEnter ( )
 			new Wave
 			(
 				2,
-				Vector2(RM->WINDOW_WIDTH * 0.5f, RM->WINDOW_HEIGHT * 2),
+				Vector2(RM->WINDOW_WIDTH * 0.5f, RM->GAME_WINDOW_HEIGHT * 2),
 				new TopBottomSpawnPattern
 				(
 					300.f

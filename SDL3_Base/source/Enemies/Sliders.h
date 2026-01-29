@@ -7,7 +7,7 @@ public:
     Sliders ( string path ) :
         Enemy
         (
-        0.5f , //Speed
+        3 , //Speed
         5 , //Health
         1 , //Damage
         path , //Sprite path
@@ -15,7 +15,7 @@ public:
         (
         new MultiPhasePattern
         ( {
-            { new LinearPattern ( Vector2::Left,0.5f ),2 }
+            { new LinearPattern ( Vector2::Left,0.5f ),speed }
         } ) 
         )
         )

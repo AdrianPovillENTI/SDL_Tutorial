@@ -2,13 +2,13 @@
 
 Floater::Floater ( )
     : Enemy (
-    0.5f ,     // Speed
-    1 ,        // Health
+    4 ,     // Speed
+    2 ,        // Health
     2 ,        // Damage
     "resources/Enemies/Imagen5.png"
     ) ,
     targetPos ( Vector2::Down ),
-    timeToPlay ( 60 + rand ( ) % 500 )
+    timeToPlay ( 10 + rand ( ) % 40 )
 {
 }
 

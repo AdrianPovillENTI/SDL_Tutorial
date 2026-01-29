@@ -86,10 +86,10 @@ void Player::InitializeStats()
 
     canShoot = true;
     shootCooldown = 0.f;
-    maxShootCooldownTime = 5;
+    maxShootCooldownTime = 10;
 
     speedUpgrade = 2.5f;
-    speed = 50.0f;
+    speed = 25;
 }
 
 void Player::InitializeGuns() 
@@ -106,7 +106,7 @@ void Player::InitializeGuns()
         "resources/Player/NormalShoot/shot_6.png"
     };
     const int bulletDamage = 10;
-    const float bulletSpeed = 40.f;
+    const float bulletSpeed = 35;
     Vector2 bulletSpawnPoint = Vector2(75.f, 0.f);
 
     primaryGun = new Gun("resources/Player/Player.png", bulletSprites, bulletSpeed, bulletDamage, bulletSpawnPoint);
