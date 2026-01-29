@@ -24,7 +24,8 @@ protected:
     float timeElapsed;
     bool killedByPlayer = false;
     bool onDieProcess = false;
-    int scorePoints;
+    int scorePoints = 100;
+
 public:
     function <void ( )> onDie;
 
