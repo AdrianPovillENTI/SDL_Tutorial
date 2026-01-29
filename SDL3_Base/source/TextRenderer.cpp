@@ -12,16 +12,24 @@ TextRenderer::~TextRenderer()
 
 void TextRenderer::SetText(std::string text)
 {
-	if (_textTexture != nullptr)
-		SDL_DestroyTexture(_textTexture);
+	if ( text.empty ( ) )
+	{
+		// Opción 1: Usar un espacio en blanco
+		text = " ";
+		// O Opción 2: Retornar sin hacer nada
+		// return;
+	}
 
-	SDL_Surface* surf = TTF_RenderText_Solid(
-		RM->GetFont(_resourcePath),
-		text.c_str(),
-		text.length(),
+	if ( _textTexture != nullptr )
+		SDL_DestroyTexture ( _textTexture );
+
+	SDL_Surface * surf = TTF_RenderText_Solid (
+		RM->GetFont ( _resourcePath ) ,
+		text.c_str ( ) ,
+		text.length ( ) ,
 		_color
 	);
-	assert(surf);
+	assert ( surf );
 
 	_textTexture = SDL_CreateTextureFromSurface(RM->GetRenderer(), surf);
 	assert(_textTexture);

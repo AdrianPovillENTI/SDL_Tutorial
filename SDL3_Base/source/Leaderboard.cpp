@@ -15,9 +15,9 @@ void Leaderboard::OnEnter()
 
 	_ui.push_back(scoreLabel);
 
-	for (int i = 1; i < 11; i++)
+	for ( int i = 1; i <= scores.size ( ) && i < 11; i++ )
 	{
-		string scoreString = i + "Score: " + scores[i - 1];
+		string scoreString = std::to_string ( i ) + ". Score: " + std::to_string ( scores [ i - 1 ] );
 
 		TextObject* scoreText = new TextObject(scoreString,
 			Vector2(RM->WINDOW_WIDTH / 2, 100 + scoreSpacing * i), Vector2::One * 2);
@@ -28,7 +28,7 @@ void Leaderboard::OnEnter()
 	Button* backButton = new Button([]()
 		{
 			assert(SM.SetNextScene("MainMenu"));
-		}, Vector2(200.f, 500.f)
+		}, Vector2(200.f, 700.f)
 			);
 	TextObject* backText = new TextObject(" backToMenu ",
 		backButton->GetTransform()->position + Vector2(-60, 75), Vector2::One * 2);

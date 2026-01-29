@@ -15,12 +15,12 @@ class Renderer {
 
 	public:
 		Renderer(Transform* transform, std::string resourcePath)
-			: _transform(transform), _resourcePath(resourcePath) { }
+			: _transform(transform), _resourcePath(resourcePath), _color{255, 255, 255, 255} { }
 
 		virtual void Update(float dt) = 0;
 		virtual void Render() = 0;
 
-		virtual void SetColor(SDL_Color color) { color = _color; }
+		virtual void SetColor(SDL_Color color) { _color = color; }
         void SetResourcePath(std::string resourcePath) { _resourcePath = resourcePath; }
 		SDL_Color GetColor() { return _color; }
 };

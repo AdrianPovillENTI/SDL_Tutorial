@@ -49,7 +49,6 @@ void Enemy::Move ( )
     if ( movePattern != nullptr )
     {
         Vector2 delta = movePattern->GetDelta ( 1.f / 45.f , timeElapsed , 0 );
-        //delta += Vector2::Left * 0.01f;
 
         _transform->position += delta;
     }
@@ -97,17 +96,18 @@ bool Enemy::WasKilledByPlayer ( )
 
 void Enemy::Die(bool killed)
 {
-    if (IsPendingDestroy()) return; // evita doble mort
+    if (IsPendingDestroy()) return; // evita doble muerte
 
     killedByPlayer = killed;
 
     if (killedByPlayer)
         SCR.AddScore(scorePoints);
 
-    if (!onDieProcess)
+    // CAMBIO: Ejecutar onDie ANTES de Destroy() y solo si no se ha procesado
+    if (!onDieProcess && onDie)
     {
         onDieProcess = true;
-        if (onDie) onDie();
+        onDie();
     }
 
     Destroy();

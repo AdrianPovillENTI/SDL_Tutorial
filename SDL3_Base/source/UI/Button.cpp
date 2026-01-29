@@ -15,11 +15,11 @@ Button::Button(OnClick onClick,
 }
 
 void Button::OnHoverEnter() {
-	_transform->rotation = 90.f;
+	_transform->scale = Vector2::One * 0.75f;
 	_isHovered = true;
 }
 void Button::OnHoverExit() {
-	_transform->rotation = 0.f;
+	_transform->scale = Vector2::One;
 	_isHovered = false;
 }
 void Button::OnClicked() {
