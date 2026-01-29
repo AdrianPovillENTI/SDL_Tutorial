@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="source\Enemies\Wave.cpp" />
+    <ClCompile Include="source\Enemies\Waves\Wave.cpp" />
     <ClCompile Include="source\Patterns\LinearToPlayerMovementPattern.cpp" />
     <ClCompile Include="source\Patterns\MultiPhasePattern.cpp" />
     <ClCompile Include="source\Enemies\Arachnid.cpp" />
@@ -45,7 +45,7 @@
     <ClCompile Include="source\Enemies\Strikers.cpp" />
     <ClCompile Include="source\Enemies\Swirlers.cpp" />
     <ClCompile Include="source\Enemies\Tentakor.cpp" />
-    <ClCompile Include="source\Enemies\WaveManager.cpp" />
+    <ClCompile Include="source\Enemies\Waves\WaveManager.cpp" />
     <ClCompile Include="source\Patterns\ZigZagMovementPattern.cpp" />
     <ClCompile Include="source\Player\Gun\AmmoGun.cpp" />
     <ClCompile Include="source\Animator.cpp" />
@@ -76,7 +76,7 @@
     <ClCompile Include="source\Player\Gun\PlayerGuns.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\Enemies\Wave.h" />
+    <ClInclude Include="source\Enemies\Waves\Wave.h" />
     <ClInclude Include="source\Patterns\LinearToPlayerMovementPattern.h" />
     <ClInclude Include="source\Patterns\MultiPhasePattern.h" />
     <ClInclude Include="source\Enemies\Arachnid.h" />
@@ -128,7 +128,7 @@
     <ClInclude Include="source\Enemies\Strikers.h" />
     <ClInclude Include="source\Enemies\Swirlers.h" />
     <ClInclude Include="source\Enemies\Tentakor.h" />
-    <ClInclude Include="source\Enemies\WaveManager.h" />
+    <ClInclude Include="source\Enemies\Waves\WaveManager.h" />
     <ClInclude Include="source\Patterns\SinusoidalMovementPattern.h" />
     <ClInclude Include="source\Patterns\ZigZagMovementPattern.h" />
     <ClInclude Include="source\Player\Gun\AmmoGun.h" />
@@ -236,5 +236,8 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="resources\Fonts\Hyperspace.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="resources\Levels\Level1.xml" />
   </ItemGroup>
 </Project>

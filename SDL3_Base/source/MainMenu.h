@@ -33,7 +33,7 @@ public:
 			{
 
 				std::cout << "ExitGame" << std::endl;
-				terminate ( );
+				exit (0);
 			}, Vector2 ( 200.f , 500.f )
 		);
 		TextObject * quitGameText = new TextObject ( " Quit Game ", 

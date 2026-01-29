@@ -14,7 +14,7 @@
 
 #include "Player/Item.h"
 #include "Player/Gun/Turret.h"
-#include "Enemies/WaveManager.h"
+#include "Enemies/Waves/WaveManager.h"
 #include "Enemies/Swirlers.h"
 #include "Enemies/Gulper.h"
 #include "Enemies/Floater.h"

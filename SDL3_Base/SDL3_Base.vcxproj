@@ -31,7 +31,7 @@
     <ClCompile Include="source\Player\Gun\AmmoGun.cpp" />
     <ClCompile Include="source\Animator.cpp" />
     <ClCompile Include="source\Background.cpp" />
-    <ClCompile Include="source\Enemies\Wave.cpp" />
+    <ClCompile Include="source\Enemies\Waves\Wave.cpp" />
     <ClCompile Include="source\Player\Gun\Gun.cpp" />
     <ClCompile Include="source\MapDecorations.cpp" />
     <ClCompile Include="source\Patterns\CheckPointMovementPattern.cpp" />
@@ -94,7 +94,7 @@
     <ClCompile Include="source\Enemies\Strikers.cpp" />
     <ClCompile Include="source\Enemies\Swirlers.cpp" />
     <ClCompile Include="source\Enemies\Tentakor.cpp" />
-    <ClCompile Include="source\Enemies\WaveManager.cpp" />
+    <ClCompile Include="source\Enemies\Waves\WaveManager.cpp" />
     <ClCompile Include="source\Patterns\ZigZagMovementPattern.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -112,7 +112,7 @@
     <ClInclude Include="source\Player\Gun\AmmoGun.h" />
     <ClInclude Include="source\Animator.h" />
     <ClInclude Include="source\Background.h" />
-    <ClInclude Include="source\Enemies\Wave.h" />
+    <ClInclude Include="source\Enemies\Waves\Wave.h" />
     <ClInclude Include="source\Player\Gun\Gun.h" />
     <ClInclude Include="source\MapDecorations.h" />
     <ClInclude Include="source\Patterns\CheckPointMovementPattern.h" />
@@ -182,7 +182,7 @@
     <ClInclude Include="source\Enemies\Strikers.h" />
     <ClInclude Include="source\Enemies\Swirlers.h" />
     <ClInclude Include="source\Enemies\Tentakor.h" />
-    <ClInclude Include="source\Enemies\WaveManager.h" />
+    <ClInclude Include="source\Enemies\Waves\WaveManager.h" />
     <ClInclude Include="source\Patterns\SinusoidalMovementPattern.h" />
     <ClInclude Include="source\Patterns\ZigZagMovementPattern.h" />
   </ItemGroup>
@@ -262,6 +262,9 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="resources\Fonts\Hyperspace.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="resources\Levels\Level1.xml" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

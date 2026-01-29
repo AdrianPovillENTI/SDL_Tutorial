@@ -9,12 +9,13 @@
 #include "MapDecorations.h"
 #include "Player/Player.h"
 #include "Player/Gun/Bullet.h"
+#include "Score/ScoreManager.h"
 
 #pragma region
 
 #include "Player/Item.h"
 #include "Player/Gun/Turret.h"
-#include "Enemies/WaveManager.h"
+#include "Enemies/Waves/WaveManager.h"
 #include "Enemies/Swirlers.h"
 #include "Enemies/Gulper.h"
 #include "Enemies/Floater.h"
@@ -25,15 +26,6 @@
 #include "Enemies/Arachnid.h"
 #include "Enemies/ArachnidTail.h"
 #include "Enemies/Tentakor.h"
-//level 2
-#include "Enemies/Headron.h"
-#include "Enemies/Gearbot.h"
-#include "Enemies/Boosters.h"
-#include "Enemies/Lifters.h"
-#include "Enemies/Strikers.h"
-#include "Enemies/Loopers.h"
-#include "Enemies/Angrygons.h"
-
 #include "Patterns/LineSpawnPattern.h"
 #include "Patterns/TopBottomSpawnPattern.h"
 #include "Patterns/RandomSpawnPattern.h"
@@ -43,12 +35,17 @@
 
 void Level1::OnEnter ( )
 {
-	srand ( time ( NULL ) );
 
 	for ( int i = 0; i < 3; i++ )
 	{
 		SPAWNER.SpawnObject ( new Background ( i , "resources/Background.png" ) );
 	}
+
+	UIM->InitializeUI();
+	SCR.RestartScore();
+
+	srand ( time ( NULL ) );
+
 	for ( int i = 0; i < 45; i++ )
 	{
 		SPAWNER.SpawnObject ( new MapDecorations ( "resources/Map/MapDecorations/Ice3.png" ) );
@@ -56,10 +53,8 @@ void Level1::OnEnter ( )
     Player * player = new Player ( 55 );
 	SPAWNER.SpawnObject ( player );
 
-	UIManager * uiManager = new UIManager ( );
 
-
-	WaveManager * waveManager = new WaveManager
+	WaveManager * wM = new WaveManager
 	(
 		{
 			new Wave 
@@ -311,4 +306,5 @@ void Level1::OnEnter ( )
 			)
 		}
 	);
+	waveManager = wM;
 }

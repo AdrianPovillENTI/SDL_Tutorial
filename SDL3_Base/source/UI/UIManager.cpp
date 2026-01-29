@@ -4,12 +4,10 @@
 void UIManager::InitializeUI()
 {
 	gameUI = new UI();
-	SCR.onScoreChanged = [](int _score)
+	SCR.onScoreChanged = [this](int _score)
 	{
-		UIM->UpdateScore(_score);
+		UpdateScore(_score);
 	};
-
-	SCR.RestartScore();
 }
 
 void UIManager::UpdateCannonAmmo(int ammo, int maxAmmo)

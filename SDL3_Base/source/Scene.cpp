@@ -64,6 +64,8 @@ void Scene::Update()
             }
         }
     }
+    if (waveManager == nullptr) return;
+    waveManager->Update();
 }
 
 void Scene::Render()

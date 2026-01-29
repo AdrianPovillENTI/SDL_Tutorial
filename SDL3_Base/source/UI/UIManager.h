@@ -11,7 +11,7 @@ public:
 		return &instance;
 	}
 
-	UIManager() { InitializeUI(); };
+	UIManager() { };
 	UIManager(UIManager&) = delete;
 	UIManager& operator = (const UIManager&) = delete;
 	~UIManager() {}

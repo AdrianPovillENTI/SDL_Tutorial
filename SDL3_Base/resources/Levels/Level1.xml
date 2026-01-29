@@ -1,0 +1,10 @@
+<Level id="1">
+	<Waves>
+		<Wave id="1" originX="1200" originY="200">
+			<Pattern type="Line" dirX="1" dirY="0" spacing="100"/>
+			<Enemies>
+				<Enemy type="Swirlers" count="4"/>
+			</Enemies>
+		</Wave>
+	</Waves>
+</Level>

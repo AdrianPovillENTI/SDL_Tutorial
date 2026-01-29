@@ -104,6 +104,12 @@ void Enemy::Die(bool killed)
     if (killedByPlayer)
         SCR.AddScore(scorePoints);
 
+    if (!onDieProcess)
+    {
+        onDieProcess = true;
+        if (onDie) onDie();
+    }
+
     Destroy();
 }
 
