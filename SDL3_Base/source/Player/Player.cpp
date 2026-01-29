@@ -5,6 +5,8 @@
 #include "../InputManager.h"
 #include "../RenderManager.h"
 #include "../UI/UIManager.h"
+#include "../Score/ScoreData.h"
+#include "../SceneManager.h"
 
 Player::Player ( int maxHealth )
     : DamageableObject ( maxHealth , "resources/Player/Player.png" )
@@ -54,7 +56,9 @@ void Player::Start ( )
 
     healthManager.onDeath = [this]()
     {
+        SD->SaveNewScore();
         Destroy();
+        SM.SetNextScene("MainMenu");
     };
 
     healthManager.Init(maxHealth, 3);

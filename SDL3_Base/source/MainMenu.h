@@ -22,8 +22,7 @@ public:
 
 		Button* highScoresButton = new Button([]()
 			{
-            std::cout << "Going to High Scores Scene but still not defined" << std::endl;
-			 //assert(SM.SetNextScene("HighScoresScene"));
+				assert(SM.SetNextScene("Leaderboard"));
 			}, Vector2 ( 200.f , 300.f )
 		);
 		TextObject * highScoresText = new TextObject ( " High Scores ", 

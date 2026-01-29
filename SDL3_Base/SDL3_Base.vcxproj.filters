@@ -74,6 +74,8 @@
     <ClCompile Include="source\Patterns\TopBottomSpawnPattern.cpp" />
     <ClCompile Include="source\Player\PlayerHealth.cpp" />
     <ClCompile Include="source\Player\Gun\PlayerGuns.cpp" />
+    <ClCompile Include="source\GameOver.cpp" />
+    <ClCompile Include="source\Score\ScoreData.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Enemies\Waves\Wave.h" />
@@ -159,6 +161,8 @@
     <ClInclude Include="source\Patterns\LinearMovementPattern.h" />
     <ClInclude Include="source\Player\PlayerHealth.h" />
     <ClInclude Include="source\Player\Gun\PlayerGuns.h" />
+    <ClInclude Include="source\GameOver.h" />
+    <ClInclude Include="source\Score\ScoreData.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bullet.png" />

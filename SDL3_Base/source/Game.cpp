@@ -10,6 +10,7 @@
 #include <cassert>
 #include "TestObject.h"
 #include "MainMenu.h"
+#include "Leaderboard.h"
 
 void Game::Init()
 {
@@ -131,6 +132,7 @@ void Game::Init()
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 	assert(SM.AddScene("Level1", new Level1()));
 	assert(SM.AddScene("Level2", new Level2()));
+	assert(SM.AddScene("Leaderboard", new Leaderboard()));
 
 	assert(SM.InitFirstScene("MainMenu"));
 	_isRunning = true;

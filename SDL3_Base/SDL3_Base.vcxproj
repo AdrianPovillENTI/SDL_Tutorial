@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\Score\ScoreData.cpp" />
+    <ClCompile Include="source\GameOver.cpp" />
     <ClCompile Include="source\Player\Gun\PlayerGuns.cpp" />
     <ClCompile Include="source\Player\PlayerHealth.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
@@ -98,6 +100,8 @@
     <ClCompile Include="source\Patterns\ZigZagMovementPattern.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\Score\ScoreData.h" />
+    <ClInclude Include="source\GameOver.h" />
     <ClInclude Include="source\Player\Gun\PlayerGuns.h" />
     <ClInclude Include="source\Player\PlayerHealth.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>

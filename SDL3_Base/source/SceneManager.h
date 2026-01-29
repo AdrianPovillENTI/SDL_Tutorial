@@ -30,6 +30,5 @@ private:
 	std::unordered_map < std::string, Scene* > _scenes;
 	Scene * _currentScene = nullptr;
 	std::string _nextScene = "";
-
 };
 
