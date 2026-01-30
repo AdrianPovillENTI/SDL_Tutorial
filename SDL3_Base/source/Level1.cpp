@@ -38,7 +38,7 @@ void Level1::OnEnter ( )
 
 	for ( int i = 0; i < 3; i++ )
 	{
-		SPAWNER.SpawnObject ( new Background ( i , "resources/Background.png" ) );
+		SPAWNER.SpawnObject ( new Background ( i , "resources/Background/Background_Lvl1.png" ) );
 	}
 
 	UIM->InitializeUI();

@@ -40,7 +40,7 @@ void Level2::OnEnter ( )
 
 	for ( int i = 0; i < 3; i++ )
 	{
-		SPAWNER.SpawnObject ( new Background ( i , "resources/Background.png" ) );
+		SPAWNER.SpawnObject ( new Background ( i , "resources/Background/Background_Lvl2.png" ) );
 	}
 	for ( int i = 0; i < 45; i++ )
 	{

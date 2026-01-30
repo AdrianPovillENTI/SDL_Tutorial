@@ -22,14 +22,14 @@ public:
 				_transform->rotation = rand()%2 == 0? 180:-180;
 				break;
 			case MapDecorations::BOTTOM:
-				offset = Vector2 ( rand ( ) % RM->WINDOW_WIDTH * 16, RM->WINDOW_HEIGHT * 1.25f);
+				offset = Vector2 ( rand ( ) % RM->WINDOW_WIDTH * 16, RM->GAME_WINDOW_HEIGHT);
 				_transform->rotation = rand()%2 == 0? 360:-360;
 				break;
 			default:
 				break;
 		}
 		_transform->position = offset;
-		speed = -0.25f;
+		speed = -2;
 	}
 
 	void Start ( ) override

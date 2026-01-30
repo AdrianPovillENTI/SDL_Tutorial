@@ -198,6 +198,17 @@
     <ClInclude Include="source\SplashScreen.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="resources\Background\BackgroundBluePlanet_Lvl1.png" />
+    <Image Include="resources\Background\BackgroundBluePlanet_Lvl2.png" />
+    <Image Include="resources\Background\BackgroundMoon_Lvl1.png" />
+    <Image Include="resources\Background\BackgroundMoon_Lvl2.png" />
+    <Image Include="resources\Background\BackgroundPlanets_Lvl1.png" />
+    <Image Include="resources\Background\BackgroundRedPlanet_Lvl1.png" />
+    <Image Include="resources\Background\BackgroundRedPlanet_Lvl2.png" />
+    <Image Include="resources\Background\Background_Lvl1.png" />
+    <Image Include="resources\Background\Background_Lvl2.png" />
+    <Image Include="resources\Background\BlackHole_Lvl2.png" />
+    <Image Include="resources\Background\Sol_Lvl1.png" />
     <Image Include="resources\bullet.png" />
     <Image Include="resources\ButtonBKG.png" />
     <Image Include="resources\EduBoss.png" />

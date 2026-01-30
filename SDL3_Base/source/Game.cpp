@@ -30,6 +30,9 @@ void Game::Init()
 	RM->LoadTexture("resources/Player/LaserSprite.png");
 	RM->LoadTexture("resources/Player/ShieldSprite.png");
 	RM->LoadTexture("resources/Player/TomasTurretlina.png");
+	RM->LoadTexture( "resources/Background/Background_Lvl1.png" );
+	RM->LoadTexture( "resources/Background/Background_Lvl2.png" );
+	RM->LoadTexture( "resources/Map/MapDecorations/Ice3.png" );
 
 	RM->LoadTexture( "resources/Player/SpeedVfx/speed_1.png" );
 	RM->LoadTexture( "resources/Player/SpeedVfx/speed_2.png" );
