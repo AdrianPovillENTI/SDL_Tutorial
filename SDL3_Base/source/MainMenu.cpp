@@ -3,6 +3,7 @@
 #include "TextObject.h"
 #include "Spawner.h"
 #include "SceneManager.h"
+#include "Audio/AudioManager.h"
 
 void MainMenu::OnEnter() 
 {
@@ -24,8 +25,7 @@ void MainMenu::OnEnter()
 
 	Button* quitGameButton = new Button([]()
 		{
-
-			std::cout << "ExitGame" << std::endl;
+			AM->HaltAudio();
 	exit(0);
 		}, Vector2(200.f, 500.f)
 			);
@@ -39,5 +39,4 @@ void MainMenu::OnEnter()
 	_ui.push_back(level1Text);
 	_ui.push_back(highScoresText);
 	_ui.push_back(quitGameText);
-
 }

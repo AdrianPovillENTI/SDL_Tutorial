@@ -170,6 +170,9 @@
     <ClInclude Include="include\rapidxml\rapidxml_utils.hpp" />
     <ClInclude Include="source\Leaderboard.h" />
     <ClInclude Include="source\SplashScreen.h" />
+    <ClInclude Include="source\Audio\AtomicWrapper.h" />
+    <ClInclude Include="source\Audio\AudioManager.h" />
+    <ClInclude Include="source\Audio\Stream.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bullet.png" />

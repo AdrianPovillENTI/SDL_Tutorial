@@ -11,6 +11,8 @@
 #include <iostream>
 #include <thread>
 #include <exception>
+#include <mutex>
+#include <chrono>
 
 //Sistema basat en els exemples oficials de SDL3
 //https://github.com/libsdl-org/SDL/blob/main/examples/audio/04-multiple-streams/multiple-streams.c
@@ -18,10 +20,6 @@
 
 //Part de threads basada en:
 //https://stackoverflow.com/questions/9094422/how-to-check-if-a-stdthread-is-still-running
-
-//Per controlar quan cal terminar de cop els threads
-static std::atomic<bool> shouldHaltAudio = false;
-static std::vector<AtomicWrapper<bool>> threadsDone;
 
 #define AM AudioManager::GetInstance()
 
@@ -42,7 +40,7 @@ public:
 		    _audioDevice = SDL_OpenAudioDevice(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, NULL);
 
 		    if (_audioDevice == 0)
-			    throw SDL_GetError();
+				throw std::runtime_error(SDL_GetError());
 
 		    return true;
 	    }   
@@ -56,19 +54,29 @@ public:
 	//Fonamental cridar abans d'acabar el programa per terminar els threads correctament
 	void HaltAudio()
 	{
-		shouldHaltAudio = true;
+		_shouldHaltAudio = true;
 
-		int size = threadsDone.size();
-		for (int i = 0; i < size; )
+		for (;;)
 		{
-			//Només incrementa comptador si el thread que s'està comprovant ha acabat
-			if (threadsDone.at(i)._a)
-				i++;
+			bool allDone = true;
+			{
+				std::lock_guard<std::mutex> lock(_threadsMtx);
+				for (auto& f : _threadsDone)
+				{
+					if (!f._a) { allDone = false; break; }
+				}
+			}
+
+			if (allDone) break;
+			std::this_thread::sleep_for(std::chrono::milliseconds(1));
 		}
 
-		//Reset (molt important!)
-		shouldHaltAudio = false;
-		threadsDone.clear();
+		_shouldHaltAudio = false;
+
+		{
+			std::lock_guard<std::mutex> lock(_threadsMtx);
+			_threadsDone.clear();
+		}
 	}
 
 	//Llegeix i guarda dades d'un so (fitxer .wav) a partir de la seva ruta
@@ -111,10 +119,13 @@ public:
 	{
 		if (_soundsData.find(path) == _soundsData.end())
 		return;
-
-		//Crear thread amb la funció corresponent
-		threadsDone.push_back(std::atomic<bool>(false));
-		std::thread thread(&AudioManager::PlaySoundCallback, this, path, (threadsDone.size()-1), false);
+		int pos;
+		{
+			std::lock_guard<std::mutex> lock(_threadsMtx);
+			_threadsDone.push_back(std::atomic<bool>(false));
+			pos = (int)_threadsDone.size() - 1;
+		}
+		std::thread thread(&AudioManager::PlaySoundCallback, this, path, pos, false);
 		thread.detach();
 	}
 
@@ -123,9 +134,15 @@ public:
 		if (_soundsData.find(path) == _soundsData.end())
 		return;
 
-		//Crear thread amb la funció corresponent
-		threadsDone.push_back(std::atomic<bool>(false));
-		std::thread thread(&AudioManager::PlaySoundCallback, this, path, (threadsDone.size() - 1), true);
+		int pos;
+		{
+			//Crear thread amb la funció corresponent
+			std::lock_guard<std::mutex> lock(_threadsMtx);
+			_threadsDone.push_back(std::atomic<bool>(false));
+			pos = (int)_threadsDone.size() - 1;
+		}
+
+		std::thread thread(&AudioManager::PlaySoundCallback, this, path, pos, true);
 		thread.detach();
 	}
 
@@ -167,17 +184,25 @@ private:
 		Stream stream = Stream(_soundsData[path]->spec, _audioDevice);
 		
 		if (looping)
-			stream.CheckPlaybackLooping(_soundsData[path], shouldHaltAudio);
+			stream.CheckPlaybackLooping(_soundsData[path], _shouldHaltAudio);
 		else
-			stream.CheckPlayback(_soundsData[path], shouldHaltAudio);
+			stream.CheckPlayback(_soundsData[path], _shouldHaltAudio);
 
-		threadsDone[pos] = AtomicWrapper<bool>(std::atomic<bool>(true));
+		{
+			std::lock_guard<std::mutex> lock(_threadsMtx);
+			if (pos >= 0 && pos < (int)_threadsDone.size())
+				_threadsDone[pos] = AtomicWrapper<bool>(std::atomic<bool>(true));
+		}
+
 		std::cout << "Stopped thread" << std::endl;
 	}
 
 	bool _muted = false;
 	SDL_AudioDeviceID _audioDevice = 0;
 
+	std::atomic<bool> _shouldHaltAudio{ false };
+	std::mutex _threadsMtx;
+	std::vector<AtomicWrapper<bool>> _threadsDone;
 	//key: ruta al .wav
 	std::map<std::string, SoundData*> _soundsData;
 };

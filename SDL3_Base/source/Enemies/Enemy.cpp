@@ -1,5 +1,6 @@
 ﻿#include "Enemy.h"
 #include "../Score/ScoreManager.h"
+#include "../Audio/AudioManager.h"
 
 void Enemy::Start ( )
 {
@@ -98,6 +99,8 @@ void Enemy::Die(bool killed)
 {
     if (IsPendingDestroy()) return; // evita doble muerte
 
+    AM->PlaySound("resources/audio/sfx/Explode.wav");
+
     killedByPlayer = killed;
 
     if (killedByPlayer)
@@ -115,6 +118,7 @@ void Enemy::Die(bool killed)
 
 void Enemy::ReceiveDamage(int dmg)
 {
+    AM->PlaySound("resources/audio/sfx/Hit.wav");
     health -= dmg;
     if (health <= 0)
         Die(true);
