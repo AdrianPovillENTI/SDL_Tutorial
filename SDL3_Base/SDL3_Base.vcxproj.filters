@@ -78,6 +78,7 @@
     <ClCompile Include="source\Leaderboard.cpp" />
     <ClCompile Include="source\SplashScreen.cpp" />
     <ClCompile Include="source\MainMenu.cpp" />
+    <ClCompile Include="source\AnimatedImageRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Enemies\Waves\Wave.h" />
@@ -170,6 +171,7 @@
     <ClInclude Include="include\rapidxml\rapidxml_utils.hpp" />
     <ClInclude Include="source\Leaderboard.h" />
     <ClInclude Include="source\SplashScreen.h" />
+    <ClInclude Include="source\AnimatedImageRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bullet.png" />

@@ -103,14 +103,14 @@ void Level2::OnEnter ( )
 					150
 				),
 				{
-					new Gearbot ( player ),
-					new Gearbot ( player ),
-					new Gearbot ( player ),
-					new Gearbot ( player ),
-					new Gearbot ( player ),
-					new Gearbot ( player ),
-					new Gearbot ( player ),
-					new Gearbot ( player )
+					new Gearbot ( player->GetTransform() ),
+					new Gearbot ( player->GetTransform ( ) ),
+					new Gearbot ( player->GetTransform ( ) ),
+					new Gearbot ( player->GetTransform ( ) ),
+					new Gearbot ( player->GetTransform ( ) ),
+					new Gearbot ( player->GetTransform ( ) ),
+					new Gearbot ( player->GetTransform ( ) ),
+					new Gearbot ( player->GetTransform ( ) )
 				}
 			),
 			new Wave

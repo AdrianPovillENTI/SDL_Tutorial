@@ -1,6 +1,6 @@
 #include "Gearbot.h"
 
-Gearbot::Gearbot ( Player * p )
+Gearbot::Gearbot ( Transform * p )
     : Enemy (
     3.8f ,
     12 ,
@@ -28,8 +28,8 @@ void Gearbot::Move ( )
 {
     if ( !player ) return;
 
-    float directionToTarget = player->GetTransform ( )->position.x - _transform->position.x;
-    Vector2 direction = player->GetTransform ( )->position - _transform->position;
+    float directionToTarget = player->position.x - _transform->position.x;
+    Vector2 direction = player->position - _transform->position;
 
     if ( directionToTarget > 0.05f ) movePattern->SetDirection ( Vector2::Right );
     else if ( directionToTarget < -0.05f ) movePattern->SetDirection ( Vector2::Left );
