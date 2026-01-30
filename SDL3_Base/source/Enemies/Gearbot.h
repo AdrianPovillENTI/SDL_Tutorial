@@ -6,13 +6,13 @@
 class Gearbot : public Enemy
 {
 public:
-    Gearbot ( Player * p );
+    Gearbot ( Transform * p );
 
     void Start ( ) override;
     void Move ( ) override;
 
 private:
-    Player * player;
+    Transform * player;
     LinearPattern * movePattern;
 
     bool hasJumped;
