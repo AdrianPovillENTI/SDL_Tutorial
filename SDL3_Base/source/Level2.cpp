@@ -51,7 +51,7 @@ void Level2::OnEnter ( )
 	Player * player = new Player ( 100 );
 	SPAWNER.SpawnObject ( player);
 
-	WaveManager * waveManager = new WaveManager
+	WaveManager * wM = new WaveManager
 	(
 		{ // enemySpawnData vector
 			new Wave
@@ -224,5 +224,5 @@ void Level2::OnEnter ( )
 		}
 	);
 
-	//_objects.push_back ( waveManager );
+	waveManager = wM;
 }

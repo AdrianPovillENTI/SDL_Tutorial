@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{52384173-F918-4DF6-8DE5-DDB3EE5078C5}|SDL3_Base.vcxproj|C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\AnimatedImageRenderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{52384173-F918-4DF6-8DE5-DDB3EE5078C5}|SDL3_Base.vcxproj|solutionrelative:source\\AnimatedImageRenderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{52384173-F918-4DF6-8DE5-DDB3EE5078C5}|SDL3_Base.vcxproj|C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Level1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{52384173-F918-4DF6-8DE5-DDB3EE5078C5}|SDL3_Base.vcxproj|solutionrelative:source\\Level1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52384173-F918-4DF6-8DE5-DDB3EE5078C5}|SDL3_Base.vcxproj|C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Level2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{52384173-F918-4DF6-8DE5-DDB3EE5078C5}|SDL3_Base.vcxproj|solutionrelative:source\\Level2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52384173-F918-4DF6-8DE5-DDB3EE5078C5}|SDL3_Base.vcxproj|C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Enemies\\Waves\\WaveManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{52384173-F918-4DF6-8DE5-DDB3EE5078C5}|SDL3_Base.vcxproj|solutionrelative:source\\Enemies\\Waves\\WaveManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\AnimatedImageRenderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\AnimatedImageRenderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52384173-F918-4DF6-8DE5-DDB3EE5078C5}|SDL3_Base.vcxproj|C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Level2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -108,11 +116,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 201,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "TopBottomSpawnPattern.cpp",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Patterns\\TopBottomSpawnPattern.cpp",
               "RelativeDocumentMoniker": "source\\Patterns\\TopBottomSpawnPattern.cpp",
@@ -122,71 +130,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-01-29T04:35:58.335Z",
               "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AnimatedImageRenderer.h",
-              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\AnimatedImageRenderer.h",
-              "RelativeDocumentMoniker": "source\\AnimatedImageRenderer.h",
-              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\AnimatedImageRenderer.h",
-              "RelativeToolTip": "source\\AnimatedImageRenderer.h",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAwEAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-30T21:22:22.815Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Level2.h",
-              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Level2.h",
-              "RelativeDocumentMoniker": "source\\Level2.h",
-              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Level2.h",
-              "RelativeToolTip": "source\\Level2.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-30T21:20:17.55Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Gearbot.cpp",
-              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Enemies\\Gearbot.cpp",
-              "RelativeDocumentMoniker": "source\\Enemies\\Gearbot.cpp",
-              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Enemies\\Gearbot.cpp",
-              "RelativeToolTip": "source\\Enemies\\Gearbot.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-01-30T21:19:30.799Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Gearbot.h",
-              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Enemies\\Gearbot.h",
-              "RelativeDocumentMoniker": "source\\Enemies\\Gearbot.h",
-              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Enemies\\Gearbot.h",
-              "RelativeToolTip": "source\\Enemies\\Gearbot.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-30T21:19:23.414Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Animator.h",
-              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Animator.h",
-              "RelativeDocumentMoniker": "source\\Animator.h",
-              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Animator.h",
-              "RelativeToolTip": "source\\Animator.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-30T21:06:44.641Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -202,20 +145,107 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Level1.cpp",
+              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Level1.cpp",
+              "RelativeDocumentMoniker": "source\\Level1.cpp",
+              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Level1.cpp",
+              "RelativeToolTip": "source\\Level1.cpp",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAAD0AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-30T21:50:52.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WaveManager.cpp",
+              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Enemies\\Waves\\WaveManager.cpp",
+              "RelativeDocumentMoniker": "source\\Enemies\\Waves\\WaveManager.cpp",
+              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Enemies\\Waves\\WaveManager.cpp",
+              "RelativeToolTip": "source\\Enemies\\Waves\\WaveManager.cpp",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-30T21:45:31.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AnimatedImageRenderer.h",
+              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\AnimatedImageRenderer.h",
+              "RelativeDocumentMoniker": "source\\AnimatedImageRenderer.h",
+              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\AnimatedImageRenderer.h",
+              "RelativeToolTip": "source\\AnimatedImageRenderer.h",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAwEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-30T21:22:22.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Level2.h",
+              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Level2.h",
+              "RelativeDocumentMoniker": "source\\Level2.h",
+              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Level2.h",
+              "RelativeToolTip": "source\\Level2.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-30T21:20:17.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Gearbot.cpp",
+              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Enemies\\Gearbot.cpp",
+              "RelativeDocumentMoniker": "source\\Enemies\\Gearbot.cpp",
+              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Enemies\\Gearbot.cpp",
+              "RelativeToolTip": "source\\Enemies\\Gearbot.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-30T21:19:30.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Gearbot.h",
+              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Enemies\\Gearbot.h",
+              "RelativeDocumentMoniker": "source\\Enemies\\Gearbot.h",
+              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Enemies\\Gearbot.h",
+              "RelativeToolTip": "source\\Enemies\\Gearbot.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-30T21:19:23.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Animator.h",
+              "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Animator.h",
+              "RelativeDocumentMoniker": "source\\Animator.h",
+              "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Animator.h",
+              "RelativeToolTip": "source\\Animator.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-30T21:06:44.641Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Level2.cpp",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Level2.cpp",
               "RelativeDocumentMoniker": "source\\Level2.cpp",
               "ToolTip": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Level2.cpp",
               "RelativeToolTip": "source\\Level2.cpp",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGoAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-01-30T19:29:19.375Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "TopBottomSpawnPattern.h",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Patterns\\TopBottomSpawnPattern.h",
               "RelativeDocumentMoniker": "source\\Patterns\\TopBottomSpawnPattern.h",
@@ -227,7 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "vector",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
@@ -239,7 +269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "XML.cpp",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\Curso2-ENTI\\Curso2-2025-2026\\Ingenier\u00EDa_Software\\Ficheros XML Codigo\\XML.cpp",
               "RelativeDocumentMoniker": "..\\..\\Curso2-ENTI\\Curso2-2025-2026\\Ingenier\u00EDa_Software\\Ficheros XML Codigo\\XML.cpp",
@@ -251,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Game.cpp",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Game.cpp",
               "RelativeDocumentMoniker": "source\\Game.cpp",
@@ -263,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "Turret.cpp",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Player\\Gun\\Turret.cpp",
               "RelativeDocumentMoniker": "source\\Player\\Gun\\Turret.cpp",
@@ -275,7 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Bullet.h",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Player\\Gun\\Bullet.h",
               "RelativeDocumentMoniker": "source\\Player\\Gun\\Bullet.h",
@@ -283,12 +313,11 @@
               "RelativeToolTip": "source\\Player\\Gun\\Bullet.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-29T02:59:10.775Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-29T02:59:10.775Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "AmmoGun.h",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Player\\Gun\\AmmoGun.h",
               "RelativeDocumentMoniker": "source\\Player\\Gun\\AmmoGun.h",
@@ -300,7 +329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "AmmoGun.cpp",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Player\\Gun\\AmmoGun.cpp",
               "RelativeDocumentMoniker": "source\\Player\\Gun\\AmmoGun.cpp",
@@ -312,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "Turret.h",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Player\\Gun\\Turret.h",
               "RelativeDocumentMoniker": "source\\Player\\Gun\\Turret.h",
@@ -324,7 +353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "AABB.cpp",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\AABB.cpp",
               "RelativeDocumentMoniker": "source\\AABB.cpp",
@@ -336,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Vector2.h",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Vector2.h",
               "RelativeDocumentMoniker": "source\\Vector2.h",
@@ -348,7 +377,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "Vector2.cpp",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Vector2.cpp",
               "RelativeDocumentMoniker": "source\\Vector2.cpp",
@@ -360,7 +389,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Transform.h",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Transform.h",
               "RelativeDocumentMoniker": "source\\Transform.h",
@@ -372,7 +401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "TestObject.h",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\TestObject.h",
               "RelativeDocumentMoniker": "source\\TestObject.h",
@@ -384,7 +413,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "DamageableObject.h",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\DamageableObject.h",
               "RelativeDocumentMoniker": "source\\DamageableObject.h",
@@ -392,12 +421,11 @@
               "RelativeToolTip": "source\\DamageableObject.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-29T02:49:47.7Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-29T02:49:47.7Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Animator.cpp",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Animator.cpp",
               "RelativeDocumentMoniker": "source\\Animator.cpp",
@@ -405,12 +433,11 @@
               "RelativeToolTip": "source\\Animator.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-01-29T02:49:40.546Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-29T02:49:40.546Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "AABB.h",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\AABB.h",
               "RelativeDocumentMoniker": "source\\AABB.h",
@@ -418,12 +445,11 @@
               "RelativeToolTip": "source\\AABB.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-29T02:49:38.252Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-29T02:49:38.252Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "Angrygons.cpp",
               "DocumentMoniker": "C:\\Users\\xasa7\\OneDrive\\Documentos\\GitHub\\SDL_Tutorial\\SDL3_Base\\source\\Enemies\\Angrygons.cpp",
               "RelativeDocumentMoniker": "source\\Enemies\\Angrygons.cpp",
