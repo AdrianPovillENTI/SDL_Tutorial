@@ -10,10 +10,18 @@ Tentakor::Tentakor ()
     "resources/EduBoss.png"
     )
 {
-
     Start ( );
-    onDie = [ this ] ( )
+    
+    // Guardar el onDie original si existe
+    auto originalOnDie = onDie;
+    
+    onDie = [ this, originalOnDie ] ( )
     {
+        // Ejecutar el callback original primero (el de Wave)
+        if (originalOnDie)
+            originalOnDie();
+            
+        cout << "Tentakor defeated! Loading Level2..." << endl;
         assert ( SM.SetNextScene ( "Level2" ) );
     };
 }

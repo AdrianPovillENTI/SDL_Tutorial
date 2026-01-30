@@ -89,7 +89,7 @@ void Level1::OnEnter ( )
 			new Wave
 			(
 				3,
-				Vector2(RM->WINDOW_WIDTH + 50, 50),
+				Vector2 ( RM->WINDOW_WIDTH + 50, RM->GAME_WINDOW_HEIGHT ), 
 				new RandomSpawnPattern
 				(
 					Vector2::Down,
@@ -221,13 +221,13 @@ void Level1::OnEnter ( )
 				}
 			),
 			new Wave
-			( //ID, ORIGIN, SPAWN PATTERNM, VECTOR ENEMIGOS
+			( 
 				3,
 				Vector2(RM->WINDOW_WIDTH, RM->GAME_WINDOW_HEIGHT / 3),
 				new LineSpawnPattern
 				(
-					Vector2(1, 0), //Direction where will spawn
-					100 //Spacing
+					Vector2(1, 0),
+					100 
 				),
 				{
 					new Swirlers(),
@@ -252,7 +252,7 @@ void Level1::OnEnter ( )
 			new Wave
 			(
 				3,
-				Vector2(RM->WINDOW_WIDTH + 50, 50),
+				Vector2 ( RM->WINDOW_WIDTH + 50 , RM->GAME_WINDOW_HEIGHT ) ,
 				new RandomSpawnPattern
 				(
 					Vector2::Down,

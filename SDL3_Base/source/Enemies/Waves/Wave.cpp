@@ -41,8 +41,16 @@ void Wave::SpawnEnemies()
         Enemy * enemy = enemies [ i ];
         if ( enemy == nullptr ) continue;
 
-        enemy->onDie = [this, enemy]()
+        // Guardar el onDie original si existe
+        auto originalOnDie = enemy->onDie;
+        
+        enemy->onDie = [this, enemy, originalOnDie]()
         {
+            // Ejecutar el callback original primero (por ejemplo, el de Tentakor)
+            if (originalOnDie)
+                originalOnDie();
+            
+            // Luego ejecutar la lógica de Wave
             this->EnemyDied(enemy->GetTransform()->position);
         };
 
@@ -52,10 +60,6 @@ void Wave::SpawnEnemies()
             onEnemySpawned(enemy);
         spawned++;
     }
-
-    //int size = enemies.size ( ) - 1;
-    //if ( size >= 0 && enemies [ size ] != nullptr )
-    //    lastEnemyPos = &( enemies [ size ]->GetTransform ( )->position );
 
     enemyAliveCount = spawned;
 }

@@ -46,11 +46,10 @@ void Level2::OnEnter ( )
 	{
 		SPAWNER.SpawnObject ( new MapDecorations ( "resources/Map/MapDecorations/Ice3.png" ) );
 	}
+	UIM->InitializeUI();
+	
 	Player * player = new Player ( 100 );
 	SPAWNER.SpawnObject ( player);
-
-	UIManager * uiManager = new UIManager ( );
-
 
 	WaveManager * waveManager = new WaveManager
 	(

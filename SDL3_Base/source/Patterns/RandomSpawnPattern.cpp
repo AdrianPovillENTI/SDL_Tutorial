@@ -1,21 +1,36 @@
 #include "RandomSpawnPattern.h"
-#include <cstdlib>
 
 std::vector<Vector2> RandomSpawnPattern::GetSpawnPositions(Vector2 origin, int count)
 {
-    std::vector<Vector2> positions;
-    positions.reserve(count);
+    std::vector<Vector2> res;
+    res.reserve(count);
+
+    int sign = (rand() % 2 == 0) ? -1 : 1;
+    Vector2 dir = baseDirection;
+    dir.x *= sign;
+
+    float maxY = RM->WINDOW_HEIGHT - enemyHeight;
 
     for (int i = 0; i < count; ++i)
     {
-        // Generar posición aleatoria en X dentro del rango
-        float randomX = origin.x + ((float)rand() / RAND_MAX * randomXRange * 2.0f) - randomXRange;
+<<<<<<< Updated upstream
+        float randomX = (float)(rand() % (int)(randomXRange * 2)) - randomXRange;
+        float randomY = (float)(rand() % (int)maxY);
+
+        Vector2 pos = origin + dir * (spacing * i);
+        pos.x += randomX;
+        pos.y = randomY;
+
+        res.push_back(pos);
+=======
+        float randomOffsetX = ((float)rand() / RAND_MAX * randomXRange * 2.0f) - randomXRange;
         
-        // Calcular posición en Y basada en el espaciado
-        float yPos = origin.y - (i * spacing);
+        Vector2 offset = baseDirection * (i * spacing);
+        Vector2 finalPos = origin + offset + Vector2(randomOffsetX, 0);
         
-        positions.push_back(Vector2(randomX, yPos));
+        positions.push_back(finalPos);
+>>>>>>> Stashed changes
     }
 
-    return positions;
+    return res;
 }
