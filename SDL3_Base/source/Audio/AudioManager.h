@@ -193,8 +193,6 @@ private:
 			if (pos >= 0 && pos < (int)_threadsDone.size())
 				_threadsDone[pos] = AtomicWrapper<bool>(std::atomic<bool>(true));
 		}
-
-		std::cout << "Stopped thread" << std::endl;
 	}
 
 	bool _muted = false;
