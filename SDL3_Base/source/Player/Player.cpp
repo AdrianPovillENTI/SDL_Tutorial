@@ -58,7 +58,7 @@ void Player::Start ( )
     {
         SD->SaveNewScore();
         Destroy();
-        SM.SetNextScene("MainMenu");
+        SM.SetNextScene("SplashScreen");
     };
 
     healthManager.Init(maxHealth, 3);

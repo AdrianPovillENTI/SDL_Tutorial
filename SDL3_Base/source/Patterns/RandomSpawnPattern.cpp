@@ -13,7 +13,6 @@ std::vector<Vector2> RandomSpawnPattern::GetSpawnPositions(Vector2 origin, int c
 
     for (int i = 0; i < count; ++i)
     {
-<<<<<<< Updated upstream
         float randomX = (float)(rand() % (int)(randomXRange * 2)) - randomXRange;
         float randomY = (float)(rand() % (int)maxY);
 
@@ -22,14 +21,12 @@ std::vector<Vector2> RandomSpawnPattern::GetSpawnPositions(Vector2 origin, int c
         pos.y = randomY;
 
         res.push_back(pos);
-=======
         float randomOffsetX = ((float)rand() / RAND_MAX * randomXRange * 2.0f) - randomXRange;
         
         Vector2 offset = baseDirection * (i * spacing);
         Vector2 finalPos = origin + offset + Vector2(randomOffsetX, 0);
         
-        positions.push_back(finalPos);
->>>>>>> Stashed changes
+        res.push_back(finalPos);
     }
 
     return res;

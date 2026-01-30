@@ -1,4 +1,5 @@
 #include "PlayerHealth.h"
+#include "../Audio/AudioManager.h"
 
 void PlayerHealth::Init(int _maxHp, int _initialLifes)
 {
@@ -20,11 +21,13 @@ void PlayerHealth::ReceiveDamage(int dmg)
 {
 	if (invincible) return;
 
+	AM->PlaySound("resources/audio/sfx/Damage.wav");
+
 	hp -= dmg;
 
 	if (onShieldChanged) onShieldChanged(hp, maxHp);
 	
-	SetInvincible(0.5f);
+	SetInvincible(3.f);
 
 	if (hp <= 0)
 	{

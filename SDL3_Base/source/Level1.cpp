@@ -30,6 +30,7 @@
 #include "Patterns/TopBottomSpawnPattern.h"
 #include "Patterns/RandomSpawnPattern.h"
 #include "Patterns/CornerSpawnPattern.h"
+#include "Audio/AudioManager.h"
 
 #pragma endregion Items
 
@@ -43,6 +44,8 @@ void Level1::OnEnter ( )
 
 	UIM->InitializeUI();
 	SCR.RestartScore();
+	AM->HaltAudio();
+	AM->PlaySoundLooping("resources/audio/music/GameplaySong.wav");
 
 	srand ( time ( NULL ) );
 

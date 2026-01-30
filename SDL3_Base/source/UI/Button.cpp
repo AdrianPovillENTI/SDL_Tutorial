@@ -15,7 +15,7 @@ Button::Button(OnClick onClick,
 }
 
 void Button::OnHoverEnter() {
-	_transform->scale = Vector2::One * 0.75f;
+	_transform->scale = Vector2::One * 0.95f;
 	_isHovered = true;
 }
 void Button::OnHoverExit() {

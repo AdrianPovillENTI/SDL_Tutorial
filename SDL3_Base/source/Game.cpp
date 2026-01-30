@@ -5,6 +5,7 @@
 
 #include "ImageObject.h"
 #include "RenderManager.h"
+#include "Audio/AudioManager.h"
 #include "InputManager.h"
 #include "SceneManager.h"
 #include <cassert>
@@ -130,6 +131,15 @@ void Game::Init()
 
 	RM->LoadFont("resources/fonts/Hyperspace.ttf");
 
+	AM->Init();
+
+	AM->LoadSoundData("resources/audio/music/MenuSong.wav");
+	AM->LoadSoundData("resources/audio/music/GameplaySong.wav");
+	AM->LoadSoundData("resources/audio/sfx/Shot.wav");
+	AM->LoadSoundData("resources/audio/sfx/Damage.wav");
+	AM->LoadSoundData("resources/audio/sfx/Hit.wav");
+	AM->LoadSoundData("resources/audio/sfx/Explode.wav");
+
 	assert(SM.AddScene("SplashScreen", new SplashScreen()));
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 	assert(SM.AddScene("Level1", new Level1()));
@@ -142,8 +152,9 @@ void Game::Init()
 
 void Game::InitSDL()
 {
-	if (!SDL_Init(SDL_INIT_VIDEO))
+	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO))
 		throw SDL_GetError();
+
 }
 
 void Game::CreateWindowAndRenderer()
@@ -179,6 +190,7 @@ void Game::Render()
 
 void Game::Release()
 {
+	AM->HaltAudio();
 	SDL_DestroyRenderer(_renderer);
 	SDL_DestroyWindow(_window);
 	SDL_Quit();

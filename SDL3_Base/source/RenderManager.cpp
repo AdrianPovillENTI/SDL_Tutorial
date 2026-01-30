@@ -18,11 +18,10 @@ RenderManager::~RenderManager()
 
 void RenderManager::InitSDL()
 {
-	if (!SDL_Init(SDL_INIT_VIDEO))
-		throw SDL_GetError();
-
-	if (!TTF_Init())
-		throw SDL_GetError();
+	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0)
+		throw std::runtime_error(SDL_GetError());
+	if (!TTF_Init() < 0)
+		throw std::runtime_error(SDL_GetError());
 }
 
 void RenderManager::CreateWindowAndRenderer()

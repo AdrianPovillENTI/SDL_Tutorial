@@ -1,17 +1,63 @@
-﻿  Game.cpp
+﻿  Enemy.cpp
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(112,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(118,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(132,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+  Game.cpp
 D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(112,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
 D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(118,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
 D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(132,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
 D:\GitHub\SDL_Tutorial\SDL3_Base\source\TestObject.h(11,70): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
 D:\GitHub\SDL_Tutorial\SDL3_Base\source\TestObject.h(11,43): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+  Level1.cpp
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(112,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(118,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(132,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\TestObject.h(11,70): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\TestObject.h(11,43): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\MapDecorations.h(21,52): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\MapDecorations.h(22,37): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\MapDecorations.h(25,52): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\MapDecorations.h(26,37): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(50,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(66,54): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(66,15): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(82,64): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(95,40): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(95,32): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(117,15): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(137,18): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(176,59): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(189,15): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(209,38): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(229,54): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(229,15): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(245,61): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(258,41): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(258,32): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(280,15): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(300,57): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Level1.cpp(300,17): warning C4244: 'argumento': conversión de 'const unsigned int' a 'float'; posible pérdida de datos
+  MainMenu.cpp
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(112,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(118,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(132,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+  Gun.cpp
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(112,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(118,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(132,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+  PlayerHealth.cpp
   SplashScreen.cpp
 D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(112,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
 D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(118,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
 D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(132,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\SplashScreen.cpp(10,51): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\SplashScreen.cpp(10,28): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\SplashScreen.cpp(12,55): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-D:\GitHub\SDL_Tutorial\SDL3_Base\source\SplashScreen.cpp(12,28): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\SplashScreen.cpp(14,51): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\SplashScreen.cpp(14,28): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\SplashScreen.cpp(16,55): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\SplashScreen.cpp(16,28): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+  Button.cpp
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(112,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(118,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
+D:\GitHub\SDL_Tutorial\SDL3_Base\source\Vector2.h(132,27): warning C4227: se ha utilizado un anacronismo: se omiten los calificadores de la referencia
   Generando código...
   SDL3_Base.vcxproj -> D:\GitHub\SDL_Tutorial\SDL3_Base\binaries\x64Debug\SDL3_Base.exe
   "pwsh.exe" no se reconoce como un comando interno o externo,
