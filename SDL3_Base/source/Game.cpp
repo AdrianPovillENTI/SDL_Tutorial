@@ -18,10 +18,6 @@ void Game::Init()
 {
 	RM->Init();
 
-	//Player Sprites
-
-	//Bullet Sprites
-    //Normal Bullet
 #pragma region LoadPlayerTextures
 	RM->LoadTexture("resources/xd.png");
 	RM->LoadTexture("resources/EduBoss.png");

@@ -106,7 +106,6 @@ void Enemy::Die(bool killed)
     if (killedByPlayer)
         SCR.AddScore(scorePoints);
 
-    // CAMBIO: Ejecutar onDie ANTES de Destroy() y solo si no se ha procesado
     if (!onDieProcess && onDie)
     {
         onDieProcess = true;

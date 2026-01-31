@@ -41,16 +41,13 @@ void Wave::SpawnEnemies()
         Enemy * enemy = enemies [ i ];
         if ( enemy == nullptr ) continue;
 
-        // Guardar el onDie original si existe
         auto originalOnDie = enemy->onDie;
         
         enemy->onDie = [this, enemy, originalOnDie]()
         {
-            // Ejecutar el callback original primero (por ejemplo, el de Tentakor)
             if (originalOnDie)
                 originalOnDie();
             
-            // Luego ejecutar la lógica de Wave
             this->EnemyDied(enemy->GetTransform()->position);
         };
 

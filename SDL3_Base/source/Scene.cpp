@@ -4,8 +4,6 @@
 
 void Scene::Update()
 {
-    //SPAWNER.ClearSpawnedObjects ( ); //Al pasar a la siguiente escena
-
     while ( SPAWNER.AreObjectsPendingSpawn ( ) )
     {
         Object * spawned = SPAWNER.GetSpawnedObjects ( );

@@ -59,7 +59,6 @@ bool ScoreData::SaveNewScore ( ) const
 
     rapidxml::xml_document<> doc;
 
-    // Declaración XML (opcional)
     rapidxml::xml_node<> * decl = doc.allocate_node ( rapidxml::node_declaration );
     decl->append_attribute ( doc.allocate_attribute ( "version" , "1.0" ) );
     decl->append_attribute ( doc.allocate_attribute ( "encoding" , "utf-8" ) );
@@ -69,7 +68,6 @@ bool ScoreData::SaveNewScore ( ) const
     rapidxml::xml_node<> * root = doc.allocate_node ( rapidxml::node_element , "Leaderboard" );
     doc.append_node ( root );
 
-    // Entradas
     for ( size_t i = 0; i < scores.size ( ); ++i )
     {
         rapidxml::xml_node<> * entry = doc.allocate_node ( rapidxml::node_element , "Entry" );
@@ -78,14 +76,12 @@ bool ScoreData::SaveNewScore ( ) const
         ss << scores [ i ];
         std::string scoreStr = ss.str ( );
 
-        // RapidXML requiere allocate_string
         char * value = doc.allocate_string ( scoreStr.c_str ( ) );
         entry->append_attribute ( doc.allocate_attribute ( "score" , value ) );
 
         root->append_node ( entry );
     }
 
-    // Serializar manualmente para evitar problemas con rapidxml::print
     std::ostringstream oss;
     oss << "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
     oss << "<Leaderboard>\n";

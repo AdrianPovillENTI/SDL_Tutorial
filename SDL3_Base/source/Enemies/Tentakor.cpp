@@ -12,12 +12,10 @@ Tentakor::Tentakor ()
 {
     Start ( );
     
-    // Guardar el onDie original si existe
     auto originalOnDie = onDie;
     
     onDie = [ this, originalOnDie ] ( )
     {
-        // Ejecutar el callback original primero (el de Wave)
         if (originalOnDie)
             originalOnDie();
             

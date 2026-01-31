@@ -14,10 +14,7 @@ void TextRenderer::SetText(std::string text)
 {
 	if ( text.empty ( ) )
 	{
-		// Opción 1: Usar un espacio en blanco
 		text = " ";
-		// O Opción 2: Retornar sin hacer nada
-		// return;
 	}
 
 	if ( _textTexture != nullptr )
